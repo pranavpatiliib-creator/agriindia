@@ -21,6 +21,10 @@ connectDB();
 
 const app = express();
 
+// Render sits behind a reverse proxy. Trust exactly one hop in production
+// so req.ip and express-rate-limit read X-Forwarded-For correctly.
+app.set("trust proxy", process.env.NODE_ENV === "production" ? 1 : false);
+
 /* ==============================
    SECURITY & MIDDLEWARE
 ================================ */
@@ -69,9 +73,7 @@ app.use("/api/auth", authLimiter);
 ================================ */
 
 app.use((req, res, next) => {
-    req.clientIp =
-        req.headers["x-forwarded-for"] ||
-        req.socket.remoteAddress;
+    req.clientIp = req.ip || req.socket.remoteAddress;
     next();
 });
 
