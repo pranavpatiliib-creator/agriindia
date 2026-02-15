@@ -6,6 +6,7 @@ const FruitCrop = require("../models/FruitCrop");
 const router = express.Router();
 
 const sessions = new Map();
+const LANGUAGE_MAP = { "1": "en", "2": "mr", "3": "hi" };
 
 function escapeXml(value = "") {
   return String(value)
@@ -24,7 +25,22 @@ function twiml(message) {
 
 function menuText() {
   return [
-    "AgriIndia WhatsApp Bot",
+    "AgriIndia WhatsApp Bot (v2)",
+    "",
+    "Reply with a number:",
+    "1. Crop Information",
+    "2. Insurance",
+    "3. Subsidies",
+    "4. Loan",
+    "5. MSP",
+    "7. Government Schemes",
+    "0. Exit",
+  ].join("\n");
+}
+
+function cropMenuText() {
+  return [
+    "Crop Information",
     "",
     "Reply with a number:",
     "1. Rabi crops",
@@ -32,8 +48,25 @@ function menuText() {
     "3. Cash crops",
     "4. Fruit crops",
     "5. Crop details by name",
-    "0. Show menu",
+    "0. Main menu",
   ].join("\n");
+}
+
+function languagePrompt() {
+  return [
+    "Welcome to AgriIndia WhatsApp Bot",
+    "",
+    "Please select language / भाषा निवडा / भाषा चुनें:",
+    "1. English",
+    "2. Marathi",
+    "3. Hindi",
+  ].join("\n");
+}
+
+function welcomeByLanguage(language) {
+  if (language === "mr") return "AgriIndia मध्ये आपले स्वागत आहे.";
+  if (language === "hi") return "AgriIndia में आपका स्वागत है।";
+  return "Welcome to AgriIndia.";
 }
 
 function shortList(items, field = "name", limit = 15) {
@@ -84,43 +117,72 @@ router.post("/webhook", async (req, res, next) => {
     const from = (req.body?.From || "unknown").trim();
     const input = (req.body?.Body || "").trim();
     const lowerInput = input.toLowerCase();
-    const session = sessions.get(from) || { step: "menu" };
+    const session = sessions.get(from) || { step: "main_menu" };
 
     let reply = "";
 
-    if (!input || ["hi", "hello", "menu", "start", "help"].includes(lowerInput)) {
-      session.step = "menu";
+    if (!session.language) {
+      const selectedLanguage = LANGUAGE_MAP[input];
+      if (!selectedLanguage) {
+        reply = languagePrompt();
+      } else {
+        session.language = selectedLanguage;
+        session.step = "main_menu";
+        reply = `${welcomeByLanguage(selectedLanguage)}\n\n${menuText()}`;
+      }
+    } else if (!input || ["hi", "hello", "menu", "start", "help"].includes(lowerInput)) {
+      session.step = "main_menu";
       reply = menuText();
+    } else if (session.step === "crop_menu") {
+      if (input === "1") {
+        const crops = await Crop.find({ season: /rabi/i }, { name: 1, _id: 0 }).lean();
+        reply = `Rabi crops:\n${shortList(crops)}\n\nReply 0 for main menu.`;
+      } else if (input === "2") {
+        const crops = await Crop.find({ season: /kharif/i }, { name: 1, _id: 0 }).lean();
+        reply = `Kharif crops:\n${shortList(crops)}\n\nReply 0 for main menu.`;
+      } else if (input === "3") {
+        const crops = await CashCrop.find({}, { crop_name: 1, _id: 0 }).lean();
+        reply = `Cash crops:\n${shortList(crops, "crop_name")}\n\nReply 0 for main menu.`;
+      } else if (input === "4") {
+        const crops = await FruitCrop.find({}, { crop_name: 1, _id: 0 }).lean();
+        reply = `Fruit crops:\n${shortList(crops, "crop_name")}\n\nReply 0 for main menu.`;
+      } else if (input === "5") {
+        session.step = "awaiting_crop_name";
+        reply = "Send crop name (example: Wheat, Mango, Cotton).";
+      } else {
+        session.step = "main_menu";
+        reply = menuText();
+      }
     } else if (session.step === "awaiting_crop_name") {
       const details = await getCropDetailsByName(input);
-      session.step = "menu";
+      session.step = "main_menu";
       reply = details
         ? `${details}\n\nReply 0 for main menu.`
         : `Crop "${input}" not found.\nReply 0 for main menu.`;
     } else if (input === "1") {
-      const crops = await Crop.find({ season: /rabi/i }, { name: 1, _id: 0 }).lean();
-      reply = `Rabi crops:\n${shortList(crops)}\n\nReply 0 for menu.`;
+      session.step = "crop_menu";
+      reply = cropMenuText();
     } else if (input === "2") {
-      const crops = await Crop.find({ season: /kharif/i }, { name: 1, _id: 0 }).lean();
-      reply = `Kharif crops:\n${shortList(crops)}\n\nReply 0 for menu.`;
+      reply = "Insurance module will be available soon.\n\nReply 0 for main menu.";
     } else if (input === "3") {
-      const crops = await CashCrop.find({}, { crop_name: 1, _id: 0 }).lean();
-      reply = `Cash crops:\n${shortList(crops, "crop_name")}\n\nReply 0 for menu.`;
+      reply = "Subsidies module will be available soon.\n\nReply 0 for main menu.";
     } else if (input === "4") {
-      const crops = await FruitCrop.find({}, { crop_name: 1, _id: 0 }).lean();
-      reply = `Fruit crops:\n${shortList(crops, "crop_name")}\n\nReply 0 for menu.`;
+      reply = "Loan module will be available soon.\n\nReply 0 for main menu.";
     } else if (input === "5") {
-      session.step = "awaiting_crop_name";
-      reply = "Send crop name (example: Wheat, Mango, Cotton).";
+      reply = "MSP module will be available soon.\n\nReply 0 for main menu.";
+    } else if (input === "7") {
+      reply = "Government schemes module will be available soon.\n\nReply 0 for main menu.";
     } else if (input === "0") {
-      session.step = "menu";
-      reply = menuText();
+      sessions.delete(from);
+      reply = "Thank you for using AgriIndia WhatsApp Bot.";
     } else {
-      reply = `Invalid input.\n\n${menuText()}`;
-      session.step = "menu";
+      reply = menuText();
+      session.step = "main_menu";
     }
 
-    sessions.set(from, session);
+    if (input !== "0") {
+      sessions.set(from, session);
+    }
     res.status(200).type("text/xml").send(twiml(reply));
   } catch (error) {
     next(error);
