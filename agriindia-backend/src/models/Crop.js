@@ -8,7 +8,7 @@ const fertilizerSchema = new mongoose.Schema({
     dosage_per_acre: String,
     application_method: String,
     water_quantity_for_spray: String
-});
+}, { _id: false, strict: false });
 
 /* Disease Structure */
 const diseaseSchema = new mongoose.Schema({
@@ -19,7 +19,7 @@ const diseaseSchema = new mongoose.Schema({
     recommended_chemical: String,
     dosage_per_liter: String,
     waiting_period_before_harvest: String
-});
+}, { _id: false, strict: false });
 
 /* Main Crop Schema */
 const cropSchema = new mongoose.Schema({
@@ -35,7 +35,7 @@ const cropSchema = new mongoose.Schema({
     fertilizer_schedule: [fertilizerSchema],
     major_diseases: [diseaseSchema]
 
-}, { timestamps: true });
+}, { timestamps: true, strict: false });
 
 module.exports = mongoose.model("Crop", cropSchema);
 

@@ -10,7 +10,11 @@ const menus = [
     title: "Language",
     prompt: "Select language",
     type: "button",
-    options: [{ id: "lang_en", title: "English", description: "English", nextMenuKey: "main_menu" }],
+    options: [
+      { id: "lang_en", title: "English", description: "English", nextMenuKey: "main_menu" },
+      { id: "lang_hi", title: "हिंदी", description: "Hindi", nextMenuKey: "main_menu" },
+      { id: "lang_mr", title: "मराठी", description: "Marathi", nextMenuKey: "main_menu" },
+    ],
   },
   {
     key: "main_menu",

@@ -15,7 +15,7 @@ const payload = {
                 from: "919999999999",
                 id: "wamid.test",
                 type: "interactive",
-                interactive: { button_reply: { id: "lang_en", title: "English" }, type: "button_reply" },
+                interactive: { button_reply: { id: "lang_hi", title: "हिंदी" }, type: "button_reply" },
               },
             ],
           },

@@ -40,11 +40,11 @@ function dedupeByName(crops) {
 function dedupeByCropName(crops) {
   const unique = new Map();
   for (const crop of crops) {
-    const name = (crop?.crop_name || "").trim();
+    const name = (crop?.crop_name || crop?.name || "").trim();
     if (!name) continue;
     const key = name.toLowerCase();
     if (!unique.has(key)) {
-      unique.set(key, { ...crop, crop_name: name });
+      unique.set(key, { ...crop, crop_name: name, name });
     }
   }
   return Array.from(unique.values());

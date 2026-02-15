@@ -7,13 +7,13 @@ const fertilizerScheduleSchema = new mongoose.Schema({
   dosage_per_acre: String,
   application_method: String,
   water_quantity_for_spray: String
-}, { _id: false });
+}, { _id: false, strict: false });
 
 const irrigationScheduleSchema = new mongoose.Schema({
   growth_stage: String,
   interval_days: String,
   water_requirement: String
-}, { _id: false });
+}, { _id: false, strict: false });
 
 const diseaseSchema = new mongoose.Schema({
   disease_name: String,
@@ -23,7 +23,7 @@ const diseaseSchema = new mongoose.Schema({
   recommended_chemical: String,
   dosage_per_liter: String,
   waiting_period_before_harvest: String
-}, { _id: false });
+}, { _id: false, strict: false });
 
 const pestSchema = new mongoose.Schema({
   pest_name: String,
@@ -31,7 +31,7 @@ const pestSchema = new mongoose.Schema({
   recommended_insecticide: String,
   dosage_per_liter: String,
   waiting_period_before_harvest: String
-}, { _id: false });
+}, { _id: false, strict: false });
 
 const cashCropSchema = new mongoose.Schema({
   crop_name: { type: String, required: true, unique: true },
@@ -49,6 +49,6 @@ const cashCropSchema = new mongoose.Schema({
   major_pests: [pestSchema],
   estimated_cost_of_cultivation_per_acre: String,
   average_profit_margin_percentage: String
-}, { timestamps: true });
+}, { timestamps: true, strict: false });
 
 module.exports = mongoose.model("CashCrop", cashCropSchema);

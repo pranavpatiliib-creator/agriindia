@@ -15,7 +15,7 @@ exports.getAllCrops = async (req, res, next) => {
 
         // Search (case-insensitive)
         if (name) {
-            queryObject.crop_name = { $regex: name, $options: "i" };
+            queryObject.name = { $regex: name, $options: "i" };
         }
 
         const skip = (page - 1) * limit;
@@ -42,7 +42,7 @@ exports.getAllCrops = async (req, res, next) => {
 exports.getCropByName = async (req, res, next) => {
     try {
         const crop = await Crop.findOne({
-            crop_name: { $regex: req.params.name, $options: "i" },
+            name: { $regex: req.params.name, $options: "i" },
         });
 
         if (!crop) {
