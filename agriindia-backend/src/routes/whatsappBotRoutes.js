@@ -9,6 +9,100 @@ const router = express.Router();
 
 const sessions = new Map();
 const LANGUAGE_MAP = { "1": "en", "2": "mr", "3": "hi" };
+const MODULE_SCHEMES = {
+  insurance: [
+    {
+      name: "PMFBY (Pradhan Mantri Fasal Bima Yojana)",
+      type: "Crop Insurance",
+      who_can_apply: "Loanee and non-loanee farmers",
+      coverage: "Yield losses due to non-preventable risks",
+      premium: "2% Kharif, 1.5% Rabi, 5% horticulture/commercial",
+      where_to_apply: "Nearest CSC, participating bank branch, https://pmfby.gov.in",
+    },
+    {
+      name: "Weather Based Crop Insurance Scheme (WBCIS)",
+      type: "Weather Insurance",
+      who_can_apply: "Farmers in notified areas",
+      coverage: "Weather deviations affecting crop yield",
+      premium: "As notified by state/season",
+      where_to_apply: "Nearest CSC, authorized insurance partner, state agriculture office",
+    },
+    {
+      name: "Coconut Palm Insurance Scheme (CPIS)",
+      type: "Plantation Insurance",
+      who_can_apply: "Coconut growers",
+      coverage: "Loss of coconut palms due to natural causes",
+      premium: "As per age slab and scheme rules",
+      where_to_apply: "Coconut Development Board channels and partner insurers",
+    },
+  ],
+  subsidies: [
+    {
+      name: "PM-KISAN",
+      benefit: "Income support to eligible farmer families",
+      eligibility: "Landholding farmer families as per scheme rules",
+      where_to_apply: "https://pmkisan.gov.in, local agriculture office, CSC",
+    },
+    {
+      name: "Soil Health Card Scheme",
+      benefit: "Soil testing and nutrient recommendation",
+      eligibility: "All farmers",
+      where_to_apply: "District agriculture office / soil testing labs",
+    },
+    {
+      name: "PMKSY (Micro Irrigation Subsidy)",
+      benefit: "Subsidy for drip and sprinkler irrigation",
+      eligibility: "Farmers adopting micro-irrigation",
+      where_to_apply: "State horticulture/agriculture department portal and office",
+    },
+  ],
+  loan: [
+    {
+      name: "Kisan Credit Card (KCC)",
+      provider: "Banks and cooperative institutions",
+      interest_rate: "As per bank/NABARD norms",
+      max_amount: "Based on landholding and crop pattern",
+      where_to_apply: "Nearest bank branch / online banking portal",
+    },
+    {
+      name: "Agriculture Term Loan",
+      provider: "Public and private sector banks",
+      interest_rate: "Bank specific",
+      max_amount: "Project and eligibility based",
+      where_to_apply: "Nearest bank branch with project report",
+    },
+    {
+      name: "NABARD Supported Farm Loans",
+      provider: "Partner banks and regional rural banks",
+      interest_rate: "Bank specific with subsidy support where applicable",
+      max_amount: "Scheme and project based",
+      where_to_apply: "Partner bank branches and district development offices",
+    },
+  ],
+  msp: [
+    {
+      name: "MSP for Wheat",
+      crop: "Wheat",
+      rate: "Refer latest notified MSP",
+      season_year: "Rabi Marketing Season",
+      where_to_apply: "Procurement center / mandi / state procurement portal",
+    },
+    {
+      name: "MSP for Paddy",
+      crop: "Paddy",
+      rate: "Refer latest notified MSP",
+      season_year: "Kharif Marketing Season",
+      where_to_apply: "Procurement center / mandi / state procurement portal",
+    },
+    {
+      name: "MSP for Cotton",
+      crop: "Cotton",
+      rate: "Refer latest notified MSP",
+      season_year: "Kharif Marketing Season",
+      where_to_apply: "Cotton procurement center / mandi",
+    },
+  ],
+};
 
 function escapeXml(value = "") {
   return String(value)
@@ -60,53 +154,92 @@ function twiml(message) {
 
 function menuText() {
   return [
-    "AgriIndia WhatsApp Bot (v2)",
+    "????? AgriIndia Main Menu",
     "",
-    "Reply with a number:",
-    "1. Crop Information",
-    "2. Insurance",
-    "3. Subsidies",
-    "4. Loan",
-    "5. MSP",
-    "7. Government Schemes",
-    "0. Exit",
-  ].join("\n");
+    "Please choose an option:",
+    "",
+    "1?? ?? Crop Information",
+    "2?? ?? Insurance",
+    "3?? ?? Subsidies",
+    "4?? ?? Loan",
+    "5?? ?? MSP",
+    "7?? ?? Government Schemes",
+    "0?? Exit",
+    "",
+    "Reply with one number.",
+  ].join("\\n");
 }
 
 function cropMenuText() {
   return [
-    "Crop Information",
+    "?? Crop Information",
     "",
-    "Reply with a number:",
-    "1. Rabi crops",
-    "2. Kharif crops",
-    "3. Cash crops",
-    "4. Fruit crops",
-    "5. Crop details by name",
-    "0. Main menu",
-  ].join("\n");
+    "Choose crop type:",
+    "",
+    "1?? ?? Rabi Crops",
+    "2?? ??? Kharif Crops",
+    "3?? ?? Cash Crops",
+    "4?? ?? Fruit Crops",
+    "5?? ?? Search by Crop Name",
+    "0?? ?? Main Menu",
+    "",
+    "Reply with one number.",
+  ].join("\\n");
 }
 
 function cropInfoTypeMenuText(name = "Crop") {
   return [
-    `${name} - Information Menu`,
+    `?? ${name}`,
+    "",
+    "Choose what you want next:",
+    "1?? ?? Fertilizer",
+    "2?? ?? Diseases",
+    "0?? ?? Main Menu",
+  ].join("\\n");
+}
+
+function moduleTitle(moduleKey = "") {
+  const map = {
+    insurance: "Insurance Schemes",
+    subsidies: "Subsidy Schemes",
+    loan: "Loan Schemes",
+    msp: "MSP List",
+  };
+  return map[moduleKey] || "Schemes";
+}
+
+function moduleListText(moduleKey = "") {
+  const schemes = MODULE_SCHEMES[moduleKey] || [];
+  return [
+    moduleTitle(moduleKey),
     "",
     "Reply with a number:",
-    "1. Fertilizer",
-    "2. Diseases",
-    "0. Main menu",
-  ].join("\n");
+    numberedList(schemes.map((s) => s.name)),
+    "0?? ?? Main Menu",
+  ].join("\\n");
+}
+
+function moduleDetailText(moduleKey = "", scheme = {}) {
+  return [
+    `? ${scheme.name || moduleTitle(moduleKey)}`,
+    "",
+    formatRecordAllFields(scheme),
+    "",
+    "0?? ?? Main Menu",
+  ].join("\\n");
 }
 
 function languagePrompt() {
   return [
-    "Welcome to AgriIndia WhatsApp Bot",
+    "?? Welcome to AgriIndia Bot",
     "",
-    "Please select language / भाषा निवडा / भाषा चुनें:",
-    "1. English",
-    "2. Marathi",
-    "3. Hindi",
-  ].join("\n");
+    "Please choose your language:",
+    "1?? English",
+    "2?? Marathi",
+    "3?? Hindi",
+    "",
+    "Reply with one number.",
+  ].join("\\n");
 }
 
 function welcomeByLanguage(language) {
@@ -126,7 +259,9 @@ function shortList(items, field = "name", limit = 15) {
 
 function numberedList(items = []) {
   if (!items.length) return "No records found.";
-  return items.map((item, index) => `${index + 1}. ${item}`).join("\n");
+  const digits = ["0️⃣", "1️⃣", "2️⃣", "3️⃣", "4️⃣", "5️⃣", "6️⃣", "7️⃣", "8️⃣", "9️⃣"];
+  const pretty = (n) => String(n).split("").map((d) => digits[Number(d)] || d).join("");
+  return items.map((item, index) => `${pretty(index + 1)} ${item}`).join("\n");
 }
 
 function numberedListFromItems(items = [], field = "name") {
@@ -400,13 +535,13 @@ router.post("/webhook", async (req, res, next) => {
         if (rabiRecords.length) {
           session.step = "rabi_crop_list";
           session.rabiCropOptions = rabiRecords;
-          reply = `Rabi crops:\n${numberedList(rabiRecords.map((r) => r.name))}\n\nReply with crop number for details.\nReply 0 for main menu.`;
+          reply = `?? Rabi Crops\n${numberedList(rabiRecords.map((r) => r.name))}\n\nReply with crop number for details.\n0?? ?? Main Menu`;
         } else {
           const crops = await Crop.find({ season: /rabi/i }).lean();
           const names = crops.map((c) => ({ name: String(c?.name || "").trim(), record: c })).filter((c) => c.name);
           session.step = "rabi_crop_list";
           session.rabiCropOptions = names;
-          reply = `Rabi crops:\n${numberedList(names.map((n) => n.name))}\n\nReply with crop number for details.\nReply 0 for main menu.`;
+          reply = `?? Rabi Crops\n${numberedList(names.map((n) => n.name))}\n\nReply with crop number for details.\n0?? ?? Main Menu`;
         }
       } else if (input === "2") {
         const kharifRecords = readDatasetRecords("kharifData.json")
@@ -415,13 +550,13 @@ router.post("/webhook", async (req, res, next) => {
         if (kharifRecords.length) {
           session.step = "kharif_crop_list";
           session.kharifCropOptions = kharifRecords;
-          reply = `Kharif crops:\n${numberedList(kharifRecords.map((r) => r.name))}\n\nReply with crop number for details.\nReply 0 for main menu.`;
+          reply = `??? Kharif Crops\n${numberedList(kharifRecords.map((r) => r.name))}\n\nReply with crop number for details.\n0?? ?? Main Menu`;
         } else {
           const crops = await Crop.find({ season: /kharif/i }).lean();
           const names = crops.map((c) => ({ name: String(c?.name || "").trim(), record: c })).filter((c) => c.name);
           session.step = "kharif_crop_list";
           session.kharifCropOptions = names;
-          reply = `Kharif crops:\n${numberedList(names.map((n) => n.name))}\n\nReply with crop number for details.\nReply 0 for main menu.`;
+          reply = `??? Kharif Crops\n${numberedList(names.map((n) => n.name))}\n\nReply with crop number for details.\n0?? ?? Main Menu`;
         }
       } else if (input === "3") {
         const cashRecords = readDatasetRecords("cash crops.json");
@@ -430,14 +565,14 @@ router.post("/webhook", async (req, res, next) => {
           session.cashCropOptions = cashRecords
             .map((row) => ({ name: normalizedRecordName(row), record: row }))
             .filter((row) => row.name);
-          reply = `Cash crops:\n${numberedList(session.cashCropOptions.map((r) => r.name))}\n\nReply with crop number for details.\nReply 0 for main menu.`;
+          reply = `?? Cash Crops\n${numberedList(session.cashCropOptions.map((r) => r.name))}\n\nReply with crop number for details.\n0?? ?? Main Menu`;
         } else {
           const crops = await CashCrop.find({}).lean();
           session.step = "cash_crop_list";
           session.cashCropOptions = crops
             .map((row) => ({ name: normalizedRecordName(row), record: row }))
             .filter((row) => row.name);
-          reply = `Cash crops:\n${numberedList(session.cashCropOptions.map((r) => r.name))}\n\nReply with crop number for details.\nReply 0 for main menu.`;
+          reply = `?? Cash Crops\n${numberedList(session.cashCropOptions.map((r) => r.name))}\n\nReply with crop number for details.\n0?? ?? Main Menu`;
         }
       } else if (input === "4") {
         const fruitRecords = readDatasetRecords("fruitcrops.json");
@@ -446,18 +581,18 @@ router.post("/webhook", async (req, res, next) => {
           session.fruitCropOptions = fruitRecords
             .map((row) => ({ name: normalizedRecordName(row), record: row }))
             .filter((row) => row.name);
-          reply = `Fruit crops:\n${numberedList(session.fruitCropOptions.map((r) => r.name))}\n\nReply with crop number for details.\nReply 0 for main menu.`;
+          reply = `?? Fruit Crops\n${numberedList(session.fruitCropOptions.map((r) => r.name))}\n\nReply with crop number for details.\n0?? ?? Main Menu`;
         } else {
           const crops = await FruitCrop.find({}).lean();
           session.step = "fruit_crop_list";
           session.fruitCropOptions = crops
             .map((row) => ({ name: normalizedRecordName(row), record: row }))
             .filter((row) => row.name);
-          reply = `Fruit crops:\n${numberedList(session.fruitCropOptions.map((r) => r.name))}\n\nReply with crop number for details.\nReply 0 for main menu.`;
+          reply = `?? Fruit Crops\n${numberedList(session.fruitCropOptions.map((r) => r.name))}\n\nReply with crop number for details.\n0?? ?? Main Menu`;
         }
       } else if (input === "5") {
         session.step = "awaiting_crop_name";
-        reply = "Send crop name (example: Wheat, Mango, Cotton).";
+        reply = "?? Send crop name (example: Wheat, Mango, Cotton).";
       } else {
         session.step = "main_menu";
         reply = menuText();
@@ -474,10 +609,10 @@ router.post("/webhook", async (req, res, next) => {
           session.selectedCropRecord = record;
           reply = buildCropInfoLanding(record, selected.name);
         } else {
-          reply = `${selected.name}\n\nDetails not available.\nReply 0 for main menu.`;
+          reply = `${selected.name}\n\nDetails not available.\n0?? ?? Main Menu`;
         }
       } else {
-        reply = "Please reply with a valid rabi crop number.\nReply 0 for main menu.";
+        reply = "Please reply with a valid rabi crop number.\n0?? ?? Main Menu";
       }
     } else if (session.step === "kharif_crop_list") {
       const selectedIndex = Number.parseInt(input, 10) - 1;
@@ -491,10 +626,10 @@ router.post("/webhook", async (req, res, next) => {
           session.selectedCropRecord = record;
           reply = buildCropInfoLanding(record, selected.name);
         } else {
-          reply = `${selected.name}\n\nDetails not available.\nReply 0 for main menu.`;
+          reply = `${selected.name}\n\nDetails not available.\n0?? ?? Main Menu`;
         }
       } else {
-        reply = "Please reply with a valid kharif crop number.\nReply 0 for main menu.";
+        reply = "Please reply with a valid kharif crop number.\n0?? ?? Main Menu";
       }
     } else if (session.step === "cash_crop_list") {
       const selectedIndex = Number.parseInt(input, 10) - 1;
@@ -507,7 +642,7 @@ router.post("/webhook", async (req, res, next) => {
         session.selectedCropRecord = selected;
         reply = buildCropInfoLanding(selected, cropName);
       } else {
-        reply = "Please reply with a valid cash crop number.\nReply 0 for main menu.";
+        reply = "Please reply with a valid cash crop number.\n0?? ?? Main Menu";
       }
     } else if (session.step === "fruit_crop_list") {
       const selectedIndex = Number.parseInt(input, 10) - 1;
@@ -520,7 +655,7 @@ router.post("/webhook", async (req, res, next) => {
         session.selectedCropRecord = selected;
         reply = buildCropInfoLanding(selected, cropName);
       } else {
-        reply = "Please reply with a valid fruit crop number.\nReply 0 for main menu.";
+        reply = "Please reply with a valid fruit crop number.\n0?? ?? Main Menu";
       }
     } else if (session.step === "crop_info_type_menu") {
       const selectedRecord = session.selectedCropRecord || null;
@@ -530,7 +665,7 @@ router.post("/webhook", async (req, res, next) => {
         reply = menuText();
       } else if (input === "1") {
         reply = [
-          `${selectedName} - Fertilizer`,
+          `${selectedName} Fertilizer Guide`,
           "",
           buildFertilizerSection(selectedRecord),
           "",
@@ -538,7 +673,7 @@ router.post("/webhook", async (req, res, next) => {
         ].join("\n");
       } else if (input === "2") {
         reply = [
-          `${selectedName} - Diseases`,
+          `${selectedName} Disease Info`,
           "",
           buildDiseaseSection(selectedRecord),
           "",
@@ -547,6 +682,26 @@ router.post("/webhook", async (req, res, next) => {
       } else {
         session.step = "main_menu";
         reply = menuText();
+      }
+    } else if (session.step === "module_list") {
+      const schemes = MODULE_SCHEMES[session.activeModule] || [];
+      const selectedIndex = Number.parseInt(input, 10) - 1;
+      const selected = schemes[selectedIndex] || null;
+      if (selected) {
+        session.step = "module_detail";
+        session.selectedScheme = selected;
+        reply = moduleDetailText(session.activeModule, selected);
+      } else {
+        reply = `Please reply with a valid number.\n\n${moduleListText(session.activeModule)}`;
+      }
+    } else if (session.step === "module_detail") {
+      if (input === "0") {
+        session.step = "main_menu";
+        session.activeModule = null;
+        session.selectedScheme = null;
+        reply = menuText();
+      } else {
+        reply = moduleDetailText(session.activeModule, session.selectedScheme || {});
       }
     } else if (session.step === "awaiting_crop_name") {
       const matched = await findCropRecordByName(input);
@@ -557,24 +712,32 @@ router.post("/webhook", async (req, res, next) => {
         reply = buildCropInfoLanding(matched.record, matched.heading);
       } else {
         session.step = "main_menu";
-        reply = `Crop "${input}" not found.\nReply 0 for main menu.`;
+        reply = `Crop "${input}" not found.\n0?? ?? Main Menu`;
       }
     } else if (input === "1") {
       session.step = "crop_menu";
       reply = cropMenuText();
     } else if (input === "2") {
-      reply = "Insurance module will be available soon.\n\nReply 0 for main menu.";
+      session.step = "module_list";
+      session.activeModule = "insurance";
+      reply = moduleListText("insurance");
     } else if (input === "3") {
-      reply = "Subsidies module will be available soon.\n\nReply 0 for main menu.";
+      session.step = "module_list";
+      session.activeModule = "subsidies";
+      reply = moduleListText("subsidies");
     } else if (input === "4") {
-      reply = "Loan module will be available soon.\n\nReply 0 for main menu.";
+      session.step = "module_list";
+      session.activeModule = "loan";
+      reply = moduleListText("loan");
     } else if (input === "5") {
-      reply = "MSP module will be available soon.\n\nReply 0 for main menu.";
+      session.step = "module_list";
+      session.activeModule = "msp";
+      reply = moduleListText("msp");
     } else if (input === "7") {
-      reply = "Government schemes module will be available soon.\n\nReply 0 for main menu.";
+      reply = "?? Government schemes module will be available soon.\n\n0?? ?? Main Menu";
     } else if (input === "0") {
       sessions.delete(from);
-      reply = "Thank you for using AgriIndia WhatsApp Bot.";
+      reply = "?? Thank you for using AgriIndia Bot.\nHave a good day, farmer! ??";
     } else {
       reply = menuText();
       session.step = "main_menu";
@@ -595,3 +758,4 @@ router.post("/webhook", async (req, res, next) => {
 });
 
 module.exports = router;
+
