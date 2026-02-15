@@ -1,4 +1,6 @@
 const express = require("express");
+const fs = require("fs");
+const path = require("path");
 const Crop = require("../models/Crop");
 const CashCrop = require("../models/CashCrop");
 const FruitCrop = require("../models/FruitCrop");
@@ -78,6 +80,84 @@ function shortList(items, field = "name", limit = 15) {
   return names.join(", ");
 }
 
+function numberedList(items = []) {
+  if (!items.length) return "No records found.";
+  return items.map((item, index) => `${index + 1}. ${item}`).join("\n");
+}
+
+function readCropNamesFromDataset(fileName) {
+  try {
+    const filePath = path.join(__dirname, "../../", fileName);
+    if (!fs.existsSync(filePath)) return [];
+    const parsed = JSON.parse(fs.readFileSync(filePath, "utf-8"));
+    if (!Array.isArray(parsed)) return [];
+
+    const unique = new Map();
+    for (const row of parsed) {
+      const name = String(row?.name || "").trim();
+      if (!name) continue;
+      const key = name.toLowerCase();
+      if (!unique.has(key)) unique.set(key, name);
+    }
+
+    return [...unique.values()];
+  } catch (_) {
+    return [];
+  }
+}
+
+function readDatasetRecords(fileName) {
+  try {
+    const filePath = path.join(__dirname, "../../", fileName);
+    if (!fs.existsSync(filePath)) return [];
+    const parsed = JSON.parse(fs.readFileSync(filePath, "utf-8"));
+    return Array.isArray(parsed) ? parsed : [];
+  } catch (_) {
+    return [];
+  }
+}
+
+function toTitle(key = "") {
+  return String(key)
+    .replace(/_/g, " ")
+    .replace(/\./g, " ")
+    .replace(/\s+/g, " ")
+    .trim()
+    .replace(/\b\w/g, (c) => c.toUpperCase());
+}
+
+function formatAny(value, indent = "") {
+  if (Array.isArray(value)) {
+    if (!value.length) return `${indent}- N/A`;
+    return value
+      .map((item, index) => {
+        if (item && typeof item === "object") {
+          return `${indent}- Item ${index + 1}\n${formatRecordAllFields(item, `${indent}  `)}`;
+        }
+        return `${indent}- ${String(item)}`;
+      })
+      .join("\n");
+  }
+
+  if (value && typeof value === "object") {
+    return formatRecordAllFields(value, `${indent}`);
+  }
+
+  if (value === null || value === undefined || value === "") return `${indent}N/A`;
+  return `${indent}${String(value)}`;
+}
+
+function formatRecordAllFields(record, indent = "") {
+  return Object.entries(record || {})
+    .map(([key, value]) => {
+      if (Array.isArray(value) || (value && typeof value === "object")) {
+        return `${indent}${toTitle(key)}:\n${formatAny(value, `${indent}  `)}`;
+      }
+      return `${indent}${toTitle(key)}: ${formatAny(value)}`;
+    })
+    .join("\n");
+}
+
 async function getCropDetailsByName(name) {
   const regex = new RegExp(`^${name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}$`, "i");
 
@@ -135,23 +215,69 @@ router.post("/webhook", async (req, res, next) => {
       reply = menuText();
     } else if (session.step === "crop_menu") {
       if (input === "1") {
-        const crops = await Crop.find({ season: /rabi/i }, { name: 1, _id: 0 }).lean();
-        reply = `Rabi crops:\n${shortList(crops)}\n\nReply 0 for main menu.`;
+        const rabiNames = readCropNamesFromDataset("rabiData.json");
+        if (rabiNames.length) {
+          reply = `Rabi crops:\n${numberedList(rabiNames)}\n\nReply 0 for main menu.`;
+        } else {
+          const crops = await Crop.find({ season: /rabi/i }, { name: 1, _id: 0 }).lean();
+          reply = `Rabi crops:\n${shortList(crops)}\n\nReply 0 for main menu.`;
+        }
       } else if (input === "2") {
-        const crops = await Crop.find({ season: /kharif/i }, { name: 1, _id: 0 }).lean();
-        reply = `Kharif crops:\n${shortList(crops)}\n\nReply 0 for main menu.`;
+        const kharifNames = readCropNamesFromDataset("kharifData.json");
+        if (kharifNames.length) {
+          reply = `Kharif crops:\n${numberedList(kharifNames)}\n\nReply 0 for main menu.`;
+        } else {
+          const crops = await Crop.find({ season: /kharif/i }, { name: 1, _id: 0 }).lean();
+          reply = `Kharif crops:\n${shortList(crops)}\n\nReply 0 for main menu.`;
+        }
       } else if (input === "3") {
-        const crops = await CashCrop.find({}, { crop_name: 1, _id: 0 }).lean();
-        reply = `Cash crops:\n${shortList(crops, "crop_name")}\n\nReply 0 for main menu.`;
+        const cashRecords = readDatasetRecords("cash crops.json");
+        if (cashRecords.length) {
+          session.step = "cash_crop_list";
+          session.cashCropOptions = cashRecords;
+          const names = cashRecords.map((row) => String(row?.crop_name || row?.name || "").trim()).filter(Boolean);
+          reply = `Cash crops:\n${numberedList(names)}\n\nReply with crop number for details.\nReply 0 for main menu.`;
+        } else {
+          const crops = await CashCrop.find({}, { crop_name: 1, _id: 0 }).lean();
+          reply = `Cash crops:\n${shortList(crops, "crop_name")}\n\nReply 0 for main menu.`;
+        }
       } else if (input === "4") {
-        const crops = await FruitCrop.find({}, { crop_name: 1, _id: 0 }).lean();
-        reply = `Fruit crops:\n${shortList(crops, "crop_name")}\n\nReply 0 for main menu.`;
+        const fruitRecords = readDatasetRecords("fruitcrops.json");
+        if (fruitRecords.length) {
+          session.step = "fruit_crop_list";
+          session.fruitCropOptions = fruitRecords;
+          const names = fruitRecords.map((row) => String(row?.crop_name || row?.name || "").trim()).filter(Boolean);
+          reply = `Fruit crops:\n${numberedList(names)}\n\nReply with crop number for details.\nReply 0 for main menu.`;
+        } else {
+          const crops = await FruitCrop.find({}, { crop_name: 1, _id: 0 }).lean();
+          reply = `Fruit crops:\n${shortList(crops, "crop_name")}\n\nReply 0 for main menu.`;
+        }
       } else if (input === "5") {
         session.step = "awaiting_crop_name";
         reply = "Send crop name (example: Wheat, Mango, Cotton).";
       } else {
         session.step = "main_menu";
         reply = menuText();
+      }
+    } else if (session.step === "cash_crop_list") {
+      const selectedIndex = Number.parseInt(input, 10) - 1;
+      const records = Array.isArray(session.cashCropOptions) ? session.cashCropOptions : [];
+      const selected = records[selectedIndex];
+      if (selected) {
+        const cropName = selected.crop_name || selected.name || "Cash Crop";
+        reply = `${cropName}\n\n${formatRecordAllFields(selected)}\n\nReply 0 for main menu.`;
+      } else {
+        reply = "Please reply with a valid cash crop number.\nReply 0 for main menu.";
+      }
+    } else if (session.step === "fruit_crop_list") {
+      const selectedIndex = Number.parseInt(input, 10) - 1;
+      const records = Array.isArray(session.fruitCropOptions) ? session.fruitCropOptions : [];
+      const selected = records[selectedIndex];
+      if (selected) {
+        const cropName = selected.crop_name || selected.name || "Fruit Crop";
+        reply = `${cropName}\n\n${formatRecordAllFields(selected)}\n\nReply 0 for main menu.`;
+      } else {
+        reply = "Please reply with a valid fruit crop number.\nReply 0 for main menu.";
       }
     } else if (session.step === "awaiting_crop_name") {
       const details = await getCropDetailsByName(input);
