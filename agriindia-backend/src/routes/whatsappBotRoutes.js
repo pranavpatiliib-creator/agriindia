@@ -124,6 +124,10 @@ function readDatasetRecords(fileName) {
   }
 }
 
+function normalizedRecordName(row = {}) {
+  return String(row?.name || row?.crop_name || "").trim();
+}
+
 function toTitle(key = "") {
   return String(key)
     .replace(/_/g, " ")
@@ -167,6 +171,24 @@ function formatRecordAllFields(record, indent = "") {
 
 async function getCropDetailsByName(name) {
   const regex = new RegExp(`^${name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}$`, "i");
+  const normalizedName = String(name || "").trim().toLowerCase();
+
+  const datasets = [
+    ...readDatasetRecords("rabiData.json"),
+    ...readDatasetRecords("kharifData.json"),
+    ...readDatasetRecords("cash crops.json"),
+    ...readDatasetRecords("fruitcrops.json"),
+  ];
+
+  const datasetMatch = datasets.find((row) => {
+    const rowName = String(row?.name || row?.crop_name || "").trim().toLowerCase();
+    return rowName && rowName === normalizedName;
+  });
+
+  if (datasetMatch) {
+    const heading = datasetMatch.crop_name || datasetMatch.name || "Crop";
+    return `${heading}\n\n${formatRecordAllFields(datasetMatch)}`;
+  }
 
   const [crop, cashCrop, fruitCrop] = await Promise.all([
     Crop.findOne({ name: regex }).lean(),
@@ -175,25 +197,12 @@ async function getCropDetailsByName(name) {
   ]);
 
   if (crop) {
-    return [
-      `Crop: ${crop.name}`,
-      `Season: ${crop.season || "N/A"}`,
-      `Sowing: ${crop.sowing_time || "N/A"}`,
-      `Harvesting: ${crop.harvesting_time || "N/A"}`,
-      `Yield: ${crop.expected_yield_per_acre_quintals || "N/A"}`,
-    ].join("\n");
+    return `${crop.name || "Crop"}\n\n${formatRecordAllFields(crop)}`;
   }
 
   const special = cashCrop || fruitCrop;
   if (special) {
-    return [
-      `Crop: ${special.crop_name}`,
-      `Type: ${special.crop_type || "N/A"}`,
-      `Season: ${special.season || "N/A"}`,
-      `Planting: ${special.sowing_or_planting_time || "N/A"}`,
-      `Harvesting: ${special.harvesting_time || "N/A"}`,
-      `Yield: ${special.expected_yield_per_acre_quintals || "N/A"}`,
-    ].join("\n");
+    return `${special.crop_name || special.name || "Crop"}\n\n${formatRecordAllFields(special)}`;
   }
 
   return null;
@@ -222,52 +231,66 @@ router.post("/webhook", async (req, res, next) => {
       reply = menuText();
     } else if (session.step === "crop_menu") {
       if (input === "1") {
-        const rabiNames = readCropNamesFromDataset("rabiData.json");
-        if (rabiNames.length) {
+        const rabiRecords = readDatasetRecords("rabiData.json")
+          .map((row) => ({ name: normalizedRecordName(row), record: row }))
+          .filter((row) => row.name);
+        if (rabiRecords.length) {
           session.step = "rabi_crop_list";
-          session.rabiCropOptions = rabiNames;
-          reply = `Rabi crops:\n${numberedList(rabiNames)}\n\nReply with crop number for details.\nReply 0 for main menu.`;
+          session.rabiCropOptions = rabiRecords;
+          reply = `Rabi crops:\n${numberedList(rabiRecords.map((r) => r.name))}\n\nReply with crop number for details.\nReply 0 for main menu.`;
         } else {
-          const crops = await Crop.find({ season: /rabi/i }, { name: 1, _id: 0 }).lean();
-          const names = crops.map((c) => String(c?.name || "").trim()).filter(Boolean);
+          const crops = await Crop.find({ season: /rabi/i }).lean();
+          const names = crops.map((c) => ({ name: String(c?.name || "").trim(), record: c })).filter((c) => c.name);
           session.step = "rabi_crop_list";
           session.rabiCropOptions = names;
-          reply = `Rabi crops:\n${numberedList(names)}\n\nReply with crop number for details.\nReply 0 for main menu.`;
+          reply = `Rabi crops:\n${numberedList(names.map((n) => n.name))}\n\nReply with crop number for details.\nReply 0 for main menu.`;
         }
       } else if (input === "2") {
-        const kharifNames = readCropNamesFromDataset("kharifData.json");
-        if (kharifNames.length) {
+        const kharifRecords = readDatasetRecords("kharifData.json")
+          .map((row) => ({ name: normalizedRecordName(row), record: row }))
+          .filter((row) => row.name);
+        if (kharifRecords.length) {
           session.step = "kharif_crop_list";
-          session.kharifCropOptions = kharifNames;
-          reply = `Kharif crops:\n${numberedList(kharifNames)}\n\nReply with crop number for details.\nReply 0 for main menu.`;
+          session.kharifCropOptions = kharifRecords;
+          reply = `Kharif crops:\n${numberedList(kharifRecords.map((r) => r.name))}\n\nReply with crop number for details.\nReply 0 for main menu.`;
         } else {
-          const crops = await Crop.find({ season: /kharif/i }, { name: 1, _id: 0 }).lean();
-          const names = crops.map((c) => String(c?.name || "").trim()).filter(Boolean);
+          const crops = await Crop.find({ season: /kharif/i }).lean();
+          const names = crops.map((c) => ({ name: String(c?.name || "").trim(), record: c })).filter((c) => c.name);
           session.step = "kharif_crop_list";
           session.kharifCropOptions = names;
-          reply = `Kharif crops:\n${numberedList(names)}\n\nReply with crop number for details.\nReply 0 for main menu.`;
+          reply = `Kharif crops:\n${numberedList(names.map((n) => n.name))}\n\nReply with crop number for details.\nReply 0 for main menu.`;
         }
       } else if (input === "3") {
         const cashRecords = readDatasetRecords("cash crops.json");
         if (cashRecords.length) {
           session.step = "cash_crop_list";
-          session.cashCropOptions = cashRecords;
-          const names = cashRecords.map((row) => String(row?.crop_name || row?.name || "").trim()).filter(Boolean);
-          reply = `Cash crops:\n${numberedList(names)}\n\nReply with crop number for details.\nReply 0 for main menu.`;
+          session.cashCropOptions = cashRecords
+            .map((row) => ({ name: normalizedRecordName(row), record: row }))
+            .filter((row) => row.name);
+          reply = `Cash crops:\n${numberedList(session.cashCropOptions.map((r) => r.name))}\n\nReply with crop number for details.\nReply 0 for main menu.`;
         } else {
-          const crops = await CashCrop.find({}, { crop_name: 1, _id: 0 }).lean();
-          reply = `Cash crops:\n${numberedListFromItems(crops, "crop_name")}\n\nReply with crop number for details.\nReply 0 for main menu.`;
+          const crops = await CashCrop.find({}).lean();
+          session.step = "cash_crop_list";
+          session.cashCropOptions = crops
+            .map((row) => ({ name: normalizedRecordName(row), record: row }))
+            .filter((row) => row.name);
+          reply = `Cash crops:\n${numberedList(session.cashCropOptions.map((r) => r.name))}\n\nReply with crop number for details.\nReply 0 for main menu.`;
         }
       } else if (input === "4") {
         const fruitRecords = readDatasetRecords("fruitcrops.json");
         if (fruitRecords.length) {
           session.step = "fruit_crop_list";
-          session.fruitCropOptions = fruitRecords;
-          const names = fruitRecords.map((row) => String(row?.crop_name || row?.name || "").trim()).filter(Boolean);
-          reply = `Fruit crops:\n${numberedList(names)}\n\nReply with crop number for details.\nReply 0 for main menu.`;
+          session.fruitCropOptions = fruitRecords
+            .map((row) => ({ name: normalizedRecordName(row), record: row }))
+            .filter((row) => row.name);
+          reply = `Fruit crops:\n${numberedList(session.fruitCropOptions.map((r) => r.name))}\n\nReply with crop number for details.\nReply 0 for main menu.`;
         } else {
-          const crops = await FruitCrop.find({}, { crop_name: 1, _id: 0 }).lean();
-          reply = `Fruit crops:\n${numberedListFromItems(crops, "crop_name")}\n\nReply with crop number for details.\nReply 0 for main menu.`;
+          const crops = await FruitCrop.find({}).lean();
+          session.step = "fruit_crop_list";
+          session.fruitCropOptions = crops
+            .map((row) => ({ name: normalizedRecordName(row), record: row }))
+            .filter((row) => row.name);
+          reply = `Fruit crops:\n${numberedList(session.fruitCropOptions.map((r) => r.name))}\n\nReply with crop number for details.\nReply 0 for main menu.`;
         }
       } else if (input === "5") {
         session.step = "awaiting_crop_name";
@@ -279,31 +302,35 @@ router.post("/webhook", async (req, res, next) => {
     } else if (session.step === "rabi_crop_list") {
       const selectedIndex = Number.parseInt(input, 10) - 1;
       const options = Array.isArray(session.rabiCropOptions) ? session.rabiCropOptions : [];
-      const selectedName = options[selectedIndex];
-      if (selectedName) {
-        const details = await getCropDetailsByName(selectedName);
+      const selected = options[selectedIndex];
+      if (selected) {
+        const details = selected.record
+          ? `${selected.name}\n\n${formatRecordAllFields(selected.record)}`
+          : await getCropDetailsByName(selected.name);
         reply = details
           ? `${details}\n\nReply 0 for main menu.`
-          : `${selectedName}\n\nDetails not available.\nReply 0 for main menu.`;
+          : `${selected.name}\n\nDetails not available.\nReply 0 for main menu.`;
       } else {
         reply = "Please reply with a valid rabi crop number.\nReply 0 for main menu.";
       }
     } else if (session.step === "kharif_crop_list") {
       const selectedIndex = Number.parseInt(input, 10) - 1;
       const options = Array.isArray(session.kharifCropOptions) ? session.kharifCropOptions : [];
-      const selectedName = options[selectedIndex];
-      if (selectedName) {
-        const details = await getCropDetailsByName(selectedName);
+      const selected = options[selectedIndex];
+      if (selected) {
+        const details = selected.record
+          ? `${selected.name}\n\n${formatRecordAllFields(selected.record)}`
+          : await getCropDetailsByName(selected.name);
         reply = details
           ? `${details}\n\nReply 0 for main menu.`
-          : `${selectedName}\n\nDetails not available.\nReply 0 for main menu.`;
+          : `${selected.name}\n\nDetails not available.\nReply 0 for main menu.`;
       } else {
         reply = "Please reply with a valid kharif crop number.\nReply 0 for main menu.";
       }
     } else if (session.step === "cash_crop_list") {
       const selectedIndex = Number.parseInt(input, 10) - 1;
       const records = Array.isArray(session.cashCropOptions) ? session.cashCropOptions : [];
-      const selected = records[selectedIndex];
+      const selected = records[selectedIndex]?.record || null;
       if (selected) {
         const cropName = selected.crop_name || selected.name || "Cash Crop";
         reply = `${cropName}\n\n${formatRecordAllFields(selected)}\n\nReply 0 for main menu.`;
@@ -313,7 +340,7 @@ router.post("/webhook", async (req, res, next) => {
     } else if (session.step === "fruit_crop_list") {
       const selectedIndex = Number.parseInt(input, 10) - 1;
       const records = Array.isArray(session.fruitCropOptions) ? session.fruitCropOptions : [];
-      const selected = records[selectedIndex];
+      const selected = records[selectedIndex]?.record || null;
       if (selected) {
         const cropName = selected.crop_name || selected.name || "Fruit Crop";
         reply = `${cropName}\n\n${formatRecordAllFields(selected)}\n\nReply 0 for main menu.`;
