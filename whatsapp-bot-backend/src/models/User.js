@@ -15,7 +15,7 @@ const userSchema = new mongoose.Schema(
   {
     waId: { type: String, required: true, unique: true, index: true },
     profileName: { type: String, default: "" },
-    language: { type: String, enum: ["en"], default: null },
+    language: { type: String, enum: ["en", "hi", "mr"], default: null },
     state: { type: userStateSchema, default: () => ({}) },
   },
   { timestamps: true }

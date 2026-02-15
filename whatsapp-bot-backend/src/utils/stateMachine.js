@@ -50,6 +50,13 @@ const I18N = {
     loanNotFound: "Loan not found.",
     insuranceNotFound: "Insurance not found.",
     invalidOption: "Invalid option. Please use menu buttons.",
+    symptoms: "Symptoms",
+    treatment: "Treatment",
+    recommendedFertilizer: "Recommended Fertilizer",
+    dosage: "Dosage",
+    method: "Method",
+    bestTime: "Best Time",
+    na: "N/A",
     mainMenuTitle: "Main Menu",
     mainMenuPrompt: "MAIN MENU",
     cropInfo: "🌾 Crop Information",
@@ -109,6 +116,13 @@ const I18N = {
     loanNotFound: "ऋण नहीं मिला।",
     insuranceNotFound: "बीमा नहीं मिला।",
     invalidOption: "अमान्य विकल्प। कृपया मेनू बटन का उपयोग करें।",
+    symptoms: "लक्षण",
+    treatment: "उपचार",
+    recommendedFertilizer: "अनुशंसित उर्वरक",
+    dosage: "मात्रा",
+    method: "विधि",
+    bestTime: "उत्तम समय",
+    na: "उपलब्ध नहीं",
     mainMenuTitle: "मुख्य मेनू",
     mainMenuPrompt: "मुख्य मेनू",
     cropInfo: "🌾 फसल जानकारी",
@@ -168,6 +182,13 @@ const I18N = {
     loanNotFound: "कर्ज सापडले नाही.",
     insuranceNotFound: "विमा सापडला नाही.",
     invalidOption: "अवैध पर्याय. कृपया मेनू बटणे वापरा.",
+    symptoms: "लक्षणे",
+    treatment: "उपचार",
+    recommendedFertilizer: "शिफारस केलेले खत",
+    dosage: "मात्रा",
+    method: "पद्धत",
+    bestTime: "योग्य वेळ",
+    na: "उपलब्ध नाही",
     mainMenuTitle: "मुख्य मेनू",
     mainMenuPrompt: "मुख्य मेनू",
     cropInfo: "🌾 पीक माहिती",
@@ -517,7 +538,12 @@ async function handleAction(user, actionId) {
   if (actionId.startsWith("disease:")) {
     const item = await Disease.findById(actionId.split(":")[1]).lean();
     const text = item
-      ? `Disease: ${item.name}\n\nSymptoms:\n${item.symptoms || "N/A"}\n\nTreatment:\n${item.treatment || "N/A"}\n\nRecommended Fertilizer:\n${item.recommendedFertilizer || "N/A"}`
+      ? `${t(user, "diseases")}: ${item.name}\n\n${t(user, "symptoms")}:\n${item.symptoms || t(user, "na")}\n\n${t(
+          user,
+          "treatment"
+        )}:\n${item.treatment || t(user, "na")}\n\n${t(user, "recommendedFertilizer")}:\n${
+          item.recommendedFertilizer || t(user, "na")
+        }`
       : t(user, "diseaseNotFound");
     return sendButtons(user.waId, text, navButtons(user));
   }
@@ -525,7 +551,12 @@ async function handleAction(user, actionId) {
   if (actionId.startsWith("fertilizer:")) {
     const item = await Fertilizer.findById(actionId.split(":")[1]).lean();
     const text = item
-      ? `Fertilizer: ${item.name}\n\nDosage:\n${item.dosagePerAcre || "N/A"}\n\nMethod:\n${item.method || "N/A"}\n\nBest Time:\n${item.bestTime || "N/A"}`
+      ? `${t(user, "fertilizers")}: ${item.name}\n\n${t(user, "dosage")}:\n${item.dosagePerAcre || t(
+          user,
+          "na"
+        )}\n\n${t(user, "method")}:\n${item.method || t(user, "na")}\n\n${t(user, "bestTime")}:\n${
+          item.bestTime || t(user, "na")
+        }`
       : t(user, "fertilizerNotFound");
     return sendButtons(user.waId, text, navButtons(user));
   }
@@ -560,19 +591,27 @@ async function handleAction(user, actionId) {
 
   if (actionId.startsWith("msp:")) {
     const item = await modules.msp.model.findById(actionId.split(":")[1]).lean();
-    return sendButtons(user.waId, item ? modules.msp.format(item) : t(user, "mspNotFound"), navButtons(user));
+    return sendButtons(user.waId, item ? modules.msp.format(item, getLang(user)) : t(user, "mspNotFound"), navButtons(user));
   }
   if (actionId.startsWith("subsidy:")) {
     const item = await modules.subsidy.model.findById(actionId.split(":")[1]).lean();
-    return sendButtons(user.waId, item ? modules.subsidy.format(item) : t(user, "subsidyNotFound"), navButtons(user));
+    return sendButtons(
+      user.waId,
+      item ? modules.subsidy.format(item, getLang(user)) : t(user, "subsidyNotFound"),
+      navButtons(user)
+    );
   }
   if (actionId.startsWith("loan:")) {
     const item = await modules.loan.model.findById(actionId.split(":")[1]).lean();
-    return sendButtons(user.waId, item ? modules.loan.format(item) : t(user, "loanNotFound"), navButtons(user));
+    return sendButtons(user.waId, item ? modules.loan.format(item, getLang(user)) : t(user, "loanNotFound"), navButtons(user));
   }
   if (actionId.startsWith("insurance:")) {
     const item = await modules.insurance.model.findById(actionId.split(":")[1]).lean();
-    return sendButtons(user.waId, item ? modules.insurance.format(item) : t(user, "insuranceNotFound"), navButtons(user));
+    return sendButtons(
+      user.waId,
+      item ? modules.insurance.format(item, getLang(user)) : t(user, "insuranceNotFound"),
+      navButtons(user)
+    );
   }
 
   await sendButtons(user.waId, t(user, "invalidOption"), [{ id: "nav_main", title: t(user, "mainMenu") }]);

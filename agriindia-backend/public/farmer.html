@@ -1,0 +1,942 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AgriIndia Farmer Hub</title>
+  <style>
+    :root {
+      --bg-1: #0c1f16;
+      --bg-2: #163c2a;
+      --bg-3: #255b3f;
+      --glass: rgba(255, 255, 255, 0.14);
+      --glass-2: rgba(255, 255, 255, 0.08);
+      --line: rgba(255, 255, 255, 0.22);
+      --text: #ecfdf1;
+      --muted: #b5ddc3;
+      --accent: #ffce57;
+      --ok: #7bed9f;
+      --card-shadow: 0 18px 40px rgba(0, 0, 0, 0.32);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--text);
+      font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+      background: radial-gradient(circle at 20% 10%, #2b7a4b 0%, transparent 25%),
+                  radial-gradient(circle at 90% 25%, #315f97 0%, transparent 24%),
+                  linear-gradient(145deg, var(--bg-1), var(--bg-2), var(--bg-3));
+      background-attachment: fixed;
+      overflow-x: hidden;
+    }
+
+    .orbs::before,
+    .orbs::after {
+      content: "";
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(12px);
+      opacity: 0.28;
+      z-index: 0;
+      pointer-events: none;
+      animation: drift 14s ease-in-out infinite alternate;
+    }
+
+    .orbs::before {
+      width: 340px;
+      height: 340px;
+      background: #9ef0b7;
+      left: -80px;
+      top: 90px;
+    }
+
+    .orbs::after {
+      width: 270px;
+      height: 270px;
+      background: #ffd47a;
+      right: -70px;
+      top: 280px;
+      animation-duration: 18s;
+    }
+
+    @keyframes drift {
+      from { transform: translateY(0px) translateX(0px); }
+      to { transform: translateY(24px) translateX(16px); }
+    }
+
+    .app {
+      position: relative;
+      z-index: 1;
+      width: min(1200px, 94vw);
+      margin: 18px auto 40px;
+    }
+
+    .hero {
+      backdrop-filter: blur(10px);
+      background: linear-gradient(120deg, var(--glass), var(--glass-2));
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      padding: 22px;
+      box-shadow: var(--card-shadow);
+    }
+
+    .hero-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(26px, 4vw, 40px);
+      letter-spacing: 0.4px;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .subtitle {
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .toolbar {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .pill,
+    select,
+    input,
+    button {
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      background: rgba(9, 24, 17, 0.52);
+      color: var(--text);
+      padding: 10px 12px;
+    }
+
+    input::placeholder { color: #b8d7c5; }
+
+    button {
+      background: linear-gradient(130deg, #2a8f56, #4cb072);
+      border: none;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+      box-shadow: 0 8px 18px rgba(29, 110, 66, 0.35);
+    }
+
+    button:hover { transform: translateY(-1px); }
+
+    .metrics {
+      margin-top: 16px;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(150px, 1fr));
+      gap: 10px;
+    }
+
+    .metric {
+      background: rgba(5, 20, 12, 0.42);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 14px;
+      padding: 12px;
+    }
+
+    .metric-label {
+      font-size: 12px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
+
+    .metric-value {
+      margin-top: 6px;
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--accent);
+    }
+
+    .chart {
+      margin-top: 18px;
+      display: flex;
+      gap: 12px;
+      align-items: flex-end;
+      min-height: 110px;
+    }
+
+    .bar {
+      flex: 1;
+      min-width: 70px;
+      background: linear-gradient(180deg, #8af5ad, #1f8f56);
+      border-radius: 12px 12px 4px 4px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: 6px;
+      color: #042911;
+      font-weight: 700;
+      box-shadow: inset 0 -18px 30px rgba(0, 0, 0, 0.18);
+      transition: height 0.35s ease;
+    }
+
+    .bar-wrap { flex: 1; text-align: center; }
+    .bar-label { margin-top: 8px; color: var(--muted); font-size: 12px; }
+
+    .controls {
+      margin: 16px 0;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr 0.8fr;
+      gap: 10px;
+    }
+
+    .planner {
+      margin: 10px 0 14px;
+      background: rgba(6, 22, 14, 0.58);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 16px;
+      box-shadow: var(--card-shadow);
+      padding: 12px;
+      display: grid;
+      grid-template-columns: 1.3fr 0.8fr auto;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .planner-output {
+      margin-top: 10px;
+      grid-column: 1 / -1;
+      color: #dafbe5;
+      font-size: 14px;
+      white-space: pre-wrap;
+      border-top: 1px dashed rgba(255, 255, 255, 0.18);
+      padding-top: 10px;
+    }
+
+    .status {
+      margin: 8px 0 16px;
+      color: #cbf7d7;
+      font-size: 14px;
+      min-height: 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .card {
+      background: rgba(5, 20, 12, 0.56);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 16px;
+      padding: 14px;
+      box-shadow: var(--card-shadow);
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 21px;
+      color: #f5ffef;
+    }
+
+    .chips { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 8px; }
+
+    .chip {
+      font-size: 11px;
+      border-radius: 999px;
+      padding: 4px 10px;
+      background: rgba(255, 255, 255, 0.12);
+      color: #d9ffe6;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .line {
+      margin: 4px 0;
+      color: #e9f9ee;
+      font-size: 14px;
+    }
+
+    .card button {
+      margin-top: 10px;
+      width: 100%;
+      background: linear-gradient(130deg, #f0a93a, #ffd66f);
+      color: #2e2007;
+      box-shadow: 0 8px 16px rgba(190, 140, 47, 0.35);
+    }
+
+    .pick-btn {
+      background: linear-gradient(130deg, #2a8f56, #4cb072) !important;
+      color: #ecfdf1 !important;
+      box-shadow: 0 8px 16px rgba(29, 110, 66, 0.35) !important;
+    }
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 14px;
+      z-index: 50;
+    }
+
+    .modal.show { display: flex; }
+
+    .modal-content {
+      width: min(860px, 96vw);
+      max-height: 92vh;
+      overflow: auto;
+      background: #f2fff6;
+      color: #16341f;
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: 0 16px 45px rgba(0, 0, 0, 0.4);
+    }
+
+    .modal h2 { margin: 0 0 10px; }
+    .modal .sec { margin-bottom: 12px; }
+
+    .danger-note {
+      margin-top: 8px;
+      color: #ffda9e;
+      font-size: 13px;
+    }
+
+    .chat-shell {
+      margin-top: 16px;
+      background: rgba(6, 22, 14, 0.58);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 16px;
+      box-shadow: var(--card-shadow);
+      overflow: hidden;
+    }
+
+    .chat-head {
+      padding: 12px 14px;
+      background: linear-gradient(120deg, #1a6a3f, #2f8d59);
+      color: #f3fff8;
+      font-weight: 700;
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .chat-body {
+      height: 340px;
+      overflow-y: auto;
+      padding: 14px;
+      background: radial-gradient(circle at 20% 20%, rgba(190, 240, 203, 0.08), transparent 30%),
+                  radial-gradient(circle at 80% 80%, rgba(255, 215, 128, 0.08), transparent 26%),
+                  rgba(7, 25, 16, 0.8);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .msg {
+      max-width: 78%;
+      padding: 8px 10px;
+      border-radius: 10px;
+      line-height: 1.35;
+      white-space: pre-wrap;
+      font-size: 14px;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+    }
+
+    .msg.user {
+      align-self: flex-end;
+      background: linear-gradient(130deg, #2ea062, #59c07f);
+      color: #082312;
+      border-bottom-right-radius: 2px;
+    }
+
+    .msg.bot {
+      align-self: flex-start;
+      background: #eefef3;
+      color: #113221;
+      border-bottom-left-radius: 2px;
+    }
+
+    .chat-input {
+      padding: 10px;
+      border-top: 1px solid rgba(255, 255, 255, 0.18);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 8px;
+      background: rgba(7, 25, 16, 0.85);
+    }
+
+    .chat-quick {
+      padding: 8px 10px;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      background: rgba(7, 25, 16, 0.85);
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .quick-btn {
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      background: rgba(255, 255, 255, 0.08);
+      color: #d5fce3;
+      padding: 6px 10px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 12px;
+    }
+
+    @media (max-width: 980px) {
+      .metrics { grid-template-columns: repeat(2, minmax(140px, 1fr)); }
+      .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .controls { grid-template-columns: 1fr; }
+      .planner { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .grid { grid-template-columns: 1fr; }
+      .hero { border-radius: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="orbs"></div>
+  <main class="app">
+    <section class="hero">
+      <div class="hero-top">
+        <div>
+          <h1 id="title">AgriIndia Farmer Hub</h1>
+          <div class="subtitle" id="subtitle">Live crop intelligence from your database</div>
+        </div>
+        <div class="toolbar">
+          <span class="pill" id="tokenLabel">Farmer Token (optional)</span>
+          <input id="tokenInput" type="password" placeholder="Paste farmer JWT for cash/fruit access" />
+          <button id="saveTokenBtn">Save</button>
+          <select id="langSelect" title="Language">
+            <option value="en">English</option>
+            <option value="hi">Hindi</option>
+            <option value="mr">Marathi</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="metrics">
+        <div class="metric"><div class="metric-label" id="m1l">Total Crops</div><div class="metric-value" id="m1">0</div></div>
+        <div class="metric"><div class="metric-label" id="m2l">Rabi + Kharif</div><div class="metric-value" id="m2">0</div></div>
+        <div class="metric"><div class="metric-label" id="m3l">Cash Crops</div><div class="metric-value" id="m3">0</div></div>
+        <div class="metric"><div class="metric-label" id="m4l">Fruit Crops</div><div class="metric-value" id="m4">0</div></div>
+      </div>
+
+      <div class="chart" aria-label="crop category chart">
+        <div class="bar-wrap"><div class="bar" id="barField" style="height:12px">0</div><div class="bar-label" id="barFieldLabel">Field</div></div>
+        <div class="bar-wrap"><div class="bar" id="barCash" style="height:12px">0</div><div class="bar-label" id="barCashLabel">Cash</div></div>
+        <div class="bar-wrap"><div class="bar" id="barFruit" style="height:12px">0</div><div class="bar-label" id="barFruitLabel">Fruit</div></div>
+      </div>
+
+      <div class="danger-note" id="note"></div>
+    </section>
+
+    <section class="controls">
+      <input id="searchInput" placeholder="Search crop by name..." />
+      <select id="typeFilter">
+        <option value="all">All Types</option>
+        <option value="field">Rabi + Kharif</option>
+        <option value="cash">Cash</option>
+        <option value="fruit">Fruit</option>
+      </select>
+      <select id="seasonFilter">
+        <option value="all">All Seasons</option>
+        <option value="Kharif">Kharif</option>
+        <option value="Rabi">Rabi</option>
+        <option value="Annual">Annual</option>
+        <option value="Perennial">Perennial</option>
+      </select>
+    </section>
+
+    <section class="planner">
+      <input id="plannerCrop" readonly placeholder="Select crop from cards below" />
+      <input id="acreInput" type="number" min="0" step="0.1" value="1" />
+      <button id="planBtn">Estimate</button>
+      <div class="planner-output" id="planOutput"></div>
+    </section>
+
+    <div class="status" id="status"></div>
+    <section class="grid" id="grid"></section>
+
+    <section class="chat-shell">
+      <div class="chat-head">
+        <span id="chatTitle">Farmer Assistant Chat</span>
+        <span id="chatState">WhatsApp-like flow connected</span>
+      </div>
+      <div class="chat-body" id="chatBody"></div>
+      <div class="chat-quick">
+        <button class="quick-btn" data-chat="menu">menu</button>
+        <button class="quick-btn" data-chat="1">1</button>
+        <button class="quick-btn" data-chat="2">2</button>
+        <button class="quick-btn" data-chat="3">3</button>
+        <button class="quick-btn" data-chat="0">0</button>
+      </div>
+      <div class="chat-input">
+        <input id="chatInput" placeholder="Type message like WhatsApp..." />
+        <button id="chatSendBtn">Send</button>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <button style="float:right" id="closeModal">Close</button>
+      <h2 id="modalTitle"></h2>
+      <div class="sec" id="modalBody"></div>
+    </div>
+  </div>
+
+  <script>
+    const texts = {
+      en: {
+        title: "AgriIndia Farmer Hub",
+        subtitle: "Live crop intelligence from your database",
+        total: "Total Crops",
+        field: "Rabi + Kharif",
+        cash: "Cash Crops",
+        fruit: "Fruit Crops",
+        allTypes: "All Types",
+        search: "Search crop by name...",
+        allSeasons: "All Seasons",
+        loading: "Loading crops from database...",
+        loaded: "Connected. Data loaded from database.",
+        partial: "Connected to field crops. Cash/Fruit endpoints need valid farmer/admin token.",
+        error: "Unable to load data. Check backend server and DB connection.",
+        details: "View Full Details",
+        season: "Season",
+        yield: "Yield",
+        msp: "MSP / Price",
+        fertilizer: "Fertilizer stages",
+        diseases: "Major diseases",
+        noData: "No data",
+        chatTitle: "Farmer Assistant Chat",
+        chatState: "WhatsApp-like flow connected",
+        chatPlaceholder: "Type message like WhatsApp...",
+        send: "Send",
+        tokenLabel: "Farmer Token (optional)",
+        tokenPlaceholder: "Paste farmer JWT for cash/fruit access",
+        plannerPlaceholder: "Select crop from cards below",
+        planButton: "Estimate",
+        selectCrop: "Set My Crop",
+        plannerEmpty: "Select crop first, then press Estimate.",
+        plannerTitle: "Farm Plan",
+        plannerAcre: "Acre",
+        plannerSeed: "Seed / Planting material needed",
+        plannerYield: "Estimated total yield",
+      },
+      hi: {
+        title: "एग्रीइंडिया किसान हब",
+        subtitle: "आपके डेटाबेस से लाइव फसल जानकारी",
+        total: "कुल फसलें",
+        field: "रबी + खरीफ",
+        cash: "नकदी फसलें",
+        fruit: "फल फसलें",
+        allTypes: "सभी प्रकार",
+        search: "नाम से फसल खोजें...",
+        allSeasons: "सभी सीजन",
+        loading: "डेटाबेस से फसलें लोड हो रही हैं...",
+        loaded: "कनेक्ट हो गया। डेटा डेटाबेस से लोड हुआ।",
+        partial: "फील्ड फसलें लोड हो गईं। Cash/Fruit API के लिए वैध किसान/एडमिन टोकन चाहिए।",
+        error: "डेटा लोड नहीं हुआ। बैकएंड सर्वर और DB कनेक्शन जांचें।",
+        details: "पूरी जानकारी देखें",
+        season: "सीजन",
+        yield: "उपज",
+        msp: "एमएसपी / कीमत",
+        fertilizer: "उर्वरक चरण",
+        diseases: "मुख्य रोग",
+        noData: "डेटा नहीं",
+        chatTitle: "किसान सहायक चैट",
+        chatState: "व्हाट्सऐप जैसी चैट जुड़ी हुई है",
+        chatPlaceholder: "व्हाट्सऐप की तरह संदेश लिखें...",
+        send: "भेजें",
+        tokenLabel: "किसान टोकन (वैकल्पिक)",
+        tokenPlaceholder: "Cash/Fruit एक्सेस हेतु किसान JWT डालें",
+        plannerPlaceholder: "नीचे कार्ड से फसल चुनें",
+        planButton: "अनुमान निकालें",
+        selectCrop: "मेरी फसल चुनें",
+        plannerEmpty: "पहले फसल चुनें, फिर अनुमान निकालें दबाएं।",
+        plannerTitle: "खेती योजना",
+        plannerAcre: "एकड़",
+        plannerSeed: "बीज / रोपण सामग्री आवश्यकता",
+        plannerYield: "कुल अनुमानित उपज",
+      },
+      mr: {
+        title: "अ‍ॅग्रीइंडिया शेतकरी हब",
+        subtitle: "तुमच्या डेटाबेसमधून थेट पीक माहिती",
+        total: "एकूण पिके",
+        field: "रबी + खरीप",
+        cash: "नगदी पिके",
+        fruit: "फळ पिके",
+        allTypes: "सर्व प्रकार",
+        search: "नावाने पीक शोधा...",
+        allSeasons: "सर्व हंगाम",
+        loading: "डेटाबेसमधून पिके लोड होत आहेत...",
+        loaded: "जोडणी यशस्वी. डेटा डेटाबेसमधून लोड झाला.",
+        partial: "फिल्ड पिके लोड झाली. Cash/Fruit साठी वैध farmer/admin टोकन आवश्यक आहे.",
+        error: "डेटा लोड झाला नाही. बॅकएंड आणि DB कनेक्शन तपासा.",
+        details: "पूर्ण माहिती पहा",
+        season: "हंगाम",
+        yield: "उत्पन्न",
+        msp: "एमएसपी / किंमत",
+        fertilizer: "खत टप्पे",
+        diseases: "मुख्य रोग",
+        noData: "डेटा नाही",
+        chatTitle: "शेतकरी सहाय्यक चॅट",
+        chatState: "व्हॉट्सअॅपसारखा चॅट फ्लो जोडलेला आहे",
+        chatPlaceholder: "व्हॉट्सअॅपसारखा संदेश टाइप करा...",
+        send: "पाठवा",
+        tokenLabel: "शेतकरी टोकन (पर्यायी)",
+        tokenPlaceholder: "Cash/Fruit साठी शेतकरी JWT टाका",
+        plannerPlaceholder: "खालील कार्डमधून पीक निवडा",
+        planButton: "अंदाज काढा",
+        selectCrop: "माझे पीक निवडा",
+        plannerEmpty: "पहिले पीक निवडा, मग अंदाज काढा दाबा.",
+        plannerTitle: "शेती आराखडा",
+        plannerAcre: "एकर",
+        plannerSeed: "बियाणे / लागवड साहित्य आवश्यकता",
+        plannerYield: "एकूण अंदाजे उत्पादन",
+      }
+    };
+
+    const state = { lang: "en", field: [], cash: [], fruit: [], selectedCrop: null };
+    const chatState = {
+      from: localStorage.getItem("chatFrom") || "web-farmer-919999999999",
+      busy: false,
+    };
+
+    function t(k) { return texts[state.lang][k] || texts.en[k] || k; }
+    function pick(obj, key) { return obj?.[`${key}_${state.lang}`] || obj?.[key] || "-"; }
+
+    function apiBase() {
+      return (localStorage.getItem("apiBaseUrl") || window.location.origin).replace(/\/+$/, "");
+    }
+
+    function token() {
+      return localStorage.getItem("token") || "";
+    }
+
+    async function req(path, needToken = false) {
+      const headers = {};
+      if (needToken && token()) headers.Authorization = `Bearer ${token()}`;
+      const res = await fetch(`${apiBase()}${path}`, { headers });
+      return res;
+    }
+
+    function val(v) { return v === undefined || v === null || v === "" ? "-" : v; }
+
+    function applyLanguage() {
+      document.documentElement.lang = state.lang;
+      document.getElementById("title").textContent = t("title");
+      document.getElementById("subtitle").textContent = t("subtitle");
+      document.getElementById("m1l").textContent = t("total");
+      document.getElementById("m2l").textContent = t("field");
+      document.getElementById("m3l").textContent = t("cash");
+      document.getElementById("m4l").textContent = t("fruit");
+      document.getElementById("barFieldLabel").textContent = t("field");
+      document.getElementById("barCashLabel").textContent = t("cash");
+      document.getElementById("barFruitLabel").textContent = t("fruit");
+      document.getElementById("searchInput").placeholder = t("search");
+      document.querySelector('#typeFilter option[value="all"]').textContent = t("allTypes");
+      document.querySelector('#seasonFilter option[value="all"]').textContent = t("allSeasons");
+      document.getElementById("chatTitle").textContent = t("chatTitle");
+      document.getElementById("chatState").textContent = t("chatState");
+      document.getElementById("chatInput").placeholder = t("chatPlaceholder");
+      document.getElementById("chatSendBtn").textContent = t("send");
+      document.getElementById("tokenLabel").textContent = t("tokenLabel");
+      document.getElementById("tokenInput").placeholder = t("tokenPlaceholder");
+      document.getElementById("plannerCrop").placeholder = t("plannerPlaceholder");
+      document.getElementById("planBtn").textContent = t("planButton");
+      render();
+    }
+
+    function addBubble(kind, text) {
+      const box = document.getElementById("chatBody");
+      const div = document.createElement("div");
+      div.className = `msg ${kind}`;
+      div.textContent = text;
+      box.appendChild(div);
+      box.scrollTop = box.scrollHeight;
+    }
+
+    function parseTwimlMessages(xmlText) {
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(xmlText, "text/xml");
+      const nodes = [...doc.getElementsByTagName("Message")];
+      return nodes.map((n) => (n.textContent || "").trim()).filter(Boolean);
+    }
+
+    async function sendChatMessage(text) {
+      const payload = String(text || "").trim();
+      if (!payload || chatState.busy) return;
+      chatState.busy = true;
+      addBubble("user", payload);
+
+      try {
+        const body = new URLSearchParams();
+        body.set("From", chatState.from);
+        body.set("Body", payload);
+
+        const res = await fetch(`${apiBase()}/api/whatsapp/webhook`, {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: body.toString(),
+        });
+
+        const xml = await res.text();
+        const replies = parseTwimlMessages(xml);
+        if (!replies.length) addBubble("bot", "No reply from bot.");
+        replies.forEach((msg) => addBubble("bot", msg));
+      } catch (err) {
+        addBubble("bot", `Chat error: ${err.message || err}`);
+      } finally {
+        chatState.busy = false;
+      }
+    }
+
+    function updateMetrics() {
+      const f = state.field.length;
+      const c = state.cash.length;
+      const r = state.fruit.length;
+      const total = f + c + r;
+      document.getElementById("m1").textContent = total;
+      document.getElementById("m2").textContent = f;
+      document.getElementById("m3").textContent = c;
+      document.getElementById("m4").textContent = r;
+
+      const max = Math.max(f, c, r, 1);
+      const bars = [
+        ["barField", f],
+        ["barCash", c],
+        ["barFruit", r]
+      ];
+      bars.forEach(([id, n]) => {
+        const h = 14 + Math.round((n / max) * 92);
+        const el = document.getElementById(id);
+        el.style.height = `${h}px`;
+        el.textContent = n;
+      });
+    }
+
+    function merged() {
+      return [
+        ...state.field.map((x) => ({ ...x, __type: "field", __name: x.name })),
+        ...state.cash.map((x) => ({ ...x, __type: "cash", __name: x.crop_name || x.name })),
+        ...state.fruit.map((x) => ({ ...x, __type: "fruit", __name: x.crop_name || x.name }))
+      ];
+    }
+
+    function render() {
+      const q = document.getElementById("searchInput").value.trim().toLowerCase();
+      const tf = document.getElementById("typeFilter").value;
+      const sf = document.getElementById("seasonFilter").value;
+      const grid = document.getElementById("grid");
+
+      const rows = merged().filter((row) => {
+        const name = String(pick(row, "name") || row.__name || "").toLowerCase();
+        const season = String(row.season || "");
+        if (q && !name.includes(q)) return false;
+        if (tf !== "all" && row.__type !== tf) return false;
+        if (sf !== "all" && season !== sf) return false;
+        return true;
+      });
+
+      grid.innerHTML = rows.map((row, i) => {
+        const nm = pick(row, "name") || row.__name || "-";
+        const season = pick(row, "season");
+        const yieldV = pick(row, "expected_yield_per_acre_quintals");
+        const msp = pick(row, "msp_rupees_per_quintal") || pick(row, "average_market_price_rupees_per_quintal");
+        const chip = row.__type === "field" ? t("field") : row.__type === "cash" ? t("cash") : t("fruit");
+
+        return `<article class="card">
+          <div class="chips"><span class="chip">${chip}</span><span class="chip">${season}</span></div>
+          <h3>${nm}</h3>
+          <div class="line"><strong>${t("yield")}:</strong> ${val(yieldV)}</div>
+          <div class="line"><strong>${t("msp")}:</strong> ${val(msp)}</div>
+          <button class="details-btn" data-index="${i}">${t("details")}</button>
+          <button class="pick-btn" data-pick="${i}">${t("selectCrop")}</button>
+        </article>`;
+      }).join("");
+
+      [...grid.querySelectorAll(".details-btn")].forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const row = rows[Number(btn.dataset.index)];
+          openModal(row);
+        });
+      });
+      [...grid.querySelectorAll(".pick-btn")].forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const row = rows[Number(btn.dataset.pick)];
+          state.selectedCrop = row || null;
+          document.getElementById("plannerCrop").value = pick(row, "name") || row.__name || "";
+          document.getElementById("planOutput").textContent = "";
+        });
+      });
+    }
+
+    function parseRangeAvg(text) {
+      const s = String(text || "");
+      const nums = s.match(/\\d+(\\.\\d+)?/g);
+      if (!nums || !nums.length) return null;
+      const arr = nums.slice(0, 2).map(Number).filter((n) => !Number.isNaN(n));
+      if (!arr.length) return null;
+      if (arr.length === 1) return arr[0];
+      return (arr[0] + arr[1]) / 2;
+    }
+
+    function runPlanner() {
+      const out = document.getElementById("planOutput");
+      const acres = Number(document.getElementById("acreInput").value);
+      if (!state.selectedCrop) {
+        out.textContent = t("plannerEmpty");
+        return;
+      }
+      if (!acres || acres <= 0) {
+        out.textContent = t("plannerEmpty");
+        return;
+      }
+
+      const row = state.selectedCrop;
+      const seedRaw = pick(row, "seed_quantity_per_acre_kg") || pick(row, "planting_material_quantity_per_acre");
+      const yieldRaw = pick(row, "expected_yield_per_acre_quintals");
+
+      const seedPerAcre = parseRangeAvg(seedRaw);
+      const yieldPerAcre = parseRangeAvg(yieldRaw);
+      const seedTotal = seedPerAcre ? (seedPerAcre * acres).toFixed(2) : null;
+      const yieldTotal = yieldPerAcre ? (yieldPerAcre * acres).toFixed(2) : null;
+
+      out.textContent = [
+        `${t("plannerTitle")}: ${pick(row, "name") || row.__name || "-"}`,
+        `${t("plannerAcre")}: ${acres}`,
+        `${t("plannerSeed")}: ${seedTotal ? `${seedTotal}` : val(seedRaw)}`,
+        `${t("plannerYield")}: ${yieldTotal ? `${yieldTotal}` : val(yieldRaw)}`,
+      ].join("\\n");
+    }
+
+    function openModal(row) {
+      const title = pick(row, "name") || row.__name || "-";
+      const fert = row.fertilizer_schedule || [];
+      const dis = row.major_diseases || [];
+      const fertHtml = fert.length ? fert.map((f) => `<li>${val(pick(f, "stage"))} - ${val(pick(f, "fertilizer_name"))} (${val(pick(f, "dosage_per_acre"))})</li>`).join("") : `<li>${t("noData")}</li>`;
+      const disHtml = dis.length ? dis.map((d) => `<li>${val(pick(d, "disease_name"))} - ${val(pick(d, "symptoms"))}</li>`).join("") : `<li>${t("noData")}</li>`;
+
+      document.getElementById("modalTitle").textContent = title;
+      document.getElementById("modalBody").innerHTML = `
+        <div class="sec"><strong>${t("season")}:</strong> ${val(pick(row, "season"))}</div>
+        <div class="sec"><strong>${t("yield")}:</strong> ${val(pick(row, "expected_yield_per_acre_quintals"))}</div>
+        <div class="sec"><strong>${t("msp")}:</strong> ${val(pick(row, "msp_rupees_per_quintal") || pick(row, "average_market_price_rupees_per_quintal"))}</div>
+        <div class="sec"><strong>${t("fertilizer")}:</strong><ul>${fertHtml}</ul></div>
+        <div class="sec"><strong>${t("diseases")}:</strong><ul>${disHtml}</ul></div>
+      `;
+      document.getElementById("modal").classList.add("show");
+    }
+
+    async function load() {
+      document.getElementById("status").textContent = t("loading");
+      document.getElementById("note").textContent = "";
+
+      let partial = false;
+      try {
+        const fieldRes = await req("/api/crops?sync=true");
+        if (!fieldRes.ok) throw new Error("field crops failed");
+        state.field = await fieldRes.json();
+
+        const cashRes = await req("/api/cash-crops", true);
+        if (cashRes.ok) {
+          const j = await cashRes.json();
+          state.cash = Array.isArray(j) ? j : (j.data || []);
+        } else {
+          state.cash = [];
+          partial = true;
+        }
+
+        const fruitRes = await req("/api/fruit-crops", true);
+        if (fruitRes.ok) {
+          const j = await fruitRes.json();
+          state.fruit = Array.isArray(j) ? j : (j.data || []);
+        } else {
+          state.fruit = [];
+          partial = true;
+        }
+
+        updateMetrics();
+        render();
+        document.getElementById("status").textContent = partial ? t("partial") : t("loaded");
+        document.getElementById("note").textContent = partial ? "Tip: Save farmer/admin JWT to unlock protected endpoints." : "";
+      } catch (e) {
+        document.getElementById("status").textContent = t("error");
+        document.getElementById("note").textContent = String(e.message || e);
+      }
+    }
+
+    document.getElementById("closeModal").addEventListener("click", () => {
+      document.getElementById("modal").classList.remove("show");
+    });
+
+    document.getElementById("modal").addEventListener("click", (e) => {
+      if (e.target.id === "modal") document.getElementById("modal").classList.remove("show");
+    });
+
+    document.getElementById("saveTokenBtn").addEventListener("click", () => {
+      const v = document.getElementById("tokenInput").value.trim();
+      if (v) localStorage.setItem("token", v);
+      else localStorage.removeItem("token");
+      load();
+    });
+    document.getElementById("planBtn").addEventListener("click", runPlanner);
+
+    document.getElementById("chatSendBtn").addEventListener("click", () => {
+      const input = document.getElementById("chatInput");
+      const value = input.value;
+      input.value = "";
+      sendChatMessage(value);
+    });
+
+    document.getElementById("chatInput").addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        document.getElementById("chatSendBtn").click();
+      }
+    });
+
+    [...document.querySelectorAll(".quick-btn")].forEach((btn) => {
+      btn.addEventListener("click", () => sendChatMessage(btn.dataset.chat || ""));
+    });
+
+    document.getElementById("langSelect").addEventListener("change", (e) => {
+      state.lang = e.target.value;
+      localStorage.setItem("farmerLang", state.lang);
+      applyLanguage();
+    });
+
+    ["searchInput", "typeFilter", "seasonFilter"].forEach((id) => {
+      document.getElementById(id).addEventListener("input", render);
+      document.getElementById(id).addEventListener("change", render);
+    });
+
+    (function init() {
+      const savedLang = localStorage.getItem("farmerLang");
+      if (savedLang && ["en", "hi", "mr"].includes(savedLang)) {
+        state.lang = savedLang;
+        document.getElementById("langSelect").value = savedLang;
+      }
+      const savedToken = localStorage.getItem("token");
+      if (savedToken) document.getElementById("tokenInput").value = savedToken;
+      applyLanguage();
+      load();
+      addBubble("bot", "Welcome. Send 'menu' to start WhatsApp-like flow.");
+    })();
+  </script>
+</body>
+</html>
