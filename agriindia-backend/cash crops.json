@@ -1,0 +1,1502 @@
+[
+    {
+        "name":  "Cotton",
+        "crop_type":  "Cash Crop",
+        "season":  "Kharif",
+        "crop_nature":  "Annual (1 Year)",
+        "sowing_or_planting_time":  "June to July",
+        "harvesting_time":  "4 to 10 months after sowing/planting",
+        "expected_yield_per_acre_quintals":  "8-12",
+        "planting_material_quantity_per_acre":  "0.8-1.0 kg seed",
+        "average_market_price_rupees_per_quintal":  "6500-7800",
+        "fertilizer_schedule":  [
+                                    {
+                                        "stage":  "Basal",
+                                        "application_period":  "Month 0",
+                                        "fertilizer_name":  "DAP 18:46:0 + MOP 0:0:60 + Zinc Sulphate",
+                                        "dosage_per_acre":  "50 kg DAP + 20 kg MOP + 10 kg ZnSO4",
+                                        "application_method":  "Band placement at planting",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Vegetative",
+                                        "application_period":  "Month 1",
+                                        "fertilizer_name":  "Urea 46% N",
+                                        "dosage_per_acre":  "35 kg",
+                                        "application_method":  "Top dressing",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Flowering/Fruiting",
+                                        "application_period":  "Month 2-3",
+                                        "fertilizer_name":  "Urea + NPK 19:19:19 + Borax",
+                                        "dosage_per_acre":  "25 kg urea + 2 kg NPK + 1 kg borax",
+                                        "application_method":  "Top dressing and foliar spray",
+                                        "water_quantity_for_spray":  "200 liters"
+                                    }
+                                ],
+        "irrigation_schedule":  [
+                                    {
+                                        "growth_stage":  "Establishment",
+                                        "interval_days":  "7-10",
+                                        "water_requirement":  "Light to moderate"
+                                    },
+                                    {
+                                        "growth_stage":  "Active growth and reproductive stage",
+                                        "interval_days":  "8-12",
+                                        "water_requirement":  "Moderate"
+                                    }
+                                ],
+        "major_diseases":  [
+                               {
+                                   "disease_name":  "Leaf Spot/Blight",
+                                   "causal_organism":  "Alternaria spp.",
+                                   "symptoms":  "Leaf spots and blighting",
+                                   "preventive_measures":  "Field sanitation, resistant variety, balanced nutrition",
+                                   "recommended_chemical":  "Mancozeb 75% WP",
+                                   "dosage_per_liter":  "2.5 g/liter",
+                                   "waiting_period_before_harvest":  "15 days"
+                               }
+                           ],
+        "major_pests":  [
+                            {
+                                "pest_name":  "Thrips/borer complex",
+                                "damage_symptoms":  "Sucking damage and bore holes",
+                                "recommended_insecticide":  "Emamectin Benzoate 5% SG",
+                                "dosage_per_liter":  "0.4 g/liter",
+                                "waiting_period_before_harvest":  "10 days"
+                            }
+                        ],
+        "estimated_cost_of_cultivation_per_acre":  "30000-42000",
+        "average_profit_margin_percentage":  "28-42"
+    },
+    {
+        "name":  "Sugarcane",
+        "crop_type":  "Cash Crop",
+        "season":  "Annual",
+        "crop_nature":  "Annual (1 Year)",
+        "sowing_or_planting_time":  "June to July",
+        "harvesting_time":  "4 to 10 months after sowing/planting",
+        "expected_yield_per_acre_quintals":  "300-450",
+        "planting_material_quantity_per_acre":  "30000-35000 setts",
+        "average_market_price_rupees_per_quintal":  "340-400",
+        "fertilizer_schedule":  [
+                                    {
+                                        "stage":  "Basal",
+                                        "application_period":  "Month 0",
+                                        "fertilizer_name":  "DAP 18:46:0 + MOP 0:0:60 + Zinc Sulphate",
+                                        "dosage_per_acre":  "50 kg DAP + 20 kg MOP + 10 kg ZnSO4",
+                                        "application_method":  "Band placement at planting",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Vegetative",
+                                        "application_period":  "Month 1",
+                                        "fertilizer_name":  "Urea 46% N",
+                                        "dosage_per_acre":  "35 kg",
+                                        "application_method":  "Top dressing",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Flowering/Fruiting",
+                                        "application_period":  "Month 2-3",
+                                        "fertilizer_name":  "Urea + NPK 19:19:19 + Borax",
+                                        "dosage_per_acre":  "25 kg urea + 2 kg NPK + 1 kg borax",
+                                        "application_method":  "Top dressing and foliar spray",
+                                        "water_quantity_for_spray":  "200 liters"
+                                    }
+                                ],
+        "irrigation_schedule":  [
+                                    {
+                                        "growth_stage":  "Establishment",
+                                        "interval_days":  "7-10",
+                                        "water_requirement":  "Light to moderate"
+                                    },
+                                    {
+                                        "growth_stage":  "Active growth and reproductive stage",
+                                        "interval_days":  "8-12",
+                                        "water_requirement":  "Moderate"
+                                    }
+                                ],
+        "major_diseases":  [
+                               {
+                                   "disease_name":  "Leaf Spot/Blight",
+                                   "causal_organism":  "Alternaria spp.",
+                                   "symptoms":  "Leaf spots and blighting",
+                                   "preventive_measures":  "Field sanitation, resistant variety, balanced nutrition",
+                                   "recommended_chemical":  "Mancozeb 75% WP",
+                                   "dosage_per_liter":  "2.5 g/liter",
+                                   "waiting_period_before_harvest":  "15 days"
+                               }
+                           ],
+        "major_pests":  [
+                            {
+                                "pest_name":  "Thrips/borer complex",
+                                "damage_symptoms":  "Sucking damage and bore holes",
+                                "recommended_insecticide":  "Emamectin Benzoate 5% SG",
+                                "dosage_per_liter":  "0.4 g/liter",
+                                "waiting_period_before_harvest":  "10 days"
+                            }
+                        ],
+        "estimated_cost_of_cultivation_per_acre":  "55000-85000",
+        "average_profit_margin_percentage":  "20-35"
+    },
+    {
+        "name":  "Jute",
+        "crop_type":  "Cash Crop",
+        "season":  "Kharif",
+        "crop_nature":  "Annual (1 Year)",
+        "sowing_or_planting_time":  "June to July",
+        "harvesting_time":  "4 to 10 months after sowing/planting",
+        "expected_yield_per_acre_quintals":  "8-12",
+        "planting_material_quantity_per_acre":  "2-2.5 kg seed",
+        "average_market_price_rupees_per_quintal":  "5200-6200",
+        "fertilizer_schedule":  [
+                                    {
+                                        "stage":  "Basal",
+                                        "application_period":  "Month 0",
+                                        "fertilizer_name":  "DAP 18:46:0 + MOP 0:0:60 + Zinc Sulphate",
+                                        "dosage_per_acre":  "50 kg DAP + 20 kg MOP + 10 kg ZnSO4",
+                                        "application_method":  "Band placement at planting",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Vegetative",
+                                        "application_period":  "Month 1",
+                                        "fertilizer_name":  "Urea 46% N",
+                                        "dosage_per_acre":  "35 kg",
+                                        "application_method":  "Top dressing",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Flowering/Fruiting",
+                                        "application_period":  "Month 2-3",
+                                        "fertilizer_name":  "Urea + NPK 19:19:19 + Borax",
+                                        "dosage_per_acre":  "25 kg urea + 2 kg NPK + 1 kg borax",
+                                        "application_method":  "Top dressing and foliar spray",
+                                        "water_quantity_for_spray":  "200 liters"
+                                    }
+                                ],
+        "irrigation_schedule":  [
+                                    {
+                                        "growth_stage":  "Establishment",
+                                        "interval_days":  "7-10",
+                                        "water_requirement":  "Light to moderate"
+                                    },
+                                    {
+                                        "growth_stage":  "Active growth and reproductive stage",
+                                        "interval_days":  "8-12",
+                                        "water_requirement":  "Moderate"
+                                    }
+                                ],
+        "major_diseases":  [
+                               {
+                                   "disease_name":  "Leaf Spot/Blight",
+                                   "causal_organism":  "Alternaria spp.",
+                                   "symptoms":  "Leaf spots and blighting",
+                                   "preventive_measures":  "Field sanitation, resistant variety, balanced nutrition",
+                                   "recommended_chemical":  "Mancozeb 75% WP",
+                                   "dosage_per_liter":  "2.5 g/liter",
+                                   "waiting_period_before_harvest":  "15 days"
+                               }
+                           ],
+        "major_pests":  [
+                            {
+                                "pest_name":  "Thrips/borer complex",
+                                "damage_symptoms":  "Sucking damage and bore holes",
+                                "recommended_insecticide":  "Emamectin Benzoate 5% SG",
+                                "dosage_per_liter":  "0.4 g/liter",
+                                "waiting_period_before_harvest":  "10 days"
+                            }
+                        ],
+        "estimated_cost_of_cultivation_per_acre":  "22000-32000",
+        "average_profit_margin_percentage":  "18-30"
+    },
+    {
+        "name":  "Tobacco",
+        "crop_type":  "Cash Crop",
+        "season":  "Rabi",
+        "crop_nature":  "Annual (1 Year)",
+        "sowing_or_planting_time":  "June to July",
+        "harvesting_time":  "4 to 10 months after sowing/planting",
+        "expected_yield_per_acre_quintals":  "8-12",
+        "planting_material_quantity_per_acre":  "0.03-0.05 kg seed",
+        "average_market_price_rupees_per_quintal":  "14000-22000",
+        "fertilizer_schedule":  [
+                                    {
+                                        "stage":  "Basal",
+                                        "application_period":  "Month 0",
+                                        "fertilizer_name":  "DAP 18:46:0 + MOP 0:0:60 + Zinc Sulphate",
+                                        "dosage_per_acre":  "50 kg DAP + 20 kg MOP + 10 kg ZnSO4",
+                                        "application_method":  "Band placement at planting",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Vegetative",
+                                        "application_period":  "Month 1",
+                                        "fertilizer_name":  "Urea 46% N",
+                                        "dosage_per_acre":  "35 kg",
+                                        "application_method":  "Top dressing",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Flowering/Fruiting",
+                                        "application_period":  "Month 2-3",
+                                        "fertilizer_name":  "Urea + NPK 19:19:19 + Borax",
+                                        "dosage_per_acre":  "25 kg urea + 2 kg NPK + 1 kg borax",
+                                        "application_method":  "Top dressing and foliar spray",
+                                        "water_quantity_for_spray":  "200 liters"
+                                    }
+                                ],
+        "irrigation_schedule":  [
+                                    {
+                                        "growth_stage":  "Establishment",
+                                        "interval_days":  "7-10",
+                                        "water_requirement":  "Light to moderate"
+                                    },
+                                    {
+                                        "growth_stage":  "Active growth and reproductive stage",
+                                        "interval_days":  "8-12",
+                                        "water_requirement":  "Moderate"
+                                    }
+                                ],
+        "major_diseases":  [
+                               {
+                                   "disease_name":  "Leaf Spot/Blight",
+                                   "causal_organism":  "Alternaria spp.",
+                                   "symptoms":  "Leaf spots and blighting",
+                                   "preventive_measures":  "Field sanitation, resistant variety, balanced nutrition",
+                                   "recommended_chemical":  "Mancozeb 75% WP",
+                                   "dosage_per_liter":  "2.5 g/liter",
+                                   "waiting_period_before_harvest":  "15 days"
+                               }
+                           ],
+        "major_pests":  [
+                            {
+                                "pest_name":  "Thrips/borer complex",
+                                "damage_symptoms":  "Sucking damage and bore holes",
+                                "recommended_insecticide":  "Emamectin Benzoate 5% SG",
+                                "dosage_per_liter":  "0.4 g/liter",
+                                "waiting_period_before_harvest":  "10 days"
+                            }
+                        ],
+        "estimated_cost_of_cultivation_per_acre":  "45000-70000",
+        "average_profit_margin_percentage":  "25-40"
+    },
+    {
+        "name":  "Turmeric",
+        "crop_type":  "Cash Crop",
+        "season":  "Kharif",
+        "crop_nature":  "Annual (1 Year)",
+        "sowing_or_planting_time":  "June to July",
+        "harvesting_time":  "4 to 10 months after sowing/planting",
+        "expected_yield_per_acre_quintals":  "80-120",
+        "planting_material_quantity_per_acre":  "800-1000 kg rhizome",
+        "average_market_price_rupees_per_quintal":  "7000-12000",
+        "fertilizer_schedule":  [
+                                    {
+                                        "stage":  "Basal",
+                                        "application_period":  "Month 0",
+                                        "fertilizer_name":  "DAP 18:46:0 + MOP 0:0:60 + Zinc Sulphate",
+                                        "dosage_per_acre":  "50 kg DAP + 20 kg MOP + 10 kg ZnSO4",
+                                        "application_method":  "Band placement at planting",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Vegetative",
+                                        "application_period":  "Month 1",
+                                        "fertilizer_name":  "Urea 46% N",
+                                        "dosage_per_acre":  "35 kg",
+                                        "application_method":  "Top dressing",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Flowering/Fruiting",
+                                        "application_period":  "Month 2-3",
+                                        "fertilizer_name":  "Urea + NPK 19:19:19 + Borax",
+                                        "dosage_per_acre":  "25 kg urea + 2 kg NPK + 1 kg borax",
+                                        "application_method":  "Top dressing and foliar spray",
+                                        "water_quantity_for_spray":  "200 liters"
+                                    }
+                                ],
+        "irrigation_schedule":  [
+                                    {
+                                        "growth_stage":  "Establishment",
+                                        "interval_days":  "7-10",
+                                        "water_requirement":  "Light to moderate"
+                                    },
+                                    {
+                                        "growth_stage":  "Active growth and reproductive stage",
+                                        "interval_days":  "8-12",
+                                        "water_requirement":  "Moderate"
+                                    }
+                                ],
+        "major_diseases":  [
+                               {
+                                   "disease_name":  "Leaf Spot/Blight",
+                                   "causal_organism":  "Alternaria spp.",
+                                   "symptoms":  "Leaf spots and blighting",
+                                   "preventive_measures":  "Field sanitation, resistant variety, balanced nutrition",
+                                   "recommended_chemical":  "Mancozeb 75% WP",
+                                   "dosage_per_liter":  "2.5 g/liter",
+                                   "waiting_period_before_harvest":  "15 days"
+                               }
+                           ],
+        "major_pests":  [
+                            {
+                                "pest_name":  "Thrips/borer complex",
+                                "damage_symptoms":  "Sucking damage and bore holes",
+                                "recommended_insecticide":  "Emamectin Benzoate 5% SG",
+                                "dosage_per_liter":  "0.4 g/liter",
+                                "waiting_period_before_harvest":  "10 days"
+                            }
+                        ],
+        "estimated_cost_of_cultivation_per_acre":  "70000-110000",
+        "average_profit_margin_percentage":  "30-55"
+    },
+    {
+        "name":  "Ginger",
+        "crop_type":  "Cash Crop",
+        "season":  "Kharif",
+        "crop_nature":  "Annual (1 Year)",
+        "sowing_or_planting_time":  "June to July",
+        "harvesting_time":  "4 to 10 months after sowing/planting",
+        "expected_yield_per_acre_quintals":  "60-100",
+        "planting_material_quantity_per_acre":  "600-800 kg rhizome",
+        "average_market_price_rupees_per_quintal":  "6000-10000",
+        "fertilizer_schedule":  [
+                                    {
+                                        "stage":  "Basal",
+                                        "application_period":  "Month 0",
+                                        "fertilizer_name":  "DAP 18:46:0 + MOP 0:0:60 + Zinc Sulphate",
+                                        "dosage_per_acre":  "50 kg DAP + 20 kg MOP + 10 kg ZnSO4",
+                                        "application_method":  "Band placement at planting",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Vegetative",
+                                        "application_period":  "Month 1",
+                                        "fertilizer_name":  "Urea 46% N",
+                                        "dosage_per_acre":  "35 kg",
+                                        "application_method":  "Top dressing",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Flowering/Fruiting",
+                                        "application_period":  "Month 2-3",
+                                        "fertilizer_name":  "Urea + NPK 19:19:19 + Borax",
+                                        "dosage_per_acre":  "25 kg urea + 2 kg NPK + 1 kg borax",
+                                        "application_method":  "Top dressing and foliar spray",
+                                        "water_quantity_for_spray":  "200 liters"
+                                    }
+                                ],
+        "irrigation_schedule":  [
+                                    {
+                                        "growth_stage":  "Establishment",
+                                        "interval_days":  "7-10",
+                                        "water_requirement":  "Light to moderate"
+                                    },
+                                    {
+                                        "growth_stage":  "Active growth and reproductive stage",
+                                        "interval_days":  "8-12",
+                                        "water_requirement":  "Moderate"
+                                    }
+                                ],
+        "major_diseases":  [
+                               {
+                                   "disease_name":  "Leaf Spot/Blight",
+                                   "causal_organism":  "Alternaria spp.",
+                                   "symptoms":  "Leaf spots and blighting",
+                                   "preventive_measures":  "Field sanitation, resistant variety, balanced nutrition",
+                                   "recommended_chemical":  "Mancozeb 75% WP",
+                                   "dosage_per_liter":  "2.5 g/liter",
+                                   "waiting_period_before_harvest":  "15 days"
+                               }
+                           ],
+        "major_pests":  [
+                            {
+                                "pest_name":  "Thrips/borer complex",
+                                "damage_symptoms":  "Sucking damage and bore holes",
+                                "recommended_insecticide":  "Emamectin Benzoate 5% SG",
+                                "dosage_per_liter":  "0.4 g/liter",
+                                "waiting_period_before_harvest":  "10 days"
+                            }
+                        ],
+        "estimated_cost_of_cultivation_per_acre":  "65000-105000",
+        "average_profit_margin_percentage":  "28-50"
+    },
+    {
+        "name":  "Mentha",
+        "crop_type":  "Cash Crop",
+        "season":  "Spring",
+        "crop_nature":  "Annual (1 Year)",
+        "sowing_or_planting_time":  "June to July",
+        "harvesting_time":  "4 to 10 months after sowing/planting",
+        "expected_yield_per_acre_quintals":  "80-120",
+        "planting_material_quantity_per_acre":  "250-300 kg stolons",
+        "average_market_price_rupees_per_quintal":  "1500-2800",
+        "fertilizer_schedule":  [
+                                    {
+                                        "stage":  "Basal",
+                                        "application_period":  "Month 0",
+                                        "fertilizer_name":  "DAP 18:46:0 + MOP 0:0:60 + Zinc Sulphate",
+                                        "dosage_per_acre":  "50 kg DAP + 20 kg MOP + 10 kg ZnSO4",
+                                        "application_method":  "Band placement at planting",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Vegetative",
+                                        "application_period":  "Month 1",
+                                        "fertilizer_name":  "Urea 46% N",
+                                        "dosage_per_acre":  "35 kg",
+                                        "application_method":  "Top dressing",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Flowering/Fruiting",
+                                        "application_period":  "Month 2-3",
+                                        "fertilizer_name":  "Urea + NPK 19:19:19 + Borax",
+                                        "dosage_per_acre":  "25 kg urea + 2 kg NPK + 1 kg borax",
+                                        "application_method":  "Top dressing and foliar spray",
+                                        "water_quantity_for_spray":  "200 liters"
+                                    }
+                                ],
+        "irrigation_schedule":  [
+                                    {
+                                        "growth_stage":  "Establishment",
+                                        "interval_days":  "7-10",
+                                        "water_requirement":  "Light to moderate"
+                                    },
+                                    {
+                                        "growth_stage":  "Active growth and reproductive stage",
+                                        "interval_days":  "8-12",
+                                        "water_requirement":  "Moderate"
+                                    }
+                                ],
+        "major_diseases":  [
+                               {
+                                   "disease_name":  "Leaf Spot/Blight",
+                                   "causal_organism":  "Alternaria spp.",
+                                   "symptoms":  "Leaf spots and blighting",
+                                   "preventive_measures":  "Field sanitation, resistant variety, balanced nutrition",
+                                   "recommended_chemical":  "Mancozeb 75% WP",
+                                   "dosage_per_liter":  "2.5 g/liter",
+                                   "waiting_period_before_harvest":  "15 days"
+                               }
+                           ],
+        "major_pests":  [
+                            {
+                                "pest_name":  "Thrips/borer complex",
+                                "damage_symptoms":  "Sucking damage and bore holes",
+                                "recommended_insecticide":  "Emamectin Benzoate 5% SG",
+                                "dosage_per_liter":  "0.4 g/liter",
+                                "waiting_period_before_harvest":  "10 days"
+                            }
+                        ],
+        "estimated_cost_of_cultivation_per_acre":  "30000-50000",
+        "average_profit_margin_percentage":  "22-40"
+    },
+    {
+        "name":  "Dry Chilli",
+        "crop_type":  "Cash Crop",
+        "season":  "Kharif/Rabi",
+        "crop_nature":  "Annual (1 Year)",
+        "sowing_or_planting_time":  "June to July",
+        "harvesting_time":  "4 to 10 months after sowing/planting",
+        "expected_yield_per_acre_quintals":  "8-15",
+        "planting_material_quantity_per_acre":  "0.25-0.35 kg seed",
+        "average_market_price_rupees_per_quintal":  "12000-22000",
+        "fertilizer_schedule":  [
+                                    {
+                                        "stage":  "Basal",
+                                        "application_period":  "Month 0",
+                                        "fertilizer_name":  "DAP 18:46:0 + MOP 0:0:60 + Zinc Sulphate",
+                                        "dosage_per_acre":  "50 kg DAP + 20 kg MOP + 10 kg ZnSO4",
+                                        "application_method":  "Band placement at planting",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Vegetative",
+                                        "application_period":  "Month 1",
+                                        "fertilizer_name":  "Urea 46% N",
+                                        "dosage_per_acre":  "35 kg",
+                                        "application_method":  "Top dressing",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Flowering/Fruiting",
+                                        "application_period":  "Month 2-3",
+                                        "fertilizer_name":  "Urea + NPK 19:19:19 + Borax",
+                                        "dosage_per_acre":  "25 kg urea + 2 kg NPK + 1 kg borax",
+                                        "application_method":  "Top dressing and foliar spray",
+                                        "water_quantity_for_spray":  "200 liters"
+                                    }
+                                ],
+        "irrigation_schedule":  [
+                                    {
+                                        "growth_stage":  "Establishment",
+                                        "interval_days":  "7-10",
+                                        "water_requirement":  "Light to moderate"
+                                    },
+                                    {
+                                        "growth_stage":  "Active growth and reproductive stage",
+                                        "interval_days":  "8-12",
+                                        "water_requirement":  "Moderate"
+                                    }
+                                ],
+        "major_diseases":  [
+                               {
+                                   "disease_name":  "Leaf Spot/Blight",
+                                   "causal_organism":  "Alternaria spp.",
+                                   "symptoms":  "Leaf spots and blighting",
+                                   "preventive_measures":  "Field sanitation, resistant variety, balanced nutrition",
+                                   "recommended_chemical":  "Mancozeb 75% WP",
+                                   "dosage_per_liter":  "2.5 g/liter",
+                                   "waiting_period_before_harvest":  "15 days"
+                               }
+                           ],
+        "major_pests":  [
+                            {
+                                "pest_name":  "Thrips/borer complex",
+                                "damage_symptoms":  "Sucking damage and bore holes",
+                                "recommended_insecticide":  "Emamectin Benzoate 5% SG",
+                                "dosage_per_liter":  "0.4 g/liter",
+                                "waiting_period_before_harvest":  "10 days"
+                            }
+                        ],
+        "estimated_cost_of_cultivation_per_acre":  "50000-90000",
+        "average_profit_margin_percentage":  "25-48"
+    },
+    {
+        "name":  "Cumin",
+        "crop_type":  "Cash Crop",
+        "season":  "Rabi",
+        "crop_nature":  "Annual (1 Year)",
+        "sowing_or_planting_time":  "June to July",
+        "harvesting_time":  "4 to 10 months after sowing/planting",
+        "expected_yield_per_acre_quintals":  "3-5",
+        "planting_material_quantity_per_acre":  "4-5 kg seed",
+        "average_market_price_rupees_per_quintal":  "14000-22000",
+        "fertilizer_schedule":  [
+                                    {
+                                        "stage":  "Basal",
+                                        "application_period":  "Month 0",
+                                        "fertilizer_name":  "DAP 18:46:0 + MOP 0:0:60 + Zinc Sulphate",
+                                        "dosage_per_acre":  "50 kg DAP + 20 kg MOP + 10 kg ZnSO4",
+                                        "application_method":  "Band placement at planting",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Vegetative",
+                                        "application_period":  "Month 1",
+                                        "fertilizer_name":  "Urea 46% N",
+                                        "dosage_per_acre":  "35 kg",
+                                        "application_method":  "Top dressing",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Flowering/Fruiting",
+                                        "application_period":  "Month 2-3",
+                                        "fertilizer_name":  "Urea + NPK 19:19:19 + Borax",
+                                        "dosage_per_acre":  "25 kg urea + 2 kg NPK + 1 kg borax",
+                                        "application_method":  "Top dressing and foliar spray",
+                                        "water_quantity_for_spray":  "200 liters"
+                                    }
+                                ],
+        "irrigation_schedule":  [
+                                    {
+                                        "growth_stage":  "Establishment",
+                                        "interval_days":  "7-10",
+                                        "water_requirement":  "Light to moderate"
+                                    },
+                                    {
+                                        "growth_stage":  "Active growth and reproductive stage",
+                                        "interval_days":  "8-12",
+                                        "water_requirement":  "Moderate"
+                                    }
+                                ],
+        "major_diseases":  [
+                               {
+                                   "disease_name":  "Leaf Spot/Blight",
+                                   "causal_organism":  "Alternaria spp.",
+                                   "symptoms":  "Leaf spots and blighting",
+                                   "preventive_measures":  "Field sanitation, resistant variety, balanced nutrition",
+                                   "recommended_chemical":  "Mancozeb 75% WP",
+                                   "dosage_per_liter":  "2.5 g/liter",
+                                   "waiting_period_before_harvest":  "15 days"
+                               }
+                           ],
+        "major_pests":  [
+                            {
+                                "pest_name":  "Thrips/borer complex",
+                                "damage_symptoms":  "Sucking damage and bore holes",
+                                "recommended_insecticide":  "Emamectin Benzoate 5% SG",
+                                "dosage_per_liter":  "0.4 g/liter",
+                                "waiting_period_before_harvest":  "10 days"
+                            }
+                        ],
+        "estimated_cost_of_cultivation_per_acre":  "22000-36000",
+        "average_profit_margin_percentage":  "24-42"
+    },
+    {
+        "name":  "Isabgol",
+        "crop_type":  "Cash Crop",
+        "season":  "Rabi",
+        "crop_nature":  "Annual (1 Year)",
+        "sowing_or_planting_time":  "June to July",
+        "harvesting_time":  "4 to 10 months after sowing/planting",
+        "expected_yield_per_acre_quintals":  "3-5",
+        "planting_material_quantity_per_acre":  "1.5-2 kg seed",
+        "average_market_price_rupees_per_quintal":  "12000-18000",
+        "fertilizer_schedule":  [
+                                    {
+                                        "stage":  "Basal",
+                                        "application_period":  "Month 0",
+                                        "fertilizer_name":  "DAP 18:46:0 + MOP 0:0:60 + Zinc Sulphate",
+                                        "dosage_per_acre":  "50 kg DAP + 20 kg MOP + 10 kg ZnSO4",
+                                        "application_method":  "Band placement at planting",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Vegetative",
+                                        "application_period":  "Month 1",
+                                        "fertilizer_name":  "Urea 46% N",
+                                        "dosage_per_acre":  "35 kg",
+                                        "application_method":  "Top dressing",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Flowering/Fruiting",
+                                        "application_period":  "Month 2-3",
+                                        "fertilizer_name":  "Urea + NPK 19:19:19 + Borax",
+                                        "dosage_per_acre":  "25 kg urea + 2 kg NPK + 1 kg borax",
+                                        "application_method":  "Top dressing and foliar spray",
+                                        "water_quantity_for_spray":  "200 liters"
+                                    }
+                                ],
+        "irrigation_schedule":  [
+                                    {
+                                        "growth_stage":  "Establishment",
+                                        "interval_days":  "7-10",
+                                        "water_requirement":  "Light to moderate"
+                                    },
+                                    {
+                                        "growth_stage":  "Active growth and reproductive stage",
+                                        "interval_days":  "8-12",
+                                        "water_requirement":  "Moderate"
+                                    }
+                                ],
+        "major_diseases":  [
+                               {
+                                   "disease_name":  "Leaf Spot/Blight",
+                                   "causal_organism":  "Alternaria spp.",
+                                   "symptoms":  "Leaf spots and blighting",
+                                   "preventive_measures":  "Field sanitation, resistant variety, balanced nutrition",
+                                   "recommended_chemical":  "Mancozeb 75% WP",
+                                   "dosage_per_liter":  "2.5 g/liter",
+                                   "waiting_period_before_harvest":  "15 days"
+                               }
+                           ],
+        "major_pests":  [
+                            {
+                                "pest_name":  "Thrips/borer complex",
+                                "damage_symptoms":  "Sucking damage and bore holes",
+                                "recommended_insecticide":  "Emamectin Benzoate 5% SG",
+                                "dosage_per_liter":  "0.4 g/liter",
+                                "waiting_period_before_harvest":  "10 days"
+                            }
+                        ],
+        "estimated_cost_of_cultivation_per_acre":  "18000-30000",
+        "average_profit_margin_percentage":  "26-40"
+    },
+    {
+        "name":  "Tea",
+        "crop_type":  "Cash Crop",
+        "season":  "Perennial",
+        "crop_nature":  "Perennial",
+        "sowing_or_planting_time":  "June to September",
+        "harvesting_time":  "Starts from bearing stage; seasonal/multiple harvests",
+        "expected_yield_per_acre_quintals":  "10-18",
+        "planting_material_quantity_per_acre":  "4500-5500 rooted cuttings",
+        "average_market_price_rupees_per_quintal":  "18000-30000",
+        "fertilizer_schedule":  [
+                                    {
+                                        "stage":  "Year 1",
+                                        "application_period":  "Pre-monsoon and post-monsoon",
+                                        "fertilizer_name":  "Urea + SSP + MOP",
+                                        "dosage_per_acre":  "20 kg N + 10 kg P2O5 + 20 kg K2O",
+                                        "application_method":  "Basin/ring application",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Year 2",
+                                        "application_period":  "2-3 split applications",
+                                        "fertilizer_name":  "Urea + SSP + MOP + Zinc Sulphate",
+                                        "dosage_per_acre":  "35 kg N + 20 kg P2O5 + 35 kg K2O + 5 kg ZnSO4",
+                                        "application_method":  "Ring application",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Year 3",
+                                        "application_period":  "Pre-monsoon, mid-monsoon, post-monsoon",
+                                        "fertilizer_name":  "Urea + MOP + Borax",
+                                        "dosage_per_acre":  "50 kg N + 30 kg P2O5 + 50 kg K2O + 2 kg borax",
+                                        "application_method":  "Split basin application",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Mature bearing",
+                                        "application_period":  "Pre-monsoon, post-monsoon, flowering stage",
+                                        "fertilizer_name":  "Urea + SSP + MOP + MgSO4",
+                                        "dosage_per_acre":  "80 kg N + 40 kg P2O5 + 100 kg K2O + 20 kg MgSO4 annually",
+                                        "application_method":  "Annual split soil application",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    }
+                                ],
+        "irrigation_schedule":  [
+                                    {
+                                        "growth_stage":  "Young orchard/plantation",
+                                        "interval_days":  "7-10",
+                                        "water_requirement":  "Light to moderate"
+                                    },
+                                    {
+                                        "growth_stage":  "Flowering and fruit set",
+                                        "interval_days":  "5-10",
+                                        "water_requirement":  "Moderate to high"
+                                    }
+                                ],
+        "major_diseases":  [
+                               {
+                                   "disease_name":  "Anthracnose/fruit rot complex",
+                                   "causal_organism":  "Colletotrichum spp.",
+                                   "symptoms":  "Leaf/panicle/fruit lesions and rotting",
+                                   "preventive_measures":  "Canopy sanitation and prophylactic sprays",
+                                   "recommended_chemical":  "Copper Oxychloride 50% WP",
+                                   "dosage_per_liter":  "3 g/liter",
+                                   "waiting_period_before_harvest":  "15 days"
+                               }
+                           ],
+        "major_pests":  [
+                            {
+                                "pest_name":  "Fruit borer/sucking pest complex",
+                                "damage_symptoms":  "Fruit damage and quality loss",
+                                "recommended_insecticide":  "Imidacloprid 17.8% SL",
+                                "dosage_per_liter":  "0.3 ml/liter",
+                                "waiting_period_before_harvest":  "10 days"
+                            }
+                        ],
+        "estimated_cost_of_cultivation_per_acre":  "90000-140000",
+        "average_profit_margin_percentage":  "22-35"
+    },
+    {
+        "name":  "Coffee",
+        "crop_type":  "Cash Crop",
+        "season":  "Perennial",
+        "crop_nature":  "Perennial",
+        "sowing_or_planting_time":  "June to September",
+        "harvesting_time":  "Starts from bearing stage; seasonal/multiple harvests",
+        "expected_yield_per_acre_quintals":  "5-8",
+        "planting_material_quantity_per_acre":  "1000-1200 seedlings",
+        "average_market_price_rupees_per_quintal":  "22000-36000",
+        "fertilizer_schedule":  [
+                                    {
+                                        "stage":  "Year 1",
+                                        "application_period":  "Pre-monsoon and post-monsoon",
+                                        "fertilizer_name":  "Urea + SSP + MOP",
+                                        "dosage_per_acre":  "20 kg N + 10 kg P2O5 + 20 kg K2O",
+                                        "application_method":  "Basin/ring application",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Year 2",
+                                        "application_period":  "2-3 split applications",
+                                        "fertilizer_name":  "Urea + SSP + MOP + Zinc Sulphate",
+                                        "dosage_per_acre":  "35 kg N + 20 kg P2O5 + 35 kg K2O + 5 kg ZnSO4",
+                                        "application_method":  "Ring application",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Year 3",
+                                        "application_period":  "Pre-monsoon, mid-monsoon, post-monsoon",
+                                        "fertilizer_name":  "Urea + MOP + Borax",
+                                        "dosage_per_acre":  "50 kg N + 30 kg P2O5 + 50 kg K2O + 2 kg borax",
+                                        "application_method":  "Split basin application",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Mature bearing",
+                                        "application_period":  "Pre-monsoon, post-monsoon, flowering stage",
+                                        "fertilizer_name":  "Urea + SSP + MOP + MgSO4",
+                                        "dosage_per_acre":  "80 kg N + 40 kg P2O5 + 100 kg K2O + 20 kg MgSO4 annually",
+                                        "application_method":  "Annual split soil application",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    }
+                                ],
+        "irrigation_schedule":  [
+                                    {
+                                        "growth_stage":  "Young orchard/plantation",
+                                        "interval_days":  "7-10",
+                                        "water_requirement":  "Light to moderate"
+                                    },
+                                    {
+                                        "growth_stage":  "Flowering and fruit set",
+                                        "interval_days":  "5-10",
+                                        "water_requirement":  "Moderate to high"
+                                    }
+                                ],
+        "major_diseases":  [
+                               {
+                                   "disease_name":  "Anthracnose/fruit rot complex",
+                                   "causal_organism":  "Colletotrichum spp.",
+                                   "symptoms":  "Leaf/panicle/fruit lesions and rotting",
+                                   "preventive_measures":  "Canopy sanitation and prophylactic sprays",
+                                   "recommended_chemical":  "Copper Oxychloride 50% WP",
+                                   "dosage_per_liter":  "3 g/liter",
+                                   "waiting_period_before_harvest":  "15 days"
+                               }
+                           ],
+        "major_pests":  [
+                            {
+                                "pest_name":  "Fruit borer/sucking pest complex",
+                                "damage_symptoms":  "Fruit damage and quality loss",
+                                "recommended_insecticide":  "Imidacloprid 17.8% SL",
+                                "dosage_per_liter":  "0.3 ml/liter",
+                                "waiting_period_before_harvest":  "10 days"
+                            }
+                        ],
+        "estimated_cost_of_cultivation_per_acre":  "80000-130000",
+        "average_profit_margin_percentage":  "20-38"
+    },
+    {
+        "name":  "Rubber",
+        "crop_type":  "Cash Crop",
+        "season":  "Perennial",
+        "crop_nature":  "Perennial",
+        "sowing_or_planting_time":  "June to September",
+        "harvesting_time":  "Starts from bearing stage; seasonal/multiple harvests",
+        "expected_yield_per_acre_quintals":  "7-10",
+        "planting_material_quantity_per_acre":  "130-150 budded stumps",
+        "average_market_price_rupees_per_quintal":  "16000-22000",
+        "fertilizer_schedule":  [
+                                    {
+                                        "stage":  "Year 1",
+                                        "application_period":  "Pre-monsoon and post-monsoon",
+                                        "fertilizer_name":  "Urea + SSP + MOP",
+                                        "dosage_per_acre":  "20 kg N + 10 kg P2O5 + 20 kg K2O",
+                                        "application_method":  "Basin/ring application",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Year 2",
+                                        "application_period":  "2-3 split applications",
+                                        "fertilizer_name":  "Urea + SSP + MOP + Zinc Sulphate",
+                                        "dosage_per_acre":  "35 kg N + 20 kg P2O5 + 35 kg K2O + 5 kg ZnSO4",
+                                        "application_method":  "Ring application",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Year 3",
+                                        "application_period":  "Pre-monsoon, mid-monsoon, post-monsoon",
+                                        "fertilizer_name":  "Urea + MOP + Borax",
+                                        "dosage_per_acre":  "50 kg N + 30 kg P2O5 + 50 kg K2O + 2 kg borax",
+                                        "application_method":  "Split basin application",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Mature bearing",
+                                        "application_period":  "Pre-monsoon, post-monsoon, flowering stage",
+                                        "fertilizer_name":  "Urea + SSP + MOP + MgSO4",
+                                        "dosage_per_acre":  "80 kg N + 40 kg P2O5 + 100 kg K2O + 20 kg MgSO4 annually",
+                                        "application_method":  "Annual split soil application",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    }
+                                ],
+        "irrigation_schedule":  [
+                                    {
+                                        "growth_stage":  "Young orchard/plantation",
+                                        "interval_days":  "7-10",
+                                        "water_requirement":  "Light to moderate"
+                                    },
+                                    {
+                                        "growth_stage":  "Flowering and fruit set",
+                                        "interval_days":  "5-10",
+                                        "water_requirement":  "Moderate to high"
+                                    }
+                                ],
+        "major_diseases":  [
+                               {
+                                   "disease_name":  "Anthracnose/fruit rot complex",
+                                   "causal_organism":  "Colletotrichum spp.",
+                                   "symptoms":  "Leaf/panicle/fruit lesions and rotting",
+                                   "preventive_measures":  "Canopy sanitation and prophylactic sprays",
+                                   "recommended_chemical":  "Copper Oxychloride 50% WP",
+                                   "dosage_per_liter":  "3 g/liter",
+                                   "waiting_period_before_harvest":  "15 days"
+                               }
+                           ],
+        "major_pests":  [
+                            {
+                                "pest_name":  "Fruit borer/sucking pest complex",
+                                "damage_symptoms":  "Fruit damage and quality loss",
+                                "recommended_insecticide":  "Imidacloprid 17.8% SL",
+                                "dosage_per_liter":  "0.3 ml/liter",
+                                "waiting_period_before_harvest":  "10 days"
+                            }
+                        ],
+        "estimated_cost_of_cultivation_per_acre":  "70000-120000",
+        "average_profit_margin_percentage":  "18-32"
+    },
+    {
+        "name":  "Oil Palm",
+        "crop_type":  "Cash Crop",
+        "season":  "Perennial",
+        "crop_nature":  "Perennial",
+        "sowing_or_planting_time":  "June to September",
+        "harvesting_time":  "Starts from bearing stage; seasonal/multiple harvests",
+        "expected_yield_per_acre_quintals":  "80-120",
+        "planting_material_quantity_per_acre":  "55-60 seedlings",
+        "average_market_price_rupees_per_quintal":  "1200-1800",
+        "fertilizer_schedule":  [
+                                    {
+                                        "stage":  "Year 1",
+                                        "application_period":  "Pre-monsoon and post-monsoon",
+                                        "fertilizer_name":  "Urea + SSP + MOP",
+                                        "dosage_per_acre":  "20 kg N + 10 kg P2O5 + 20 kg K2O",
+                                        "application_method":  "Basin/ring application",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Year 2",
+                                        "application_period":  "2-3 split applications",
+                                        "fertilizer_name":  "Urea + SSP + MOP + Zinc Sulphate",
+                                        "dosage_per_acre":  "35 kg N + 20 kg P2O5 + 35 kg K2O + 5 kg ZnSO4",
+                                        "application_method":  "Ring application",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Year 3",
+                                        "application_period":  "Pre-monsoon, mid-monsoon, post-monsoon",
+                                        "fertilizer_name":  "Urea + MOP + Borax",
+                                        "dosage_per_acre":  "50 kg N + 30 kg P2O5 + 50 kg K2O + 2 kg borax",
+                                        "application_method":  "Split basin application",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Mature bearing",
+                                        "application_period":  "Pre-monsoon, post-monsoon, flowering stage",
+                                        "fertilizer_name":  "Urea + SSP + MOP + MgSO4",
+                                        "dosage_per_acre":  "80 kg N + 40 kg P2O5 + 100 kg K2O + 20 kg MgSO4 annually",
+                                        "application_method":  "Annual split soil application",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    }
+                                ],
+        "irrigation_schedule":  [
+                                    {
+                                        "growth_stage":  "Young orchard/plantation",
+                                        "interval_days":  "7-10",
+                                        "water_requirement":  "Light to moderate"
+                                    },
+                                    {
+                                        "growth_stage":  "Flowering and fruit set",
+                                        "interval_days":  "5-10",
+                                        "water_requirement":  "Moderate to high"
+                                    }
+                                ],
+        "major_diseases":  [
+                               {
+                                   "disease_name":  "Anthracnose/fruit rot complex",
+                                   "causal_organism":  "Colletotrichum spp.",
+                                   "symptoms":  "Leaf/panicle/fruit lesions and rotting",
+                                   "preventive_measures":  "Canopy sanitation and prophylactic sprays",
+                                   "recommended_chemical":  "Copper Oxychloride 50% WP",
+                                   "dosage_per_liter":  "3 g/liter",
+                                   "waiting_period_before_harvest":  "15 days"
+                               }
+                           ],
+        "major_pests":  [
+                            {
+                                "pest_name":  "Fruit borer/sucking pest complex",
+                                "damage_symptoms":  "Fruit damage and quality loss",
+                                "recommended_insecticide":  "Imidacloprid 17.8% SL",
+                                "dosage_per_liter":  "0.3 ml/liter",
+                                "waiting_period_before_harvest":  "10 days"
+                            }
+                        ],
+        "estimated_cost_of_cultivation_per_acre":  "95000-160000",
+        "average_profit_margin_percentage":  "25-40"
+    },
+    {
+        "name":  "Cocoa",
+        "crop_type":  "Cash Crop",
+        "season":  "Perennial",
+        "crop_nature":  "Perennial",
+        "sowing_or_planting_time":  "June to September",
+        "harvesting_time":  "Starts from bearing stage; seasonal/multiple harvests",
+        "expected_yield_per_acre_quintals":  "4-7",
+        "planting_material_quantity_per_acre":  "400-500 plants",
+        "average_market_price_rupees_per_quintal":  "22000-32000",
+        "fertilizer_schedule":  [
+                                    {
+                                        "stage":  "Year 1",
+                                        "application_period":  "Pre-monsoon and post-monsoon",
+                                        "fertilizer_name":  "Urea + SSP + MOP",
+                                        "dosage_per_acre":  "20 kg N + 10 kg P2O5 + 20 kg K2O",
+                                        "application_method":  "Basin/ring application",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Year 2",
+                                        "application_period":  "2-3 split applications",
+                                        "fertilizer_name":  "Urea + SSP + MOP + Zinc Sulphate",
+                                        "dosage_per_acre":  "35 kg N + 20 kg P2O5 + 35 kg K2O + 5 kg ZnSO4",
+                                        "application_method":  "Ring application",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Year 3",
+                                        "application_period":  "Pre-monsoon, mid-monsoon, post-monsoon",
+                                        "fertilizer_name":  "Urea + MOP + Borax",
+                                        "dosage_per_acre":  "50 kg N + 30 kg P2O5 + 50 kg K2O + 2 kg borax",
+                                        "application_method":  "Split basin application",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Mature bearing",
+                                        "application_period":  "Pre-monsoon, post-monsoon, flowering stage",
+                                        "fertilizer_name":  "Urea + SSP + MOP + MgSO4",
+                                        "dosage_per_acre":  "80 kg N + 40 kg P2O5 + 100 kg K2O + 20 kg MgSO4 annually",
+                                        "application_method":  "Annual split soil application",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    }
+                                ],
+        "irrigation_schedule":  [
+                                    {
+                                        "growth_stage":  "Young orchard/plantation",
+                                        "interval_days":  "7-10",
+                                        "water_requirement":  "Light to moderate"
+                                    },
+                                    {
+                                        "growth_stage":  "Flowering and fruit set",
+                                        "interval_days":  "5-10",
+                                        "water_requirement":  "Moderate to high"
+                                    }
+                                ],
+        "major_diseases":  [
+                               {
+                                   "disease_name":  "Anthracnose/fruit rot complex",
+                                   "causal_organism":  "Colletotrichum spp.",
+                                   "symptoms":  "Leaf/panicle/fruit lesions and rotting",
+                                   "preventive_measures":  "Canopy sanitation and prophylactic sprays",
+                                   "recommended_chemical":  "Copper Oxychloride 50% WP",
+                                   "dosage_per_liter":  "3 g/liter",
+                                   "waiting_period_before_harvest":  "15 days"
+                               }
+                           ],
+        "major_pests":  [
+                            {
+                                "pest_name":  "Fruit borer/sucking pest complex",
+                                "damage_symptoms":  "Fruit damage and quality loss",
+                                "recommended_insecticide":  "Imidacloprid 17.8% SL",
+                                "dosage_per_liter":  "0.3 ml/liter",
+                                "waiting_period_before_harvest":  "10 days"
+                            }
+                        ],
+        "estimated_cost_of_cultivation_per_acre":  "65000-110000",
+        "average_profit_margin_percentage":  "24-40"
+    },
+    {
+        "name":  "Arecanut",
+        "crop_type":  "Cash Crop",
+        "season":  "Perennial",
+        "crop_nature":  "Perennial",
+        "sowing_or_planting_time":  "June to September",
+        "harvesting_time":  "Starts from bearing stage; seasonal/multiple harvests",
+        "expected_yield_per_acre_quintals":  "8-12",
+        "planting_material_quantity_per_acre":  "500-550 seedlings",
+        "average_market_price_rupees_per_quintal":  "25000-42000",
+        "fertilizer_schedule":  [
+                                    {
+                                        "stage":  "Year 1",
+                                        "application_period":  "Pre-monsoon and post-monsoon",
+                                        "fertilizer_name":  "Urea + SSP + MOP",
+                                        "dosage_per_acre":  "20 kg N + 10 kg P2O5 + 20 kg K2O",
+                                        "application_method":  "Basin/ring application",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Year 2",
+                                        "application_period":  "2-3 split applications",
+                                        "fertilizer_name":  "Urea + SSP + MOP + Zinc Sulphate",
+                                        "dosage_per_acre":  "35 kg N + 20 kg P2O5 + 35 kg K2O + 5 kg ZnSO4",
+                                        "application_method":  "Ring application",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Year 3",
+                                        "application_period":  "Pre-monsoon, mid-monsoon, post-monsoon",
+                                        "fertilizer_name":  "Urea + MOP + Borax",
+                                        "dosage_per_acre":  "50 kg N + 30 kg P2O5 + 50 kg K2O + 2 kg borax",
+                                        "application_method":  "Split basin application",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Mature bearing",
+                                        "application_period":  "Pre-monsoon, post-monsoon, flowering stage",
+                                        "fertilizer_name":  "Urea + SSP + MOP + MgSO4",
+                                        "dosage_per_acre":  "80 kg N + 40 kg P2O5 + 100 kg K2O + 20 kg MgSO4 annually",
+                                        "application_method":  "Annual split soil application",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    }
+                                ],
+        "irrigation_schedule":  [
+                                    {
+                                        "growth_stage":  "Young orchard/plantation",
+                                        "interval_days":  "7-10",
+                                        "water_requirement":  "Light to moderate"
+                                    },
+                                    {
+                                        "growth_stage":  "Flowering and fruit set",
+                                        "interval_days":  "5-10",
+                                        "water_requirement":  "Moderate to high"
+                                    }
+                                ],
+        "major_diseases":  [
+                               {
+                                   "disease_name":  "Anthracnose/fruit rot complex",
+                                   "causal_organism":  "Colletotrichum spp.",
+                                   "symptoms":  "Leaf/panicle/fruit lesions and rotting",
+                                   "preventive_measures":  "Canopy sanitation and prophylactic sprays",
+                                   "recommended_chemical":  "Copper Oxychloride 50% WP",
+                                   "dosage_per_liter":  "3 g/liter",
+                                   "waiting_period_before_harvest":  "15 days"
+                               }
+                           ],
+        "major_pests":  [
+                            {
+                                "pest_name":  "Fruit borer/sucking pest complex",
+                                "damage_symptoms":  "Fruit damage and quality loss",
+                                "recommended_insecticide":  "Imidacloprid 17.8% SL",
+                                "dosage_per_liter":  "0.3 ml/liter",
+                                "waiting_period_before_harvest":  "10 days"
+                            }
+                        ],
+        "estimated_cost_of_cultivation_per_acre":  "70000-120000",
+        "average_profit_margin_percentage":  "22-36"
+    },
+    {
+        "name":  "Coconut",
+        "crop_type":  "Cash Crop",
+        "season":  "Perennial",
+        "crop_nature":  "Perennial",
+        "sowing_or_planting_time":  "June to September",
+        "harvesting_time":  "Starts from bearing stage; seasonal/multiple harvests",
+        "expected_yield_per_acre_quintals":  "80-140",
+        "planting_material_quantity_per_acre":  "70-75 seedlings",
+        "average_market_price_rupees_per_quintal":  "2800-4200",
+        "fertilizer_schedule":  [
+                                    {
+                                        "stage":  "Year 1",
+                                        "application_period":  "Pre-monsoon and post-monsoon",
+                                        "fertilizer_name":  "Urea + SSP + MOP",
+                                        "dosage_per_acre":  "20 kg N + 10 kg P2O5 + 20 kg K2O",
+                                        "application_method":  "Basin/ring application",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Year 2",
+                                        "application_period":  "2-3 split applications",
+                                        "fertilizer_name":  "Urea + SSP + MOP + Zinc Sulphate",
+                                        "dosage_per_acre":  "35 kg N + 20 kg P2O5 + 35 kg K2O + 5 kg ZnSO4",
+                                        "application_method":  "Ring application",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Year 3",
+                                        "application_period":  "Pre-monsoon, mid-monsoon, post-monsoon",
+                                        "fertilizer_name":  "Urea + MOP + Borax",
+                                        "dosage_per_acre":  "50 kg N + 30 kg P2O5 + 50 kg K2O + 2 kg borax",
+                                        "application_method":  "Split basin application",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Mature bearing",
+                                        "application_period":  "Pre-monsoon, post-monsoon, flowering stage",
+                                        "fertilizer_name":  "Urea + SSP + MOP + MgSO4",
+                                        "dosage_per_acre":  "80 kg N + 40 kg P2O5 + 100 kg K2O + 20 kg MgSO4 annually",
+                                        "application_method":  "Annual split soil application",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    }
+                                ],
+        "irrigation_schedule":  [
+                                    {
+                                        "growth_stage":  "Young orchard/plantation",
+                                        "interval_days":  "7-10",
+                                        "water_requirement":  "Light to moderate"
+                                    },
+                                    {
+                                        "growth_stage":  "Flowering and fruit set",
+                                        "interval_days":  "5-10",
+                                        "water_requirement":  "Moderate to high"
+                                    }
+                                ],
+        "major_diseases":  [
+                               {
+                                   "disease_name":  "Anthracnose/fruit rot complex",
+                                   "causal_organism":  "Colletotrichum spp.",
+                                   "symptoms":  "Leaf/panicle/fruit lesions and rotting",
+                                   "preventive_measures":  "Canopy sanitation and prophylactic sprays",
+                                   "recommended_chemical":  "Copper Oxychloride 50% WP",
+                                   "dosage_per_liter":  "3 g/liter",
+                                   "waiting_period_before_harvest":  "15 days"
+                               }
+                           ],
+        "major_pests":  [
+                            {
+                                "pest_name":  "Fruit borer/sucking pest complex",
+                                "damage_symptoms":  "Fruit damage and quality loss",
+                                "recommended_insecticide":  "Imidacloprid 17.8% SL",
+                                "dosage_per_liter":  "0.3 ml/liter",
+                                "waiting_period_before_harvest":  "10 days"
+                            }
+                        ],
+        "estimated_cost_of_cultivation_per_acre":  "60000-100000",
+        "average_profit_margin_percentage":  "20-34"
+    },
+    {
+        "name":  "Black Pepper",
+        "crop_type":  "Cash Crop",
+        "season":  "Perennial",
+        "crop_nature":  "Perennial",
+        "sowing_or_planting_time":  "June to September",
+        "harvesting_time":  "Starts from bearing stage; seasonal/multiple harvests",
+        "expected_yield_per_acre_quintals":  "2-4",
+        "planting_material_quantity_per_acre":  "800-1000 cuttings",
+        "average_market_price_rupees_per_quintal":  "50000-70000",
+        "fertilizer_schedule":  [
+                                    {
+                                        "stage":  "Year 1",
+                                        "application_period":  "Pre-monsoon and post-monsoon",
+                                        "fertilizer_name":  "Urea + SSP + MOP",
+                                        "dosage_per_acre":  "20 kg N + 10 kg P2O5 + 20 kg K2O",
+                                        "application_method":  "Basin/ring application",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Year 2",
+                                        "application_period":  "2-3 split applications",
+                                        "fertilizer_name":  "Urea + SSP + MOP + Zinc Sulphate",
+                                        "dosage_per_acre":  "35 kg N + 20 kg P2O5 + 35 kg K2O + 5 kg ZnSO4",
+                                        "application_method":  "Ring application",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Year 3",
+                                        "application_period":  "Pre-monsoon, mid-monsoon, post-monsoon",
+                                        "fertilizer_name":  "Urea + MOP + Borax",
+                                        "dosage_per_acre":  "50 kg N + 30 kg P2O5 + 50 kg K2O + 2 kg borax",
+                                        "application_method":  "Split basin application",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Mature bearing",
+                                        "application_period":  "Pre-monsoon, post-monsoon, flowering stage",
+                                        "fertilizer_name":  "Urea + SSP + MOP + MgSO4",
+                                        "dosage_per_acre":  "80 kg N + 40 kg P2O5 + 100 kg K2O + 20 kg MgSO4 annually",
+                                        "application_method":  "Annual split soil application",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    }
+                                ],
+        "irrigation_schedule":  [
+                                    {
+                                        "growth_stage":  "Young orchard/plantation",
+                                        "interval_days":  "7-10",
+                                        "water_requirement":  "Light to moderate"
+                                    },
+                                    {
+                                        "growth_stage":  "Flowering and fruit set",
+                                        "interval_days":  "5-10",
+                                        "water_requirement":  "Moderate to high"
+                                    }
+                                ],
+        "major_diseases":  [
+                               {
+                                   "disease_name":  "Anthracnose/fruit rot complex",
+                                   "causal_organism":  "Colletotrichum spp.",
+                                   "symptoms":  "Leaf/panicle/fruit lesions and rotting",
+                                   "preventive_measures":  "Canopy sanitation and prophylactic sprays",
+                                   "recommended_chemical":  "Copper Oxychloride 50% WP",
+                                   "dosage_per_liter":  "3 g/liter",
+                                   "waiting_period_before_harvest":  "15 days"
+                               }
+                           ],
+        "major_pests":  [
+                            {
+                                "pest_name":  "Fruit borer/sucking pest complex",
+                                "damage_symptoms":  "Fruit damage and quality loss",
+                                "recommended_insecticide":  "Imidacloprid 17.8% SL",
+                                "dosage_per_liter":  "0.3 ml/liter",
+                                "waiting_period_before_harvest":  "10 days"
+                            }
+                        ],
+        "estimated_cost_of_cultivation_per_acre":  "70000-130000",
+        "average_profit_margin_percentage":  "26-45"
+    },
+    {
+        "name":  "Cardamom",
+        "crop_type":  "Cash Crop",
+        "season":  "Perennial",
+        "crop_nature":  "Perennial",
+        "sowing_or_planting_time":  "June to September",
+        "harvesting_time":  "Starts from bearing stage; seasonal/multiple harvests",
+        "expected_yield_per_acre_quintals":  "1.5-3",
+        "planting_material_quantity_per_acre":  "1200-1600 suckers",
+        "average_market_price_rupees_per_quintal":  "120000-220000",
+        "fertilizer_schedule":  [
+                                    {
+                                        "stage":  "Year 1",
+                                        "application_period":  "Pre-monsoon and post-monsoon",
+                                        "fertilizer_name":  "Urea + SSP + MOP",
+                                        "dosage_per_acre":  "20 kg N + 10 kg P2O5 + 20 kg K2O",
+                                        "application_method":  "Basin/ring application",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Year 2",
+                                        "application_period":  "2-3 split applications",
+                                        "fertilizer_name":  "Urea + SSP + MOP + Zinc Sulphate",
+                                        "dosage_per_acre":  "35 kg N + 20 kg P2O5 + 35 kg K2O + 5 kg ZnSO4",
+                                        "application_method":  "Ring application",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Year 3",
+                                        "application_period":  "Pre-monsoon, mid-monsoon, post-monsoon",
+                                        "fertilizer_name":  "Urea + MOP + Borax",
+                                        "dosage_per_acre":  "50 kg N + 30 kg P2O5 + 50 kg K2O + 2 kg borax",
+                                        "application_method":  "Split basin application",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Mature bearing",
+                                        "application_period":  "Pre-monsoon, post-monsoon, flowering stage",
+                                        "fertilizer_name":  "Urea + SSP + MOP + MgSO4",
+                                        "dosage_per_acre":  "80 kg N + 40 kg P2O5 + 100 kg K2O + 20 kg MgSO4 annually",
+                                        "application_method":  "Annual split soil application",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    }
+                                ],
+        "irrigation_schedule":  [
+                                    {
+                                        "growth_stage":  "Young orchard/plantation",
+                                        "interval_days":  "7-10",
+                                        "water_requirement":  "Light to moderate"
+                                    },
+                                    {
+                                        "growth_stage":  "Flowering and fruit set",
+                                        "interval_days":  "5-10",
+                                        "water_requirement":  "Moderate to high"
+                                    }
+                                ],
+        "major_diseases":  [
+                               {
+                                   "disease_name":  "Anthracnose/fruit rot complex",
+                                   "causal_organism":  "Colletotrichum spp.",
+                                   "symptoms":  "Leaf/panicle/fruit lesions and rotting",
+                                   "preventive_measures":  "Canopy sanitation and prophylactic sprays",
+                                   "recommended_chemical":  "Copper Oxychloride 50% WP",
+                                   "dosage_per_liter":  "3 g/liter",
+                                   "waiting_period_before_harvest":  "15 days"
+                               }
+                           ],
+        "major_pests":  [
+                            {
+                                "pest_name":  "Fruit borer/sucking pest complex",
+                                "damage_symptoms":  "Fruit damage and quality loss",
+                                "recommended_insecticide":  "Imidacloprid 17.8% SL",
+                                "dosage_per_liter":  "0.3 ml/liter",
+                                "waiting_period_before_harvest":  "10 days"
+                            }
+                        ],
+        "estimated_cost_of_cultivation_per_acre":  "120000-220000",
+        "average_profit_margin_percentage":  "30-55"
+    },
+    {
+        "name":  "Cashew",
+        "crop_type":  "Cash Crop",
+        "season":  "Perennial",
+        "crop_nature":  "Perennial",
+        "sowing_or_planting_time":  "June to September",
+        "harvesting_time":  "Starts from bearing stage; seasonal/multiple harvests",
+        "expected_yield_per_acre_quintals":  "6-10",
+        "planting_material_quantity_per_acre":  "70-90 grafts",
+        "average_market_price_rupees_per_quintal":  "12000-18000",
+        "fertilizer_schedule":  [
+                                    {
+                                        "stage":  "Year 1",
+                                        "application_period":  "Pre-monsoon and post-monsoon",
+                                        "fertilizer_name":  "Urea + SSP + MOP",
+                                        "dosage_per_acre":  "20 kg N + 10 kg P2O5 + 20 kg K2O",
+                                        "application_method":  "Basin/ring application",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Year 2",
+                                        "application_period":  "2-3 split applications",
+                                        "fertilizer_name":  "Urea + SSP + MOP + Zinc Sulphate",
+                                        "dosage_per_acre":  "35 kg N + 20 kg P2O5 + 35 kg K2O + 5 kg ZnSO4",
+                                        "application_method":  "Ring application",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Year 3",
+                                        "application_period":  "Pre-monsoon, mid-monsoon, post-monsoon",
+                                        "fertilizer_name":  "Urea + MOP + Borax",
+                                        "dosage_per_acre":  "50 kg N + 30 kg P2O5 + 50 kg K2O + 2 kg borax",
+                                        "application_method":  "Split basin application",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Mature bearing",
+                                        "application_period":  "Pre-monsoon, post-monsoon, flowering stage",
+                                        "fertilizer_name":  "Urea + SSP + MOP + MgSO4",
+                                        "dosage_per_acre":  "80 kg N + 40 kg P2O5 + 100 kg K2O + 20 kg MgSO4 annually",
+                                        "application_method":  "Annual split soil application",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    }
+                                ],
+        "irrigation_schedule":  [
+                                    {
+                                        "growth_stage":  "Young orchard/plantation",
+                                        "interval_days":  "7-10",
+                                        "water_requirement":  "Light to moderate"
+                                    },
+                                    {
+                                        "growth_stage":  "Flowering and fruit set",
+                                        "interval_days":  "5-10",
+                                        "water_requirement":  "Moderate to high"
+                                    }
+                                ],
+        "major_diseases":  [
+                               {
+                                   "disease_name":  "Anthracnose/fruit rot complex",
+                                   "causal_organism":  "Colletotrichum spp.",
+                                   "symptoms":  "Leaf/panicle/fruit lesions and rotting",
+                                   "preventive_measures":  "Canopy sanitation and prophylactic sprays",
+                                   "recommended_chemical":  "Copper Oxychloride 50% WP",
+                                   "dosage_per_liter":  "3 g/liter",
+                                   "waiting_period_before_harvest":  "15 days"
+                               }
+                           ],
+        "major_pests":  [
+                            {
+                                "pest_name":  "Fruit borer/sucking pest complex",
+                                "damage_symptoms":  "Fruit damage and quality loss",
+                                "recommended_insecticide":  "Imidacloprid 17.8% SL",
+                                "dosage_per_liter":  "0.3 ml/liter",
+                                "waiting_period_before_harvest":  "10 days"
+                            }
+                        ],
+        "estimated_cost_of_cultivation_per_acre":  "50000-90000",
+        "average_profit_margin_percentage":  "22-38"
+    }
+]

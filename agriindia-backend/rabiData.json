@@ -1,0 +1,2422 @@
+[
+    {
+        "name":  "Wheat",
+        "season":  "Rabi",
+        "sowing_time":  "Late October to November",
+        "harvesting_time":  "March to April",
+        "expected_yield_per_acre_quintals":  "18-24",
+        "seed_quantity_per_acre_kg":  "40-50",
+        "msp_rupees_per_quintal":  "2585 (RMS 2026-27)",
+        "fertilizer_schedule":  [
+                                    {
+                                        "stage":  "Basal at sowing",
+                                        "days_after_sowing":  "0",
+                                        "fertilizer_name":  "DAP + MOP + Zinc Sulphate",
+                                        "dosage_per_acre":  "65 kg DAP + 20 kg MOP + 10 kg ZnSO4",
+                                        "application_method":  "Band placement at sowing",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "CRI stage top dressing",
+                                        "days_after_sowing":  "20-25",
+                                        "fertilizer_name":  "Urea",
+                                        "dosage_per_acre":  "45 kg",
+                                        "application_method":  "Top dress before first irrigation",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Late tillering/boot stage",
+                                        "days_after_sowing":  "45-55",
+                                        "fertilizer_name":  "Urea + NPK 19:19:19",
+                                        "dosage_per_acre":  "45 kg urea + 2 kg NPK 19:19:19",
+                                        "application_method":  "Urea top dressing and foliar spray",
+                                        "water_quantity_for_spray":  "200 liters"
+                                    }
+                                ],
+        "major_diseases":  [
+                               {
+                                   "disease_name":  "Yellow Rust",
+                                   "causal_organism":  "Puccinia striiformis f. sp. tritici",
+                                   "symptoms":  "Yellow linear pustules on leaves",
+                                   "preventive_measures":  "Resistant varieties, timely sowing, balanced nitrogen",
+                                   "recommended_chemical":  "Propiconazole 25% EC",
+                                   "dosage_per_liter":  "1 ml/liter",
+                                   "waiting_period_before_harvest":  "30 days"
+                               },
+                               {
+                                   "disease_name":  "Loose Smut",
+                                   "causal_organism":  "Ustilago tritici",
+                                   "symptoms":  "Earheads replaced by black powdery spores",
+                                   "preventive_measures":  "Use healthy seed and seed treatment",
+                                   "recommended_chemical":  "Carboxin 37.5% + Thiram 37.5% DS",
+                                   "dosage_per_liter":  "2.5 g/kg seed",
+                                   "waiting_period_before_harvest":  "Not applicable (seed treatment)"
+                               }
+                           ]
+    },
+    {
+        "name":  "Barley",
+        "season":  "Rabi",
+        "sowing_time":  "Late October to November",
+        "harvesting_time":  "March",
+        "expected_yield_per_acre_quintals":  "14-20",
+        "seed_quantity_per_acre_kg":  "35-40",
+        "msp_rupees_per_quintal":  "2150 (RMS 2026-27)",
+        "fertilizer_schedule":  [
+                                    {
+                                        "stage":  "Basal",
+                                        "days_after_sowing":  "0",
+                                        "fertilizer_name":  "DAP + MOP",
+                                        "dosage_per_acre":  "50 kg DAP + 15 kg MOP",
+                                        "application_method":  "Drill placement",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Tillering",
+                                        "days_after_sowing":  "25-30",
+                                        "fertilizer_name":  "Urea",
+                                        "dosage_per_acre":  "35 kg",
+                                        "application_method":  "Top dressing with irrigation",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Booting",
+                                        "days_after_sowing":  "55-60",
+                                        "fertilizer_name":  "NPK 19:19:19",
+                                        "dosage_per_acre":  "2 kg",
+                                        "application_method":  "Foliar spray",
+                                        "water_quantity_for_spray":  "200 liters"
+                                    }
+                                ],
+        "major_diseases":  [
+                               {
+                                   "disease_name":  "Yellow Rust",
+                                   "causal_organism":  "Puccinia striiformis f. sp. hordei",
+                                   "symptoms":  "Yellow pustules in streaks on leaves",
+                                   "preventive_measures":  "Resistant variety, avoid late sowing",
+                                   "recommended_chemical":  "Tebuconazole 25.9% EC",
+                                   "dosage_per_liter":  "1 ml/liter",
+                                   "waiting_period_before_harvest":  "25 days"
+                               },
+                               {
+                                   "disease_name":  "Leaf Blight",
+                                   "causal_organism":  "Bipolaris sorokiniana",
+                                   "symptoms":  "Brown necrotic spots on leaves",
+                                   "preventive_measures":  "Crop rotation and residue management",
+                                   "recommended_chemical":  "Mancozeb 75% WP",
+                                   "dosage_per_liter":  "2.5 g/liter",
+                                   "waiting_period_before_harvest":  "20 days"
+                               }
+                           ]
+    },
+    {
+        "name":  "Oat (Grain/Fodder)",
+        "season":  "Rabi",
+        "sowing_time":  "October to November",
+        "harvesting_time":  "February to March (fodder), March to April (grain)",
+        "expected_yield_per_acre_quintals":  "18-22 grain or 180-250 green fodder",
+        "seed_quantity_per_acre_kg":  "30-35",
+        "msp_rupees_per_quintal":  "No MSP (market-based pricing)",
+        "fertilizer_schedule":  [
+                                    {
+                                        "stage":  "Basal",
+                                        "days_after_sowing":  "0",
+                                        "fertilizer_name":  "DAP + MOP",
+                                        "dosage_per_acre":  "45 kg DAP + 15 kg MOP",
+                                        "application_method":  "Drill placement",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "First top dressing",
+                                        "days_after_sowing":  "25-30",
+                                        "fertilizer_name":  "Urea",
+                                        "dosage_per_acre":  "35 kg",
+                                        "application_method":  "Top dress after first cut or at tillering",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Second top dressing",
+                                        "days_after_sowing":  "50-55",
+                                        "fertilizer_name":  "Urea",
+                                        "dosage_per_acre":  "25 kg",
+                                        "application_method":  "Top dress after second irrigation/cut",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    }
+                                ],
+        "major_diseases":  [
+                               {
+                                   "disease_name":  "Leaf Rust",
+                                   "causal_organism":  "Puccinia coronata",
+                                   "symptoms":  "Orange pustules on leaves",
+                                   "preventive_measures":  "Resistant varieties and balanced nitrogen",
+                                   "recommended_chemical":  "Propiconazole 25% EC",
+                                   "dosage_per_liter":  "1 ml/liter",
+                                   "waiting_period_before_harvest":  "20 days"
+                               },
+                               {
+                                   "disease_name":  "Powdery Mildew",
+                                   "causal_organism":  "Blumeria graminis",
+                                   "symptoms":  "White powdery growth on foliage",
+                                   "preventive_measures":  "Proper spacing and avoid excess N",
+                                   "recommended_chemical":  "Wettable Sulphur 80% WP",
+                                   "dosage_per_liter":  "2.5 g/liter",
+                                   "waiting_period_before_harvest":  "10 days"
+                               }
+                           ]
+    },
+    {
+        "name":  "Rabi Maize",
+        "season":  "Rabi",
+        "sowing_time":  "October to November",
+        "harvesting_time":  "February to March",
+        "expected_yield_per_acre_quintals":  "22-30",
+        "seed_quantity_per_acre_kg":  "8-10",
+        "msp_rupees_per_quintal":  "2400 (2025-26, commonly used reference)",
+        "fertilizer_schedule":  [
+                                    {
+                                        "stage":  "Basal",
+                                        "days_after_sowing":  "0",
+                                        "fertilizer_name":  "DAP + MOP + Zinc Sulphate",
+                                        "dosage_per_acre":  "60 kg DAP + 20 kg MOP + 10 kg ZnSO4",
+                                        "application_method":  "Band placement 5 cm below seed",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Knee-high stage",
+                                        "days_after_sowing":  "25-30",
+                                        "fertilizer_name":  "Urea",
+                                        "dosage_per_acre":  "55 kg",
+                                        "application_method":  "Side dressing",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Pre-tasseling",
+                                        "days_after_sowing":  "45-50",
+                                        "fertilizer_name":  "Urea + Borax",
+                                        "dosage_per_acre":  "35 kg urea + 2 kg borax",
+                                        "application_method":  "Urea side dress and borax foliar",
+                                        "water_quantity_for_spray":  "200 liters"
+                                    }
+                                ],
+        "major_diseases":  [
+                               {
+                                   "disease_name":  "Maydis Leaf Blight",
+                                   "causal_organism":  "Bipolaris maydis",
+                                   "symptoms":  "Tan elongated lesions on leaves",
+                                   "preventive_measures":  "Seed treatment, residue management",
+                                   "recommended_chemical":  "Mancozeb 75% WP",
+                                   "dosage_per_liter":  "2.5 g/liter",
+                                   "waiting_period_before_harvest":  "20 days"
+                               },
+                               {
+                                   "disease_name":  "Turcicum Leaf Blight",
+                                   "causal_organism":  "Exserohilum turcicum",
+                                   "symptoms":  "Long cigar-shaped lesions",
+                                   "preventive_measures":  "Resistant hybrids and crop rotation",
+                                   "recommended_chemical":  "Propiconazole 25% EC",
+                                   "dosage_per_liter":  "1 ml/liter",
+                                   "waiting_period_before_harvest":  "20 days"
+                               }
+                           ]
+    },
+    {
+        "name":  "Gram (Chickpea)",
+        "season":  "Rabi",
+        "sowing_time":  "October to November",
+        "harvesting_time":  "February to March",
+        "expected_yield_per_acre_quintals":  "8-12",
+        "seed_quantity_per_acre_kg":  "24-32",
+        "msp_rupees_per_quintal":  "5875 (RMS 2026-27)",
+        "fertilizer_schedule":  [
+                                    {
+                                        "stage":  "Basal",
+                                        "days_after_sowing":  "0",
+                                        "fertilizer_name":  "DAP + SSP + Rhizobium + PSB",
+                                        "dosage_per_acre":  "40 kg DAP + 50 kg SSP + 200 g Rhizobium + 200 g PSB",
+                                        "application_method":  "DAP/SSP at sowing and seed inoculation",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Branching stage",
+                                        "days_after_sowing":  "30-35",
+                                        "fertilizer_name":  "NPK 19:19:19",
+                                        "dosage_per_acre":  "2 kg",
+                                        "application_method":  "Foliar spray",
+                                        "water_quantity_for_spray":  "200 liters"
+                                    },
+                                    {
+                                        "stage":  "Pod formation",
+                                        "days_after_sowing":  "50-60",
+                                        "fertilizer_name":  "DAP (foliar) + Borax",
+                                        "dosage_per_acre":  "2 kg DAP + 1 kg borax",
+                                        "application_method":  "Foliar spray",
+                                        "water_quantity_for_spray":  "200 liters"
+                                    }
+                                ],
+        "major_diseases":  [
+                               {
+                                   "disease_name":  "Fusarium Wilt",
+                                   "causal_organism":  "Fusarium oxysporum f. sp. ciceri",
+                                   "symptoms":  "Sudden wilting and vascular browning",
+                                   "preventive_measures":  "Resistant varieties, seed treatment, crop rotation",
+                                   "recommended_chemical":  "Carbendazim 50% WP",
+                                   "dosage_per_liter":  "2 g/kg seed",
+                                   "waiting_period_before_harvest":  "Not applicable (seed treatment)"
+                               },
+                               {
+                                   "disease_name":  "Ascochyta Blight",
+                                   "causal_organism":  "Ascochyta rabiei",
+                                   "symptoms":  "Brown lesions on leaves and pods",
+                                   "preventive_measures":  "Use clean seed and avoid dense canopy",
+                                   "recommended_chemical":  "Chlorothalonil 75% WP",
+                                   "dosage_per_liter":  "2 g/liter",
+                                   "waiting_period_before_harvest":  "20 days"
+                               }
+                           ]
+    },
+    {
+        "name":  "Lentil (Masoor)",
+        "season":  "Rabi",
+        "sowing_time":  "October to November",
+        "harvesting_time":  "February to March",
+        "expected_yield_per_acre_quintals":  "6-9",
+        "seed_quantity_per_acre_kg":  "12-16",
+        "msp_rupees_per_quintal":  "7000 (RMS 2026-27)",
+        "fertilizer_schedule":  [
+                                    {
+                                        "stage":  "Basal",
+                                        "days_after_sowing":  "0",
+                                        "fertilizer_name":  "DAP + SSP + Rhizobium",
+                                        "dosage_per_acre":  "35 kg DAP + 50 kg SSP + 200 g Rhizobium culture",
+                                        "application_method":  "Basal placement and seed treatment",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Vegetative stage",
+                                        "days_after_sowing":  "30-35",
+                                        "fertilizer_name":  "NPK 19:19:19",
+                                        "dosage_per_acre":  "2 kg",
+                                        "application_method":  "Foliar spray",
+                                        "water_quantity_for_spray":  "200 liters"
+                                    },
+                                    {
+                                        "stage":  "Flowering to pod set",
+                                        "days_after_sowing":  "50-55",
+                                        "fertilizer_name":  "DAP (foliar) + Borax",
+                                        "dosage_per_acre":  "2 kg DAP + 1 kg borax",
+                                        "application_method":  "Foliar spray",
+                                        "water_quantity_for_spray":  "180-200 liters"
+                                    }
+                                ],
+        "major_diseases":  [
+                               {
+                                   "disease_name":  "Rust",
+                                   "causal_organism":  "Uromyces viciae-fabae",
+                                   "symptoms":  "Reddish-brown pustules on leaves",
+                                   "preventive_measures":  "Timely sowing and disease-free seed",
+                                   "recommended_chemical":  "Hexaconazole 5% SC",
+                                   "dosage_per_liter":  "2 ml/liter",
+                                   "waiting_period_before_harvest":  "20 days"
+                               },
+                               {
+                                   "disease_name":  "Wilt",
+                                   "causal_organism":  "Fusarium oxysporum",
+                                   "symptoms":  "Drying and drooping of plants",
+                                   "preventive_measures":  "Seed treatment and crop rotation",
+                                   "recommended_chemical":  "Carbendazim 50% WP",
+                                   "dosage_per_liter":  "2 g/kg seed",
+                                   "waiting_period_before_harvest":  "Not applicable (seed treatment)"
+                               }
+                           ]
+    },
+    {
+        "name":  "Field Pea (Dry Pea)",
+        "season":  "Rabi",
+        "sowing_time":  "October to November",
+        "harvesting_time":  "February to March",
+        "expected_yield_per_acre_quintals":  "8-12",
+        "seed_quantity_per_acre_kg":  "30-35",
+        "msp_rupees_per_quintal":  "No MSP (market-based pricing)",
+        "fertilizer_schedule":  [
+                                    {
+                                        "stage":  "Basal",
+                                        "days_after_sowing":  "0",
+                                        "fertilizer_name":  "DAP + MOP + Rhizobium",
+                                        "dosage_per_acre":  "45 kg DAP + 12 kg MOP + 200 g Rhizobium",
+                                        "application_method":  "Basal drilling and seed inoculation",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Branching stage",
+                                        "days_after_sowing":  "30-35",
+                                        "fertilizer_name":  "NPK 19:19:19",
+                                        "dosage_per_acre":  "2 kg",
+                                        "application_method":  "Foliar spray",
+                                        "water_quantity_for_spray":  "180 liters"
+                                    },
+                                    {
+                                        "stage":  "Pre-flowering",
+                                        "days_after_sowing":  "45-50",
+                                        "fertilizer_name":  "DAP (foliar)",
+                                        "dosage_per_acre":  "2 kg",
+                                        "application_method":  "Foliar spray",
+                                        "water_quantity_for_spray":  "180 liters"
+                                    }
+                                ],
+        "major_diseases":  [
+                               {
+                                   "disease_name":  "Powdery Mildew",
+                                   "causal_organism":  "Erysiphe pisi",
+                                   "symptoms":  "White powdery growth on foliage",
+                                   "preventive_measures":  "Avoid late sowing and dense crop",
+                                   "recommended_chemical":  "Wettable Sulphur 80% WP",
+                                   "dosage_per_liter":  "2.5 g/liter",
+                                   "waiting_period_before_harvest":  "10 days"
+                               },
+                               {
+                                   "disease_name":  "Rust",
+                                   "causal_organism":  "Uromyces pisi",
+                                   "symptoms":  "Brown pustules on leaves",
+                                   "preventive_measures":  "Field sanitation and resistant cultivars",
+                                   "recommended_chemical":  "Propiconazole 25% EC",
+                                   "dosage_per_liter":  "1 ml/liter",
+                                   "waiting_period_before_harvest":  "20 days"
+                               }
+                           ]
+    },
+    {
+        "name":  "Rajmash (Kidney Bean, Rabi in Hills/Plains under irrigation)",
+        "season":  "Rabi",
+        "sowing_time":  "October to November",
+        "harvesting_time":  "February to March",
+        "expected_yield_per_acre_quintals":  "7-10",
+        "seed_quantity_per_acre_kg":  "32-40",
+        "msp_rupees_per_quintal":  "No MSP (market-based pricing)",
+        "fertilizer_schedule":  [
+                                    {
+                                        "stage":  "Basal",
+                                        "days_after_sowing":  "0",
+                                        "fertilizer_name":  "DAP + MOP + SSP",
+                                        "dosage_per_acre":  "55 kg DAP + 15 kg MOP + 40 kg SSP",
+                                        "application_method":  "Band placement at sowing",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Vegetative stage",
+                                        "days_after_sowing":  "25-30",
+                                        "fertilizer_name":  "Urea",
+                                        "dosage_per_acre":  "15 kg",
+                                        "application_method":  "Light top dressing",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Flowering",
+                                        "days_after_sowing":  "45-50",
+                                        "fertilizer_name":  "NPK 19:19:19 + Borax",
+                                        "dosage_per_acre":  "2 kg + 1 kg",
+                                        "application_method":  "Foliar spray",
+                                        "water_quantity_for_spray":  "200 liters"
+                                    }
+                                ],
+        "major_diseases":  [
+                               {
+                                   "disease_name":  "Anthracnose",
+                                   "causal_organism":  "Colletotrichum lindemuthianum",
+                                   "symptoms":  "Dark sunken lesions on pods and stems",
+                                   "preventive_measures":  "Certified seed and crop rotation",
+                                   "recommended_chemical":  "Carbendazim 50% WP",
+                                   "dosage_per_liter":  "1 g/liter",
+                                   "waiting_period_before_harvest":  "15 days"
+                               },
+                               {
+                                   "disease_name":  "Rust",
+                                   "causal_organism":  "Uromyces appendiculatus",
+                                   "symptoms":  "Reddish pustules on leaves",
+                                   "preventive_measures":  "Balanced fertilizer and sanitation",
+                                   "recommended_chemical":  "Hexaconazole 5% SC",
+                                   "dosage_per_liter":  "2 ml/liter",
+                                   "waiting_period_before_harvest":  "20 days"
+                               }
+                           ]
+    },
+    {
+        "name":  "Lathyrus (Grass Pea)",
+        "season":  "Rabi",
+        "sowing_time":  "October to November",
+        "harvesting_time":  "February to March",
+        "expected_yield_per_acre_quintals":  "5-8",
+        "seed_quantity_per_acre_kg":  "24-30",
+        "msp_rupees_per_quintal":  "No MSP (market-based pricing)",
+        "fertilizer_schedule":  [
+                                    {
+                                        "stage":  "Basal",
+                                        "days_after_sowing":  "0",
+                                        "fertilizer_name":  "DAP + SSP",
+                                        "dosage_per_acre":  "35 kg DAP + 40 kg SSP",
+                                        "application_method":  "Broadcast and incorporate",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Branching",
+                                        "days_after_sowing":  "30-35",
+                                        "fertilizer_name":  "NPK 19:19:19",
+                                        "dosage_per_acre":  "2 kg",
+                                        "application_method":  "Foliar",
+                                        "water_quantity_for_spray":  "180 liters"
+                                    },
+                                    {
+                                        "stage":  "Flowering",
+                                        "days_after_sowing":  "50-55",
+                                        "fertilizer_name":  "DAP (foliar)",
+                                        "dosage_per_acre":  "2 kg",
+                                        "application_method":  "Foliar spray",
+                                        "water_quantity_for_spray":  "180 liters"
+                                    }
+                                ],
+        "major_diseases":  [
+                               {
+                                   "disease_name":  "Powdery Mildew",
+                                   "causal_organism":  "Erysiphe pisi",
+                                   "symptoms":  "White coating on leaves and stems",
+                                   "preventive_measures":  "Avoid dense crop, timely sowing",
+                                   "recommended_chemical":  "Sulphur 80% WP",
+                                   "dosage_per_liter":  "2.5 g/liter",
+                                   "waiting_period_before_harvest":  "10 days"
+                               },
+                               {
+                                   "disease_name":  "Rust",
+                                   "causal_organism":  "Uromyces pisi",
+                                   "symptoms":  "Rust pustules on foliage",
+                                   "preventive_measures":  "Resistant lines and field sanitation",
+                                   "recommended_chemical":  "Propiconazole 25% EC",
+                                   "dosage_per_liter":  "1 ml/liter",
+                                   "waiting_period_before_harvest":  "20 days"
+                               }
+                           ]
+    },
+    {
+        "name":  "Indian Mustard (Rai/Sarson)",
+        "season":  "Rabi",
+        "sowing_time":  "October to November",
+        "harvesting_time":  "February to March",
+        "expected_yield_per_acre_quintals":  "8-12",
+        "seed_quantity_per_acre_kg":  "1.5-2.0",
+        "msp_rupees_per_quintal":  "6200 (RMS 2026-27, Rapeseed-Mustard)",
+        "fertilizer_schedule":  [
+                                    {
+                                        "stage":  "Basal",
+                                        "days_after_sowing":  "0",
+                                        "fertilizer_name":  "DAP + MOP + Sulphur + Zinc Sulphate",
+                                        "dosage_per_acre":  "55 kg DAP + 18 kg MOP + 20 kg Bentonite Sulphur + 10 kg ZnSO4",
+                                        "application_method":  "Drill placement",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "First irrigation stage",
+                                        "days_after_sowing":  "25-30",
+                                        "fertilizer_name":  "Urea",
+                                        "dosage_per_acre":  "35 kg",
+                                        "application_method":  "Top dressing",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Pre-flowering",
+                                        "days_after_sowing":  "45-50",
+                                        "fertilizer_name":  "Urea + Borax",
+                                        "dosage_per_acre":  "20 kg urea + 1.5 kg borax",
+                                        "application_method":  "Top dress and foliar spray",
+                                        "water_quantity_for_spray":  "200 liters"
+                                    }
+                                ],
+        "major_diseases":  [
+                               {
+                                   "disease_name":  "Alternaria Blight",
+                                   "causal_organism":  "Alternaria brassicae",
+                                   "symptoms":  "Concentric dark spots on leaves and siliqua",
+                                   "preventive_measures":  "Crop rotation and residue destruction",
+                                   "recommended_chemical":  "Mancozeb 75% WP",
+                                   "dosage_per_liter":  "2.5 g/liter",
+                                   "waiting_period_before_harvest":  "20 days"
+                               },
+                               {
+                                   "disease_name":  "White Rust",
+                                   "causal_organism":  "Albugo candida",
+                                   "symptoms":  "White pustules under leaves and floral deformity",
+                                   "preventive_measures":  "Resistant varieties and clean seed",
+                                   "recommended_chemical":  "Metalaxyl 8% + Mancozeb 64% WP",
+                                   "dosage_per_liter":  "2 g/liter",
+                                   "waiting_period_before_harvest":  "20 days"
+                               }
+                           ]
+    },
+    {
+        "name":  "Rapeseed (Gobhi Sarson/Toria in Rabi tract)",
+        "season":  "Rabi",
+        "sowing_time":  "October to November",
+        "harvesting_time":  "January to February",
+        "expected_yield_per_acre_quintals":  "6-10",
+        "seed_quantity_per_acre_kg":  "1.5-2.0",
+        "msp_rupees_per_quintal":  "6200 (RMS 2026-27, Rapeseed-Mustard)",
+        "fertilizer_schedule":  [
+                                    {
+                                        "stage":  "Basal",
+                                        "days_after_sowing":  "0",
+                                        "fertilizer_name":  "DAP + MOP + Sulphur",
+                                        "dosage_per_acre":  "50 kg DAP + 15 kg MOP + 20 kg sulphur",
+                                        "application_method":  "Band placement",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Rosette stage",
+                                        "days_after_sowing":  "20-25",
+                                        "fertilizer_name":  "Urea",
+                                        "dosage_per_acre":  "30 kg",
+                                        "application_method":  "Top dressing",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Flower initiation",
+                                        "days_after_sowing":  "35-40",
+                                        "fertilizer_name":  "Borax + NPK 19:19:19",
+                                        "dosage_per_acre":  "1.5 kg borax + 2 kg NPK",
+                                        "application_method":  "Foliar spray",
+                                        "water_quantity_for_spray":  "180 liters"
+                                    }
+                                ],
+        "major_diseases":  [
+                               {
+                                   "disease_name":  "Downy Mildew",
+                                   "causal_organism":  "Peronospora parasitica",
+                                   "symptoms":  "Yellow patches and white downy growth",
+                                   "preventive_measures":  "Seed treatment and good aeration",
+                                   "recommended_chemical":  "Metalaxyl 35% WS",
+                                   "dosage_per_liter":  "6 g/kg seed",
+                                   "waiting_period_before_harvest":  "Not applicable (seed treatment)"
+                               },
+                               {
+                                   "disease_name":  "Alternaria Blight",
+                                   "causal_organism":  "Alternaria brassicicola",
+                                   "symptoms":  "Leaf and pod spots with concentric rings",
+                                   "preventive_measures":  "Use healthy seed and avoid overhead irrigation",
+                                   "recommended_chemical":  "Azoxystrobin 23% SC",
+                                   "dosage_per_liter":  "1 ml/liter",
+                                   "waiting_period_before_harvest":  "15 days"
+                               }
+                           ]
+    },
+    {
+        "name":  "Linseed",
+        "season":  "Rabi",
+        "sowing_time":  "October to November",
+        "harvesting_time":  "February to March",
+        "expected_yield_per_acre_quintals":  "4-7",
+        "seed_quantity_per_acre_kg":  "12-16",
+        "msp_rupees_per_quintal":  "No MSP in current central mandate list (market-based pricing reference)",
+        "fertilizer_schedule":  [
+                                    {
+                                        "stage":  "Basal",
+                                        "days_after_sowing":  "0",
+                                        "fertilizer_name":  "DAP + MOP + Zinc Sulphate",
+                                        "dosage_per_acre":  "45 kg DAP + 15 kg MOP + 8 kg ZnSO4",
+                                        "application_method":  "Drill placement",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Branching",
+                                        "days_after_sowing":  "30-35",
+                                        "fertilizer_name":  "Urea",
+                                        "dosage_per_acre":  "20 kg",
+                                        "application_method":  "Top dressing",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Flowering",
+                                        "days_after_sowing":  "50-55",
+                                        "fertilizer_name":  "NPK 19:19:19",
+                                        "dosage_per_acre":  "2 kg",
+                                        "application_method":  "Foliar spray",
+                                        "water_quantity_for_spray":  "180 liters"
+                                    }
+                                ],
+        "major_diseases":  [
+                               {
+                                   "disease_name":  "Wilt",
+                                   "causal_organism":  "Fusarium oxysporum f. sp. lini",
+                                   "symptoms":  "Yellowing and sudden plant collapse",
+                                   "preventive_measures":  "Seed treatment and rotation",
+                                   "recommended_chemical":  "Carbendazim 50% WP",
+                                   "dosage_per_liter":  "2 g/kg seed",
+                                   "waiting_period_before_harvest":  "Not applicable (seed treatment)"
+                               },
+                               {
+                                   "disease_name":  "Powdery Mildew",
+                                   "causal_organism":  "Oidium lini",
+                                   "symptoms":  "White powder on leaves and stems",
+                                   "preventive_measures":  "Avoid late sowing and excess N",
+                                   "recommended_chemical":  "Hexaconazole 5% SC",
+                                   "dosage_per_liter":  "2 ml/liter",
+                                   "waiting_period_before_harvest":  "15 days"
+                               }
+                           ]
+    },
+    {
+        "name":  "Safflower",
+        "season":  "Rabi",
+        "sowing_time":  "October to November",
+        "harvesting_time":  "February to March",
+        "expected_yield_per_acre_quintals":  "5-8",
+        "seed_quantity_per_acre_kg":  "4-6",
+        "msp_rupees_per_quintal":  "6540 (RMS 2026-27)",
+        "fertilizer_schedule":  [
+                                    {
+                                        "stage":  "Basal",
+                                        "days_after_sowing":  "0",
+                                        "fertilizer_name":  "DAP + SSP + MOP",
+                                        "dosage_per_acre":  "45 kg DAP + 40 kg SSP + 12 kg MOP",
+                                        "application_method":  "Placement below seed",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Rosette stage",
+                                        "days_after_sowing":  "25-30",
+                                        "fertilizer_name":  "Urea",
+                                        "dosage_per_acre":  "20 kg",
+                                        "application_method":  "Top dressing",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Pre-flowering",
+                                        "days_after_sowing":  "45-50",
+                                        "fertilizer_name":  "NPK 19:19:19 + Borax",
+                                        "dosage_per_acre":  "2 kg + 1 kg",
+                                        "application_method":  "Foliar spray",
+                                        "water_quantity_for_spray":  "180 liters"
+                                    }
+                                ],
+        "major_diseases":  [
+                               {
+                                   "disease_name":  "Alternaria Leaf Spot",
+                                   "causal_organism":  "Alternaria carthami",
+                                   "symptoms":  "Brown to black irregular spots",
+                                   "preventive_measures":  "Seed treatment and residue removal",
+                                   "recommended_chemical":  "Mancozeb 75% WP",
+                                   "dosage_per_liter":  "2.5 g/liter",
+                                   "waiting_period_before_harvest":  "20 days"
+                               },
+                               {
+                                   "disease_name":  "Wilt",
+                                   "causal_organism":  "Fusarium oxysporum",
+                                   "symptoms":  "Sudden wilting from flowering stage",
+                                   "preventive_measures":  "Crop rotation and seed treatment",
+                                   "recommended_chemical":  "Thiram 75% WS",
+                                   "dosage_per_liter":  "3 g/kg seed",
+                                   "waiting_period_before_harvest":  "Not applicable (seed treatment)"
+                               }
+                           ]
+    },
+    {
+        "name":  "Sunflower (Rabi)",
+        "season":  "Rabi",
+        "sowing_time":  "October to November",
+        "harvesting_time":  "January to February",
+        "expected_yield_per_acre_quintals":  "6-10",
+        "seed_quantity_per_acre_kg":  "2-2.5",
+        "msp_rupees_per_quintal":  "7721 (2025-26 reference)",
+        "fertilizer_schedule":  [
+                                    {
+                                        "stage":  "Basal",
+                                        "days_after_sowing":  "0",
+                                        "fertilizer_name":  "DAP + MOP + Borax + Zinc Sulphate",
+                                        "dosage_per_acre":  "55 kg DAP + 18 kg MOP + 2 kg borax + 8 kg ZnSO4",
+                                        "application_method":  "Band placement",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Vegetative stage",
+                                        "days_after_sowing":  "25-30",
+                                        "fertilizer_name":  "Urea",
+                                        "dosage_per_acre":  "30 kg",
+                                        "application_method":  "Side dressing",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Button to flowering",
+                                        "days_after_sowing":  "40-45",
+                                        "fertilizer_name":  "NPK 19:19:19",
+                                        "dosage_per_acre":  "2 kg",
+                                        "application_method":  "Foliar spray",
+                                        "water_quantity_for_spray":  "180-200 liters"
+                                    }
+                                ],
+        "major_diseases":  [
+                               {
+                                   "disease_name":  "Alternaria Blight",
+                                   "causal_organism":  "Alternaria helianthi",
+                                   "symptoms":  "Dark necrotic leaf lesions",
+                                   "preventive_measures":  "Crop rotation and field sanitation",
+                                   "recommended_chemical":  "Tebuconazole 25.9% EC",
+                                   "dosage_per_liter":  "1 ml/liter",
+                                   "waiting_period_before_harvest":  "20 days"
+                               },
+                               {
+                                   "disease_name":  "Downy Mildew",
+                                   "causal_organism":  "Plasmopara halstedii",
+                                   "symptoms":  "Stunting and downy growth under leaves",
+                                   "preventive_measures":  "Use treated seed and resistant hybrids",
+                                   "recommended_chemical":  "Metalaxyl 35% WS",
+                                   "dosage_per_liter":  "6 g/kg seed",
+                                   "waiting_period_before_harvest":  "Not applicable (seed treatment)"
+                               }
+                           ]
+    },
+    {
+        "name":  "Potato",
+        "season":  "Rabi",
+        "sowing_time":  "October to November",
+        "harvesting_time":  "January to March",
+        "expected_yield_per_acre_quintals":  "80-120",
+        "seed_quantity_per_acre_kg":  "800-1000",
+        "msp_rupees_per_quintal":  "No MSP (market-based pricing)",
+        "fertilizer_schedule":  [
+                                    {
+                                        "stage":  "Basal during planting",
+                                        "days_after_sowing":  "0",
+                                        "fertilizer_name":  "DAP + MOP + SSP + Zinc Sulphate",
+                                        "dosage_per_acre":  "80 kg DAP + 35 kg MOP + 60 kg SSP + 10 kg ZnSO4",
+                                        "application_method":  "Band application in furrow",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Earthing-up stage I",
+                                        "days_after_sowing":  "20-25",
+                                        "fertilizer_name":  "Urea",
+                                        "dosage_per_acre":  "45 kg",
+                                        "application_method":  "Side dressing before earthing",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Tuber bulking",
+                                        "days_after_sowing":  "40-45",
+                                        "fertilizer_name":  "Urea + SOP/NPK 19:19:19",
+                                        "dosage_per_acre":  "35 kg urea + 2 kg NPK 19:19:19 foliar",
+                                        "application_method":  "Top dress and foliar spray",
+                                        "water_quantity_for_spray":  "200 liters"
+                                    }
+                                ],
+        "major_diseases":  [
+                               {
+                                   "disease_name":  "Late Blight",
+                                   "causal_organism":  "Phytophthora infestans",
+                                   "symptoms":  "Water-soaked lesions and rapid blighting",
+                                   "preventive_measures":  "Use healthy seed and avoid prolonged canopy wetness",
+                                   "recommended_chemical":  "Cymoxanil 8% + Mancozeb 64% WP",
+                                   "dosage_per_liter":  "2.5 g/liter",
+                                   "waiting_period_before_harvest":  "10 days"
+                               },
+                               {
+                                   "disease_name":  "Early Blight",
+                                   "causal_organism":  "Alternaria solani",
+                                   "symptoms":  "Concentric rings on older leaves",
+                                   "preventive_measures":  "Balanced nutrition and crop rotation",
+                                   "recommended_chemical":  "Chlorothalonil 75% WP",
+                                   "dosage_per_liter":  "2 g/liter",
+                                   "waiting_period_before_harvest":  "10 days"
+                               }
+                           ]
+    },
+    {
+        "name":  "Onion (Rabi)",
+        "season":  "Rabi",
+        "sowing_time":  "Nursery in October-November, transplant November-December",
+        "harvesting_time":  "April to May",
+        "expected_yield_per_acre_quintals":  "90-140",
+        "seed_quantity_per_acre_kg":  "3-4 (for nursery transplanting)",
+        "msp_rupees_per_quintal":  "No MSP (market-based pricing)",
+        "fertilizer_schedule":  [
+                                    {
+                                        "stage":  "Basal at transplanting",
+                                        "days_after_sowing":  "0",
+                                        "fertilizer_name":  "DAP + MOP + Sulphur + Zinc Sulphate",
+                                        "dosage_per_acre":  "70 kg DAP + 25 kg MOP + 20 kg sulphur + 8 kg ZnSO4",
+                                        "application_method":  "Band placement in rows",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Establishment stage",
+                                        "days_after_sowing":  "25-30",
+                                        "fertilizer_name":  "Urea",
+                                        "dosage_per_acre":  "35 kg",
+                                        "application_method":  "Top dressing with irrigation",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Bulb development",
+                                        "days_after_sowing":  "45-55",
+                                        "fertilizer_name":  "Urea + NPK 19:19:19",
+                                        "dosage_per_acre":  "30 kg urea + 2 kg NPK 19:19:19",
+                                        "application_method":  "Top dress and foliar",
+                                        "water_quantity_for_spray":  "200 liters"
+                                    }
+                                ],
+        "major_diseases":  [
+                               {
+                                   "disease_name":  "Purple Blotch",
+                                   "causal_organism":  "Alternaria porri",
+                                   "symptoms":  "Purple concentric lesions on leaves",
+                                   "preventive_measures":  "Avoid overhead irrigation and ensure spacing",
+                                   "recommended_chemical":  "Mancozeb 75% WP",
+                                   "dosage_per_liter":  "2.5 g/liter",
+                                   "waiting_period_before_harvest":  "7 days"
+                               },
+                               {
+                                   "disease_name":  "Downy Mildew",
+                                   "causal_organism":  "Peronospora destructor",
+                                   "symptoms":  "Pale spots with grey fungal growth",
+                                   "preventive_measures":  "Crop rotation and proper ventilation",
+                                   "recommended_chemical":  "Metalaxyl 8% + Mancozeb 64% WP",
+                                   "dosage_per_liter":  "2 g/liter",
+                                   "waiting_period_before_harvest":  "7 days"
+                               }
+                           ]
+    },
+    {
+        "name":  "Garlic",
+        "season":  "Rabi",
+        "sowing_time":  "October to November",
+        "harvesting_time":  "March to April",
+        "expected_yield_per_acre_quintals":  "40-70",
+        "seed_quantity_per_acre_kg":  "200-250 (cloves)",
+        "msp_rupees_per_quintal":  "No MSP (market-based pricing)",
+        "fertilizer_schedule":  [
+                                    {
+                                        "stage":  "Basal",
+                                        "days_after_sowing":  "0",
+                                        "fertilizer_name":  "DAP + MOP + Sulphur + Zinc Sulphate",
+                                        "dosage_per_acre":  "65 kg DAP + 20 kg MOP + 20 kg sulphur + 8 kg ZnSO4",
+                                        "application_method":  "Row placement",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Vegetative phase",
+                                        "days_after_sowing":  "25-30",
+                                        "fertilizer_name":  "Urea",
+                                        "dosage_per_acre":  "30 kg",
+                                        "application_method":  "Top dressing",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Bulb initiation",
+                                        "days_after_sowing":  "45-50",
+                                        "fertilizer_name":  "Urea + NPK 19:19:19",
+                                        "dosage_per_acre":  "25 kg urea + 2 kg NPK",
+                                        "application_method":  "Top dress and foliar",
+                                        "water_quantity_for_spray":  "180-200 liters"
+                                    }
+                                ],
+        "major_diseases":  [
+                               {
+                                   "disease_name":  "Stemphylium Blight",
+                                   "causal_organism":  "Stemphylium vesicarium",
+                                   "symptoms":  "Small yellow to brown lesions on leaves",
+                                   "preventive_measures":  "Balanced irrigation and field sanitation",
+                                   "recommended_chemical":  "Azoxystrobin 23% SC",
+                                   "dosage_per_liter":  "1 ml/liter",
+                                   "waiting_period_before_harvest":  "10 days"
+                               },
+                               {
+                                   "disease_name":  "Purple Blotch",
+                                   "causal_organism":  "Alternaria porri",
+                                   "symptoms":  "Purple lesions leading to drying",
+                                   "preventive_measures":  "Clean field and avoid prolonged wetness",
+                                   "recommended_chemical":  "Iprovalicarb 5.5% + Propineb 61.25% WP",
+                                   "dosage_per_liter":  "2 g/liter",
+                                   "waiting_period_before_harvest":  "10 days"
+                               }
+                           ]
+    },
+    {
+        "name":  "Cabbage",
+        "season":  "Rabi",
+        "sowing_time":  "September to November (nursery), transplant October to December",
+        "harvesting_time":  "January to March",
+        "expected_yield_per_acre_quintals":  "120-180",
+        "seed_quantity_per_acre_kg":  "0.2-0.3 (nursery)",
+        "msp_rupees_per_quintal":  "No MSP (market-based pricing)",
+        "fertilizer_schedule":  [
+                                    {
+                                        "stage":  "Basal at transplanting",
+                                        "days_after_sowing":  "0",
+                                        "fertilizer_name":  "DAP + MOP + SSP + Borax",
+                                        "dosage_per_acre":  "70 kg DAP + 25 kg MOP + 60 kg SSP + 2 kg borax",
+                                        "application_method":  "Band placement in rows",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Vegetative growth",
+                                        "days_after_sowing":  "20-25",
+                                        "fertilizer_name":  "Urea",
+                                        "dosage_per_acre":  "35 kg",
+                                        "application_method":  "Top dressing",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Head formation",
+                                        "days_after_sowing":  "40-45",
+                                        "fertilizer_name":  "Urea + NPK 19:19:19",
+                                        "dosage_per_acre":  "30 kg urea + 2 kg NPK",
+                                        "application_method":  "Top dress and foliar",
+                                        "water_quantity_for_spray":  "200 liters"
+                                    }
+                                ],
+        "major_diseases":  [
+                               {
+                                   "disease_name":  "Black Rot",
+                                   "causal_organism":  "Xanthomonas campestris pv. campestris",
+                                   "symptoms":  "V-shaped yellow lesions from margins",
+                                   "preventive_measures":  "Disease-free seed and crop rotation",
+                                   "recommended_chemical":  "Copper Oxychloride 50% WP",
+                                   "dosage_per_liter":  "3 g/liter",
+                                   "waiting_period_before_harvest":  "7 days"
+                               },
+                               {
+                                   "disease_name":  "Alternaria Leaf Spot",
+                                   "causal_organism":  "Alternaria brassicae",
+                                   "symptoms":  "Target-like brown spots on leaves",
+                                   "preventive_measures":  "Remove infected debris and avoid water splash",
+                                   "recommended_chemical":  "Mancozeb 75% WP",
+                                   "dosage_per_liter":  "2.5 g/liter",
+                                   "waiting_period_before_harvest":  "7 days"
+                               }
+                           ]
+    },
+    {
+        "name":  "Cauliflower",
+        "season":  "Rabi",
+        "sowing_time":  "September to November (nursery), transplant October to December",
+        "harvesting_time":  "December to March",
+        "expected_yield_per_acre_quintals":  "80-140",
+        "seed_quantity_per_acre_kg":  "0.2-0.3 (nursery)",
+        "msp_rupees_per_quintal":  "No MSP (market-based pricing)",
+        "fertilizer_schedule":  [
+                                    {
+                                        "stage":  "Basal at transplanting",
+                                        "days_after_sowing":  "0",
+                                        "fertilizer_name":  "DAP + MOP + SSP + Borax",
+                                        "dosage_per_acre":  "70 kg DAP + 22 kg MOP + 60 kg SSP + 2 kg borax",
+                                        "application_method":  "Band placement",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Vegetative stage",
+                                        "days_after_sowing":  "20-25",
+                                        "fertilizer_name":  "Urea",
+                                        "dosage_per_acre":  "35 kg",
+                                        "application_method":  "Top dressing",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Curd initiation",
+                                        "days_after_sowing":  "35-40",
+                                        "fertilizer_name":  "Urea + NPK 19:19:19",
+                                        "dosage_per_acre":  "25 kg urea + 2 kg NPK",
+                                        "application_method":  "Top dress and foliar spray",
+                                        "water_quantity_for_spray":  "180-200 liters"
+                                    }
+                                ],
+        "major_diseases":  [
+                               {
+                                   "disease_name":  "Downy Mildew",
+                                   "causal_organism":  "Hyaloperonospora parasitica",
+                                   "symptoms":  "Yellow patches and white downy growth",
+                                   "preventive_measures":  "Good drainage and wider spacing",
+                                   "recommended_chemical":  "Metalaxyl 8% + Mancozeb 64% WP",
+                                   "dosage_per_liter":  "2 g/liter",
+                                   "waiting_period_before_harvest":  "7 days"
+                               },
+                               {
+                                   "disease_name":  "Black Rot",
+                                   "causal_organism":  "Xanthomonas campestris",
+                                   "symptoms":  "Yellowing and V-shaped lesions",
+                                   "preventive_measures":  "Hot water seed treatment and sanitation",
+                                   "recommended_chemical":  "Copper Hydroxide 77% WP",
+                                   "dosage_per_liter":  "2.5 g/liter",
+                                   "waiting_period_before_harvest":  "7 days"
+                               }
+                           ]
+    },
+    {
+        "name":  "Carrot",
+        "season":  "Rabi",
+        "sowing_time":  "October to November",
+        "harvesting_time":  "January to March",
+        "expected_yield_per_acre_quintals":  "70-110",
+        "seed_quantity_per_acre_kg":  "2-2.5",
+        "msp_rupees_per_quintal":  "No MSP (market-based pricing)",
+        "fertilizer_schedule":  [
+                                    {
+                                        "stage":  "Basal before sowing",
+                                        "days_after_sowing":  "0",
+                                        "fertilizer_name":  "DAP + MOP + SSP + Borax",
+                                        "dosage_per_acre":  "55 kg DAP + 20 kg MOP + 40 kg SSP + 1.5 kg borax",
+                                        "application_method":  "Broadcast and incorporate in beds",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Early vegetative",
+                                        "days_after_sowing":  "25-30",
+                                        "fertilizer_name":  "Urea",
+                                        "dosage_per_acre":  "20 kg",
+                                        "application_method":  "Top dressing",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Root enlargement",
+                                        "days_after_sowing":  "45-50",
+                                        "fertilizer_name":  "NPK 19:19:19",
+                                        "dosage_per_acre":  "2 kg",
+                                        "application_method":  "Foliar spray",
+                                        "water_quantity_for_spray":  "180 liters"
+                                    }
+                                ],
+        "major_diseases":  [
+                               {
+                                   "disease_name":  "Alternaria Leaf Blight",
+                                   "causal_organism":  "Alternaria dauci",
+                                   "symptoms":  "Dark brown necrotic spots on leaves",
+                                   "preventive_measures":  "Healthy seed and crop rotation",
+                                   "recommended_chemical":  "Chlorothalonil 75% WP",
+                                   "dosage_per_liter":  "2 g/liter",
+                                   "waiting_period_before_harvest":  "10 days"
+                               },
+                               {
+                                   "disease_name":  "Powdery Mildew",
+                                   "causal_organism":  "Erysiphe heraclei",
+                                   "symptoms":  "White powdery growth on foliage",
+                                   "preventive_measures":  "Avoid dense canopy",
+                                   "recommended_chemical":  "Wettable Sulphur 80% WP",
+                                   "dosage_per_liter":  "2.5 g/liter",
+                                   "waiting_period_before_harvest":  "7 days"
+                               }
+                           ]
+    },
+    {
+        "name":  "Radish",
+        "season":  "Rabi",
+        "sowing_time":  "October to December",
+        "harvesting_time":  "December to February",
+        "expected_yield_per_acre_quintals":  "60-90",
+        "seed_quantity_per_acre_kg":  "4-5",
+        "msp_rupees_per_quintal":  "No MSP (market-based pricing)",
+        "fertilizer_schedule":  [
+                                    {
+                                        "stage":  "Basal",
+                                        "days_after_sowing":  "0",
+                                        "fertilizer_name":  "DAP + MOP + SSP",
+                                        "dosage_per_acre":  "45 kg DAP + 15 kg MOP + 40 kg SSP",
+                                        "application_method":  "Broadcast in beds",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Leaf development",
+                                        "days_after_sowing":  "18-22",
+                                        "fertilizer_name":  "Urea",
+                                        "dosage_per_acre":  "15 kg",
+                                        "application_method":  "Top dressing with irrigation",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Root bulking",
+                                        "days_after_sowing":  "30-35",
+                                        "fertilizer_name":  "NPK 19:19:19",
+                                        "dosage_per_acre":  "1.5 kg",
+                                        "application_method":  "Foliar spray",
+                                        "water_quantity_for_spray":  "150 liters"
+                                    }
+                                ],
+        "major_diseases":  [
+                               {
+                                   "disease_name":  "Downy Mildew",
+                                   "causal_organism":  "Peronospora parasitica",
+                                   "symptoms":  "Yellow patches and grey downy growth",
+                                   "preventive_measures":  "Good drainage and avoid overhead irrigation",
+                                   "recommended_chemical":  "Metalaxyl + Mancozeb WP",
+                                   "dosage_per_liter":  "2 g/liter",
+                                   "waiting_period_before_harvest":  "7 days"
+                               },
+                               {
+                                   "disease_name":  "White Rust",
+                                   "causal_organism":  "Albugo candida",
+                                   "symptoms":  "White blisters on leaves",
+                                   "preventive_measures":  "Crop sanitation and resistant lines",
+                                   "recommended_chemical":  "Mancozeb 75% WP",
+                                   "dosage_per_liter":  "2.5 g/liter",
+                                   "waiting_period_before_harvest":  "7 days"
+                               }
+                           ]
+    },
+    {
+        "name":  "Beetroot",
+        "season":  "Rabi",
+        "sowing_time":  "October to November",
+        "harvesting_time":  "January to February",
+        "expected_yield_per_acre_quintals":  "80-120",
+        "seed_quantity_per_acre_kg":  "4-5",
+        "msp_rupees_per_quintal":  "No MSP (market-based pricing)",
+        "fertilizer_schedule":  [
+                                    {
+                                        "stage":  "Basal",
+                                        "days_after_sowing":  "0",
+                                        "fertilizer_name":  "DAP + MOP + SSP + Borax",
+                                        "dosage_per_acre":  "50 kg DAP + 20 kg MOP + 40 kg SSP + 1.5 kg borax",
+                                        "application_method":  "Basal incorporation in beds",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Vegetative stage",
+                                        "days_after_sowing":  "20-25",
+                                        "fertilizer_name":  "Urea",
+                                        "dosage_per_acre":  "18 kg",
+                                        "application_method":  "Top dressing",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Root enlargement",
+                                        "days_after_sowing":  "40-45",
+                                        "fertilizer_name":  "NPK 19:19:19",
+                                        "dosage_per_acre":  "1.5-2 kg",
+                                        "application_method":  "Foliar spray",
+                                        "water_quantity_for_spray":  "150-180 liters"
+                                    }
+                                ],
+        "major_diseases":  [
+                               {
+                                   "disease_name":  "Cercospora Leaf Spot",
+                                   "causal_organism":  "Cercospora beticola",
+                                   "symptoms":  "Small circular spots with grey center",
+                                   "preventive_measures":  "Crop rotation and lower humidity in canopy",
+                                   "recommended_chemical":  "Propiconazole 25% EC",
+                                   "dosage_per_liter":  "1 ml/liter",
+                                   "waiting_period_before_harvest":  "10 days"
+                               },
+                               {
+                                   "disease_name":  "Powdery Mildew",
+                                   "causal_organism":  "Erysiphe polygoni",
+                                   "symptoms":  "White powder on leaf surface",
+                                   "preventive_measures":  "Balanced fertilization and spacing",
+                                   "recommended_chemical":  "Sulphur 80% WP",
+                                   "dosage_per_liter":  "2.5 g/liter",
+                                   "waiting_period_before_harvest":  "7 days"
+                               }
+                           ]
+    },
+    {
+        "name":  "Coriander (Rabi)",
+        "season":  "Rabi",
+        "sowing_time":  "October to November",
+        "harvesting_time":  "February to March",
+        "expected_yield_per_acre_quintals":  "6-9 seed or 35-45 green leaves",
+        "seed_quantity_per_acre_kg":  "10-12",
+        "msp_rupees_per_quintal":  "No MSP (market-based pricing)",
+        "fertilizer_schedule":  [
+                                    {
+                                        "stage":  "Basal",
+                                        "days_after_sowing":  "0",
+                                        "fertilizer_name":  "DAP + MOP + SSP",
+                                        "dosage_per_acre":  "40 kg DAP + 12 kg MOP + 40 kg SSP",
+                                        "application_method":  "Broadcast and incorporate",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Branching stage",
+                                        "days_after_sowing":  "25-30",
+                                        "fertilizer_name":  "Urea",
+                                        "dosage_per_acre":  "18 kg",
+                                        "application_method":  "Top dressing",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Flowering stage",
+                                        "days_after_sowing":  "45-50",
+                                        "fertilizer_name":  "NPK 19:19:19",
+                                        "dosage_per_acre":  "2 kg",
+                                        "application_method":  "Foliar spray",
+                                        "water_quantity_for_spray":  "180 liters"
+                                    }
+                                ],
+        "major_diseases":  [
+                               {
+                                   "disease_name":  "Powdery Mildew",
+                                   "causal_organism":  "Erysiphe polygoni",
+                                   "symptoms":  "White powdery growth on aerial parts",
+                                   "preventive_measures":  "Timely sowing and aeration",
+                                   "recommended_chemical":  "Wettable Sulphur 80% WP",
+                                   "dosage_per_liter":  "2.5 g/liter",
+                                   "waiting_period_before_harvest":  "10 days"
+                               },
+                               {
+                                   "disease_name":  "Stem Gall",
+                                   "causal_organism":  "Protomyces macrosporus",
+                                   "symptoms":  "Tumorous swellings on stems and leaves",
+                                   "preventive_measures":  "Seed treatment and crop rotation",
+                                   "recommended_chemical":  "Carbendazim 50% WP",
+                                   "dosage_per_liter":  "2 g/kg seed",
+                                   "waiting_period_before_harvest":  "Not applicable (seed treatment)"
+                               }
+                           ]
+    },
+    {
+        "name":  "Fenugreek (Methi)",
+        "season":  "Rabi",
+        "sowing_time":  "October to November",
+        "harvesting_time":  "February to March",
+        "expected_yield_per_acre_quintals":  "5-8 seed or 30-40 green leaves",
+        "seed_quantity_per_acre_kg":  "8-10",
+        "msp_rupees_per_quintal":  "No MSP (market-based pricing)",
+        "fertilizer_schedule":  [
+                                    {
+                                        "stage":  "Basal",
+                                        "days_after_sowing":  "0",
+                                        "fertilizer_name":  "DAP + SSP + Rhizobium",
+                                        "dosage_per_acre":  "35 kg DAP + 40 kg SSP + 200 g Rhizobium culture",
+                                        "application_method":  "Basal placement and seed inoculation",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Branching",
+                                        "days_after_sowing":  "25-30",
+                                        "fertilizer_name":  "Urea",
+                                        "dosage_per_acre":  "12 kg",
+                                        "application_method":  "Top dressing",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Flower initiation",
+                                        "days_after_sowing":  "45-50",
+                                        "fertilizer_name":  "NPK 19:19:19 + Borax",
+                                        "dosage_per_acre":  "2 kg + 1 kg",
+                                        "application_method":  "Foliar spray",
+                                        "water_quantity_for_spray":  "180 liters"
+                                    }
+                                ],
+        "major_diseases":  [
+                               {
+                                   "disease_name":  "Powdery Mildew",
+                                   "causal_organism":  "Erysiphe polygoni",
+                                   "symptoms":  "White powdery growth on leaves",
+                                   "preventive_measures":  "Balanced irrigation and spacing",
+                                   "recommended_chemical":  "Sulphur 80% WP",
+                                   "dosage_per_liter":  "2.5 g/liter",
+                                   "waiting_period_before_harvest":  "10 days"
+                               },
+                               {
+                                   "disease_name":  "Damping Off",
+                                   "causal_organism":  "Pythium spp., Rhizoctonia solani",
+                                   "symptoms":  "Seedling collapse near soil line",
+                                   "preventive_measures":  "Seed treatment and well-drained beds",
+                                   "recommended_chemical":  "Thiram 75% WS + Carbendazim 50% WP",
+                                   "dosage_per_liter":  "2 g + 1 g/kg seed",
+                                   "waiting_period_before_harvest":  "Not applicable (seed treatment)"
+                               }
+                           ]
+    },
+    {
+        "name":  "Cumin (Jeera)",
+        "season":  "Rabi",
+        "sowing_time":  "November",
+        "harvesting_time":  "February to March",
+        "expected_yield_per_acre_quintals":  "3-5",
+        "seed_quantity_per_acre_kg":  "4-5",
+        "msp_rupees_per_quintal":  "No MSP (market-based pricing)",
+        "fertilizer_schedule":  [
+                                    {
+                                        "stage":  "Basal",
+                                        "days_after_sowing":  "0",
+                                        "fertilizer_name":  "DAP + MOP + SSP",
+                                        "dosage_per_acre":  "30 kg DAP + 10 kg MOP + 40 kg SSP",
+                                        "application_method":  "Basal incorporation",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Vegetative stage",
+                                        "days_after_sowing":  "25-30",
+                                        "fertilizer_name":  "Urea",
+                                        "dosage_per_acre":  "10 kg",
+                                        "application_method":  "Top dressing in moist soil",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Flowering stage",
+                                        "days_after_sowing":  "45-50",
+                                        "fertilizer_name":  "NPK 19:19:19",
+                                        "dosage_per_acre":  "1.5 kg",
+                                        "application_method":  "Foliar spray",
+                                        "water_quantity_for_spray":  "150 liters"
+                                    }
+                                ],
+        "major_diseases":  [
+                               {
+                                   "disease_name":  "Blight",
+                                   "causal_organism":  "Alternaria burnsii",
+                                   "symptoms":  "Brown-black lesions and drying umbels",
+                                   "preventive_measures":  "Timely sowing and residue destruction",
+                                   "recommended_chemical":  "Mancozeb 75% WP",
+                                   "dosage_per_liter":  "2.5 g/liter",
+                                   "waiting_period_before_harvest":  "15 days"
+                               },
+                               {
+                                   "disease_name":  "Powdery Mildew",
+                                   "causal_organism":  "Erysiphe polygoni",
+                                   "symptoms":  "White fungal growth on foliage",
+                                   "preventive_measures":  "Wider spacing and avoid excess N",
+                                   "recommended_chemical":  "Hexaconazole 5% SC",
+                                   "dosage_per_liter":  "2 ml/liter",
+                                   "waiting_period_before_harvest":  "15 days"
+                               }
+                           ]
+    },
+    {
+        "name":  "Fennel (Saunf)",
+        "season":  "Rabi",
+        "sowing_time":  "October to November",
+        "harvesting_time":  "March to April",
+        "expected_yield_per_acre_quintals":  "6-9",
+        "seed_quantity_per_acre_kg":  "4-5",
+        "msp_rupees_per_quintal":  "No MSP (market-based pricing)",
+        "fertilizer_schedule":  [
+                                    {
+                                        "stage":  "Basal at sowing/transplanting",
+                                        "days_after_sowing":  "0",
+                                        "fertilizer_name":  "DAP + MOP + SSP",
+                                        "dosage_per_acre":  "55 kg DAP + 18 kg MOP + 40 kg SSP",
+                                        "application_method":  "Band placement",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Vegetative growth",
+                                        "days_after_sowing":  "30-35",
+                                        "fertilizer_name":  "Urea",
+                                        "dosage_per_acre":  "25 kg",
+                                        "application_method":  "Top dressing",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Umbel initiation",
+                                        "days_after_sowing":  "55-60",
+                                        "fertilizer_name":  "NPK 19:19:19 + Borax",
+                                        "dosage_per_acre":  "2 kg + 1 kg",
+                                        "application_method":  "Foliar spray",
+                                        "water_quantity_for_spray":  "200 liters"
+                                    }
+                                ],
+        "major_diseases":  [
+                               {
+                                   "disease_name":  "Powdery Mildew",
+                                   "causal_organism":  "Leveillula taurica",
+                                   "symptoms":  "White powdery growth on leaves",
+                                   "preventive_measures":  "Avoid high humidity and dense canopy",
+                                   "recommended_chemical":  "Sulphur 80% WP",
+                                   "dosage_per_liter":  "2.5 g/liter",
+                                   "waiting_period_before_harvest":  "10 days"
+                               },
+                               {
+                                   "disease_name":  "Ramularia Blight",
+                                   "causal_organism":  "Ramularia foeniculi",
+                                   "symptoms":  "Brown leaf spots leading to blight",
+                                   "preventive_measures":  "Field sanitation and balanced nutrition",
+                                   "recommended_chemical":  "Carbendazim 50% WP",
+                                   "dosage_per_liter":  "1 g/liter",
+                                   "waiting_period_before_harvest":  "12 days"
+                               }
+                           ]
+    },
+    {
+        "name":  "Isabgol (Psyllium)",
+        "season":  "Rabi",
+        "sowing_time":  "November",
+        "harvesting_time":  "February to March",
+        "expected_yield_per_acre_quintals":  "3-5 seed",
+        "seed_quantity_per_acre_kg":  "1.5-2.0",
+        "msp_rupees_per_quintal":  "No MSP (market-based pricing)",
+        "fertilizer_schedule":  [
+                                    {
+                                        "stage":  "Basal",
+                                        "days_after_sowing":  "0",
+                                        "fertilizer_name":  "DAP + SSP",
+                                        "dosage_per_acre":  "30 kg DAP + 40 kg SSP",
+                                        "application_method":  "Basal broadcasting and mixing",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Tillering",
+                                        "days_after_sowing":  "25-30",
+                                        "fertilizer_name":  "Urea",
+                                        "dosage_per_acre":  "12 kg",
+                                        "application_method":  "Top dressing",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Spike initiation",
+                                        "days_after_sowing":  "45-50",
+                                        "fertilizer_name":  "NPK 19:19:19",
+                                        "dosage_per_acre":  "1.5 kg",
+                                        "application_method":  "Foliar spray",
+                                        "water_quantity_for_spray":  "150 liters"
+                                    }
+                                ],
+        "major_diseases":  [
+                               {
+                                   "disease_name":  "Downy Mildew",
+                                   "causal_organism":  "Peronospora alta",
+                                   "symptoms":  "Yellowing and downy growth",
+                                   "preventive_measures":  "Seed treatment and optimum spacing",
+                                   "recommended_chemical":  "Metalaxyl 35% WS",
+                                   "dosage_per_liter":  "6 g/kg seed",
+                                   "waiting_period_before_harvest":  "Not applicable (seed treatment)"
+                               },
+                               {
+                                   "disease_name":  "Powdery Mildew",
+                                   "causal_organism":  "Erysiphe cichoracearum",
+                                   "symptoms":  "White fungal growth on foliage and spikes",
+                                   "preventive_measures":  "Avoid excess irrigation and dense stand",
+                                   "recommended_chemical":  "Wettable Sulphur 80% WP",
+                                   "dosage_per_liter":  "2.5 g/liter",
+                                   "waiting_period_before_harvest":  "10 days"
+                               }
+                           ]
+    },
+    {
+        "name":  "Ajwain (Carom)",
+        "season":  "Rabi",
+        "sowing_time":  "October to November",
+        "harvesting_time":  "March to April",
+        "expected_yield_per_acre_quintals":  "4-6",
+        "seed_quantity_per_acre_kg":  "1.5-2.0",
+        "msp_rupees_per_quintal":  "No MSP (market-based pricing)",
+        "fertilizer_schedule":  [
+                                    {
+                                        "stage":  "Basal at sowing",
+                                        "days_after_sowing":  "0",
+                                        "fertilizer_name":  "DAP + MOP + SSP",
+                                        "dosage_per_acre":  "40 kg DAP + 12 kg MOP + 40 kg SSP",
+                                        "application_method":  "Row placement",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Vegetative stage",
+                                        "days_after_sowing":  "30-35",
+                                        "fertilizer_name":  "Urea",
+                                        "dosage_per_acre":  "15 kg",
+                                        "application_method":  "Top dress",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Flowering",
+                                        "days_after_sowing":  "55-60",
+                                        "fertilizer_name":  "NPK 19:19:19 + Borax",
+                                        "dosage_per_acre":  "2 kg + 1 kg",
+                                        "application_method":  "Foliar spray",
+                                        "water_quantity_for_spray":  "180 liters"
+                                    }
+                                ],
+        "major_diseases":  [
+                               {
+                                   "disease_name":  "Powdery Mildew",
+                                   "causal_organism":  "Erysiphe polygoni",
+                                   "symptoms":  "White powder on leaves and umbels",
+                                   "preventive_measures":  "Field aeration and avoid excess N",
+                                   "recommended_chemical":  "Hexaconazole 5% SC",
+                                   "dosage_per_liter":  "2 ml/liter",
+                                   "waiting_period_before_harvest":  "12 days"
+                               },
+                               {
+                                   "disease_name":  "Blight",
+                                   "causal_organism":  "Alternaria spp.",
+                                   "symptoms":  "Necrotic spots and drying umbels",
+                                   "preventive_measures":  "Disease-free seed and sanitation",
+                                   "recommended_chemical":  "Mancozeb 75% WP",
+                                   "dosage_per_liter":  "2.5 g/liter",
+                                   "waiting_period_before_harvest":  "12 days"
+                               }
+                           ]
+    },
+    {
+        "name":  "Berseem (Fodder)",
+        "season":  "Rabi",
+        "sowing_time":  "October to November",
+        "harvesting_time":  "First cut in December, last cut by April",
+        "expected_yield_per_acre_quintals":  "300-450 green fodder",
+        "seed_quantity_per_acre_kg":  "10-12",
+        "msp_rupees_per_quintal":  "No MSP (market-based pricing)",
+        "fertilizer_schedule":  [
+                                    {
+                                        "stage":  "Basal at sowing",
+                                        "days_after_sowing":  "0",
+                                        "fertilizer_name":  "DAP + SSP + Rhizobium",
+                                        "dosage_per_acre":  "40 kg DAP + 50 kg SSP + 200 g Rhizobium",
+                                        "application_method":  "Basal and seed inoculation",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "After first cut",
+                                        "days_after_sowing":  "45-50",
+                                        "fertilizer_name":  "Urea",
+                                        "dosage_per_acre":  "15 kg",
+                                        "application_method":  "Top dress after each cut",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "After third cut",
+                                        "days_after_sowing":  "90-100",
+                                        "fertilizer_name":  "Urea + NPK 19:19:19",
+                                        "dosage_per_acre":  "10 kg urea + 1.5 kg NPK",
+                                        "application_method":  "Top dress and foliar",
+                                        "water_quantity_for_spray":  "150 liters"
+                                    }
+                                ],
+        "major_diseases":  [
+                               {
+                                   "disease_name":  "Stem Rot",
+                                   "causal_organism":  "Sclerotinia trifoliorum",
+                                   "symptoms":  "Water-soaked lesions and plant rotting",
+                                   "preventive_measures":  "Avoid waterlogging and rotate crops",
+                                   "recommended_chemical":  "Carbendazim 50% WP",
+                                   "dosage_per_liter":  "1 g/liter",
+                                   "waiting_period_before_harvest":  "10 days"
+                               },
+                               {
+                                   "disease_name":  "Root Rot",
+                                   "causal_organism":  "Rhizoctonia solani",
+                                   "symptoms":  "Poor stand and root decay",
+                                   "preventive_measures":  "Seed treatment and proper drainage",
+                                   "recommended_chemical":  "Thiram 75% WS",
+                                   "dosage_per_liter":  "3 g/kg seed",
+                                   "waiting_period_before_harvest":  "Not applicable (seed treatment)"
+                               }
+                           ]
+    },
+    {
+        "name":  "Lucerne (Alfalfa)",
+        "season":  "Rabi",
+        "sowing_time":  "October to November",
+        "harvesting_time":  "Multiple cuts from December to May",
+        "expected_yield_per_acre_quintals":  "250-400 green fodder",
+        "seed_quantity_per_acre_kg":  "6-8",
+        "msp_rupees_per_quintal":  "No MSP (market-based pricing)",
+        "fertilizer_schedule":  [
+                                    {
+                                        "stage":  "Basal at sowing",
+                                        "days_after_sowing":  "0",
+                                        "fertilizer_name":  "DAP + SSP + Rhizobium",
+                                        "dosage_per_acre":  "45 kg DAP + 60 kg SSP + 200 g Rhizobium",
+                                        "application_method":  "Basal incorporation and seed inoculation",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "After first cut",
+                                        "days_after_sowing":  "45-50",
+                                        "fertilizer_name":  "Urea",
+                                        "dosage_per_acre":  "12 kg",
+                                        "application_method":  "Top dressing after cuts",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Mid-season nourishment",
+                                        "days_after_sowing":  "90-100",
+                                        "fertilizer_name":  "NPK 19:19:19",
+                                        "dosage_per_acre":  "1.5 kg",
+                                        "application_method":  "Foliar spray",
+                                        "water_quantity_for_spray":  "150 liters"
+                                    }
+                                ],
+        "major_diseases":  [
+                               {
+                                   "disease_name":  "Leaf Spot",
+                                   "causal_organism":  "Pseudopeziza medicaginis",
+                                   "symptoms":  "Brown circular spots on leaves",
+                                   "preventive_measures":  "Sanitation and timely cutting",
+                                   "recommended_chemical":  "Mancozeb 75% WP",
+                                   "dosage_per_liter":  "2 g/liter",
+                                   "waiting_period_before_harvest":  "10 days"
+                               },
+                               {
+                                   "disease_name":  "Wilt",
+                                   "causal_organism":  "Fusarium oxysporum",
+                                   "symptoms":  "Yellowing and vascular browning",
+                                   "preventive_measures":  "Use resistant seed and avoid water stress",
+                                   "recommended_chemical":  "Carbendazim 50% WP",
+                                   "dosage_per_liter":  "2 g/kg seed",
+                                   "waiting_period_before_harvest":  "Not applicable (seed treatment)"
+                               }
+                           ]
+    },
+    {
+        "name":  "Sugarbeet",
+        "season":  "Rabi",
+        "sowing_time":  "October to November",
+        "harvesting_time":  "March to April",
+        "expected_yield_per_acre_quintals":  "180-260 roots",
+        "seed_quantity_per_acre_kg":  "4-5",
+        "msp_rupees_per_quintal":  "No MSP (contract/market pricing)",
+        "fertilizer_schedule":  [
+                                    {
+                                        "stage":  "Basal before sowing",
+                                        "days_after_sowing":  "0",
+                                        "fertilizer_name":  "DAP + MOP + Borax + Zinc Sulphate",
+                                        "dosage_per_acre":  "70 kg DAP + 30 kg MOP + 2 kg borax + 8 kg ZnSO4",
+                                        "application_method":  "Band placement in rows",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "4-6 leaf stage",
+                                        "days_after_sowing":  "25-30",
+                                        "fertilizer_name":  "Urea",
+                                        "dosage_per_acre":  "35 kg",
+                                        "application_method":  "Side dressing",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Root bulking",
+                                        "days_after_sowing":  "50-60",
+                                        "fertilizer_name":  "Urea + NPK 19:19:19",
+                                        "dosage_per_acre":  "25 kg urea + 2 kg NPK",
+                                        "application_method":  "Top dress and foliar",
+                                        "water_quantity_for_spray":  "200 liters"
+                                    }
+                                ],
+        "major_diseases":  [
+                               {
+                                   "disease_name":  "Cercospora Leaf Spot",
+                                   "causal_organism":  "Cercospora beticola",
+                                   "symptoms":  "Small ash-grey spots with red margin",
+                                   "preventive_measures":  "Crop rotation and debris removal",
+                                   "recommended_chemical":  "Tebuconazole 25.9% EC",
+                                   "dosage_per_liter":  "1 ml/liter",
+                                   "waiting_period_before_harvest":  "20 days"
+                               },
+                               {
+                                   "disease_name":  "Powdery Mildew",
+                                   "causal_organism":  "Erysiphe betae",
+                                   "symptoms":  "White powdery growth on leaves",
+                                   "preventive_measures":  "Balanced fertilization and proper spacing",
+                                   "recommended_chemical":  "Sulphur 80% WP",
+                                   "dosage_per_liter":  "2.5 g/liter",
+                                   "waiting_period_before_harvest":  "10 days"
+                               }
+                           ]
+    },
+    {
+        "name":  "Tobacco (FCV/Natu types in Rabi window)",
+        "season":  "Rabi",
+        "sowing_time":  "Nursery September-October, transplant October-November",
+        "harvesting_time":  "January to March (leaf pickings)",
+        "expected_yield_per_acre_quintals":  "8-12 cured leaf",
+        "seed_quantity_per_acre_kg":  "0.02-0.04 (nursery)",
+        "msp_rupees_per_quintal":  "No MSP (auction/contract pricing)",
+        "fertilizer_schedule":  [
+                                    {
+                                        "stage":  "Basal at transplanting",
+                                        "days_after_sowing":  "0",
+                                        "fertilizer_name":  "DAP + MOP + SSP",
+                                        "dosage_per_acre":  "45 kg DAP + 30 kg MOP + 40 kg SSP",
+                                        "application_method":  "Band placement near root zone",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Establishment",
+                                        "days_after_sowing":  "20-25",
+                                        "fertilizer_name":  "Urea",
+                                        "dosage_per_acre":  "20 kg",
+                                        "application_method":  "Top dressing",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Pre-topping",
+                                        "days_after_sowing":  "40-45",
+                                        "fertilizer_name":  "SOP/NPK 19:19:19",
+                                        "dosage_per_acre":  "10 kg SOP equivalent or 1.5 kg NPK foliar",
+                                        "application_method":  "Soil or foliar depending on field status",
+                                        "water_quantity_for_spray":  "150 liters"
+                                    }
+                                ],
+        "major_diseases":  [
+                               {
+                                   "disease_name":  "Black Shank",
+                                   "causal_organism":  "Phytophthora nicotianae",
+                                   "symptoms":  "Stem blackening and plant collapse",
+                                   "preventive_measures":  "Well-drained fields and healthy seedlings",
+                                   "recommended_chemical":  "Metalaxyl-M 4% + Mancozeb 64% WP",
+                                   "dosage_per_liter":  "2 g/liter",
+                                   "waiting_period_before_harvest":  "15 days"
+                               },
+                               {
+                                   "disease_name":  "Damping Off",
+                                   "causal_organism":  "Pythium spp.",
+                                   "symptoms":  "Nursery seedling death",
+                                   "preventive_measures":  "Raised nursery and seed treatment",
+                                   "recommended_chemical":  "Captan 50% WP",
+                                   "dosage_per_liter":  "2.5 g/kg seed",
+                                   "waiting_period_before_harvest":  "Not applicable (seed/nursery treatment)"
+                               }
+                           ]
+    },
+    {
+        "name":  "Rabi Sorghum (Jowar, Maldandi type)",
+        "season":  "Rabi",
+        "sowing_time":  "September end to October",
+        "harvesting_time":  "January to February",
+        "expected_yield_per_acre_quintals":  "8-12",
+        "seed_quantity_per_acre_kg":  "3-4",
+        "msp_rupees_per_quintal":  "3749 (Maldandi, 2025-26 reference)",
+        "fertilizer_schedule":  [
+                                    {
+                                        "stage":  "Basal at sowing",
+                                        "days_after_sowing":  "0",
+                                        "fertilizer_name":  "DAP + MOP + Zinc Sulphate",
+                                        "dosage_per_acre":  "45 kg DAP + 15 kg MOP + 8 kg ZnSO4",
+                                        "application_method":  "Band placement",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Knee-high stage",
+                                        "days_after_sowing":  "25-30",
+                                        "fertilizer_name":  "Urea",
+                                        "dosage_per_acre":  "30 kg",
+                                        "application_method":  "Side dressing",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Booting stage",
+                                        "days_after_sowing":  "45-50",
+                                        "fertilizer_name":  "Urea + NPK 19:19:19",
+                                        "dosage_per_acre":  "20 kg urea + 2 kg NPK",
+                                        "application_method":  "Top dress and foliar",
+                                        "water_quantity_for_spray":  "180 liters"
+                                    }
+                                ],
+        "major_diseases":  [
+                               {
+                                   "disease_name":  "Charcoal Rot",
+                                   "causal_organism":  "Macrophomina phaseolina",
+                                   "symptoms":  "Stem shredding and lodging",
+                                   "preventive_measures":  "Moisture conservation and balanced K",
+                                   "recommended_chemical":  "Carbendazim 50% WP",
+                                   "dosage_per_liter":  "2 g/kg seed",
+                                   "waiting_period_before_harvest":  "Not applicable (seed treatment)"
+                               },
+                               {
+                                   "disease_name":  "Leaf Blight",
+                                   "causal_organism":  "Exserohilum turcicum",
+                                   "symptoms":  "Elongated necrotic lesions",
+                                   "preventive_measures":  "Clean seed and residue management",
+                                   "recommended_chemical":  "Propiconazole 25% EC",
+                                   "dosage_per_liter":  "1 ml/liter",
+                                   "waiting_period_before_harvest":  "20 days"
+                               }
+                           ]
+    },
+    {
+        "name":  "Pea (Vegetable)",
+        "season":  "Rabi",
+        "sowing_time":  "October to November",
+        "harvesting_time":  "January to February",
+        "expected_yield_per_acre_quintals":  "35-55 green pods",
+        "seed_quantity_per_acre_kg":  "28-32",
+        "msp_rupees_per_quintal":  "No MSP (market-based pricing)",
+        "fertilizer_schedule":  [
+                                    {
+                                        "stage":  "Basal at sowing",
+                                        "days_after_sowing":  "0",
+                                        "fertilizer_name":  "DAP + MOP + Rhizobium",
+                                        "dosage_per_acre":  "50 kg DAP + 15 kg MOP + 200 g Rhizobium",
+                                        "application_method":  "Band placement and seed inoculation",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Vegetative stage",
+                                        "days_after_sowing":  "25-30",
+                                        "fertilizer_name":  "Urea",
+                                        "dosage_per_acre":  "12 kg",
+                                        "application_method":  "Light top dressing",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Flowering/pod set",
+                                        "days_after_sowing":  "40-45",
+                                        "fertilizer_name":  "NPK 19:19:19 + Borax",
+                                        "dosage_per_acre":  "2 kg + 1 kg",
+                                        "application_method":  "Foliar spray",
+                                        "water_quantity_for_spray":  "180 liters"
+                                    }
+                                ],
+        "major_diseases":  [
+                               {
+                                   "disease_name":  "Powdery Mildew",
+                                   "causal_organism":  "Erysiphe pisi",
+                                   "symptoms":  "White coating on leaf and pod surface",
+                                   "preventive_measures":  "Timely sowing and aeration",
+                                   "recommended_chemical":  "Wettable Sulphur 80% WP",
+                                   "dosage_per_liter":  "2.5 g/liter",
+                                   "waiting_period_before_harvest":  "7 days"
+                               },
+                               {
+                                   "disease_name":  "Rust",
+                                   "causal_organism":  "Uromyces pisi",
+                                   "symptoms":  "Reddish pustules on leaves",
+                                   "preventive_measures":  "Remove volunteer plants and rotate crop",
+                                   "recommended_chemical":  "Hexaconazole 5% SC",
+                                   "dosage_per_liter":  "2 ml/liter",
+                                   "waiting_period_before_harvest":  "10 days"
+                               }
+                           ]
+    },
+    {
+        "name":  "Tomato (Rabi)",
+        "season":  "Rabi",
+        "sowing_time":  "Nursery September-October, transplant October-November",
+        "harvesting_time":  "January to April",
+        "expected_yield_per_acre_quintals":  "120-220",
+        "seed_quantity_per_acre_kg":  "0.08-0.1 (nursery)",
+        "msp_rupees_per_quintal":  "No MSP (market-based pricing)",
+        "fertilizer_schedule":  [
+                                    {
+                                        "stage":  "Basal at transplanting",
+                                        "days_after_sowing":  "0",
+                                        "fertilizer_name":  "DAP + MOP + SSP + Borax + Zinc Sulphate",
+                                        "dosage_per_acre":  "80 kg DAP + 30 kg MOP + 60 kg SSP + 1.5 kg borax + 8 kg ZnSO4",
+                                        "application_method":  "Band placement in rows",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Vegetative phase",
+                                        "days_after_sowing":  "25-30",
+                                        "fertilizer_name":  "Urea",
+                                        "dosage_per_acre":  "35 kg",
+                                        "application_method":  "Top dressing through irrigation/fertigation",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Flowering and fruit set",
+                                        "days_after_sowing":  "45-55",
+                                        "fertilizer_name":  "Urea + NPK 19:19:19 + Borax",
+                                        "dosage_per_acre":  "30 kg urea + 2 kg NPK + 1 kg borax",
+                                        "application_method":  "Top dress and foliar spray",
+                                        "water_quantity_for_spray":  "200 liters"
+                                    }
+                                ],
+        "major_diseases":  [
+                               {
+                                   "disease_name":  "Early Blight",
+                                   "causal_organism":  "Alternaria solani",
+                                   "symptoms":  "Target-like brown leaf spots",
+                                   "preventive_measures":  "Crop rotation and lower leaf sanitation",
+                                   "recommended_chemical":  "Mancozeb 75% WP",
+                                   "dosage_per_liter":  "2.5 g/liter",
+                                   "waiting_period_before_harvest":  "5 days"
+                               },
+                               {
+                                   "disease_name":  "Late Blight",
+                                   "causal_organism":  "Phytophthora infestans",
+                                   "symptoms":  "Water-soaked lesions and fruit rot",
+                                   "preventive_measures":  "Avoid prolonged leaf wetness and use staking",
+                                   "recommended_chemical":  "Cymoxanil 8% + Mancozeb 64% WP",
+                                   "dosage_per_liter":  "2.5 g/liter",
+                                   "waiting_period_before_harvest":  "5 days"
+                               }
+                           ]
+    },
+    {
+        "name":  "Brinjal (Rabi)",
+        "season":  "Rabi",
+        "sowing_time":  "Nursery September-October, transplant October-November",
+        "harvesting_time":  "January to April",
+        "expected_yield_per_acre_quintals":  "120-180",
+        "seed_quantity_per_acre_kg":  "0.1-0.15 (nursery)",
+        "msp_rupees_per_quintal":  "No MSP (market-based pricing)",
+        "fertilizer_schedule":  [
+                                    {
+                                        "stage":  "Basal at transplanting",
+                                        "days_after_sowing":  "0",
+                                        "fertilizer_name":  "DAP + MOP + SSP + Zinc Sulphate",
+                                        "dosage_per_acre":  "75 kg DAP + 28 kg MOP + 60 kg SSP + 8 kg ZnSO4",
+                                        "application_method":  "Basal placement",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Vegetative growth",
+                                        "days_after_sowing":  "25-30",
+                                        "fertilizer_name":  "Urea",
+                                        "dosage_per_acre":  "35 kg",
+                                        "application_method":  "Top dressing",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Flowering/fruiting",
+                                        "days_after_sowing":  "45-55",
+                                        "fertilizer_name":  "Urea + NPK 19:19:19",
+                                        "dosage_per_acre":  "30 kg urea + 2 kg NPK",
+                                        "application_method":  "Top dress and foliar",
+                                        "water_quantity_for_spray":  "200 liters"
+                                    }
+                                ],
+        "major_diseases":  [
+                               {
+                                   "disease_name":  "Phomopsis Blight and Fruit Rot",
+                                   "causal_organism":  "Phomopsis vexans",
+                                   "symptoms":  "Leaf lesions and fruit rot with pycnidia",
+                                   "preventive_measures":  "Seed treatment and clean nursery",
+                                   "recommended_chemical":  "Carbendazim 50% WP",
+                                   "dosage_per_liter":  "1 g/liter",
+                                   "waiting_period_before_harvest":  "5 days"
+                               },
+                               {
+                                   "disease_name":  "Bacterial Wilt",
+                                   "causal_organism":  "Ralstonia solanacearum",
+                                   "symptoms":  "Sudden wilting without yellowing",
+                                   "preventive_measures":  "Crop rotation and raised beds",
+                                   "recommended_chemical":  "Copper Oxychloride 50% WP + Streptocycline",
+                                   "dosage_per_liter":  "3 g + 0.1 g/liter",
+                                   "waiting_period_before_harvest":  "5 days"
+                               }
+                           ]
+    },
+    {
+        "name":  "Green Chilli (Rabi)",
+        "season":  "Rabi",
+        "sowing_time":  "Nursery September-October, transplant October-November",
+        "harvesting_time":  "January to April",
+        "expected_yield_per_acre_quintals":  "50-80 green chilli",
+        "seed_quantity_per_acre_kg":  "0.25-0.35 (nursery)",
+        "msp_rupees_per_quintal":  "No MSP (market-based pricing)",
+        "fertilizer_schedule":  [
+                                    {
+                                        "stage":  "Basal at transplanting",
+                                        "days_after_sowing":  "0",
+                                        "fertilizer_name":  "DAP + MOP + SSP + Borax",
+                                        "dosage_per_acre":  "75 kg DAP + 30 kg MOP + 60 kg SSP + 1.5 kg borax",
+                                        "application_method":  "Band placement",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Vegetative growth",
+                                        "days_after_sowing":  "25-30",
+                                        "fertilizer_name":  "Urea",
+                                        "dosage_per_acre":  "35 kg",
+                                        "application_method":  "Top dressing",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Flowering and fruit set",
+                                        "days_after_sowing":  "45-55",
+                                        "fertilizer_name":  "Urea + NPK 19:19:19 + Borax",
+                                        "dosage_per_acre":  "30 kg urea + 2 kg NPK + 1 kg borax",
+                                        "application_method":  "Top dress and foliar",
+                                        "water_quantity_for_spray":  "200 liters"
+                                    }
+                                ],
+        "major_diseases":  [
+                               {
+                                   "disease_name":  "Anthracnose/Fruit Rot",
+                                   "causal_organism":  "Colletotrichum capsici",
+                                   "symptoms":  "Sunken lesions on fruits",
+                                   "preventive_measures":  "Use healthy seedlings and avoid water splash",
+                                   "recommended_chemical":  "Azoxystrobin 23% SC",
+                                   "dosage_per_liter":  "1 ml/liter",
+                                   "waiting_period_before_harvest":  "5 days"
+                               },
+                               {
+                                   "disease_name":  "Powdery Mildew",
+                                   "causal_organism":  "Leveillula taurica",
+                                   "symptoms":  "White growth on lower leaf surface",
+                                   "preventive_measures":  "Proper spacing and balanced fertilization",
+                                   "recommended_chemical":  "Hexaconazole 5% SC",
+                                   "dosage_per_liter":  "1.5-2 ml/liter",
+                                   "waiting_period_before_harvest":  "5 days"
+                               }
+                           ]
+    },
+    {
+        "name":  "Spinach (Palak)",
+        "season":  "Rabi",
+        "sowing_time":  "October to February",
+        "harvesting_time":  "First cutting 30-35 DAS, repeated up to 70 DAS",
+        "expected_yield_per_acre_quintals":  "60-100 green leaves",
+        "seed_quantity_per_acre_kg":  "10-12",
+        "msp_rupees_per_quintal":  "No MSP (market-based pricing)",
+        "fertilizer_schedule":  [
+                                    {
+                                        "stage":  "Basal before sowing",
+                                        "days_after_sowing":  "0",
+                                        "fertilizer_name":  "DAP + MOP",
+                                        "dosage_per_acre":  "45 kg DAP + 12 kg MOP",
+                                        "application_method":  "Broadcast and incorporate",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "After first cutting",
+                                        "days_after_sowing":  "30-35",
+                                        "fertilizer_name":  "Urea",
+                                        "dosage_per_acre":  "12 kg",
+                                        "application_method":  "Top dress after each cut",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "After second cutting",
+                                        "days_after_sowing":  "50-55",
+                                        "fertilizer_name":  "Urea + NPK 19:19:19",
+                                        "dosage_per_acre":  "10 kg urea + 1.5 kg NPK",
+                                        "application_method":  "Top dress and foliar",
+                                        "water_quantity_for_spray":  "150 liters"
+                                    }
+                                ],
+        "major_diseases":  [
+                               {
+                                   "disease_name":  "Downy Mildew",
+                                   "causal_organism":  "Peronospora farinosa f. sp. spinaciae",
+                                   "symptoms":  "Yellow lesions and grey growth underside",
+                                   "preventive_measures":  "Avoid excess moisture and rotate crops",
+                                   "recommended_chemical":  "Metalaxyl + Mancozeb WP",
+                                   "dosage_per_liter":  "2 g/liter",
+                                   "waiting_period_before_harvest":  "5 days"
+                               },
+                               {
+                                   "disease_name":  "Cercospora Leaf Spot",
+                                   "causal_organism":  "Cercospora beticola",
+                                   "symptoms":  "Small round spots on foliage",
+                                   "preventive_measures":  "Clean cultivation and avoid overhead irrigation",
+                                   "recommended_chemical":  "Carbendazim 50% WP",
+                                   "dosage_per_liter":  "1 g/liter",
+                                   "waiting_period_before_harvest":  "5 days"
+                               }
+                           ]
+    },
+    {
+        "name":  "Knol-khol (Kohlrabi)",
+        "season":  "Rabi",
+        "sowing_time":  "September to November (nursery), transplant October to December",
+        "harvesting_time":  "December to February",
+        "expected_yield_per_acre_quintals":  "80-120",
+        "seed_quantity_per_acre_kg":  "0.2-0.3 (nursery)",
+        "msp_rupees_per_quintal":  "No MSP (market-based pricing)",
+        "fertilizer_schedule":  [
+                                    {
+                                        "stage":  "Basal at transplanting",
+                                        "days_after_sowing":  "0",
+                                        "fertilizer_name":  "DAP + MOP + SSP",
+                                        "dosage_per_acre":  "60 kg DAP + 20 kg MOP + 50 kg SSP",
+                                        "application_method":  "Basal row placement",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Vegetative stage",
+                                        "days_after_sowing":  "20-25",
+                                        "fertilizer_name":  "Urea",
+                                        "dosage_per_acre":  "25 kg",
+                                        "application_method":  "Top dressing",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Knob development",
+                                        "days_after_sowing":  "35-40",
+                                        "fertilizer_name":  "NPK 19:19:19",
+                                        "dosage_per_acre":  "2 kg",
+                                        "application_method":  "Foliar spray",
+                                        "water_quantity_for_spray":  "180 liters"
+                                    }
+                                ],
+        "major_diseases":  [
+                               {
+                                   "disease_name":  "Alternaria Leaf Spot",
+                                   "causal_organism":  "Alternaria brassicae",
+                                   "symptoms":  "Dark circular lesions on leaves",
+                                   "preventive_measures":  "Disease-free nursery and sanitation",
+                                   "recommended_chemical":  "Mancozeb 75% WP",
+                                   "dosage_per_liter":  "2.5 g/liter",
+                                   "waiting_period_before_harvest":  "7 days"
+                               },
+                               {
+                                   "disease_name":  "Downy Mildew",
+                                   "causal_organism":  "Peronospora parasitica",
+                                   "symptoms":  "Yellowing and downy growth on lower surface",
+                                   "preventive_measures":  "Good air circulation and drainage",
+                                   "recommended_chemical":  "Metalaxyl 8% + Mancozeb 64% WP",
+                                   "dosage_per_liter":  "2 g/liter",
+                                   "waiting_period_before_harvest":  "7 days"
+                               }
+                           ]
+    },
+    {
+        "name":  "Turnip",
+        "season":  "Rabi",
+        "sowing_time":  "October to November",
+        "harvesting_time":  "December to January",
+        "expected_yield_per_acre_quintals":  "70-100",
+        "seed_quantity_per_acre_kg":  "1.5-2.0",
+        "msp_rupees_per_quintal":  "No MSP (market-based pricing)",
+        "fertilizer_schedule":  [
+                                    {
+                                        "stage":  "Basal before sowing",
+                                        "days_after_sowing":  "0",
+                                        "fertilizer_name":  "DAP + MOP + SSP",
+                                        "dosage_per_acre":  "45 kg DAP + 15 kg MOP + 40 kg SSP",
+                                        "application_method":  "Incorporate in beds",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Leaf growth",
+                                        "days_after_sowing":  "18-22",
+                                        "fertilizer_name":  "Urea",
+                                        "dosage_per_acre":  "12-15 kg",
+                                        "application_method":  "Top dressing",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Root bulking",
+                                        "days_after_sowing":  "30-35",
+                                        "fertilizer_name":  "NPK 19:19:19",
+                                        "dosage_per_acre":  "1.5 kg",
+                                        "application_method":  "Foliar spray",
+                                        "water_quantity_for_spray":  "150 liters"
+                                    }
+                                ],
+        "major_diseases":  [
+                               {
+                                   "disease_name":  "Downy Mildew",
+                                   "causal_organism":  "Peronospora parasitica",
+                                   "symptoms":  "Yellow leaf lesions with downy growth",
+                                   "preventive_measures":  "Rotate crops and avoid excess irrigation",
+                                   "recommended_chemical":  "Metalaxyl + Mancozeb WP",
+                                   "dosage_per_liter":  "2 g/liter",
+                                   "waiting_period_before_harvest":  "7 days"
+                               },
+                               {
+                                   "disease_name":  "White Rust",
+                                   "causal_organism":  "Albugo candida",
+                                   "symptoms":  "White pustules and distortion",
+                                   "preventive_measures":  "Use tolerant varieties and sanitation",
+                                   "recommended_chemical":  "Mancozeb 75% WP",
+                                   "dosage_per_liter":  "2.5 g/liter",
+                                   "waiting_period_before_harvest":  "7 days"
+                               }
+                           ]
+    },
+    {
+        "name":  "Kasuri Methi (Leaf Fenugreek for dried herb)",
+        "season":  "Rabi",
+        "sowing_time":  "October to November",
+        "harvesting_time":  "First cut at 30-35 DAS, final by 70-80 DAS",
+        "expected_yield_per_acre_quintals":  "40-60 green biomass",
+        "seed_quantity_per_acre_kg":  "8-10",
+        "msp_rupees_per_quintal":  "No MSP (market-based pricing)",
+        "fertilizer_schedule":  [
+                                    {
+                                        "stage":  "Basal at sowing",
+                                        "days_after_sowing":  "0",
+                                        "fertilizer_name":  "DAP + SSP + Rhizobium",
+                                        "dosage_per_acre":  "35 kg DAP + 40 kg SSP + 200 g Rhizobium",
+                                        "application_method":  "Basal and seed inoculation",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "After first cut",
+                                        "days_after_sowing":  "30-35",
+                                        "fertilizer_name":  "Urea",
+                                        "dosage_per_acre":  "10-12 kg",
+                                        "application_method":  "Top dress",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Second regrowth",
+                                        "days_after_sowing":  "50-55",
+                                        "fertilizer_name":  "NPK 19:19:19",
+                                        "dosage_per_acre":  "1.5 kg",
+                                        "application_method":  "Foliar spray",
+                                        "water_quantity_for_spray":  "150 liters"
+                                    }
+                                ],
+        "major_diseases":  [
+                               {
+                                   "disease_name":  "Powdery Mildew",
+                                   "causal_organism":  "Erysiphe polygoni",
+                                   "symptoms":  "White powdery patches on leaves",
+                                   "preventive_measures":  "Wider spacing and avoid excess N",
+                                   "recommended_chemical":  "Wettable Sulphur 80% WP",
+                                   "dosage_per_liter":  "2.5 g/liter",
+                                   "waiting_period_before_harvest":  "7 days"
+                               },
+                               {
+                                   "disease_name":  "Root Rot",
+                                   "causal_organism":  "Rhizoctonia solani",
+                                   "symptoms":  "Root browning and patchy wilting",
+                                   "preventive_measures":  "Seed treatment and drainage",
+                                   "recommended_chemical":  "Carbendazim 50% WP",
+                                   "dosage_per_liter":  "2 g/kg seed",
+                                   "waiting_period_before_harvest":  "Not applicable (seed treatment)"
+                               }
+                           ]
+    },
+    {
+        "name":  "Field Pea",
+        "season":  "Rabi",
+        "sowing_time":  "October to November",
+        "harvesting_time":  "February to March",
+        "expected_yield_per_acre_quintals":  "8-12",
+        "seed_quantity_per_acre_kg":  "30-35",
+        "msp_rupees_per_quintal":  "No MSP",
+        "fertilizer_schedule":  [
+                                    {
+                                        "stage":  "Basal",
+                                        "days_after_sowing":  "0",
+                                        "fertilizer_name":  "DAP + MOP + Rhizobium",
+                                        "dosage_per_acre":  "45 kg DAP + 12 kg MOP + 200 g inoculant",
+                                        "application_method":  "Basal + seed inoculation",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Branching",
+                                        "days_after_sowing":  "30-35",
+                                        "fertilizer_name":  "NPK 19:19:19",
+                                        "dosage_per_acre":  "2 kg",
+                                        "application_method":  "Foliar spray",
+                                        "water_quantity_for_spray":  "180 liters"
+                                    },
+                                    {
+                                        "stage":  "Pre-flowering",
+                                        "days_after_sowing":  "45-50",
+                                        "fertilizer_name":  "DAP",
+                                        "dosage_per_acre":  "2 kg",
+                                        "application_method":  "Foliar spray",
+                                        "water_quantity_for_spray":  "180 liters"
+                                    }
+                                ],
+        "major_diseases":  [
+                               {
+                                   "disease_name":  "Powdery Mildew",
+                                   "causal_organism":  "Erysiphe pisi",
+                                   "symptoms":  "White powdery coating",
+                                   "preventive_measures":  "Avoid dense crop",
+                                   "recommended_chemical":  "Sulphur 80% WP",
+                                   "dosage_per_liter":  "2.5 g/liter",
+                                   "waiting_period_before_harvest":  "10 days"
+                               },
+                               {
+                                   "disease_name":  "Rust",
+                                   "causal_organism":  "Uromyces pisi",
+                                   "symptoms":  "Brown pustules",
+                                   "preventive_measures":  "Field sanitation",
+                                   "recommended_chemical":  "Propiconazole 25% EC",
+                                   "dosage_per_liter":  "1 ml/liter",
+                                   "waiting_period_before_harvest":  "20 days"
+                               }
+                           ]
+    },
+    {
+        "name":  "Indian Mustard",
+        "season":  "Rabi",
+        "sowing_time":  "October to November",
+        "harvesting_time":  "February to March",
+        "expected_yield_per_acre_quintals":  "8-12",
+        "seed_quantity_per_acre_kg":  "1.5-2.0",
+        "msp_rupees_per_quintal":  "6200",
+        "fertilizer_schedule":  [
+                                    {
+                                        "stage":  "Basal",
+                                        "days_after_sowing":  "0",
+                                        "fertilizer_name":  "DAP + MOP + Sulphur + Zinc Sulphate",
+                                        "dosage_per_acre":  "55 kg DAP + 18 kg MOP + 20 kg sulphur + 10 kg ZnSO4",
+                                        "application_method":  "Band placement",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "First irrigation",
+                                        "days_after_sowing":  "25-30",
+                                        "fertilizer_name":  "Urea",
+                                        "dosage_per_acre":  "35 kg",
+                                        "application_method":  "Top dressing",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Pre-flowering",
+                                        "days_after_sowing":  "45-50",
+                                        "fertilizer_name":  "Borax",
+                                        "dosage_per_acre":  "1.5 kg",
+                                        "application_method":  "Foliar spray",
+                                        "water_quantity_for_spray":  "200 liters"
+                                    }
+                                ],
+        "major_diseases":  [
+                               {
+                                   "disease_name":  "Alternaria Blight",
+                                   "causal_organism":  "Alternaria brassicae",
+                                   "symptoms":  "Concentric dark spots",
+                                   "preventive_measures":  "Crop rotation",
+                                   "recommended_chemical":  "Mancozeb 75% WP",
+                                   "dosage_per_liter":  "2.5 g/liter",
+                                   "waiting_period_before_harvest":  "20 days"
+                               },
+                               {
+                                   "disease_name":  "White Rust",
+                                   "causal_organism":  "Albugo candida",
+                                   "symptoms":  "White pustules",
+                                   "preventive_measures":  "Healthy seed",
+                                   "recommended_chemical":  "Metalaxyl + Mancozeb",
+                                   "dosage_per_liter":  "2 g/liter",
+                                   "waiting_period_before_harvest":  "20 days"
+                               }
+                           ]
+    },
+    {
+        "name":  "Rapeseed",
+        "season":  "Rabi",
+        "sowing_time":  "October to November",
+        "harvesting_time":  "January to February",
+        "expected_yield_per_acre_quintals":  "6-10",
+        "seed_quantity_per_acre_kg":  "1.5-2.0",
+        "msp_rupees_per_quintal":  "6200",
+        "fertilizer_schedule":  [
+                                    {
+                                        "stage":  "Basal",
+                                        "days_after_sowing":  "0",
+                                        "fertilizer_name":  "DAP + MOP + Sulphur",
+                                        "dosage_per_acre":  "50 kg DAP + 15 kg MOP + 20 kg sulphur",
+                                        "application_method":  "Band placement",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Rosette",
+                                        "days_after_sowing":  "20-25",
+                                        "fertilizer_name":  "Urea",
+                                        "dosage_per_acre":  "30 kg",
+                                        "application_method":  "Top dressing",
+                                        "water_quantity_for_spray":  "Not applicable"
+                                    },
+                                    {
+                                        "stage":  "Flower initiation",
+                                        "days_after_sowing":  "35-40",
+                                        "fertilizer_name":  "NPK 19:19:19 + Borax",
+                                        "dosage_per_acre":  "2 kg + 1.5 kg",
+                                        "application_method":  "Foliar spray",
+                                        "water_quantity_for_spray":  "180 liters"
+                                    }
+                                ],
+        "major_diseases":  [
+                               {
+                                   "disease_name":  "Downy Mildew",
+                                   "causal_organism":  "Peronospora parasitica",
+                                   "symptoms":  "Yellow patches and downy growth",
+                                   "preventive_measures":  "Seed treatment",
+                                   "recommended_chemical":  "Metalaxyl 35% WS",
+                                   "dosage_per_liter":  "6 g/kg seed",
+                                   "waiting_period_before_harvest":  "Not applicable (seed treatment)"
+                               },
+                               {
+                                   "disease_name":  "Alternaria Blight",
+                                   "causal_organism":  "Alternaria brassicicola",
+                                   "symptoms":  "Leaf/pod spots",
+                                   "preventive_measures":  "Sanitation",
+                                   "recommended_chemical":  "Azoxystrobin 23% SC",
+                                   "dosage_per_liter":  "1 ml/liter",
+                                   "waiting_period_before_harvest":  "15 days"
+                               }
+                           ]
+    }
+]

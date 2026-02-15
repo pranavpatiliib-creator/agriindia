@@ -1,0 +1,2169 @@
+[
+    {
+        "name": "Paddy (Rice)",
+        "season": "Kharif",
+        "sowing_time": "June to July",
+        "harvesting_time": "October to November",
+        "expected_yield_per_acre_quintals": "20-25",
+        "seed_quantity_per_acre_kg": "8-10 (transplanting), 15-20 (direct seeding)",
+        "msp_rupees_per_quintal": "2183 (Common), 2203 (Grade A)",
+        "fertilizer_schedule": [
+            {
+                "stage": "Basal Application",
+                "days_after_sowing": "0",
+                "fertilizer_name": "DAP + MOP",
+                "dosage_per_acre": "50 kg DAP + 17 kg MOP",
+                "application_method": "Broadcasting and incorporation",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "First Top Dressing",
+                "days_after_sowing": "20-25",
+                "fertilizer_name": "Urea",
+                "dosage_per_acre": "45 kg",
+                "application_method": "Broadcasting in standing water",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "Second Top Dressing",
+                "days_after_sowing": "40-45",
+                "fertilizer_name": "Urea",
+                "dosage_per_acre": "45 kg",
+                "application_method": "Broadcasting at panicle initiation",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "Zinc Application",
+                "days_after_sowing": "15-20",
+                "fertilizer_name": "Zinc Sulphate",
+                "dosage_per_acre": "10 kg",
+                "application_method": "Soil application or foliar spray",
+                "water_quantity_for_spray": "200 liters (if foliar)"
+            }
+        ],
+        "major_diseases": [
+            {
+                "disease_name": "Blast",
+                "causal_organism": "Pyricularia oryzae (Magnaporthe grisea)",
+                "symptoms": "Diamond-shaped lesions on leaves, neck rot, panicle blast",
+                "preventive_measures": "Use resistant varieties, avoid excess nitrogen, maintain proper spacing",
+                "recommended_chemical": "Tricyclazole 75% WP or Carbendazim 50% WP",
+                "dosage_per_liter": "0.6 g/liter (Tricyclazole), 1 g/liter (Carbendazim)",
+                "waiting_period_before_harvest": "15-20 days"
+            },
+            {
+                "disease_name": "Bacterial Leaf Blight",
+                "causal_organism": "Xanthomonas oryzae pv. oryzae",
+                "symptoms": "Water-soaked lesions, yellowing of leaf margins, kresek phase",
+                "preventive_measures": "Use disease-free seeds, avoid deep water, balanced fertilization",
+                "recommended_chemical": "Streptocycline 9% + Copper Oxychloride 50% SP",
+                "dosage_per_liter": "2 g/liter + 3 g/liter",
+                "waiting_period_before_harvest": "7-10 days"
+            },
+            {
+                "disease_name": "Sheath Blight",
+                "causal_organism": "Rhizoctonia solani",
+                "symptoms": "Elliptical or irregular greenish-grey spots on leaf sheaths",
+                "preventive_measures": "Proper water management, remove infected plant debris",
+                "recommended_chemical": "Validamycin 3% L or Hexaconazole 5% SC",
+                "dosage_per_liter": "2 ml/liter (Validamycin), 2 ml/liter (Hexaconazole)",
+                "waiting_period_before_harvest": "14 days"
+            }
+        ]
+    },
+    {
+        "name": "Maize",
+        "season": "Kharif",
+        "sowing_time": "June to July",
+        "harvesting_time": "September to October",
+        "expected_yield_per_acre_quintals": "18-22",
+        "seed_quantity_per_acre_kg": "8-10",
+        "msp_rupees_per_quintal": "2090",
+        "fertilizer_schedule": [
+            {
+                "stage": "Basal Application",
+                "days_after_sowing": "0",
+                "fertilizer_name": "DAP + MOP",
+                "dosage_per_acre": "50 kg DAP + 20 kg MOP",
+                "application_method": "Band placement 5 cm below seed",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "First Top Dressing",
+                "days_after_sowing": "25-30",
+                "fertilizer_name": "Urea",
+                "dosage_per_acre": "50 kg",
+                "application_method": "Side dressing at knee high stage",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "Second Top Dressing",
+                "days_after_sowing": "45-50",
+                "fertilizer_name": "Urea",
+                "dosage_per_acre": "30 kg",
+                "application_method": "Side dressing before tasseling",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "Micronutrient Application",
+                "days_after_sowing": "30-35",
+                "fertilizer_name": "Zinc Sulphate + Borax",
+                "dosage_per_acre": "8 kg ZnSO4 + 2 kg Borax",
+                "application_method": "Soil application",
+                "water_quantity_for_spray": "Not applicable"
+            }
+        ],
+        "major_diseases": [
+            {
+                "disease_name": "Turcicum Leaf Blight",
+                "causal_organism": "Exserohilum turcicum",
+                "symptoms": "Long cigar-shaped necrotic lesions on leaves",
+                "preventive_measures": "Use resistant varieties, crop rotation, destroy infected debris",
+                "recommended_chemical": "Mancozeb 75% WP or Propiconazole 25% EC",
+                "dosage_per_liter": "2.5 g/liter (Mancozeb), 1 ml/liter (Propiconazole)",
+                "waiting_period_before_harvest": "15 days"
+            },
+            {
+                "disease_name": "Maydis Leaf Blight",
+                "causal_organism": "Bipolaris maydis",
+                "symptoms": "Small tan-colored lesions with reddish-brown margins",
+                "preventive_measures": "Balanced nutrition, avoid water stress, use certified seeds",
+                "recommended_chemical": "Carbendazim 50% WP",
+                "dosage_per_liter": "1 g/liter",
+                "waiting_period_before_harvest": "14 days"
+            },
+            {
+                "disease_name": "Post Flowering Stalk Rot",
+                "causal_organism": "Fusarium moniliforme",
+                "symptoms": "Stalk becomes soft, discolored pith, lodging",
+                "preventive_measures": "Maintain plant population, ensure adequate potash, timely harvest",
+                "recommended_chemical": "Carbendazim 12% + Mancozeb 63% WP",
+                "dosage_per_liter": "2.5 g/liter",
+                "waiting_period_before_harvest": "20 days"
+            }
+        ]
+    },
+    {
+        "name": "Jowar (Sorghum)",
+        "season": "Kharif",
+        "sowing_time": "June to July",
+        "harvesting_time": "October to November",
+        "expected_yield_per_acre_quintals": "12-15",
+        "seed_quantity_per_acre_kg": "4-5",
+        "msp_rupees_per_quintal": "3225 (Hybrid), 3180 (Maldandi)",
+        "fertilizer_schedule": [
+            {
+                "stage": "Basal Application",
+                "days_after_sowing": "0",
+                "fertilizer_name": "DAP + MOP",
+                "dosage_per_acre": "40 kg DAP + 17 kg MOP",
+                "application_method": "Broadcasting and incorporation",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "Top Dressing",
+                "days_after_sowing": "30-35",
+                "fertilizer_name": "Urea",
+                "dosage_per_acre": "45 kg",
+                "application_method": "Side dressing at knee high stage",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "Micronutrient Spray",
+                "days_after_sowing": "40-45",
+                "fertilizer_name": "Ferrous Sulphate + Zinc Sulphate",
+                "dosage_per_acre": "5 kg FeSO4 + 2.5 kg ZnSO4 in 200 liters water",
+                "application_method": "Foliar spray",
+                "water_quantity_for_spray": "200 liters"
+            }
+        ],
+        "major_diseases": [
+            {
+                "disease_name": "Grain Mold",
+                "causal_organism": "Fusarium spp., Curvularia spp., Alternaria spp.",
+                "symptoms": "Discoloration of grains, moldy appearance, reduced grain quality",
+                "preventive_measures": "Use resistant varieties, avoid late sowing, timely harvest",
+                "recommended_chemical": "Mancozeb 75% WP + Carbendazim 25% WP",
+                "dosage_per_liter": "2 g/liter (Mancozeb) + 0.5 g/liter (Carbendazim)",
+                "waiting_period_before_harvest": "10 days"
+            },
+            {
+                "disease_name": "Charcoal Rot",
+                "causal_organism": "Macrophomina phaseolina",
+                "symptoms": "Premature death, silvery grey appearance of stem, black sclerotia",
+                "preventive_measures": "Deep summer ploughing, crop rotation, avoid water stress",
+                "recommended_chemical": "Carbendazim 50% WP (seed treatment)",
+                "dosage_per_liter": "2 g/kg seed",
+                "waiting_period_before_harvest": "Not applicable (seed treatment)"
+            },
+            {
+                "disease_name": "Leaf Blight",
+                "causal_organism": "Exserohilum turcicum",
+                "symptoms": "Long elliptical tan-colored lesions on leaves",
+                "preventive_measures": "Proper spacing, balanced fertilization, resistant varieties",
+                "recommended_chemical": "Propiconazole 25% EC",
+                "dosage_per_liter": "1 ml/liter",
+                "waiting_period_before_harvest": "15 days"
+            }
+        ]
+    },
+    {
+        "name": "Bajra (Pearl Millet)",
+        "season": "Kharif",
+        "sowing_time": "June to July",
+        "harvesting_time": "September to October",
+        "expected_yield_per_acre_quintals": "8-12",
+        "seed_quantity_per_acre_kg": "2-2.5",
+        "msp_rupees_per_quintal": "2500",
+        "fertilizer_schedule": [
+            {
+                "stage": "Basal Application",
+                "days_after_sowing": "0",
+                "fertilizer_name": "DAP",
+                "dosage_per_acre": "40 kg",
+                "application_method": "Broadcasting and incorporation",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "Top Dressing",
+                "days_after_sowing": "25-30",
+                "fertilizer_name": "Urea",
+                "dosage_per_acre": "40 kg",
+                "application_method": "Side dressing at tillering stage",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "Zinc Application",
+                "days_after_sowing": "0",
+                "fertilizer_name": "Zinc Sulphate",
+                "dosage_per_acre": "10 kg",
+                "application_method": "Soil application with basal fertilizer",
+                "water_quantity_for_spray": "Not applicable"
+            }
+        ],
+        "major_diseases": [
+            {
+                "disease_name": "Downy Mildew",
+                "causal_organism": "Sclerospora graminicola",
+                "symptoms": "Chlorotic streaks, excessive tillering, malformed earheads",
+                "preventive_measures": "Roguing of diseased plants, use resistant hybrids, seed treatment",
+                "recommended_chemical": "Metalaxyl 35% WS (seed treatment) or Mancozeb 75% WP (foliar)",
+                "dosage_per_liter": "6 g/kg seed (Metalaxyl), 2.5 g/liter (Mancozeb)",
+                "waiting_period_before_harvest": "15 days (foliar spray)"
+            },
+            {
+                "disease_name": "Ergot",
+                "causal_organism": "Claviceps fusiformis",
+                "symptoms": "Honeydew droplets on earhead, hard black sclerotia replacing grains",
+                "preventive_measures": "Remove ergot bodies before sowing, avoid late sowing",
+                "recommended_chemical": "Copper Oxychloride 50% WP",
+                "dosage_per_liter": "3 g/liter",
+                "waiting_period_before_harvest": "10 days"
+            },
+            {
+                "disease_name": "Blast",
+                "causal_organism": "Pyricularia grisea",
+                "symptoms": "Elliptical to spindle-shaped spots on leaves, neck blast",
+                "preventive_measures": "Balanced fertilization, avoid excess nitrogen, resistant varieties",
+                "recommended_chemical": "Tricyclazole 75% WP",
+                "dosage_per_liter": "0.6 g/liter",
+                "waiting_period_before_harvest": "14 days"
+            }
+        ]
+    },
+    {
+        "name": "Ragi (Finger Millet)",
+        "season": "Kharif",
+        "sowing_time": "June to July",
+        "harvesting_time": "October to November",
+        "expected_yield_per_acre_quintals": "10-12",
+        "seed_quantity_per_acre_kg": "4-5 (transplanting), 8-10 (direct seeding)",
+        "msp_rupees_per_quintal": "3846",
+        "fertilizer_schedule": [
+            {
+                "stage": "Basal Application",
+                "days_after_sowing": "0",
+                "fertilizer_name": "DAP + MOP",
+                "dosage_per_acre": "30 kg DAP + 13 kg MOP",
+                "application_method": "Broadcasting and incorporation",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "First Top Dressing",
+                "days_after_sowing": "20-25",
+                "fertilizer_name": "Urea",
+                "dosage_per_acre": "30 kg",
+                "application_method": "Side dressing at tillering",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "Second Top Dressing",
+                "days_after_sowing": "40-45",
+                "fertilizer_name": "Urea",
+                "dosage_per_acre": "20 kg",
+                "application_method": "Side dressing before flowering",
+                "water_quantity_for_spray": "Not applicable"
+            }
+        ],
+        "major_diseases": [
+            {
+                "disease_name": "Blast",
+                "causal_organism": "Pyricularia grisea",
+                "symptoms": "Spindle-shaped lesions on leaves, neck and finger blast",
+                "preventive_measures": "Use resistant varieties, avoid excess nitrogen, proper spacing",
+                "recommended_chemical": "Tricyclazole 75% WP or Carbendazim 50% WP",
+                "dosage_per_liter": "0.6 g/liter (Tricyclazole), 1 g/liter (Carbendazim)",
+                "waiting_period_before_harvest": "15 days"
+            },
+            {
+                "disease_name": "Brown Spot",
+                "causal_organism": "Helminthosporium nodulosum",
+                "symptoms": "Brown oval spots with yellow halo on leaves",
+                "preventive_measures": "Seed treatment, balanced nutrition, timely sowing",
+                "recommended_chemical": "Mancozeb 75% WP",
+                "dosage_per_liter": "2.5 g/liter",
+                "waiting_period_before_harvest": "12 days"
+            },
+            {
+                "disease_name": "Foot Rot",
+                "causal_organism": "Sclerotium rolfsii",
+                "symptoms": "Rotting of lower stem, white mycelial growth, sclerotia formation",
+                "preventive_measures": "Deep summer ploughing, crop rotation, avoid water logging",
+                "recommended_chemical": "Carbendazim 50% WP (soil drenching)",
+                "dosage_per_liter": "2 g/liter",
+                "waiting_period_before_harvest": "20 days"
+            }
+        ]
+    },
+    {
+        "name": "Soybean",
+        "season": "Kharif",
+        "sowing_time": "June to July",
+        "harvesting_time": "October to November",
+        "expected_yield_per_acre_quintals": "10-12",
+        "seed_quantity_per_acre_kg": "30-35",
+        "msp_rupees_per_quintal": "4892 (Yellow), 5760 (Black)",
+        "fertilizer_schedule": [
+            {
+                "stage": "Basal Application",
+                "days_after_sowing": "0",
+                "fertilizer_name": "DAP + MOP",
+                "dosage_per_acre": "30 kg DAP + 17 kg MOP",
+                "application_method": "Broadcasting and incorporation",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "Seed Treatment with Rhizobium",
+                "days_after_sowing": "0",
+                "fertilizer_name": "Rhizobium culture + PSB",
+                "dosage_per_acre": "200 g Rhizobium + 200 g PSB per 30 kg seed",
+                "application_method": "Seed treatment before sowing",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "Foliar Spray",
+                "days_after_sowing": "30-35",
+                "fertilizer_name": "NPK 19:19:19",
+                "dosage_per_acre": "2 kg in 200 liters water",
+                "application_method": "Foliar spray at flowering",
+                "water_quantity_for_spray": "200 liters"
+            },
+            {
+                "stage": "Micronutrient Spray",
+                "days_after_sowing": "45-50",
+                "fertilizer_name": "Chelated Micronutrient Mixture",
+                "dosage_per_acre": "500 g in 200 liters water",
+                "application_method": "Foliar spray at pod formation",
+                "water_quantity_for_spray": "200 liters"
+            }
+        ],
+        "major_diseases": [
+            {
+                "disease_name": "Yellow Mosaic Virus",
+                "causal_organism": "Mung bean yellow mosaic virus (vector: Whitefly)",
+                "symptoms": "Yellow mosaic pattern on leaves, stunted growth, reduced pod formation",
+                "preventive_measures": "Control whitefly population, use resistant varieties, remove infected plants",
+                "recommended_chemical": "Imidacloprid 17.8% SL (for vector control)",
+                "dosage_per_liter": "0.3 ml/liter",
+                "waiting_period_before_harvest": "21 days"
+            },
+            {
+                "disease_name": "Rust",
+                "causal_organism": "Phakopsora pachyrhizi",
+                "symptoms": "Small tan to dark reddish-brown pustules on leaves",
+                "preventive_measures": "Proper spacing, timely sowing, field sanitation",
+                "recommended_chemical": "Hexaconazole 5% SC or Tebuconazole 25.9% EC",
+                "dosage_per_liter": "2 ml/liter (Hexaconazole), 1 ml/liter (Tebuconazole)",
+                "waiting_period_before_harvest": "15 days"
+            },
+            {
+                "disease_name": "Anthracnose",
+                "causal_organism": "Colletotrichum truncatum",
+                "symptoms": "Dark brown to black lesions on pods, stems and leaves",
+                "preventive_measures": "Seed treatment, crop rotation, avoid overhead irrigation",
+                "recommended_chemical": "Carbendazim 50% WP or Mancozeb 75% WP",
+                "dosage_per_liter": "1 g/liter (Carbendazim), 2.5 g/liter (Mancozeb)",
+                "waiting_period_before_harvest": "14 days"
+            }
+        ]
+    },
+    {
+        "name": "Groundnut",
+        "season": "Kharif",
+        "sowing_time": "June to July",
+        "harvesting_time": "October to November",
+        "expected_yield_per_acre_quintals": "12-15",
+        "seed_quantity_per_acre_kg": "40-50",
+        "msp_rupees_per_quintal": "6377",
+        "fertilizer_schedule": [
+            {
+                "stage": "Basal Application",
+                "days_after_sowing": "0",
+                "fertilizer_name": "SSP + MOP",
+                "dosage_per_acre": "80 kg SSP + 33 kg MOP",
+                "application_method": "Broadcasting and incorporation",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "Gypsum Application",
+                "days_after_sowing": "30-35",
+                "fertilizer_name": "Gypsum",
+                "dosage_per_acre": "160-200 kg",
+                "application_method": "Broadcasting at flowering stage",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "Foliar Spray",
+                "days_after_sowing": "40-45",
+                "fertilizer_name": "NPK 19:19:19 + Boron",
+                "dosage_per_acre": "2 kg NPK + 200 g Borax in 200 liters water",
+                "application_method": "Foliar spray at pegging stage",
+                "water_quantity_for_spray": "200 liters"
+            },
+            {
+                "stage": "Micronutrient Application",
+                "days_after_sowing": "0",
+                "fertilizer_name": "Zinc Sulphate + Ferrous Sulphate",
+                "dosage_per_acre": "10 kg ZnSO4 + 20 kg FeSO4",
+                "application_method": "Soil application with basal fertilizer",
+                "water_quantity_for_spray": "Not applicable"
+            }
+        ],
+        "major_diseases": [
+            {
+                "disease_name": "Tikka Disease (Early and Late Leaf Spot)",
+                "causal_organism": "Cercospora arachidicola, Phaeoisariopsis personata",
+                "symptoms": "Circular brown spots with yellow halo, premature defoliation",
+                "preventive_measures": "Use resistant varieties, crop rotation, proper spacing",
+                "recommended_chemical": "Mancozeb 75% WP or Chlorothalonil 75% WP",
+                "dosage_per_liter": "2.5 g/liter (Mancozeb), 2 g/liter (Chlorothalonil)",
+                "waiting_period_before_harvest": "15 days"
+            },
+            {
+                "disease_name": "Collar Rot",
+                "causal_organism": "Aspergillus niger",
+                "symptoms": "Blackening of collar region, wilting, plant death",
+                "preventive_measures": "Seed treatment, avoid deep sowing, proper drainage",
+                "recommended_chemical": "Carbendazim 50% WP (seed treatment)",
+                "dosage_per_liter": "2 g/kg seed",
+                "waiting_period_before_harvest": "Not applicable (seed treatment)"
+            },
+            {
+                "disease_name": "Rust",
+                "causal_organism": "Puccinia arachidis",
+                "symptoms": "Orange-brown pustules on lower leaf surface",
+                "preventive_measures": "Timely sowing, balanced fertilization, field sanitation",
+                "recommended_chemical": "Tebuconazole 25.9% EC",
+                "dosage_per_liter": "1 ml/liter",
+                "waiting_period_before_harvest": "14 days"
+            }
+        ]
+    },
+    {
+        "name": "Cotton",
+        "season": "Kharif",
+        "sowing_time": "May to June",
+        "harvesting_time": "October to January (multiple pickings)",
+        "expected_yield_per_acre_quintals": "12-15 (lint)",
+        "seed_quantity_per_acre_kg": "1.5-2 (Bt cotton)",
+        "msp_rupees_per_quintal": "7020 (Medium staple), 7521 (Long staple)",
+        "fertilizer_schedule": [
+            {
+                "stage": "Basal Application",
+                "days_after_sowing": "0",
+                "fertilizer_name": "DAP + MOP",
+                "dosage_per_acre": "40 kg DAP + 20 kg MOP",
+                "application_method": "Band placement",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "First Top Dressing",
+                "days_after_sowing": "30-35",
+                "fertilizer_name": "Urea",
+                "dosage_per_acre": "40 kg",
+                "application_method": "Side dressing at square formation",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "Second Top Dressing",
+                "days_after_sowing": "60-65",
+                "fertilizer_name": "Urea",
+                "dosage_per_acre": "40 kg",
+                "application_method": "Side dressing at flowering",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "Foliar Spray",
+                "days_after_sowing": "75-80",
+                "fertilizer_name": "NPK 19:19:19 + Micronutrients",
+                "dosage_per_acre": "2 kg in 200 liters water",
+                "application_method": "Foliar spray at boll formation",
+                "water_quantity_for_spray": "200 liters"
+            },
+            {
+                "stage": "Zinc Application",
+                "days_after_sowing": "0",
+                "fertilizer_name": "Zinc Sulphate",
+                "dosage_per_acre": "10 kg",
+                "application_method": "Soil application",
+                "water_quantity_for_spray": "Not applicable"
+            }
+        ],
+        "major_diseases": [
+            {
+                "disease_name": "Bacterial Blight",
+                "causal_organism": "Xanthomonas axonopodis pv. malvacearum",
+                "symptoms": "Angular water-soaked lesions, black arm symptoms, boll rot",
+                "preventive_measures": "Use disease-free seeds, crop rotation, avoid overhead irrigation",
+                "recommended_chemical": "Streptocycline 9% + Copper Oxychloride 50% SP",
+                "dosage_per_liter": "2 g/liter + 3 g/liter",
+                "waiting_period_before_harvest": "7 days"
+            },
+            {
+                "disease_name": "Alternaria Leaf Spot",
+                "causal_organism": "Alternaria macrospora",
+                "symptoms": "Circular brown spots with concentric rings on leaves",
+                "preventive_measures": "Proper spacing, balanced nutrition, remove infected leaves",
+                "recommended_chemical": "Mancozeb 75% WP or Zineb 75% WP",
+                "dosage_per_liter": "2.5 g/liter",
+                "waiting_period_before_harvest": "14 days"
+            },
+            {
+                "disease_name": "Grey Mildew",
+                "causal_organism": "Ramularia areola",
+                "symptoms": "White powdery growth on lower leaf surface, angular spots",
+                "preventive_measures": "Avoid excess nitrogen, maintain plant vigour, proper ventilation",
+                "recommended_chemical": "Copper Oxychloride 50% WP or Sulfur 80% WP",
+                "dosage_per_liter": "3 g/liter (Copper Oxychloride), 2.5 g/liter (Sulfur)",
+                "waiting_period_before_harvest": "10 days"
+            }
+        ]
+    },
+    {
+        "name": "Arhar (Pigeon Pea)",
+        "season": "Kharif",
+        "sowing_time": "June to July",
+        "harvesting_time": "December to January",
+        "expected_yield_per_acre_quintals": "6-8",
+        "seed_quantity_per_acre_kg": "6-8",
+        "msp_rupees_per_quintal": "7550",
+        "fertilizer_schedule": [
+            {
+                "stage": "Basal Application",
+                "days_after_sowing": "0",
+                "fertilizer_name": "DAP + MOP",
+                "dosage_per_acre": "30 kg DAP + 13 kg MOP",
+                "application_method": "Broadcasting and incorporation",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "Seed Treatment",
+                "days_after_sowing": "0",
+                "fertilizer_name": "Rhizobium culture + PSB",
+                "dosage_per_acre": "200 g each for 8 kg seed",
+                "application_method": "Seed treatment before sowing",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "Foliar Spray",
+                "days_after_sowing": "60-65",
+                "fertilizer_name": "NPK 19:19:19",
+                "dosage_per_acre": "2 kg in 200 liters water",
+                "application_method": "Foliar spray at flowering",
+                "water_quantity_for_spray": "200 liters"
+            }
+        ],
+        "major_diseases": [
+            {
+                "disease_name": "Wilt",
+                "causal_organism": "Fusarium udum",
+                "symptoms": "Yellowing and drooping of leaves, vascular browning, plant death",
+                "preventive_measures": "Use resistant varieties, crop rotation, seed treatment",
+                "recommended_chemical": "Carbendazim 50% WP (seed treatment + soil drenching)",
+                "dosage_per_liter": "2 g/kg seed, 2 g/liter for soil drenching",
+                "waiting_period_before_harvest": "20 days"
+            },
+            {
+                "disease_name": "Sterility Mosaic",
+                "causal_organism": "Pigeonpea sterility mosaic virus (vector: Eriophyid mite)",
+                "symptoms": "Mosaic pattern, excessive vegetative growth, no flowering",
+                "preventive_measures": "Rogue out diseased plants, control mite vectors, use resistant varieties",
+                "recommended_chemical": "Dicofol 18.5% EC or Propargite 57% EC (mite control)",
+                "dosage_per_liter": "2.5 ml/liter",
+                "waiting_period_before_harvest": "15 days"
+            },
+            {
+                "disease_name": "Phytophthora Blight",
+                "causal_organism": "Phytophthora drechsleri f.sp. cajani",
+                "symptoms": "Water-soaked lesions on stem, wilting, seedling mortality",
+                "preventive_measures": "Proper drainage, avoid water logging, seed treatment",
+                "recommended_chemical": "Metalaxyl 8% + Mancozeb 64% WP",
+                "dosage_per_liter": "2.5 g/liter",
+                "waiting_period_before_harvest": "15 days"
+            }
+        ]
+    },
+    {
+        "name": "Moong (Green Gram)",
+        "season": "Kharif",
+        "sowing_time": "June to July",
+        "harvesting_time": "September to October",
+        "expected_yield_per_acre_quintals": "4-5",
+        "seed_quantity_per_acre_kg": "8-10",
+        "msp_rupees_per_quintal": "8558",
+        "fertilizer_schedule": [
+            {
+                "stage": "Basal Application",
+                "days_after_sowing": "0",
+                "fertilizer_name": "DAP + MOP",
+                "dosage_per_acre": "20 kg DAP + 10 kg MOP",
+                "application_method": "Broadcasting and incorporation",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "Seed Treatment",
+                "days_after_sowing": "0",
+                "fertilizer_name": "Rhizobium culture",
+                "dosage_per_acre": "200 g for 10 kg seed",
+                "application_method": "Seed treatment before sowing",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "Foliar Spray",
+                "days_after_sowing": "30-35",
+                "fertilizer_name": "DAP 2%",
+                "dosage_per_acre": "4 kg in 200 liters water",
+                "application_method": "Foliar spray at flowering",
+                "water_quantity_for_spray": "200 liters"
+            }
+        ],
+        "major_diseases": [
+            {
+                "disease_name": "Yellow Mosaic Virus",
+                "causal_organism": "Mung bean yellow mosaic virus (vector: Whitefly)",
+                "symptoms": "Yellow mosaic patches on leaves, stunted growth, reduced yield",
+                "preventive_measures": "Control whitefly, use resistant varieties, timely sowing",
+                "recommended_chemical": "Imidacloprid 17.8% SL (vector control)",
+                "dosage_per_liter": "0.3 ml/liter",
+                "waiting_period_before_harvest": "15 days"
+            },
+            {
+                "disease_name": "Powdery Mildew",
+                "causal_organism": "Erysiphe polygoni",
+                "symptoms": "White powdery coating on leaves, stems and pods",
+                "preventive_measures": "Proper spacing, avoid excess nitrogen, resistant varieties",
+                "recommended_chemical": "Sulfur 80% WP or Hexaconazole 5% SC",
+                "dosage_per_liter": "2.5 g/liter (Sulfur), 1.5 ml/liter (Hexaconazole)",
+                "waiting_period_before_harvest": "7 days"
+            },
+            {
+                "disease_name": "Cercospora Leaf Spot",
+                "causal_organism": "Cercospora canescens",
+                "symptoms": "Circular brown spots with grey center on leaves",
+                "preventive_measures": "Seed treatment, crop rotation, field sanitation",
+                "recommended_chemical": "Mancozeb 75% WP",
+                "dosage_per_liter": "2.5 g/liter",
+                "waiting_period_before_harvest": "10 days"
+            }
+        ]
+    },
+    {
+        "name": "Urad (Black Gram)",
+        "season": "Kharif",
+        "sowing_time": "June to July",
+        "harvesting_time": "September to October",
+        "expected_yield_per_acre_quintals": "4-5",
+        "seed_quantity_per_acre_kg": "10-12",
+        "msp_rupees_per_quintal": "6950",
+        "fertilizer_schedule": [
+            {
+                "stage": "Basal Application",
+                "days_after_sowing": "0",
+                "fertilizer_name": "DAP + MOP",
+                "dosage_per_acre": "20 kg DAP + 10 kg MOP",
+                "application_method": "Broadcasting and incorporation",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "Seed Treatment",
+                "days_after_sowing": "0",
+                "fertilizer_name": "Rhizobium culture + PSB",
+                "dosage_per_acre": "200 g Rhizobium + 200 g PSB for 12 kg seed",
+                "application_method": "Seed treatment before sowing",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "Foliar Spray",
+                "days_after_sowing": "30-35",
+                "fertilizer_name": "NPK 19:19:19",
+                "dosage_per_acre": "2 kg in 200 liters water",
+                "application_method": "Foliar spray at flowering",
+                "water_quantity_for_spray": "200 liters"
+            }
+        ],
+        "major_diseases": [
+            {
+                "disease_name": "Yellow Mosaic Virus",
+                "causal_organism": "Mung bean yellow mosaic virus (vector: Whitefly)",
+                "symptoms": "Yellow mosaic pattern, leaf distortion, reduced pod setting",
+                "preventive_measures": "Early sowing, control whitefly, use resistant varieties",
+                "recommended_chemical": "Imidacloprid 17.8% SL or Thiamethoxam 25% WG (vector control)",
+                "dosage_per_liter": "0.3 ml/liter (Imidacloprid), 0.2 g/liter (Thiamethoxam)",
+                "waiting_period_before_harvest": "15 days"
+            },
+            {
+                "disease_name": "Powdery Mildew",
+                "causal_organism": "Erysiphe polygoni",
+                "symptoms": "White powdery growth on leaves and pods",
+                "preventive_measures": "Balanced nutrition, proper spacing, timely sowing",
+                "recommended_chemical": "Sulfur 80% WP or Carbendazim 50% WP",
+                "dosage_per_liter": "2.5 g/liter (Sulfur), 1 g/liter (Carbendazim)",
+                "waiting_period_before_harvest": "10 days"
+            },
+            {
+                "disease_name": "Leaf Crinkle Virus",
+                "causal_organism": "Urd bean leaf crinkle virus (vector: Whitefly)",
+                "symptoms": "Severe leaf crinkling, downward curling, stunting",
+                "preventive_measures": "Vector control, remove infected plants, resistant varieties",
+                "recommended_chemical": "Acetamiprid 20% SP (vector control)",
+                "dosage_per_liter": "0.2 g/liter",
+                "waiting_period_before_harvest": "14 days"
+            }
+        ]
+    },
+    {
+        "name": "Sesame (Til)",
+        "season": "Kharif",
+        "sowing_time": "June to July",
+        "harvesting_time": "September to October",
+        "expected_yield_per_acre_quintals": "2-3",
+        "seed_quantity_per_acre_kg": "1.5-2",
+        "msp_rupees_per_quintal": "8635",
+        "fertilizer_schedule": [
+            {
+                "stage": "Basal Application",
+                "days_after_sowing": "0",
+                "fertilizer_name": "DAP + MOP",
+                "dosage_per_acre": "25 kg DAP + 13 kg MOP",
+                "application_method": "Broadcasting and incorporation",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "Top Dressing",
+                "days_after_sowing": "25-30",
+                "fertilizer_name": "Urea",
+                "dosage_per_acre": "20 kg",
+                "application_method": "Side dressing at flowering",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "Foliar Spray",
+                "days_after_sowing": "40-45",
+                "fertilizer_name": "DAP 2%",
+                "dosage_per_acre": "4 kg in 200 liters water",
+                "application_method": "Foliar spray at capsule formation",
+                "water_quantity_for_spray": "200 liters"
+            }
+        ],
+        "major_diseases": [
+            {
+                "disease_name": "Phyllody",
+                "causal_organism": "Phytoplasma (vector: Leafhopper)",
+                "symptoms": "Floral parts converted to leaf-like structures, excessive branching",
+                "preventive_measures": "Control leafhopper vectors, rogue out diseased plants",
+                "recommended_chemical": "Imidacloprid 17.8% SL (vector control)",
+                "dosage_per_liter": "0.3 ml/liter",
+                "waiting_period_before_harvest": "20 days"
+            },
+            {
+                "disease_name": "Alternaria Leaf Spot",
+                "causal_organism": "Alternaria sesami",
+                "symptoms": "Dark brown spots with concentric rings on leaves",
+                "preventive_measures": "Seed treatment, crop rotation, proper spacing",
+                "recommended_chemical": "Mancozeb 75% WP or Zineb 75% WP",
+                "dosage_per_liter": "2.5 g/liter",
+                "waiting_period_before_harvest": "12 days"
+            },
+            {
+                "disease_name": "Powdery Mildew",
+                "causal_organism": "Oidium sp.",
+                "symptoms": "White powdery growth on leaves and capsules",
+                "preventive_measures": "Avoid excess nitrogen, maintain proper spacing",
+                "recommended_chemical": "Sulfur 80% WP",
+                "dosage_per_liter": "2.5 g/liter",
+                "waiting_period_before_harvest": "7 days"
+            }
+        ]
+    },
+    {
+        "name": "Sunflower",
+        "season": "Kharif",
+        "sowing_time": "June to July",
+        "harvesting_time": "September to October",
+        "expected_yield_per_acre_quintals": "6-8",
+        "seed_quantity_per_acre_kg": "4-5",
+        "msp_rupees_per_quintal": "7227",
+        "fertilizer_schedule": [
+            {
+                "stage": "Basal Application",
+                "days_after_sowing": "0",
+                "fertilizer_name": "DAP + MOP",
+                "dosage_per_acre": "50 kg DAP + 25 kg MOP",
+                "application_method": "Broadcasting and incorporation",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "First Top Dressing",
+                "days_after_sowing": "25-30",
+                "fertilizer_name": "Urea",
+                "dosage_per_acre": "40 kg",
+                "application_method": "Side dressing at vegetative stage",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "Second Top Dressing",
+                "days_after_sowing": "45-50",
+                "fertilizer_name": "Urea",
+                "dosage_per_acre": "30 kg",
+                "application_method": "Side dressing before flowering",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "Boron Application",
+                "days_after_sowing": "35-40",
+                "fertilizer_name": "Borax",
+                "dosage_per_acre": "4 kg or 400 g in 200 liters water (foliar)",
+                "application_method": "Soil application or foliar spray",
+                "water_quantity_for_spray": "200 liters (if foliar)"
+            }
+        ],
+        "major_diseases": [
+            {
+                "disease_name": "Alternaria Blight",
+                "causal_organism": "Alternaria helianthi",
+                "symptoms": "Dark brown spots with concentric rings on leaves, premature defoliation",
+                "preventive_measures": "Use resistant varieties, crop rotation, seed treatment",
+                "recommended_chemical": "Mancozeb 75% WP or Iprodione 50% WP",
+                "dosage_per_liter": "2.5 g/liter (Mancozeb), 2 g/liter (Iprodione)",
+                "waiting_period_before_harvest": "15 days"
+            },
+            {
+                "disease_name": "Downy Mildew",
+                "causal_organism": "Plasmopara halstedii",
+                "symptoms": "Chlorotic patches on upper leaf surface, white downy growth below",
+                "preventive_measures": "Use resistant hybrids, seed treatment with metalaxyl",
+                "recommended_chemical": "Metalaxyl 8% + Mancozeb 64% WP",
+                "dosage_per_liter": "2.5 g/liter",
+                "waiting_period_before_harvest": "15 days"
+            },
+            {
+                "disease_name": "Rust",
+                "causal_organism": "Puccinia helianthi",
+                "symptoms": "Orange-brown pustules on lower leaf surface",
+                "preventive_measures": "Timely sowing, balanced nutrition, resistant varieties",
+                "recommended_chemical": "Propiconazole 25% EC or Tebuconazole 25.9% EC",
+                "dosage_per_liter": "1 ml/liter",
+                "waiting_period_before_harvest": "14 days"
+            }
+        ]
+    },
+    {
+        "name": "Castor",
+        "season": "Kharif",
+        "sowing_time": "June to July",
+        "harvesting_time": "October to December (multiple pickings)",
+        "expected_yield_per_acre_quintals": "8-10",
+        "seed_quantity_per_acre_kg": "4-5",
+        "msp_rupees_per_quintal": "7387",
+        "fertilizer_schedule": [
+            {
+                "stage": "Basal Application",
+                "days_after_sowing": "0",
+                "fertilizer_name": "DAP + MOP",
+                "dosage_per_acre": "40 kg DAP + 20 kg MOP",
+                "application_method": "Broadcasting and incorporation",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "First Top Dressing",
+                "days_after_sowing": "30-35",
+                "fertilizer_name": "Urea",
+                "dosage_per_acre": "40 kg",
+                "application_method": "Side dressing at branching stage",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "Second Top Dressing",
+                "days_after_sowing": "60-65",
+                "fertilizer_name": "Urea",
+                "dosage_per_acre": "30 kg",
+                "application_method": "Side dressing at flowering",
+                "water_quantity_for_spray": "Not applicable"
+            }
+        ],
+        "major_diseases": [
+            {
+                "disease_name": "Wilt",
+                "causal_organism": "Fusarium oxysporum f.sp. ricini",
+                "symptoms": "Yellowing and wilting of leaves, vascular browning, plant death",
+                "preventive_measures": "Use resistant varieties, crop rotation, seed treatment",
+                "recommended_chemical": "Carbendazim 50% WP (seed treatment + soil drenching)",
+                "dosage_per_liter": "2 g/kg seed, 2 g/liter for drenching",
+                "waiting_period_before_harvest": "20 days"
+            },
+            {
+                "disease_name": "Leaf Spot",
+                "causal_organism": "Cercospora ricinella",
+                "symptoms": "Circular brown spots with grey center on leaves",
+                "preventive_measures": "Field sanitation, proper spacing, balanced nutrition",
+                "recommended_chemical": "Mancozeb 75% WP",
+                "dosage_per_liter": "2.5 g/liter",
+                "waiting_period_before_harvest": "14 days"
+            },
+            {
+                "disease_name": "Botrytis Grey Rot",
+                "causal_organism": "Botrytis ricini",
+                "symptoms": "Grey mold on spikes and capsules, seed rot",
+                "preventive_measures": "Avoid excess humidity, proper spacing, timely harvest",
+                "recommended_chemical": "Carbendazim 50% WP or Iprodione 50% WP",
+                "dosage_per_liter": "1 g/liter (Carbendazim), 2 g/liter (Iprodione)",
+                "waiting_period_before_harvest": "15 days"
+            }
+        ]
+    },
+    {
+        "name": "Sugarcane",
+        "season": "Kharif",
+        "sowing_time": "February to March (main season sowing for Kharif harvest)",
+        "harvesting_time": "December to March (next year)",
+        "expected_yield_per_acre_quintals": "300-350",
+        "seed_quantity_per_acre_kg": "1000-1200 (2-3 budded setts)",
+        "msp_rupees_per_quintal": "340 (FRP for 10% sugar recovery)",
+        "fertilizer_schedule": [
+            {
+                "stage": "Basal Application",
+                "days_after_sowing": "0",
+                "fertilizer_name": "FYM + SSP + MOP",
+                "dosage_per_acre": "4000 kg FYM + 125 kg SSP + 40 kg MOP",
+                "application_method": "Broadcasting in furrows",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "First Top Dressing",
+                "days_after_sowing": "30-40",
+                "fertilizer_name": "Urea",
+                "dosage_per_acre": "70 kg",
+                "application_method": "Side dressing at tillering",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "Second Top Dressing",
+                "days_after_sowing": "75-90",
+                "fertilizer_name": "Urea + MOP",
+                "dosage_per_acre": "70 kg Urea + 40 kg MOP",
+                "application_method": "Side dressing at grand growth phase",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "Third Top Dressing",
+                "days_after_sowing": "120-135",
+                "fertilizer_name": "Urea",
+                "dosage_per_acre": "60 kg",
+                "application_method": "Side dressing before earthing up",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "Micronutrient Application",
+                "days_after_sowing": "60-75",
+                "fertilizer_name": "Zinc Sulphate + Ferrous Sulphate",
+                "dosage_per_acre": "10 kg ZnSO4 + 20 kg FeSO4",
+                "application_method": "Soil application",
+                "water_quantity_for_spray": "Not applicable"
+            }
+        ],
+        "major_diseases": [
+            {
+                "disease_name": "Red Rot",
+                "causal_organism": "Colletotrichum falcatum",
+                "symptoms": "Reddening of internal tissues with white patches, characteristic sour smell",
+                "preventive_measures": "Use resistant varieties, rogue out diseased clumps, sett treatment",
+                "recommended_chemical": "Carbendazim 50% WP (sett treatment)",
+                "dosage_per_liter": "2 g/liter (soak setts for 30 minutes)",
+                "waiting_period_before_harvest": "Not applicable (sett treatment)"
+            },
+            {
+                "disease_name": "Smut",
+                "causal_organism": "Sporisorium scitamineum",
+                "symptoms": "Whip-like structure emerging from shoot apex covered with black spores",
+                "preventive_measures": "Use disease-free setts, rogue out diseased shoots, resistant varieties",
+                "recommended_chemical": "Carbendazim 50% WP (sett treatment)",
+                "dosage_per_liter": "2 g/liter",
+                "waiting_period_before_harvest": "Not applicable (sett treatment)"
+            },
+            {
+                "disease_name": "Wilt",
+                "causal_organism": "Fusarium sacchari, Cephalosporium sacchari",
+                "symptoms": "Yellowing of leaves, drying from tips, stunted growth",
+                "preventive_measures": "Proper drainage, resistant varieties, sett treatment",
+                "recommended_chemical": "Carbendazim 50% WP + Mancozeb 63% WP (sett treatment)",
+                "dosage_per_liter": "2.5 g/liter (combined)",
+                "waiting_period_before_harvest": "Not applicable (sett treatment)"
+            }
+        ]
+    },
+    {
+        "name": "Onion (Kharif)",
+        "season": "Kharif",
+        "sowing_time": "May to June (nursery)",
+        "harvesting_time": "October to November",
+        "expected_yield_per_acre_quintals": "80-100",
+        "seed_quantity_per_acre_kg": "4-5 (nursery for 1 acre)",
+        "msp_rupees_per_quintal": "No MSP (market-based pricing)",
+        "fertilizer_schedule": [
+            {
+                "stage": "Basal Application",
+                "days_after_sowing": "0 (at transplanting)",
+                "fertilizer_name": "FYM + DAP + MOP",
+                "dosage_per_acre": "4000 kg FYM + 60 kg DAP + 40 kg MOP",
+                "application_method": "Broadcasting and incorporation",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "First Top Dressing",
+                "days_after_sowing": "30-35",
+                "fertilizer_name": "Urea",
+                "dosage_per_acre": "50 kg",
+                "application_method": "Broadcasting between rows",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "Second Top Dressing",
+                "days_after_sowing": "50-55",
+                "fertilizer_name": "Urea + MOP",
+                "dosage_per_acre": "40 kg Urea + 20 kg MOP",
+                "application_method": "Broadcasting at bulb formation",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "Foliar Spray",
+                "days_after_sowing": "60-65",
+                "fertilizer_name": "NPK 19:19:19",
+                "dosage_per_acre": "2 kg in 200 liters water",
+                "application_method": "Foliar spray",
+                "water_quantity_for_spray": "200 liters"
+            }
+        ],
+        "major_diseases": [
+            {
+                "disease_name": "Purple Blotch",
+                "causal_organism": "Alternaria porri",
+                "symptoms": "Purplish oval spots on leaves and flower stalks",
+                "preventive_measures": "Proper spacing, avoid overhead irrigation, crop rotation",
+                "recommended_chemical": "Mancozeb 75% WP or Iprodione 50% WP",
+                "dosage_per_liter": "2.5 g/liter (Mancozeb), 2 g/liter (Iprodione)",
+                "waiting_period_before_harvest": "10 days"
+            },
+            {
+                "disease_name": "Stemphylium Blight",
+                "causal_organism": "Stemphylium vesicarium",
+                "symptoms": "Small yellow to orange spots on leaves and seed stalks",
+                "preventive_measures": "Use disease-free seeds, balanced fertilization, field sanitation",
+                "recommended_chemical": "Mancozeb 75% WP + Carbendazim 12% WP",
+                "dosage_per_liter": "2 g/liter (combined formulation)",
+                "waiting_period_before_harvest": "12 days"
+            },
+            {
+                "disease_name": "Basal Rot",
+                "causal_organism": "Fusarium oxysporum f.sp. cepae",
+                "symptoms": "Yellowing of leaves, root decay, basal plate rot",
+                "preventive_measures": "Proper drainage, crop rotation, avoid injury to roots",
+                "recommended_chemical": "Carbendazim 50% WP (soil drenching)",
+                "dosage_per_liter": "2 g/liter",
+                "waiting_period_before_harvest": "15 days"
+            }
+        ]
+    },
+    {
+        "name": "Chillies",
+        "season": "Kharif",
+        "sowing_time": "May to June (nursery)",
+        "harvesting_time": "September to December (multiple pickings)",
+        "expected_yield_per_acre_quintals": "12-15 (dry), 40-50 (green)",
+        "seed_quantity_per_acre_kg": "0.4-0.5 (nursery)",
+        "msp_rupees_per_quintal": "No MSP (market-based pricing)",
+        "fertilizer_schedule": [
+            {
+                "stage": "Basal Application",
+                "days_after_sowing": "0 (at transplanting)",
+                "fertilizer_name": "FYM + DAP + MOP",
+                "dosage_per_acre": "4000 kg FYM + 50 kg DAP + 30 kg MOP",
+                "application_method": "Broadcasting and incorporation",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "First Top Dressing",
+                "days_after_sowing": "30-35",
+                "fertilizer_name": "Urea",
+                "dosage_per_acre": "45 kg",
+                "application_method": "Side dressing at flowering",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "Second Top Dressing",
+                "days_after_sowing": "60-65",
+                "fertilizer_name": "Urea + MOP",
+                "dosage_per_acre": "40 kg Urea + 25 kg MOP",
+                "application_method": "Side dressing at fruiting",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "Foliar Spray",
+                "days_after_sowing": "75-80",
+                "fertilizer_name": "NPK 19:19:19",
+                "dosage_per_acre": "2 kg in 200 liters water",
+                "application_method": "Foliar spray during peak fruiting",
+                "water_quantity_for_spray": "200 liters"
+            }
+        ],
+        "major_diseases": [
+            {
+                "disease_name": "Anthracnose (Fruit Rot)",
+                "causal_organism": "Colletotrichum capsici",
+                "symptoms": "Circular sunken lesions on fruits with concentric rings",
+                "preventive_measures": "Avoid overhead irrigation, proper drainage, fruit harvest at right stage",
+                "recommended_chemical": "Mancozeb 75% WP or Carbendazim 50% WP",
+                "dosage_per_liter": "2.5 g/liter (Mancozeb), 1 g/liter (Carbendazim)",
+                "waiting_period_before_harvest": "7 days"
+            },
+            {
+                "disease_name": "Powdery Mildew",
+                "causal_organism": "Leveillula taurica",
+                "symptoms": "White powdery growth on lower leaf surface, yellowing of leaves",
+                "preventive_measures": "Proper spacing, avoid excess nitrogen, resistant varieties",
+                "recommended_chemical": "Sulfur 80% WP or Hexaconazole 5% SC",
+                "dosage_per_liter": "2.5 g/liter (Sulfur), 1.5 ml/liter (Hexaconazole)",
+                "waiting_period_before_harvest": "5 days"
+            },
+            {
+                "disease_name": "Bacterial Wilt",
+                "causal_organism": "Ralstonia solanacearum",
+                "symptoms": "Sudden wilting without yellowing, vascular browning",
+                "preventive_measures": "Use disease-free seedlings, crop rotation, avoid water logging",
+                "recommended_chemical": "Streptocycline 9% + Copper Oxychloride 50% (soil drenching)",
+                "dosage_per_liter": "2 g/liter + 3 g/liter",
+                "waiting_period_before_harvest": "7 days"
+            }
+        ]
+    },
+    {
+        "name": "Okra (Bhindi)",
+        "season": "Kharif",
+        "sowing_time": "June to July",
+        "harvesting_time": "August to October (multiple pickings)",
+        "expected_yield_per_acre_quintals": "60-80",
+        "seed_quantity_per_acre_kg": "8-10",
+        "msp_rupees_per_quintal": "No MSP (market-based pricing)",
+        "fertilizer_schedule": [
+            {
+                "stage": "Basal Application",
+                "days_after_sowing": "0",
+                "fertilizer_name": "FYM + DAP + MOP",
+                "dosage_per_acre": "4000 kg FYM + 50 kg DAP + 25 kg MOP",
+                "application_method": "Broadcasting and incorporation",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "First Top Dressing",
+                "days_after_sowing": "25-30",
+                "fertilizer_name": "Urea",
+                "dosage_per_acre": "40 kg",
+                "application_method": "Side dressing at flowering",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "Second Top Dressing",
+                "days_after_sowing": "50-55",
+                "fertilizer_name": "Urea + MOP",
+                "dosage_per_acre": "35 kg Urea + 20 kg MOP",
+                "application_method": "Side dressing during fruiting",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "Foliar Spray",
+                "days_after_sowing": "60-65",
+                "fertilizer_name": "NPK 19:19:19",
+                "dosage_per_acre": "2 kg in 200 liters water",
+                "application_method": "Foliar spray",
+                "water_quantity_for_spray": "200 liters"
+            }
+        ],
+        "major_diseases": [
+            {
+                "disease_name": "Yellow Vein Mosaic Virus",
+                "causal_organism": "Bhendi yellow vein mosaic virus (vector: Whitefly)",
+                "symptoms": "Yellow vein clearing, mosaic pattern, stunted growth, malformed fruits",
+                "preventive_measures": "Control whitefly vectors, use resistant varieties, timely sowing",
+                "recommended_chemical": "Imidacloprid 17.8% SL or Thiamethoxam 25% WG (vector control)",
+                "dosage_per_liter": "0.3 ml/liter (Imidacloprid), 0.2 g/liter (Thiamethoxam)",
+                "waiting_period_before_harvest": "3 days"
+            },
+            {
+                "disease_name": "Powdery Mildew",
+                "causal_organism": "Erysiphe cichoracearum",
+                "symptoms": "White powdery coating on leaves, stems and fruits",
+                "preventive_measures": "Proper spacing, avoid excess nitrogen, field sanitation",
+                "recommended_chemical": "Sulfur 80% WP or Carbendazim 50% WP",
+                "dosage_per_liter": "2.5 g/liter (Sulfur), 1 g/liter (Carbendazim)",
+                "waiting_period_before_harvest": "3 days"
+            },
+            {
+                "disease_name": "Cercospora Leaf Spot",
+                "causal_organism": "Cercospora abelmoschi",
+                "symptoms": "Circular brown spots with grey center on leaves",
+                "preventive_measures": "Crop rotation, balanced nutrition, remove infected leaves",
+                "recommended_chemical": "Mancozeb 75% WP",
+                "dosage_per_liter": "2.5 g/liter",
+                "waiting_period_before_harvest": "5 days"
+            }
+        ]
+    },
+    {
+        "name": "Brinjal (Eggplant)",
+        "season": "Kharif",
+        "sowing_time": "May to June (nursery)",
+        "harvesting_time": "August to November (multiple pickings)",
+        "expected_yield_per_acre_quintals": "120-150",
+        "seed_quantity_per_acre_kg": "0.2-0.25 (nursery)",
+        "msp_rupees_per_quintal": "No MSP (market-based pricing)",
+        "fertilizer_schedule": [
+            {
+                "stage": "Basal Application",
+                "days_after_sowing": "0 (at transplanting)",
+                "fertilizer_name": "FYM + DAP + MOP",
+                "dosage_per_acre": "5000 kg FYM + 50 kg DAP + 30 kg MOP",
+                "application_method": "Broadcasting and incorporation",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "First Top Dressing",
+                "days_after_sowing": "30-35",
+                "fertilizer_name": "Urea",
+                "dosage_per_acre": "45 kg",
+                "application_method": "Side dressing at flowering",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "Second Top Dressing",
+                "days_after_sowing": "60-65",
+                "fertilizer_name": "Urea + MOP",
+                "dosage_per_acre": "40 kg Urea + 25 kg MOP",
+                "application_method": "Side dressing at fruiting",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "Foliar Spray",
+                "days_after_sowing": "75-80",
+                "fertilizer_name": "NPK 19:19:19",
+                "dosage_per_acre": "2 kg in 200 liters water",
+                "application_method": "Foliar spray during peak fruiting",
+                "water_quantity_for_spray": "200 liters"
+            }
+        ],
+        "major_diseases": [
+            {
+                "disease_name": "Bacterial Wilt",
+                "causal_organism": "Ralstonia solanacearum",
+                "symptoms": "Sudden wilting, vascular browning, plant death",
+                "preventive_measures": "Use disease-free seedlings, crop rotation, proper drainage",
+                "recommended_chemical": "Streptocycline 9% + Copper Oxychloride 50% (soil drenching)",
+                "dosage_per_liter": "2 g/liter + 3 g/liter",
+                "waiting_period_before_harvest": "5 days"
+            },
+            {
+                "disease_name": "Phomopsis Blight",
+                "causal_organism": "Phomopsis vexans",
+                "symptoms": "Circular grey spots with concentric rings on leaves and fruits",
+                "preventive_measures": "Seed treatment, avoid overhead irrigation, field sanitation",
+                "recommended_chemical": "Mancozeb 75% WP or Carbendazim 50% WP",
+                "dosage_per_liter": "2.5 g/liter (Mancozeb), 1 g/liter (Carbendazim)",
+                "waiting_period_before_harvest": "5 days"
+            },
+            {
+                "disease_name": "Little Leaf",
+                "causal_organism": "Phytoplasma (vector: Leafhopper)",
+                "symptoms": "Stunted growth, proliferation of shoots, reduced leaf size",
+                "preventive_measures": "Control leafhopper vectors, rogue out diseased plants",
+                "recommended_chemical": "Imidacloprid 17.8% SL (vector control)",
+                "dosage_per_liter": "0.3 ml/liter",
+                "waiting_period_before_harvest": "3 days"
+            }
+        ]
+    },
+    {
+        "name": "Tomato",
+        "season": "Kharif",
+        "sowing_time": "May to June (nursery)",
+        "harvesting_time": "August to October (multiple pickings)",
+        "expected_yield_per_acre_quintals": "200-250",
+        "seed_quantity_per_acre_kg": "0.15-0.2 (nursery)",
+        "msp_rupees_per_quintal": "No MSP (market-based pricing)",
+        "fertilizer_schedule": [
+            {
+                "stage": "Basal Application",
+                "days_after_sowing": "0 (at transplanting)",
+                "fertilizer_name": "FYM + DAP + MOP",
+                "dosage_per_acre": "5000 kg FYM + 60 kg DAP + 35 kg MOP",
+                "application_method": "Broadcasting and incorporation",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "First Top Dressing",
+                "days_after_sowing": "25-30",
+                "fertilizer_name": "Urea",
+                "dosage_per_acre": "50 kg",
+                "application_method": "Side dressing at flowering",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "Second Top Dressing",
+                "days_after_sowing": "50-55",
+                "fertilizer_name": "Urea + MOP",
+                "dosage_per_acre": "45 kg Urea + 30 kg MOP",
+                "application_method": "Side dressing at fruiting",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "Foliar Spray",
+                "days_after_sowing": "60-65",
+                "fertilizer_name": "NPK 19:19:19 + Calcium Nitrate",
+                "dosage_per_acre": "2 kg NPK + 1 kg Ca(NO3)2 in 200 liters water",
+                "application_method": "Foliar spray to prevent blossom end rot",
+                "water_quantity_for_spray": "200 liters"
+            }
+        ],
+        "major_diseases": [
+            {
+                "disease_name": "Early Blight",
+                "causal_organism": "Alternaria solani",
+                "symptoms": "Dark brown spots with concentric rings on leaves, collar rot",
+                "preventive_measures": "Crop rotation, staking, avoid overhead irrigation",
+                "recommended_chemical": "Mancozeb 75% WP or Iprodione 50% WP",
+                "dosage_per_liter": "2.5 g/liter (Mancozeb), 2 g/liter (Iprodione)",
+                "waiting_period_before_harvest": "5 days"
+            },
+            {
+                "disease_name": "Late Blight",
+                "causal_organism": "Phytophthora infestans",
+                "symptoms": "Water-soaked lesions on leaves, white mold on lower surface, fruit rot",
+                "preventive_measures": "Proper spacing, avoid excess humidity, resistant varieties",
+                "recommended_chemical": "Metalaxyl 8% + Mancozeb 64% WP or Cymoxanil 8% + Mancozeb 64% WP",
+                "dosage_per_liter": "2.5 g/liter",
+                "waiting_period_before_harvest": "7 days"
+            },
+            {
+                "disease_name": "Bacterial Wilt",
+                "causal_organism": "Ralstonia solanacearum",
+                "symptoms": "Sudden wilting without yellowing, vascular browning",
+                "preventive_measures": "Use disease-free seedlings, soil solarization, crop rotation",
+                "recommended_chemical": "Streptocycline 9% + Copper Oxychloride 50% (soil drenching)",
+                "dosage_per_liter": "2 g/liter + 3 g/liter",
+                "waiting_period_before_harvest": "5 days"
+            }
+        ]
+    },
+    {
+        "name": "Turmeric",
+        "season": "Kharif",
+        "sowing_time": "May to June",
+        "harvesting_time": "January to March (next year)",
+        "expected_yield_per_acre_quintals": "80-100 (fresh rhizomes), 16-20 (dry)",
+        "seed_quantity_per_acre_kg": "1000-1200 (rhizomes)",
+        "msp_rupees_per_quintal": "9500",
+        "fertilizer_schedule": [
+            {
+                "stage": "Basal Application",
+                "days_after_sowing": "0",
+                "fertilizer_name": "FYM + DAP + MOP",
+                "dosage_per_acre": "5000 kg FYM + 40 kg DAP + 50 kg MOP",
+                "application_method": "Broadcasting and incorporation",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "First Top Dressing",
+                "days_after_sowing": "45-50",
+                "fertilizer_name": "Urea",
+                "dosage_per_acre": "50 kg",
+                "application_method": "Side dressing at tillering",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "Second Top Dressing",
+                "days_after_sowing": "90-100",
+                "fertilizer_name": "Urea + MOP",
+                "dosage_per_acre": "50 kg Urea + 50 kg MOP",
+                "application_method": "Side dressing at rhizome development",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "Third Top Dressing",
+                "days_after_sowing": "120-130",
+                "fertilizer_name": "Urea",
+                "dosage_per_acre": "40 kg",
+                "application_method": "Side dressing",
+                "water_quantity_for_spray": "Not applicable"
+            }
+        ],
+        "major_diseases": [
+            {
+                "disease_name": "Rhizome Rot",
+                "causal_organism": "Pythium aphanidermatum, Fusarium solani",
+                "symptoms": "Water-soaked lesions on rhizomes, rotting, foul smell",
+                "preventive_measures": "Use disease-free rhizomes, proper drainage, crop rotation",
+                "recommended_chemical": "Metalaxyl 8% + Mancozeb 64% WP (rhizome treatment)",
+                "dosage_per_liter": "2.5 g/liter (soak for 30 minutes)",
+                "waiting_period_before_harvest": "30 days before harvest"
+            },
+            {
+                "disease_name": "Leaf Blotch",
+                "causal_organism": "Taphrina maculans",
+                "symptoms": "Small brown spots on upper surface, white spots on lower surface",
+                "preventive_measures": "Field sanitation, proper spacing, avoid overhead irrigation",
+                "recommended_chemical": "Mancozeb 75% WP or Copper Oxychloride 50% WP",
+                "dosage_per_liter": "2.5 g/liter (Mancozeb), 3 g/liter (Copper Oxychloride)",
+                "waiting_period_before_harvest": "15 days"
+            },
+            {
+                "disease_name": "Leaf Spot",
+                "causal_organism": "Colletotrichum capsici",
+                "symptoms": "Irregular brown spots on leaves, premature drying",
+                "preventive_measures": "Balanced fertilization, proper water management",
+                "recommended_chemical": "Carbendazim 50% WP or Mancozeb 75% WP",
+                "dosage_per_liter": "1 g/liter (Carbendazim), 2.5 g/liter (Mancozeb)",
+                "waiting_period_before_harvest": "14 days"
+            }
+        ]
+    },
+    {
+        "name": "Ginger",
+        "season": "Kharif",
+        "sowing_time": "April to May",
+        "harvesting_time": "December to January (next year)",
+        "expected_yield_per_acre_quintals": "80-120 (fresh rhizomes)",
+        "seed_quantity_per_acre_kg": "600-800 (rhizomes)",
+        "msp_rupees_per_quintal": "No MSP (market-based pricing)",
+        "fertilizer_schedule": [
+            {
+                "stage": "Basal Application",
+                "days_after_sowing": "0",
+                "fertilizer_name": "FYM + SSP + MOP",
+                "dosage_per_acre": "4000 kg FYM + 100 kg SSP + 40 kg MOP",
+                "application_method": "Broadcasting in beds",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "First Top Dressing",
+                "days_after_sowing": "45-50",
+                "fertilizer_name": "Urea",
+                "dosage_per_acre": "45 kg",
+                "application_method": "Broadcasting after first weeding",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "Second Top Dressing",
+                "days_after_sowing": "90-100",
+                "fertilizer_name": "Urea + MOP",
+                "dosage_per_acre": "45 kg Urea + 40 kg MOP",
+                "application_method": "Broadcasting after second weeding",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "Third Top Dressing",
+                "days_after_sowing": "120-130",
+                "fertilizer_name": "Urea",
+                "dosage_per_acre": "40 kg",
+                "application_method": "Broadcasting during rhizome development",
+                "water_quantity_for_spray": "Not applicable"
+            }
+        ],
+        "major_diseases": [
+            {
+                "disease_name": "Soft Rot (Rhizome Rot)",
+                "causal_organism": "Pythium aphanidermatum, Fusarium oxysporum",
+                "symptoms": "Water-soaked lesions, foul smell, complete rotting of rhizomes",
+                "preventive_measures": "Use disease-free rhizomes, proper drainage, avoid water logging",
+                "recommended_chemical": "Metalaxyl 8% + Mancozeb 64% WP (rhizome treatment)",
+                "dosage_per_liter": "2.5 g/liter (soak for 30 minutes before planting)",
+                "waiting_period_before_harvest": "30 days"
+            },
+            {
+                "disease_name": "Bacterial Wilt",
+                "causal_organism": "Ralstonia solanacearum",
+                "symptoms": "Yellowing and wilting of leaves, vascular discoloration",
+                "preventive_measures": "Crop rotation, use disease-free rhizomes, soil solarization",
+                "recommended_chemical": "Streptocycline 9% + Copper Oxychloride 50% (soil drenching)",
+                "dosage_per_liter": "2 g/liter + 3 g/liter",
+                "waiting_period_before_harvest": "30 days"
+            },
+            {
+                "disease_name": "Leaf Spot",
+                "causal_organism": "Phyllosticta zingiberi",
+                "symptoms": "Oval to rectangular brown spots with yellow halo",
+                "preventive_measures": "Remove infected leaves, proper spacing, avoid overhead irrigation",
+                "recommended_chemical": "Mancozeb 75% WP",
+                "dosage_per_liter": "2.5 g/liter",
+                "waiting_period_before_harvest": "15 days"
+            }
+        ]
+    },
+    {
+        "name": "Niger Seed",
+        "season": "Kharif",
+        "sowing_time": "June to July",
+        "harvesting_time": "October to November",
+        "expected_yield_per_acre_quintals": "2-3",
+        "seed_quantity_per_acre_kg": "4-5",
+        "msp_rupees_per_quintal": "7734",
+        "fertilizer_schedule": [
+            {
+                "stage": "Basal Application",
+                "days_after_sowing": "0",
+                "fertilizer_name": "DAP + MOP",
+                "dosage_per_acre": "30 kg DAP + 10 kg MOP",
+                "application_method": "Broadcasting and incorporation",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "Top Dressing",
+                "days_after_sowing": "30-35",
+                "fertilizer_name": "Urea",
+                "dosage_per_acre": "30 kg",
+                "application_method": "Side dressing at flowering",
+                "water_quantity_for_spray": "Not applicable"
+            }
+        ],
+        "major_diseases": [
+            {
+                "disease_name": "Alternaria Blight",
+                "causal_organism": "Alternaria spp.",
+                "symptoms": "Brown circular spots with concentric rings on leaves",
+                "preventive_measures": "Crop rotation, seed treatment, proper spacing",
+                "recommended_chemical": "Mancozeb 75% WP",
+                "dosage_per_liter": "2.5 g/liter",
+                "waiting_period_before_harvest": "12 days"
+            },
+            {
+                "disease_name": "Wilt",
+                "causal_organism": "Fusarium oxysporum",
+                "symptoms": "Yellowing and wilting of plants, vascular browning",
+                "preventive_measures": "Use resistant varieties, crop rotation, seed treatment",
+                "recommended_chemical": "Carbendazim 50% WP (seed treatment)",
+                "dosage_per_liter": "2 g/kg seed",
+                "waiting_period_before_harvest": "Not applicable (seed treatment)"
+            }
+        ]
+    },
+    {
+        "name": "Cowpea",
+        "season": "Kharif",
+        "sowing_time": "June to July",
+        "harvesting_time": "September to October",
+        "expected_yield_per_acre_quintals": "6-8 (grain), 40-50 (green pods)",
+        "seed_quantity_per_acre_kg": "8-10",
+        "msp_rupees_per_quintal": "No MSP (market-based pricing)",
+        "fertilizer_schedule": [
+            {
+                "stage": "Basal Application",
+                "days_after_sowing": "0",
+                "fertilizer_name": "DAP + MOP",
+                "dosage_per_acre": "25 kg DAP + 13 kg MOP",
+                "application_method": "Broadcasting and incorporation",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "Seed Treatment",
+                "days_after_sowing": "0",
+                "fertilizer_name": "Rhizobium culture",
+                "dosage_per_acre": "200 g for 10 kg seed",
+                "application_method": "Seed treatment before sowing",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "Foliar Spray",
+                "days_after_sowing": "30-35",
+                "fertilizer_name": "DAP 2%",
+                "dosage_per_acre": "4 kg in 200 liters water",
+                "application_method": "Foliar spray at flowering",
+                "water_quantity_for_spray": "200 liters"
+            }
+        ],
+        "major_diseases": [
+            {
+                "disease_name": "Yellow Mosaic Virus",
+                "causal_organism": "Cowpea yellow mosaic virus (vector: Whitefly)",
+                "symptoms": "Yellow mosaic pattern on leaves, stunted growth",
+                "preventive_measures": "Control whitefly, early sowing, resistant varieties",
+                "recommended_chemical": "Imidacloprid 17.8% SL (vector control)",
+                "dosage_per_liter": "0.3 ml/liter",
+                "waiting_period_before_harvest": "3 days"
+            },
+            {
+                "disease_name": "Anthracnose",
+                "causal_organism": "Colletotrichum lindemuthianum",
+                "symptoms": "Dark brown to black lesions on pods, stems and leaves",
+                "preventive_measures": "Seed treatment, crop rotation, avoid overhead irrigation",
+                "recommended_chemical": "Mancozeb 75% WP or Carbendazim 50% WP",
+                "dosage_per_liter": "2.5 g/liter (Mancozeb), 1 g/liter (Carbendazim)",
+                "waiting_period_before_harvest": "7 days"
+            },
+            {
+                "disease_name": "Bacterial Blight",
+                "causal_organism": "Xanthomonas axonopodis pv. vignicola",
+                "symptoms": "Water-soaked lesions on leaves, stem cankers",
+                "preventive_measures": "Use disease-free seeds, avoid working in wet fields",
+                "recommended_chemical": "Streptocycline 9% + Copper Oxychloride 50%",
+                "dosage_per_liter": "2 g/liter + 3 g/liter",
+                "waiting_period_before_harvest": "5 days"
+            }
+        ]
+    },
+    {
+        "name": "Cluster Bean (Guar)",
+        "season": "Kharif",
+        "sowing_time": "June to July",
+        "harvesting_time": "September to October",
+        "expected_yield_per_acre_quintals": "8-10 (grain), 50-60 (green pods)",
+        "seed_quantity_per_acre_kg": "10-12",
+        "msp_rupees_per_quintal": "5950",
+        "fertilizer_schedule": [
+            {
+                "stage": "Basal Application",
+                "days_after_sowing": "0",
+                "fertilizer_name": "DAP + MOP",
+                "dosage_per_acre": "25 kg DAP + 10 kg MOP",
+                "application_method": "Broadcasting and incorporation",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "Seed Treatment",
+                "days_after_sowing": "0",
+                "fertilizer_name": "Rhizobium culture + PSB",
+                "dosage_per_acre": "200 g Rhizobium + 200 g PSB for 12 kg seed",
+                "application_method": "Seed treatment before sowing",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "Foliar Spray",
+                "days_after_sowing": "35-40",
+                "fertilizer_name": "NPK 19:19:19",
+                "dosage_per_acre": "2 kg in 200 liters water",
+                "application_method": "Foliar spray at pod formation",
+                "water_quantity_for_spray": "200 liters"
+            }
+        ],
+        "major_diseases": [
+            {
+                "disease_name": "Bacterial Blight",
+                "causal_organism": "Xanthomonas campestris pv. cyamopsidis",
+                "symptoms": "Water-soaked lesions, yellowing, premature defoliation",
+                "preventive_measures": "Use disease-free seeds, crop rotation, avoid overhead irrigation",
+                "recommended_chemical": "Streptocycline 9% + Copper Oxychloride 50%",
+                "dosage_per_liter": "2 g/liter + 3 g/liter",
+                "waiting_period_before_harvest": "7 days"
+            },
+            {
+                "disease_name": "Alternaria Leaf Spot",
+                "causal_organism": "Alternaria cyamopsidis",
+                "symptoms": "Circular brown spots with yellow halo on leaves",
+                "preventive_measures": "Field sanitation, balanced nutrition, proper spacing",
+                "recommended_chemical": "Mancozeb 75% WP",
+                "dosage_per_liter": "2.5 g/liter",
+                "waiting_period_before_harvest": "10 days"
+            },
+            {
+                "disease_name": "Root Rot",
+                "causal_organism": "Rhizoctonia solani, Macrophomina phaseolina",
+                "symptoms": "Wilting, root decay, collar region browning",
+                "preventive_measures": "Proper drainage, crop rotation, seed treatment",
+                "recommended_chemical": "Carbendazim 50% WP (seed treatment + soil drenching)",
+                "dosage_per_liter": "2 g/kg seed, 2 g/liter for drenching",
+                "waiting_period_before_harvest": "15 days"
+            }
+        ]
+    },
+    {
+        "name": "Bottle Gourd (Lauki)",
+        "season": "Kharif",
+        "sowing_time": "June to July",
+        "harvesting_time": "August to October (multiple pickings)",
+        "expected_yield_per_acre_quintals": "120-150",
+        "seed_quantity_per_acre_kg": "2-3",
+        "msp_rupees_per_quintal": "No MSP (market-based pricing)",
+        "fertilizer_schedule": [
+            {
+                "stage": "Basal Application",
+                "days_after_sowing": "0",
+                "fertilizer_name": "FYM + DAP + MOP",
+                "dosage_per_acre": "5000 kg FYM + 40 kg DAP + 25 kg MOP",
+                "application_method": "Pit application",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "First Top Dressing",
+                "days_after_sowing": "25-30",
+                "fertilizer_name": "Urea",
+                "dosage_per_acre": "40 kg",
+                "application_method": "Side dressing at vine elongation",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "Second Top Dressing",
+                "days_after_sowing": "50-55",
+                "fertilizer_name": "Urea + MOP",
+                "dosage_per_acre": "35 kg Urea + 20 kg MOP",
+                "application_method": "Side dressing at flowering and fruiting",
+                "water_quantity_for_spray": "Not applicable"
+            }
+        ],
+        "major_diseases": [
+            {
+                "disease_name": "Powdery Mildew",
+                "causal_organism": "Erysiphe cichoracearum",
+                "symptoms": "White powdery growth on leaves and stems",
+                "preventive_measures": "Proper spacing, avoid excess nitrogen, resistant varieties",
+                "recommended_chemical": "Sulfur 80% WP or Carbendazim 50% WP",
+                "dosage_per_liter": "2.5 g/liter (Sulfur), 1 g/liter (Carbendazim)",
+                "waiting_period_before_harvest": "3 days"
+            },
+            {
+                "disease_name": "Downy Mildew",
+                "causal_organism": "Pseudoperonospora cubensis",
+                "symptoms": "Yellow angular spots on upper surface, grey downy growth below",
+                "preventive_measures": "Avoid overhead irrigation, proper ventilation, field sanitation",
+                "recommended_chemical": "Metalaxyl 8% + Mancozeb 64% WP",
+                "dosage_per_liter": "2.5 g/liter",
+                "waiting_period_before_harvest": "5 days"
+            },
+            {
+                "disease_name": "Fruit Rot",
+                "causal_organism": "Pythium aphanidermatum, Phytophthora spp.",
+                "symptoms": "Water-soaked lesions on fruits, rotting, white mycelial growth",
+                "preventive_measures": "Mulching to prevent fruit-soil contact, proper drainage",
+                "recommended_chemical": "Copper Oxychloride 50% WP or Mancozeb 75% WP",
+                "dosage_per_liter": "3 g/liter (Copper Oxychloride), 2.5 g/liter (Mancozeb)",
+                "waiting_period_before_harvest": "5 days"
+            }
+        ]
+    },
+    {
+        "name": "Bitter Gourd (Karela)",
+        "season": "Kharif",
+        "sowing_time": "June to July",
+        "harvesting_time": "August to October (multiple pickings)",
+        "expected_yield_per_acre_quintals": "60-80",
+        "seed_quantity_per_acre_kg": "2-2.5",
+        "msp_rupees_per_quintal": "No MSP (market-based pricing)",
+        "fertilizer_schedule": [
+            {
+                "stage": "Basal Application",
+                "days_after_sowing": "0",
+                "fertilizer_name": "FYM + DAP + MOP",
+                "dosage_per_acre": "5000 kg FYM + 40 kg DAP + 25 kg MOP",
+                "application_method": "Pit application",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "First Top Dressing",
+                "days_after_sowing": "25-30",
+                "fertilizer_name": "Urea",
+                "dosage_per_acre": "35 kg",
+                "application_method": "Side dressing at flowering",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "Second Top Dressing",
+                "days_after_sowing": "50-55",
+                "fertilizer_name": "Urea + MOP",
+                "dosage_per_acre": "30 kg Urea + 20 kg MOP",
+                "application_method": "Side dressing at fruiting",
+                "water_quantity_for_spray": "Not applicable"
+            }
+        ],
+        "major_diseases": [
+            {
+                "disease_name": "Powdery Mildew",
+                "causal_organism": "Erysiphe cichoracearum",
+                "symptoms": "White powdery coating on leaves, stems and fruits",
+                "preventive_measures": "Proper spacing, balanced nutrition, avoid excess nitrogen",
+                "recommended_chemical": "Sulfur 80% WP or Hexaconazole 5% SC",
+                "dosage_per_liter": "2.5 g/liter (Sulfur), 1.5 ml/liter (Hexaconazole)",
+                "waiting_period_before_harvest": "3 days"
+            },
+            {
+                "disease_name": "Downy Mildew",
+                "causal_organism": "Pseudoperonospora cubensis",
+                "symptoms": "Yellow angular leaf spots, grey downy growth on lower surface",
+                "preventive_measures": "Field sanitation, avoid overhead irrigation, proper drainage",
+                "recommended_chemical": "Metalaxyl 8% + Mancozeb 64% WP",
+                "dosage_per_liter": "2.5 g/liter",
+                "waiting_period_before_harvest": "5 days"
+            },
+            {
+                "disease_name": "Cercospora Leaf Spot",
+                "causal_organism": "Cercospora citrullina",
+                "symptoms": "Circular brown spots with grey center on leaves",
+                "preventive_measures": "Crop rotation, remove infected leaves, balanced fertilization",
+                "recommended_chemical": "Mancozeb 75% WP",
+                "dosage_per_liter": "2.5 g/liter",
+                "waiting_period_before_harvest": "5 days"
+            }
+        ]
+    },
+    {
+        "name": "Ridge Gourd (Turai)",
+        "season": "Kharif",
+        "sowing_time": "June to July",
+        "harvesting_time": "August to October (multiple pickings)",
+        "expected_yield_per_acre_quintals": "80-100",
+        "seed_quantity_per_acre_kg": "2-3",
+        "msp_rupees_per_quintal": "No MSP (market-based pricing)",
+        "fertilizer_schedule": [
+            {
+                "stage": "Basal Application",
+                "days_after_sowing": "0",
+                "fertilizer_name": "FYM + DAP + MOP",
+                "dosage_per_acre": "5000 kg FYM + 40 kg DAP + 25 kg MOP",
+                "application_method": "Pit application",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "First Top Dressing",
+                "days_after_sowing": "25-30",
+                "fertilizer_name": "Urea",
+                "dosage_per_acre": "35 kg",
+                "application_method": "Side dressing at vine growth",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "Second Top Dressing",
+                "days_after_sowing": "50-55",
+                "fertilizer_name": "Urea + MOP",
+                "dosage_per_acre": "30 kg Urea + 20 kg MOP",
+                "application_method": "Side dressing at flowering and fruiting",
+                "water_quantity_for_spray": "Not applicable"
+            }
+        ],
+        "major_diseases": [
+            {
+                "disease_name": "Powdery Mildew",
+                "causal_organism": "Erysiphe cichoracearum",
+                "symptoms": "White powdery growth on leaves and stems",
+                "preventive_measures": "Proper spacing, avoid excess nitrogen, field sanitation",
+                "recommended_chemical": "Sulfur 80% WP or Carbendazim 50% WP",
+                "dosage_per_liter": "2.5 g/liter (Sulfur), 1 g/liter (Carbendazim)",
+                "waiting_period_before_harvest": "3 days"
+            },
+            {
+                "disease_name": "Downy Mildew",
+                "causal_organism": "Pseudoperonospora cubensis",
+                "symptoms": "Angular chlorotic spots, grey downy growth on lower leaf surface",
+                "preventive_measures": "Avoid overhead irrigation, proper ventilation, resistant varieties",
+                "recommended_chemical": "Metalaxyl 8% + Mancozeb 64% WP",
+                "dosage_per_liter": "2.5 g/liter",
+                "waiting_period_before_harvest": "5 days"
+            },
+            {
+                "disease_name": "Fruit Rot",
+                "causal_organism": "Pythium spp., Phytophthora spp.",
+                "symptoms": "Water-soaked lesions on fruits, rotting, white growth",
+                "preventive_measures": "Mulching, proper drainage, avoid fruit-soil contact",
+                "recommended_chemical": "Copper Oxychloride 50% WP",
+                "dosage_per_liter": "3 g/liter",
+                "waiting_period_before_harvest": "5 days"
+            }
+        ]
+    },
+    {
+        "name": "Cucumber",
+        "season": "Kharif",
+        "sowing_time": "June to July",
+        "harvesting_time": "August to September (multiple pickings)",
+        "expected_yield_per_acre_quintals": "100-120",
+        "seed_quantity_per_acre_kg": "1.5-2",
+        "msp_rupees_per_quintal": "No MSP (market-based pricing)",
+        "fertilizer_schedule": [
+            {
+                "stage": "Basal Application",
+                "days_after_sowing": "0",
+                "fertilizer_name": "FYM + DAP + MOP",
+                "dosage_per_acre": "4000 kg FYM + 40 kg DAP + 25 kg MOP",
+                "application_method": "Broadcasting in beds or pits",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "First Top Dressing",
+                "days_after_sowing": "20-25",
+                "fertilizer_name": "Urea",
+                "dosage_per_acre": "35 kg",
+                "application_method": "Side dressing at vine elongation",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "Second Top Dressing",
+                "days_after_sowing": "40-45",
+                "fertilizer_name": "Urea + MOP",
+                "dosage_per_acre": "30 kg Urea + 20 kg MOP",
+                "application_method": "Side dressing at flowering",
+                "water_quantity_for_spray": "Not applicable"
+            }
+        ],
+        "major_diseases": [
+            {
+                "disease_name": "Powdery Mildew",
+                "causal_organism": "Erysiphe cichoracearum",
+                "symptoms": "White powdery coating on leaves and stems",
+                "preventive_measures": "Proper spacing, avoid excess nitrogen, resistant varieties",
+                "recommended_chemical": "Sulfur 80% WP or Hexaconazole 5% SC",
+                "dosage_per_liter": "2.5 g/liter (Sulfur), 1.5 ml/liter (Hexaconazole)",
+                "waiting_period_before_harvest": "3 days"
+            },
+            {
+                "disease_name": "Downy Mildew",
+                "causal_organism": "Pseudoperonospora cubensis",
+                "symptoms": "Yellow angular spots on upper surface, grey growth below",
+                "preventive_measures": "Avoid overhead irrigation, proper drainage, field sanitation",
+                "recommended_chemical": "Metalaxyl 8% + Mancozeb 64% WP",
+                "dosage_per_liter": "2.5 g/liter",
+                "waiting_period_before_harvest": "5 days"
+            },
+            {
+                "disease_name": "Anthracnose",
+                "causal_organism": "Colletotrichum lagenarium",
+                "symptoms": "Circular water-soaked lesions on fruits and leaves",
+                "preventive_measures": "Seed treatment, crop rotation, avoid overhead irrigation",
+                "recommended_chemical": "Mancozeb 75% WP or Carbendazim 50% WP",
+                "dosage_per_liter": "2.5 g/liter (Mancozeb), 1 g/liter (Carbendazim)",
+                "waiting_period_before_harvest": "5 days"
+            }
+        ]
+    },
+    {
+        "name": "Pumpkin",
+        "season": "Kharif",
+        "sowing_time": "June to July",
+        "harvesting_time": "September to November",
+        "expected_yield_per_acre_quintals": "120-150",
+        "seed_quantity_per_acre_kg": "2-3",
+        "msp_rupees_per_quintal": "No MSP (market-based pricing)",
+        "fertilizer_schedule": [
+            {
+                "stage": "Basal Application",
+                "days_after_sowing": "0",
+                "fertilizer_name": "FYM + DAP + MOP",
+                "dosage_per_acre": "5000 kg FYM + 50 kg DAP + 30 kg MOP",
+                "application_method": "Pit application",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "First Top Dressing",
+                "days_after_sowing": "30-35",
+                "fertilizer_name": "Urea",
+                "dosage_per_acre": "40 kg",
+                "application_method": "Side dressing at vine growth",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "Second Top Dressing",
+                "days_after_sowing": "55-60",
+                "fertilizer_name": "Urea + MOP",
+                "dosage_per_acre": "35 kg Urea + 25 kg MOP",
+                "application_method": "Side dressing at fruit development",
+                "water_quantity_for_spray": "Not applicable"
+            }
+        ],
+        "major_diseases": [
+            {
+                "disease_name": "Powdery Mildew",
+                "causal_organism": "Erysiphe cichoracearum",
+                "symptoms": "White powdery growth on leaves and stems",
+                "preventive_measures": "Proper spacing, balanced nutrition, field sanitation",
+                "recommended_chemical": "Sulfur 80% WP or Carbendazim 50% WP",
+                "dosage_per_liter": "2.5 g/liter (Sulfur), 1 g/liter (Carbendazim)",
+                "waiting_period_before_harvest": "5 days"
+            },
+            {
+                "disease_name": "Downy Mildew",
+                "causal_organism": "Pseudoperonospora cubensis",
+                "symptoms": "Yellow angular spots with grey downy growth on lower surface",
+                "preventive_measures": "Avoid overhead irrigation, proper ventilation, resistant varieties",
+                "recommended_chemical": "Metalaxyl 8% + Mancozeb 64% WP",
+                "dosage_per_liter": "2.5 g/liter",
+                "waiting_period_before_harvest": "7 days"
+            },
+            {
+                "disease_name": "Fruit Rot",
+                "causal_organism": "Pythium aphanidermatum, Phytophthora spp.",
+                "symptoms": "Water-soaked lesions on fruits, rotting, white mycelial growth",
+                "preventive_measures": "Mulching to prevent fruit-soil contact, proper drainage",
+                "recommended_chemical": "Copper Oxychloride 50% WP",
+                "dosage_per_liter": "3 g/liter",
+                "waiting_period_before_harvest": "7 days"
+            }
+        ]
+    },
+    {
+        "name": "Green Chilli",
+        "season": "Kharif",
+        "sowing_time": "May to June (nursery)",
+        "harvesting_time": "August to November (multiple pickings)",
+        "expected_yield_per_acre_quintals": "60-80",
+        "seed_quantity_per_acre_kg": "0.4-0.5 (nursery)",
+        "msp_rupees_per_quintal": "No MSP (market-based pricing)",
+        "fertilizer_schedule": [
+            {
+                "stage": "Basal Application",
+                "days_after_sowing": "0 (at transplanting)",
+                "fertilizer_name": "FYM + DAP + MOP",
+                "dosage_per_acre": "4000 kg FYM + 50 kg DAP + 30 kg MOP",
+                "application_method": "Broadcasting and incorporation",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "First Top Dressing",
+                "days_after_sowing": "30-35",
+                "fertilizer_name": "Urea",
+                "dosage_per_acre": "45 kg",
+                "application_method": "Side dressing at flowering",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "Second Top Dressing",
+                "days_after_sowing": "60-65",
+                "fertilizer_name": "Urea + MOP",
+                "dosage_per_acre": "40 kg Urea + 25 kg MOP",
+                "application_method": "Side dressing at fruiting",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "Foliar Spray",
+                "days_after_sowing": "75-80",
+                "fertilizer_name": "NPK 19:19:19",
+                "dosage_per_acre": "2 kg in 200 liters water",
+                "application_method": "Foliar spray during peak fruiting",
+                "water_quantity_for_spray": "200 liters"
+            }
+        ],
+        "major_diseases": [
+            {
+                "disease_name": "Anthracnose (Fruit Rot)",
+                "causal_organism": "Colletotrichum capsici",
+                "symptoms": "Circular sunken lesions on fruits with concentric rings",
+                "preventive_measures": "Avoid overhead irrigation, proper drainage, timely harvest",
+                "recommended_chemical": "Mancozeb 75% WP or Carbendazim 50% WP",
+                "dosage_per_liter": "2.5 g/liter (Mancozeb), 1 g/liter (Carbendazim)",
+                "waiting_period_before_harvest": "3 days"
+            },
+            {
+                "disease_name": "Powdery Mildew",
+                "causal_organism": "Leveillula taurica",
+                "symptoms": "White powdery growth on lower leaf surface, leaf yellowing",
+                "preventive_measures": "Proper spacing, avoid excess nitrogen, balanced fertilization",
+                "recommended_chemical": "Sulfur 80% WP or Hexaconazole 5% SC",
+                "dosage_per_liter": "2.5 g/liter (Sulfur), 1.5 ml/liter (Hexaconazole)",
+                "waiting_period_before_harvest": "3 days"
+            },
+            {
+                "disease_name": "Bacterial Leaf Spot",
+                "causal_organism": "Xanthomonas campestris pv. vesicatoria",
+                "symptoms": "Small water-soaked spots on leaves and fruits",
+                "preventive_measures": "Use disease-free seedlings, avoid overhead irrigation, field sanitation",
+                "recommended_chemical": "Streptocycline 9% + Copper Oxychloride 50%",
+                "dosage_per_liter": "2 g/liter + 3 g/liter",
+                "waiting_period_before_harvest": "5 days"
+            }
+        ]
+    },
+    {
+        "name": "Coriander (Kharif)",
+        "season": "Kharif",
+        "crop.sowing_time": "June to July",
+        "harvesting_time": "September to October",
+        "expected_yield_per_acre_quintals": "6-8 (seed), 40-50 (green leaves)",
+        "seed_quantity_per_acre_kg": "10-12",
+        "msp_rupees_per_quintal": "7755",
+        "fertilizer_schedule": [
+            {
+                "stage": "Basal Application",
+                "days_after_sowing": "0",
+                "fertilizer_name": "DAP + MOP",
+                "dosage_per_acre": "30 kg DAP + 13 kg MOP",
+                "application_method": "Broadcasting and incorporation",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "Top Dressing",
+                "days_after_sowing": "25-30",
+                "fertilizer_name": "Urea",
+                "dosage_per_acre": "30 kg",
+                "application_method": "Broadcasting at branching stage",
+                "water_quantity_for_spray": "Not applicable"
+            },
+            {
+                "stage": "Foliar Spray",
+                "days_after_sowing": "45-50",
+                "fertilizer_name": "NPK 19:19:19",
+                "dosage_per_acre": "2 kg in 200 liters water",
+                "application_method": "Foliar spray at flowering",
+                "water_quantity_for_spray": "200 liters"
+            }
+        ],
+        "major_diseases": [
+            {
+                "disease_name": "Powdery Mildew",
+                "causal_organism": "Erysiphe polygoni",
+                "symptoms": "White powdery growth on leaves and stems",
+                "preventive_measures": "Proper spacing, avoid excess nitrogen, resistant varieties",
+                "recommended_chemical": "Sulfur 80% WP or Carbendazim 50% WP",
+                "dosage_per_liter": "2.5 g/liter (Sulfur), 1 g/liter (Carbendazim)",
+                "waiting_period_before_harvest": "10 days"
+            },
+            {
+                "disease_name": "Stem Gall",
+                "causal_organism": "Protomyces macrosporus",
+                "symptoms": "Galls on stems, distortion of plant parts",
+                "preventive_measures": "Use disease-free seeds, crop rotation, field sanitation",
+                "recommended_chemical": "Mancozeb 75% WP",
+                "dosage_per_liter": "2.5 g/liter",
+                "waiting_period_before_harvest": "12 days"
+            },
+            {
+                "disease_name": "Wilt",
+                "causal_organism": "Fusarium oxysporum",
+                "symptoms": "Wilting, yellowing, vascular browning",
+                "preventive_measures": "Seed treatment, crop rotation, proper drainage",
+                "recommended_chemical": "Carbendazim 50% WP (seed treatment)",
+                "dosage_per_liter": "2 g/kg seed",
+                "waiting_period_before_harvest": "Not applicable (seed treatment)"
+            }
+        ]
+    }
+]

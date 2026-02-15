@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AgriIndia Admin Panel</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f4f6f9;
+            margin: 40px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #835324;
+        }
+
+        .card {
+            background: #ffffff;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08);
+        }
+        .app-shell {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero-card {
+            background: linear-gradient(135deg, #134e2a 0%, #1b5e20 45%, #2e7d32 100%);
+            color: #ffffff;
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 14px 34px rgba(27, 94, 32, 0.3);
+        }
+
+        .hero-title {
+            margin: 0;
+            font-size: 24px;
+            font-weight: 700;
+            color: #ffffff;
+            text-align: left;
+        }
+
+        .hero-subtitle {
+            margin-top: 8px;
+            opacity: 0.92;
+            font-size: 14px;
+        }
+
+        .metrics-grid {
+            margin-top: 18px;
+            display: grid;
+            grid-template-columns: repeat(4, minmax(160px, 1fr));
+            gap: 14px;
+        }
+
+        .metric-card {
+            background: rgba(255, 255, 255, 0.14);
+            border: 1px solid rgba(255, 255, 255, 0.24);
+            border-radius: 12px;
+            padding: 14px;
+            backdrop-filter: blur(6px);
+        }
+
+        .metric-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            opacity: 0.86;
+            margin-bottom: 6px;
+        }
+
+        .metric-value {
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 1.1;
+        }
+
+        .recent-list {
+            margin-top: 12px;
+            display: grid;
+            gap: 8px;
+        }
+
+        .recent-item {
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 10px 12px;
+            background: #ffffff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .recent-name {
+            font-weight: 600;
+            color: #1f2937;
+        }
+
+        .recent-meta {
+            color: #6b7280;
+            font-size: 12px;
+            white-space: nowrap;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 8px;
+            margin: 6px 0;
+        }
+
+        button {
+            padding: 8px 15px;
+            background-color: #1b5e20;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+
+        button:hover {
+            background-color: #144d17;
+        }
+
+        .remove-btn {
+            background-color: #b71c1c;
+        }
+
+        .remove-btn:hover {
+            background-color: #8e0000;
+        }
+
+        .entry-box {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-top: 10px;
+            border-radius: 6px;
+            background-color: #fafafa;
+        }
+
+        /* ============================= */
+        /*        RESPONSIVE DESIGN      */
+        /* ============================= */
+
+        /* Tablets */
+        @media (max-width: 992px) {
+            body {
+                margin: 20px;
+            }
+
+            .card {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            h3 {
+                font-size: 18px;
+            }
+        }
+
+        /* Mobile Devices */
+        @media (max-width: 768px) {
+
+            body {
+                margin: 15px;
+            }
+
+            h1 {
+                font-size: 20px;
+                text-align: center;
+            }
+
+            .card {
+                padding: 15px;
+                border-radius: 8px;
+            }
+
+            input,
+            textarea,
+            select {
+                font-size: 14px;
+                padding: 10px;
+            }
+
+            button {
+                width: 100%;
+                margin-top: 10px;
+                padding: 12px;
+                font-size: 14px;
+            }
+
+            .remove-btn {
+                width: 100%;
+                margin-top: 10px;
+            }
+
+            .entry-box {
+                padding: 12px;
+            }
+            .metrics-grid {
+                grid-template-columns: repeat(2, minmax(140px, 1fr));
+            }
+
+            /* Stack fertilizer month/day selects */
+            .entry-box select {
+                width: 100%;
+                margin-bottom: 8px;
+            }
+
+            /* Make crop list buttons vertical */
+            #cropList button {
+                width: 100%;
+                margin-top: 8px;
+            }
+
+            /* Logout button fix */
+            #cropSection button[onclick="logout()"] {
+                float: none !important;
+                width: 100%;
+                margin-bottom: 15px;
+            }
+        }
+
+        /* Small Phones */
+        @media (max-width: 480px) {
+
+            h1 {
+                font-size: 18px;
+            }
+
+            .card {
+                padding: 12px;
+            }
+
+            input,
+            textarea,
+            select {
+                font-size: 13px;
+            }
+
+            button {
+                font-size: 13px;
+                padding: 10px;
+            }
+            .metrics-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app-shell">
+
+    <h1>AgriIndia Admin Panel</h1>
+
+    <!-- LOGIN -->
+    <div class="card">
+        <h3>Admin Login</h3>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="login()">Login</button>
+    </div>
+
+    <!-- CROP SECTION -->
+    <div class="card" id="cropSection" style="display:none;">
+        <div class="hero-card">
+            <h2 class="hero-title">Admin Insights</h2>
+            <div class="hero-subtitle">Live operational metrics from crops and users</div>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-label">Total Crops Count</div>
+                    <div class="metric-value" id="totalCropsCount">0</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Total Diseases Count</div>
+                    <div class="metric-value" id="totalDiseasesCount">0</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Total Farmers Registered</div>
+                    <div class="metric-value" id="totalFarmersCount">0</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Total Fertilizer Records</div>
+                    <div class="metric-value" id="totalFertilizersCount">0</div>
+                </div>
+            </div>
+        </div>
+
+        <h3>Recently Added Crops</h3>
+        <div id="recentCropsList" class="recent-list"></div>
+        <hr>
+
+        <h3>Crop Information</h3>
+        <button onclick="logout()" style="background:#6c757d; float:right;">Logout</button>
+
+        <input type="text" id="name" placeholder="Crop Name">
+        <input type="text" id="season" placeholder="Season (Rabi/Kharif/Zaid)">
+        <input type="text" id="sowing_time" placeholder="Sowing Time">
+        <input type="text" id="harvesting_time" placeholder="Harvesting Time">
+        <input type="text" id="expected_yield_per_acre_quintals" placeholder="Expected Yield per Acre (Quintals)">
+        <input type="text" id="seed_quantity_per_acre_kg" placeholder="Seed Quantity per Acre (kg)">
+        <input type="text" id="msp_rupees_per_quintal" placeholder="MSP (â‚¹ per quintal)">
+
+        <h4>Fertilizer Schedule</h4>
+        <div id="fertilizerContainer"></div>
+        <button onclick="addFertilizer()">Add Fertilizer Stage</button>
+
+        <h4>Disease Information</h4>
+        <div id="diseaseContainer"></div>
+        <button onclick="addDisease()">Add Disease</button>
+
+        <br><br>
+        <button onclick="submitCrop()">Submit Crop</button>
+
+        <hr>
+        <h3>All Crops</h3>
+        <div id="cropList"></div>
+
+        <hr>
+        <h3>Cash Crops</h3>
+        <button onclick="addCashCrop()">Add Cash Crop</button>
+        <div id="cashCropList"></div>
+
+        <hr>
+        <h3>Fruit Crops</h3>
+        <button onclick="addFruitCrop()">Add Fruit Crop</button>
+        <div id="fruitCropList"></div>
+
+    </div>
+
+    <script>
+
+        let editingCropName = null;
+        let expandedCropName = null;
+        let cachedCrops = [];
+        let cachedCashCrops = [];
+        let cachedFruitCrops = [];
+
+        function encodeName(name) {
+            return encodeURIComponent(name || "");
+        }
+
+        function decodeName(encodedName) {
+            return decodeURIComponent(encodedName || "");
+        }
+
+        function formatValue(value) {
+            if (value === undefined || value === null || value === "") return "N/A";
+            return value;
+        }
+
+        function setMetric(id, value) {
+            const element = document.getElementById(id);
+            if (element) element.textContent = String(value ?? 0);
+        }
+
+        function getCollection(payload) {
+            return Array.isArray(payload) ? payload : (payload?.data || []);
+        }
+
+        function countDiseases(collection) {
+            return (collection || []).reduce((total, item) => {
+                const diseases = item?.major_diseases || item?.diseases || [];
+                return total + (Array.isArray(diseases) ? diseases.length : 0);
+            }, 0);
+        }
+
+        function countFertilizers(collection) {
+            return (collection || []).reduce((total, item) => {
+                const fertilizers = item?.fertilizer_schedule || [];
+                return total + (Array.isArray(fertilizers) ? fertilizers.length : 0);
+            }, 0);
+        }
+
+        function formatDateTime(value) {
+            if (!value) return "No timestamp";
+            const date = new Date(value);
+            if (Number.isNaN(date.getTime())) return "No timestamp";
+            return date.toLocaleString();
+        }
+
+        function renderRecentCrops(crops, limit = 6) {
+            const container = document.getElementById("recentCropsList");
+            if (!container) return;
+
+            const sorted = [...(crops || [])].sort((a, b) => {
+                const bTime = new Date(b.createdAt || b.updatedAt || 0).getTime();
+                const aTime = new Date(a.createdAt || a.updatedAt || 0).getTime();
+                return bTime - aTime;
+            });
+
+            const recent = sorted.slice(0, limit);
+            if (recent.length === 0) {
+                container.innerHTML = "<div class='entry-box'>No recent crops available.</div>";
+                return;
+            }
+
+            container.innerHTML = recent.map((crop) => `
+                <div class="recent-item">
+                    <div class="recent-name">${formatValue(crop.name)}</div>
+                    <div class="recent-meta">${formatDateTime(crop.createdAt || crop.updatedAt)}</div>
+                </div>
+            `).join("");
+        }
+
+        async function loadDashboardMetrics(crops, cashCrops, fruitCrops) {
+            const token = localStorage.getItem("token");
+            let users = [];
+
+            try {
+                const usersResponse = await apiFetch("/api/users", {
+                    headers: {
+                        "Authorization": "Bearer " + token
+                    }
+                });
+
+                if (usersResponse.ok) {
+                    const usersPayload = await usersResponse.json();
+                    users = getCollection(usersPayload);
+                }
+            } catch (error) {
+                users = [];
+            }
+
+            const totalCrops = (crops?.length || 0) + (cashCrops?.length || 0) + (fruitCrops?.length || 0);
+            const totalDiseases =
+                countDiseases(crops) +
+                countDiseases(cashCrops) +
+                countDiseases(fruitCrops);
+            const totalFertilizers =
+                countFertilizers(crops) +
+                countFertilizers(cashCrops) +
+                countFertilizers(fruitCrops);
+            const totalFarmers = users.filter(user => user?.role === "farmer").length;
+
+            setMetric("totalCropsCount", totalCrops);
+            setMetric("totalDiseasesCount", totalDiseases);
+            setMetric("totalFertilizersCount", totalFertilizers);
+            setMetric("totalFarmersCount", totalFarmers);
+            renderRecentCrops(crops);
+        }
+
+        function getTokenPayload(token) {
+            try {
+                const base64 = token.split(".")[1];
+                if (!base64) return null;
+                return JSON.parse(atob(base64));
+            } catch (e) {
+                return null;
+            }
+        }
+
+        
+        async function apiFetch(path, options = {}) {
+            const configuredBase = localStorage.getItem("apiBaseUrl") || "";
+            const fallbackBase = "http://localhost:5000";
+            const candidates = [];
+
+            if (configuredBase) candidates.push(configuredBase.replace(/\/+$/, ""));
+            candidates.push(window.location.origin);
+            if (!candidates.includes(fallbackBase)) candidates.push(fallbackBase);
+
+            let lastError = null;
+            for (const base of candidates) {
+                try {
+                    const response = await window.fetch(`${base}${path}`, options);
+                    if (response.status !== 405) return response;
+                } catch (error) {
+                    lastError = error;
+                }
+            }
+
+            if (lastError) throw lastError;
+            throw new Error(`API call failed for ${path}`);
+        }
+
+        function createDetailsHtml(crop) {
+            const fertilizers = (crop.fertilizer_schedule || []).map((item, index) => `
+                <div style="margin-top:8px;">
+                    <strong>Stage ${index + 1}:</strong> ${formatValue(item.stage)}<br>
+                    Days after sowing: ${formatValue(item.days_after_sowing)}<br>
+                    Fertilizer: ${formatValue(item.fertilizer_name)}<br>
+                    Dosage: ${formatValue(item.dosage_per_acre)}<br>
+                    Method: ${formatValue(item.application_method)}<br>
+                    Water: ${formatValue(item.water_quantity_for_spray)}
+                </div>
+            `).join("");
+
+            const diseases = (crop.major_diseases || []).map((item, index) => `
+                <div style="margin-top:8px;">
+                    <strong>Disease ${index + 1}:</strong> ${formatValue(item.disease_name)}<br>
+                    Causal organism: ${formatValue(item.causal_organism)}<br>
+                    Symptoms: ${formatValue(item.symptoms)}<br>
+                    Prevention: ${formatValue(item.preventive_measures)}<br>
+                    Chemical: ${formatValue(item.recommended_chemical)}<br>
+                    Dosage/liter: ${formatValue(item.dosage_per_liter)}<br>
+                    Waiting period: ${formatValue(item.waiting_period_before_harvest)}
+                </div>
+            `).join("");
+
+            return `
+                <div style="margin-top:10px; padding-top:10px; border-top:1px solid #ddd;">
+                    <strong>Full Crop Details</strong><br>
+                    Sowing time: ${formatValue(crop.sowing_time)}<br>
+                    Harvesting time: ${formatValue(crop.harvesting_time)}<br>
+                    Seed quantity: ${formatValue(crop.seed_quantity_per_acre_kg)} kg/acre<br>
+                    <br>
+                    <strong>Fertilizer Schedule</strong>
+                    ${fertilizers || "<div style='margin-top:8px;'>N/A</div>"}
+                    <br>
+                    <strong>Major Diseases</strong>
+                    ${diseases || "<div style='margin-top:8px;'>N/A</div>"}
+                </div>
+            `;
+        }
+
+        function createSpecialCropDetailsHtml(crop) {
+            const fertilizers = (crop.fertilizer_schedule || []).map((item, index) => `
+                <div style="margin-top:8px;">
+                    <strong>Stage ${index + 1}:</strong> ${formatValue(item.stage)}<br>
+                    Period: ${formatValue(item.application_period)}<br>
+                    Fertilizer: ${formatValue(item.fertilizer_name)}<br>
+                    Dosage: ${formatValue(item.dosage_per_acre)}<br>
+                    Method: ${formatValue(item.application_method)}<br>
+                    Water: ${formatValue(item.water_quantity_for_spray)}
+                </div>
+            `).join("");
+
+            const irrigation = (crop.irrigation_schedule || []).map((item, index) => `
+                <div style="margin-top:8px;">
+                    <strong>Stage ${index + 1}:</strong> ${formatValue(item.growth_stage)}<br>
+                    Interval (days): ${formatValue(item.interval_days)}<br>
+                    Water requirement: ${formatValue(item.water_requirement)}
+                </div>
+            `).join("");
+
+            const diseases = (crop.major_diseases || []).map((item, index) => `
+                <div style="margin-top:8px;">
+                    <strong>Disease ${index + 1}:</strong> ${formatValue(item.disease_name)}<br>
+                    Causal organism: ${formatValue(item.causal_organism)}<br>
+                    Symptoms: ${formatValue(item.symptoms)}<br>
+                    Prevention: ${formatValue(item.preventive_measures)}<br>
+                    Chemical: ${formatValue(item.recommended_chemical)}<br>
+                    Dosage/liter: ${formatValue(item.dosage_per_liter)}<br>
+                    Waiting period: ${formatValue(item.waiting_period_before_harvest)}
+                </div>
+            `).join("");
+
+            const pests = (crop.major_pests || []).map((item, index) => `
+                <div style="margin-top:8px;">
+                    <strong>Pest ${index + 1}:</strong> ${formatValue(item.pest_name)}<br>
+                    Damage symptoms: ${formatValue(item.damage_symptoms)}<br>
+                    Insecticide: ${formatValue(item.recommended_insecticide)}<br>
+                    Dosage/liter: ${formatValue(item.dosage_per_liter)}<br>
+                    Waiting period: ${formatValue(item.waiting_period_before_harvest)}
+                </div>
+            `).join("");
+
+            return `
+                <div style="margin-top:10px; padding-top:10px; border-top:1px solid #ddd;">
+                    <strong>Planting time:</strong> ${formatValue(crop.sowing_or_planting_time)}<br>
+                    <strong>Harvesting time:</strong> ${formatValue(crop.harvesting_time)}<br>
+                    <strong>Planting material:</strong> ${formatValue(crop.planting_material_quantity_per_acre)}<br>
+                    <strong>Cost/acre:</strong> ${formatValue(crop.estimated_cost_of_cultivation_per_acre)}<br>
+                    <strong>Profit margin (%):</strong> ${formatValue(crop.average_profit_margin_percentage)}<br>
+                    <br>
+                    <strong>Fertilizer Schedule</strong>
+                    ${fertilizers || "<div style='margin-top:8px;'>N/A</div>"}
+                    <br>
+                    <strong>Irrigation Schedule</strong>
+                    ${irrigation || "<div style='margin-top:8px;'>N/A</div>"}
+                    <br>
+                    <strong>Major Diseases</strong>
+                    ${diseases || "<div style='margin-top:8px;'>N/A</div>"}
+                    <br>
+                    <strong>Major Pests</strong>
+                    ${pests || "<div style='margin-top:8px;'>N/A</div>"}
+                </div>
+            `;
+        }
+
+        /* ================= LOGIN ================= */
+        async function login() {
+            const username = document.getElementById("username").value.trim();
+            const password = document.getElementById("password").value;
+
+            if (!username || !password) {
+                alert("Please enter username and password");
+                return;
+            }
+
+            try {
+                const response = await apiFetch("/api/auth/login", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ username, password })
+                });
+
+                let data = {};
+                try {
+                    data = await response.json();
+                } catch (e) {
+                    data = {};
+                }
+
+                if (!response.ok) {
+                    const message = data.message || `Login failed (${response.status})`;
+                    alert(message);
+                    return;
+                }
+
+                if (data.token) {
+                    const payload = getTokenPayload(data.token);
+                    if (!payload || payload.role !== "admin") {
+                        alert("Access denied: admin account required");
+                        localStorage.removeItem("token");
+                        return;
+                    }
+
+                    localStorage.setItem("token", data.token);
+                    alert("Login successful");
+                    document.getElementById("cropSection").style.display = "block";
+                    await loadCrops();
+                } else {
+                    alert("Login failed: token not received");
+                }
+            } catch (error) {
+                alert("Unable to reach server. Open this page via backend URL (e.g. http://localhost:5000/admin.html).");
+                console.error("Login error:", error);
+            }
+        }
+
+        /* ================= LOGOUT ================= */
+        function logout() {
+            localStorage.removeItem("token");
+            document.getElementById("cropSection").style.display = "none";
+            alert("Logged out successfully");
+        }
+
+        /* ================= ADD FERTILIZER ================= */
+        function addFertilizer() {
+
+            const container = document.getElementById("fertilizerContainer");
+            const div = document.createElement("div");
+            div.classList.add("entry-box");
+
+            div.innerHTML = `
+                <input type="text" class="stage" placeholder="Stage (e.g., Basal Application)">
+                <input type="text" class="days_after_sowing" placeholder="Days After Sowing (e.g., 0, 20-25)">
+                <input type="text" class="fertilizer_name" placeholder="Fertilizer Name">
+                <input type="text" class="dosage_per_acre" placeholder="Dosage per Acre">
+                <input type="text" class="application_method" placeholder="Application Method">
+                <input type="text" class="water_quantity_for_spray" placeholder="Water Quantity for Spray">
+                <button class="remove-btn" onclick="this.parentElement.remove()">Remove</button>
+            `;
+
+            container.appendChild(div);
+        }
+
+        /* ================= ADD DISEASE ================= */
+        function addDisease() {
+
+            const container = document.getElementById("diseaseContainer");
+            const div = document.createElement("div");
+            div.classList.add("entry-box");
+
+            div.innerHTML = `
+                <input type="text" class="disease_name" placeholder="Disease Name">
+                <input type="text" class="causal_organism" placeholder="Causal Organism">
+                <textarea class="symptoms" placeholder="Symptoms"></textarea>
+                <textarea class="preventive_measures" placeholder="Preventive Measures"></textarea>
+                <input type="text" class="recommended_chemical" placeholder="Recommended Chemical">
+                <input type="text" class="dosage_per_liter" placeholder="Dosage per Liter">
+                <input type="text" class="waiting_period_before_harvest" placeholder="Waiting Period Before Harvest">
+                <button class="remove-btn" onclick="this.parentElement.remove()">Remove</button>
+            `;
+
+            container.appendChild(div);
+        }
+
+        /* ================= SUBMIT CROP ================= */
+        async function submitCrop() {
+
+            const fertBoxes = document.querySelectorAll("#fertilizerContainer .entry-box");
+            let fertilizer_schedule = [];
+
+            fertBoxes.forEach(box => {
+                fertilizer_schedule.push({
+                    stage: box.querySelector(".stage")?.value || "",
+                    days_after_sowing: box.querySelector(".days_after_sowing")?.value || "",
+                    fertilizer_name: box.querySelector(".fertilizer_name")?.value || "",
+                    dosage_per_acre: box.querySelector(".dosage_per_acre")?.value || "",
+                    application_method: box.querySelector(".application_method")?.value || "",
+                    water_quantity_for_spray: box.querySelector(".water_quantity_for_spray")?.value || ""
+                });
+            });
+
+            const diseaseBoxes = document.querySelectorAll("#diseaseContainer .entry-box");
+            let major_diseases = [];
+
+            diseaseBoxes.forEach(box => {
+                major_diseases.push({
+                    disease_name: box.querySelector(".disease_name")?.value || "",
+                    causal_organism: box.querySelector(".causal_organism")?.value || "",
+                    symptoms: box.querySelector(".symptoms")?.value || "",
+                    preventive_measures: box.querySelector(".preventive_measures")?.value || "",
+                    recommended_chemical: box.querySelector(".recommended_chemical")?.value || "",
+                    dosage_per_liter: box.querySelector(".dosage_per_liter")?.value || "",
+                    waiting_period_before_harvest: box.querySelector(".waiting_period_before_harvest")?.value || ""
+                });
+            });
+
+            const cropData = {
+                name: document.getElementById("name").value,
+                season: document.getElementById("season").value,
+                sowing_time: document.getElementById("sowing_time").value,
+                harvesting_time: document.getElementById("harvesting_time").value,
+                expected_yield_per_acre_quintals: document.getElementById("expected_yield_per_acre_quintals").value,
+                seed_quantity_per_acre_kg: document.getElementById("seed_quantity_per_acre_kg").value,
+                msp_rupees_per_quintal: document.getElementById("msp_rupees_per_quintal").value,
+                fertilizer_schedule: fertilizer_schedule,
+                major_diseases: major_diseases
+            };
+
+            const method = editingCropName ? "PUT" : "POST";
+            const url = editingCropName ? `/api/crops/${encodeName(editingCropName)}` : "/api/crops";
+
+            const response = await apiFetch(url, {
+                method: method,
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": "Bearer " + localStorage.getItem("token")
+                },
+                body: JSON.stringify(cropData)
+            });
+
+            if (response.ok) {
+                alert("Crop saved successfully!");
+                editingCropName = null;
+                loadCrops();
+            } else {
+                const data = await response.json().catch(() => ({}));
+                alert(data.message || "Error saving crop");
+            }
+        }
+
+        /* ================= LOAD CROPS ================= */
+        async function loadCrops() {
+
+            const response = await apiFetch("/api/crops?sync=true");
+
+            if (!response.ok) {
+                alert("Failed to load crops");
+                return;
+            }
+
+            const crops = await response.json();
+
+            if (!Array.isArray(crops)) {
+                alert("Invalid crop data received");
+                return;
+            }
+
+            cachedCrops = crops;
+            const container = document.getElementById("cropList");
+            container.innerHTML = "";
+
+            if (crops.length === 0) {
+                container.innerHTML = "<p>No crops found.</p>";
+                return;
+            }
+
+            crops.forEach(crop => {
+                const encodedName = encodeName(crop.name);
+                const isExpanded = expandedCropName === crop.name;
+
+                const div = document.createElement("div");
+                div.classList.add("entry-box");
+
+                div.innerHTML = `
+                    <strong>${crop.name}</strong><br>
+                    Season: ${crop.season}<br>
+                    MSP: ${formatValue(crop.msp_rupees_per_quintal)}<br>
+                    Yield: ${formatValue(crop.expected_yield_per_acre_quintals)} quintals/acre<br>
+                    <button onclick="editCrop('${encodedName}')">${isExpanded ? "Hide" : "Edit"}</button>
+                    <button class="remove-btn" onclick="deleteCrop('${encodedName}')">Delete</button>
+                    ${isExpanded ? createDetailsHtml(crop) : ""}
+                `;
+
+                container.appendChild(div);
+            });
+
+            await loadCashCrops();
+            await loadFruitCrops();
+            await loadDashboardMetrics(cachedCrops, cachedCashCrops, cachedFruitCrops);
+        }
+
+        async function loadCashCrops() {
+            const token = localStorage.getItem("token");
+            const response = await apiFetch("/api/cash-crops", {
+                headers: {
+                    "Authorization": "Bearer " + token
+                }
+            });
+            const container = document.getElementById("cashCropList");
+
+            if (!response.ok) {
+                container.innerHTML = "<p>Failed to load cash crops.</p>";
+                return;
+            }
+
+            const payload = await response.json();
+            const crops = Array.isArray(payload) ? payload : (payload.data || []);
+            cachedCashCrops = crops;
+            container.innerHTML = "";
+
+            if (!Array.isArray(crops) || crops.length === 0) {
+                container.innerHTML = "<p>No cash crops found.</p>";
+                return;
+            }
+
+            crops.forEach(crop => {
+                const cropName = crop.crop_name || crop.name || "";
+                const encodedName = encodeName(cropName);
+                const div = document.createElement("div");
+                div.classList.add("entry-box");
+                div.innerHTML = `
+                    <strong>${formatValue(cropName)}</strong><br>
+                    Type: ${formatValue(crop.crop_type)}<br>
+                    Season: ${formatValue(crop.season)}<br>
+                    Market Price: ${formatValue(crop.average_market_price_rupees_per_quintal)}<br>
+                    <button onclick="editCashCrop('${encodedName}')">Edit</button>
+                    <button class="remove-btn" onclick="deleteCashCrop('${encodedName}')">Delete</button>
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        async function loadFruitCrops() {
+            const token = localStorage.getItem("token");
+            const response = await apiFetch("/api/fruit-crops", {
+                headers: {
+                    "Authorization": "Bearer " + token
+                }
+            });
+            const container = document.getElementById("fruitCropList");
+
+            if (!response.ok) {
+                container.innerHTML = "<p>Failed to load fruit crops.</p>";
+                return;
+            }
+
+            const payload = await response.json();
+            const crops = Array.isArray(payload) ? payload : (payload.data || []);
+            cachedFruitCrops = crops;
+            container.innerHTML = "";
+
+            if (!Array.isArray(crops) || crops.length === 0) {
+                container.innerHTML = "<p>No fruit crops found.</p>";
+                return;
+            }
+
+            crops.forEach(crop => {
+                const cropName = crop.crop_name || crop.name || "";
+                const encodedName = encodeName(cropName);
+                const div = document.createElement("div");
+                div.classList.add("entry-box");
+                div.innerHTML = `
+                    <strong>${formatValue(cropName)}</strong><br>
+                    Type: ${formatValue(crop.crop_type)}<br>
+                    Season: ${formatValue(crop.season)}<br>
+                    Market Price: ${formatValue(crop.average_market_price_rupees_per_quintal)}<br>
+                    <button onclick="editFruitCrop('${encodedName}')">Edit</button>
+                    <button class="remove-btn" onclick="deleteFruitCrop('${encodedName}')">Delete</button>
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        async function addCashCrop() {
+            const name = (prompt("Enter cash crop name") || "").trim();
+            if (!name) return;
+
+            const payload = {
+                crop_name: name,
+                crop_type: prompt("Crop type (optional)") || "",
+                season: prompt("Season (optional)") || "",
+                crop_nature: prompt("Crop nature (optional)") || "",
+                average_market_price_rupees_per_quintal: prompt("Market price (optional)") || "",
+                expected_yield_per_acre_quintals: prompt("Yield (optional)") || ""
+            };
+
+            const response = await apiFetch("/api/cash-crops", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": "Bearer " + localStorage.getItem("token")
+                },
+                body: JSON.stringify(payload)
+            });
+
+            const data = await response.json().catch(() => ({}));
+            if (!response.ok) {
+                alert(data.message || "Failed to add cash crop");
+                return;
+            }
+
+            alert("Cash crop added successfully");
+            await loadCashCrops();
+        }
+
+        async function addFruitCrop() {
+            const name = (prompt("Enter fruit crop name") || "").trim();
+            if (!name) return;
+
+            const payload = {
+                crop_name: name,
+                crop_type: prompt("Crop type (optional)") || "",
+                season: prompt("Season (optional)") || "",
+                crop_nature: prompt("Crop nature (optional)") || "",
+                average_market_price_rupees_per_quintal: prompt("Market price (optional)") || "",
+                expected_yield_per_acre_quintals: prompt("Yield (optional)") || ""
+            };
+
+            const response = await apiFetch("/api/fruit-crops", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": "Bearer " + localStorage.getItem("token")
+                },
+                body: JSON.stringify(payload)
+            });
+
+            const data = await response.json().catch(() => ({}));
+            if (!response.ok) {
+                alert(data.message || "Failed to add fruit crop");
+                return;
+            }
+
+            alert("Fruit crop added successfully");
+            await loadFruitCrops();
+        }
+
+        async function deleteCashCrop(encodedName) {
+            const name = decodeName(encodedName);
+            if (!confirm(`Delete cash crop: ${name}?`)) return;
+
+            const response = await apiFetch("/api/cash-crops/" + encodeName(name), {
+                method: "DELETE",
+                headers: {
+                    "Authorization": "Bearer " + localStorage.getItem("token")
+                }
+            });
+
+            const data = await response.json().catch(() => ({}));
+            if (!response.ok) {
+                alert(data.message || "Failed to delete cash crop");
+                return;
+            }
+
+            alert("Cash crop deleted successfully");
+            await loadCashCrops();
+        }
+
+        async function deleteFruitCrop(encodedName) {
+            const name = decodeName(encodedName);
+            if (!confirm(`Delete fruit crop: ${name}?`)) return;
+
+            const response = await apiFetch("/api/fruit-crops/" + encodeName(name), {
+                method: "DELETE",
+                headers: {
+                    "Authorization": "Bearer " + localStorage.getItem("token")
+                }
+            });
+
+            const data = await response.json().catch(() => ({}));
+            if (!response.ok) {
+                alert(data.message || "Failed to delete fruit crop");
+                return;
+            }
+
+            alert("Fruit crop deleted successfully");
+            await loadFruitCrops();
+        }
+
+        async function editCashCrop(encodedName) {
+            const name = decodeName(encodedName);
+            const nextType = prompt("Crop type (optional)");
+            if (nextType === null) return;
+            const nextSeason = prompt("Season (optional)");
+            if (nextSeason === null) return;
+            const nextNature = prompt("Crop nature (optional)");
+            if (nextNature === null) return;
+            const nextPrice = prompt("Market price (optional)");
+            if (nextPrice === null) return;
+            const nextYield = prompt("Yield (optional)");
+            if (nextYield === null) return;
+
+            const response = await apiFetch("/api/cash-crops/" + encodeName(name), {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": "Bearer " + localStorage.getItem("token")
+                },
+                body: JSON.stringify({
+                    crop_type: nextType,
+                    season: nextSeason,
+                    crop_nature: nextNature,
+                    average_market_price_rupees_per_quintal: nextPrice,
+                    expected_yield_per_acre_quintals: nextYield
+                })
+            });
+
+            const data = await response.json().catch(() => ({}));
+            if (!response.ok) {
+                alert(data.message || "Failed to update cash crop");
+                return;
+            }
+
+            alert("Cash crop updated successfully");
+            await loadCashCrops();
+        }
+
+        async function editFruitCrop(encodedName) {
+            const name = decodeName(encodedName);
+            const nextType = prompt("Crop type (optional)");
+            if (nextType === null) return;
+            const nextSeason = prompt("Season (optional)");
+            if (nextSeason === null) return;
+            const nextNature = prompt("Crop nature (optional)");
+            if (nextNature === null) return;
+            const nextPrice = prompt("Market price (optional)");
+            if (nextPrice === null) return;
+            const nextYield = prompt("Yield (optional)");
+            if (nextYield === null) return;
+
+            const response = await apiFetch("/api/fruit-crops/" + encodeName(name), {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": "Bearer " + localStorage.getItem("token")
+                },
+                body: JSON.stringify({
+                    crop_type: nextType,
+                    season: nextSeason,
+                    crop_nature: nextNature,
+                    average_market_price_rupees_per_quintal: nextPrice,
+                    expected_yield_per_acre_quintals: nextYield
+                })
+            });
+
+            const data = await response.json().catch(() => ({}));
+            if (!response.ok) {
+                alert(data.message || "Failed to update fruit crop");
+                return;
+            }
+
+            alert("Fruit crop updated successfully");
+            await loadFruitCrops();
+        }
+
+        /* ================= DELETE ================= */
+        async function deleteCrop(encodedName) {
+            const name = decodeName(encodedName);
+
+            if (!confirm("Delete this crop?")) return;
+
+            const response = await apiFetch("/api/crops/" + encodeName(name), {
+                method: "DELETE",
+                headers: {
+                    "Authorization": "Bearer " + localStorage.getItem("token")
+                }
+            });
+
+            if (response.ok) {
+                alert("Deleted successfully");
+                loadCrops();
+            } else {
+                alert("Delete failed");
+            }
+        }
+
+        async function editCrop(encodedName) {
+            const name = decodeName(encodedName);
+            expandedCropName = expandedCropName === name ? null : name;
+            if (!expandedCropName) {
+                loadCrops();
+                return;
+            }
+
+            const crop = cachedCrops.find(item => item.name === name);
+            if (!crop) {
+                await loadCrops();
+                return;
+            }
+
+            editingCropName = name;
+
+            document.getElementById("name").value = crop.name || "";
+            document.getElementById("season").value = crop.season || "";
+            document.getElementById("sowing_time").value = crop.sowing_time || "";
+            document.getElementById("harvesting_time").value = crop.harvesting_time || "";
+            document.getElementById("expected_yield_per_acre_quintals").value = crop.expected_yield_per_acre_quintals || "";
+            document.getElementById("seed_quantity_per_acre_kg").value = crop.seed_quantity_per_acre_kg || "";
+            document.getElementById("msp_rupees_per_quintal").value = crop.msp_rupees_per_quintal || "";
+
+            document.getElementById("fertilizerContainer").innerHTML = "";
+            document.getElementById("diseaseContainer").innerHTML = "";
+
+            crop.fertilizer_schedule?.forEach(f => {
+                addFertilizer();
+
+                const box = document.querySelector("#fertilizerContainer .entry-box:last-child");
+
+                box.querySelector(".stage").value = f.stage || "";
+                box.querySelector(".days_after_sowing").value = f.days_after_sowing || "";
+                box.querySelector(".fertilizer_name").value = f.fertilizer_name || "";
+                box.querySelector(".dosage_per_acre").value = f.dosage_per_acre || "";
+                box.querySelector(".application_method").value = f.application_method || "";
+                box.querySelector(".water_quantity_for_spray").value = f.water_quantity_for_spray || "";
+            });
+
+            const diseaseData = crop.major_diseases || crop.diseases || [];
+            diseaseData.forEach(d => {
+                addDisease();
+
+                const box = document.querySelector("#diseaseContainer .entry-box:last-child");
+
+                box.querySelector(".disease_name").value = d.disease_name || d.name || "";
+                box.querySelector(".causal_organism").value = d.causal_organism || d.cause || "";
+                box.querySelector(".symptoms").value = d.symptoms || "";
+                box.querySelector(".preventive_measures").value = d.preventive_measures || d.prevention || "";
+                box.querySelector(".recommended_chemical").value = d.recommended_chemical || d.treatment?.chemical_name || "";
+                box.querySelector(".dosage_per_liter").value = d.dosage_per_liter || d.treatment?.dosage || "";
+                box.querySelector(".waiting_period_before_harvest").value = d.waiting_period_before_harvest || "";
+            });
+
+            loadCrops();
+        }
+
+
+        /* ================= AUTO LOGIN ================= */
+        window.onload = function () {
+            const savedToken = localStorage.getItem("token");
+            if (savedToken) {
+                const payload = getTokenPayload(savedToken);
+                if (!payload || payload.role !== "admin") {
+                    localStorage.removeItem("token");
+                    alert("Access denied: admin account required");
+                    return;
+                }
+                document.getElementById("cropSection").style.display = "block";
+                loadCrops();
+            }
+        };
+
+    </script>
+
+    </div>
+</body>
+
+</html>
+
+
+
