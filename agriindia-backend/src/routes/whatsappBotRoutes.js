@@ -169,6 +169,85 @@ function formatRecordAllFields(record, indent = "") {
     .join("\n");
 }
 
+function pickFirstExisting(record = {}, keys = []) {
+  for (const key of keys) {
+    if (record[key] !== undefined && record[key] !== null) return record[key];
+  }
+  return null;
+}
+
+function normalizeArray(value) {
+  return Array.isArray(value) ? value : [];
+}
+
+function buildFertilizerSection(record = {}) {
+  const schedule = normalizeArray(
+    pickFirstExisting(record, ["fertilizer_schedule", "fertilizerSchedule"])
+  );
+  if (!schedule.length) return "Fertilizer Dosage: N/A";
+
+  const lines = ["Fertilizer Dosage:"];
+  for (let i = 0; i < Math.min(schedule.length, 5); i += 1) {
+    const row = schedule[i] || {};
+    const stage = row.stage || row.application_period || `Step ${i + 1}`;
+    const dosage = row.dosage_per_acre || row.dosage || row.quantity || "N/A";
+    lines.push(`${i + 1}. ${stage}: ${dosage}`);
+  }
+  return lines.join("\n");
+}
+
+function buildDiseaseSection(record = {}) {
+  const diseases = normalizeArray(
+    pickFirstExisting(record, ["major_diseases", "diseases", "disease_management"])
+  );
+  if (!diseases.length) return "Diseases: N/A";
+
+  const lines = ["Diseases:"];
+  for (let i = 0; i < Math.min(diseases.length, 5); i += 1) {
+    const row = diseases[i] || {};
+    const diseaseName = row.disease_name || row.name || row.disease || `Disease ${i + 1}`;
+    lines.push(`${i + 1}. ${diseaseName}`);
+  }
+  return lines.join("\n");
+}
+
+function formatCropResponse(record = {}, heading = "Crop") {
+  const rawYield =
+    record.expected_yield_per_acre_quintals ||
+    record.expected_yield ||
+    record.yield ||
+    "N/A";
+  const yieldText =
+    rawYield && String(rawYield).toLowerCase() !== "n/a"
+      ? `${rawYield} quintal/acre`
+      : "N/A";
+
+  const rawMsp =
+    record.msp_rupees_per_quintal ||
+    record.msp ||
+    record.minimum_support_price ||
+    "N/A";
+  const mspText =
+    rawMsp && String(rawMsp).toLowerCase() !== "n/a"
+      ? `Rs ${rawMsp} per quintal`
+      : "N/A";
+
+  return [
+    heading,
+    "",
+    `Season: ${record.season || "N/A"}`,
+    `Sowing/Planting: ${record.sowing_time || record.sowing_or_planting_time || "N/A"}`,
+    `Harvesting: ${record.harvesting_time || "N/A"}`,
+    `Yield: ${yieldText}`,
+    `MSP: ${mspText}`,
+    buildFertilizerSection(record),
+    buildDiseaseSection(record),
+    "",
+    "Full Details:",
+    formatRecordAllFields(record),
+  ].join("\n");
+}
+
 async function getCropDetailsByName(name) {
   const regex = new RegExp(`^${name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}$`, "i");
   const normalizedName = String(name || "").trim().toLowerCase();
@@ -187,7 +266,7 @@ async function getCropDetailsByName(name) {
 
   if (datasetMatch) {
     const heading = datasetMatch.crop_name || datasetMatch.name || "Crop";
-    return `${heading}\n\n${formatRecordAllFields(datasetMatch)}`;
+    return formatCropResponse(datasetMatch, heading);
   }
 
   const [crop, cashCrop, fruitCrop] = await Promise.all([
@@ -197,12 +276,12 @@ async function getCropDetailsByName(name) {
   ]);
 
   if (crop) {
-    return `${crop.name || "Crop"}\n\n${formatRecordAllFields(crop)}`;
+    return formatCropResponse(crop, crop.name || "Crop");
   }
 
   const special = cashCrop || fruitCrop;
   if (special) {
-    return `${special.crop_name || special.name || "Crop"}\n\n${formatRecordAllFields(special)}`;
+    return formatCropResponse(special, special.crop_name || special.name || "Crop");
   }
 
   return null;
@@ -305,7 +384,7 @@ router.post("/webhook", async (req, res, next) => {
       const selected = options[selectedIndex];
       if (selected) {
         const details = selected.record
-          ? `${selected.name}\n\n${formatRecordAllFields(selected.record)}`
+          ? formatCropResponse(selected.record, selected.name)
           : await getCropDetailsByName(selected.name);
         reply = details
           ? `${details}\n\nReply 0 for main menu.`
@@ -319,7 +398,7 @@ router.post("/webhook", async (req, res, next) => {
       const selected = options[selectedIndex];
       if (selected) {
         const details = selected.record
-          ? `${selected.name}\n\n${formatRecordAllFields(selected.record)}`
+          ? formatCropResponse(selected.record, selected.name)
           : await getCropDetailsByName(selected.name);
         reply = details
           ? `${details}\n\nReply 0 for main menu.`
@@ -333,7 +412,7 @@ router.post("/webhook", async (req, res, next) => {
       const selected = records[selectedIndex]?.record || null;
       if (selected) {
         const cropName = selected.crop_name || selected.name || "Cash Crop";
-        reply = `${cropName}\n\n${formatRecordAllFields(selected)}\n\nReply 0 for main menu.`;
+        reply = `${formatCropResponse(selected, cropName)}\n\nReply 0 for main menu.`;
       } else {
         reply = "Please reply with a valid cash crop number.\nReply 0 for main menu.";
       }
@@ -343,7 +422,7 @@ router.post("/webhook", async (req, res, next) => {
       const selected = records[selectedIndex]?.record || null;
       if (selected) {
         const cropName = selected.crop_name || selected.name || "Fruit Crop";
-        reply = `${cropName}\n\n${formatRecordAllFields(selected)}\n\nReply 0 for main menu.`;
+        reply = `${formatCropResponse(selected, cropName)}\n\nReply 0 for main menu.`;
       } else {
         reply = "Please reply with a valid fruit crop number.\nReply 0 for main menu.";
       }
