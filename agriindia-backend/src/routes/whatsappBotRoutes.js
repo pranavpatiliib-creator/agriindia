@@ -585,7 +585,12 @@ router.post("/webhook", async (req, res, next) => {
     }
     res.status(200).type("text/xml").send(twiml(reply));
   } catch (error) {
-    next(error);
+    console.error("WhatsApp webhook error:", error);
+    // Always return TwiML so Twilio can send a fallback reply instead of silently failing.
+    return res
+      .status(200)
+      .type("text/xml")
+      .send(twiml("We are facing a temporary issue. Please send 0 to return to main menu."));
   }
 });
 
