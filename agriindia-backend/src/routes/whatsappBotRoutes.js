@@ -19,10 +19,43 @@ function escapeXml(value = "") {
     .replace(/'/g, "&apos;");
 }
 
+function splitMessage(text = "", maxLen = 1400) {
+  const lines = String(text).split("\n");
+  const chunks = [];
+  let current = "";
+
+  for (const line of lines) {
+    const next = current ? `${current}\n${line}` : line;
+    if (next.length <= maxLen) {
+      current = next;
+      continue;
+    }
+
+    if (current) {
+      chunks.push(current);
+      current = "";
+    }
+
+    if (line.length <= maxLen) {
+      current = line;
+      continue;
+    }
+
+    let start = 0;
+    while (start < line.length) {
+      chunks.push(line.slice(start, start + maxLen));
+      start += maxLen;
+    }
+  }
+
+  if (current) chunks.push(current);
+  return chunks.length ? chunks : [""];
+}
+
 function twiml(message) {
-  return `<?xml version="1.0" encoding="UTF-8"?><Response><Message>${escapeXml(
-    message
-  )}</Message></Response>`;
+  const parts = splitMessage(message);
+  const payload = parts.map((part) => `<Message>${escapeXml(part)}</Message>`).join("");
+  return `<?xml version="1.0" encoding="UTF-8"?><Response>${payload}</Response>`;
 }
 
 function menuText() {
@@ -50,6 +83,17 @@ function cropMenuText() {
     "3. Cash crops",
     "4. Fruit crops",
     "5. Crop details by name",
+    "0. Main menu",
+  ].join("\n");
+}
+
+function cropInfoTypeMenuText(name = "Crop") {
+  return [
+    `${name} - Information Menu`,
+    "",
+    "Reply with a number:",
+    "1. Fertilizer",
+    "2. Diseases",
     "0. Main menu",
   ].join("\n");
 }
@@ -248,7 +292,47 @@ function formatCropResponse(record = {}, heading = "Crop") {
   ].join("\n");
 }
 
-async function getCropDetailsByName(name) {
+function buildBasicInfoSection(record = {}) {
+  const rawYield =
+    record.expected_yield_per_acre_quintals ||
+    record.expected_yield ||
+    record.yield ||
+    "N/A";
+  const yieldText =
+    rawYield && String(rawYield).toLowerCase() !== "n/a"
+      ? `${rawYield} quintal/acre`
+      : "N/A";
+
+  const rawMsp =
+    record.msp_rupees_per_quintal ||
+    record.msp ||
+    record.minimum_support_price ||
+    "N/A";
+  const mspText =
+    rawMsp && String(rawMsp).toLowerCase() !== "n/a"
+      ? `Rs ${rawMsp} per quintal`
+      : "N/A";
+
+  return [
+    `Season: ${record.season || "N/A"}`,
+    `Sowing/Planting: ${record.sowing_time || record.sowing_or_planting_time || "N/A"}`,
+    `Harvesting: ${record.harvesting_time || "N/A"}`,
+    `Yield: ${yieldText}`,
+    `MSP: ${mspText}`,
+  ].join("\n");
+}
+
+function buildCropInfoLanding(record = {}, heading = "Crop") {
+  return [
+    heading,
+    "",
+    buildBasicInfoSection(record),
+    "",
+    cropInfoTypeMenuText(heading),
+  ].join("\n");
+}
+
+async function findCropRecordByName(name) {
   const regex = new RegExp(`^${name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}$`, "i");
   const normalizedName = String(name || "").trim().toLowerCase();
 
@@ -266,7 +350,7 @@ async function getCropDetailsByName(name) {
 
   if (datasetMatch) {
     const heading = datasetMatch.crop_name || datasetMatch.name || "Crop";
-    return formatCropResponse(datasetMatch, heading);
+    return { heading, record: datasetMatch };
   }
 
   const [crop, cashCrop, fruitCrop] = await Promise.all([
@@ -276,12 +360,12 @@ async function getCropDetailsByName(name) {
   ]);
 
   if (crop) {
-    return formatCropResponse(crop, crop.name || "Crop");
+    return { heading: crop.name || "Crop", record: crop };
   }
 
   const special = cashCrop || fruitCrop;
   if (special) {
-    return formatCropResponse(special, special.crop_name || special.name || "Crop");
+    return { heading: special.crop_name || special.name || "Crop", record: special };
   }
 
   return null;
@@ -383,12 +467,15 @@ router.post("/webhook", async (req, res, next) => {
       const options = Array.isArray(session.rabiCropOptions) ? session.rabiCropOptions : [];
       const selected = options[selectedIndex];
       if (selected) {
-        const details = selected.record
-          ? formatCropResponse(selected.record, selected.name)
-          : await getCropDetailsByName(selected.name);
-        reply = details
-          ? `${details}\n\nReply 0 for main menu.`
-          : `${selected.name}\n\nDetails not available.\nReply 0 for main menu.`;
+        const record = selected.record || null;
+        if (record) {
+          session.step = "crop_info_type_menu";
+          session.selectedCropName = selected.name;
+          session.selectedCropRecord = record;
+          reply = buildCropInfoLanding(record, selected.name);
+        } else {
+          reply = `${selected.name}\n\nDetails not available.\nReply 0 for main menu.`;
+        }
       } else {
         reply = "Please reply with a valid rabi crop number.\nReply 0 for main menu.";
       }
@@ -397,12 +484,15 @@ router.post("/webhook", async (req, res, next) => {
       const options = Array.isArray(session.kharifCropOptions) ? session.kharifCropOptions : [];
       const selected = options[selectedIndex];
       if (selected) {
-        const details = selected.record
-          ? formatCropResponse(selected.record, selected.name)
-          : await getCropDetailsByName(selected.name);
-        reply = details
-          ? `${details}\n\nReply 0 for main menu.`
-          : `${selected.name}\n\nDetails not available.\nReply 0 for main menu.`;
+        const record = selected.record || null;
+        if (record) {
+          session.step = "crop_info_type_menu";
+          session.selectedCropName = selected.name;
+          session.selectedCropRecord = record;
+          reply = buildCropInfoLanding(record, selected.name);
+        } else {
+          reply = `${selected.name}\n\nDetails not available.\nReply 0 for main menu.`;
+        }
       } else {
         reply = "Please reply with a valid kharif crop number.\nReply 0 for main menu.";
       }
@@ -412,7 +502,10 @@ router.post("/webhook", async (req, res, next) => {
       const selected = records[selectedIndex]?.record || null;
       if (selected) {
         const cropName = selected.crop_name || selected.name || "Cash Crop";
-        reply = `${formatCropResponse(selected, cropName)}\n\nReply 0 for main menu.`;
+        session.step = "crop_info_type_menu";
+        session.selectedCropName = cropName;
+        session.selectedCropRecord = selected;
+        reply = buildCropInfoLanding(selected, cropName);
       } else {
         reply = "Please reply with a valid cash crop number.\nReply 0 for main menu.";
       }
@@ -422,16 +515,50 @@ router.post("/webhook", async (req, res, next) => {
       const selected = records[selectedIndex]?.record || null;
       if (selected) {
         const cropName = selected.crop_name || selected.name || "Fruit Crop";
-        reply = `${formatCropResponse(selected, cropName)}\n\nReply 0 for main menu.`;
+        session.step = "crop_info_type_menu";
+        session.selectedCropName = cropName;
+        session.selectedCropRecord = selected;
+        reply = buildCropInfoLanding(selected, cropName);
       } else {
         reply = "Please reply with a valid fruit crop number.\nReply 0 for main menu.";
       }
+    } else if (session.step === "crop_info_type_menu") {
+      const selectedRecord = session.selectedCropRecord || null;
+      const selectedName = session.selectedCropName || "Crop";
+      if (!selectedRecord) {
+        session.step = "main_menu";
+        reply = menuText();
+      } else if (input === "1") {
+        reply = [
+          `${selectedName} - Fertilizer`,
+          "",
+          buildFertilizerSection(selectedRecord),
+          "",
+          cropInfoTypeMenuText(selectedName),
+        ].join("\n");
+      } else if (input === "2") {
+        reply = [
+          `${selectedName} - Diseases`,
+          "",
+          buildDiseaseSection(selectedRecord),
+          "",
+          cropInfoTypeMenuText(selectedName),
+        ].join("\n");
+      } else {
+        session.step = "main_menu";
+        reply = menuText();
+      }
     } else if (session.step === "awaiting_crop_name") {
-      const details = await getCropDetailsByName(input);
-      session.step = "main_menu";
-      reply = details
-        ? `${details}\n\nReply 0 for main menu.`
-        : `Crop "${input}" not found.\nReply 0 for main menu.`;
+      const matched = await findCropRecordByName(input);
+      if (matched?.record) {
+        session.step = "crop_info_type_menu";
+        session.selectedCropName = matched.heading;
+        session.selectedCropRecord = matched.record;
+        reply = buildCropInfoLanding(matched.record, matched.heading);
+      } else {
+        session.step = "main_menu";
+        reply = `Crop "${input}" not found.\nReply 0 for main menu.`;
+      }
     } else if (input === "1") {
       session.step = "crop_menu";
       reply = cropMenuText();
