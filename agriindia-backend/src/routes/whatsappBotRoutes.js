@@ -138,6 +138,11 @@ const I18N = {
     module_subsidies: "Subsidy schemes",
     module_loan: "Farm loans",
     module_msp: "MSP information",
+    msp_all_heading: "MSP of all crops",
+    msp_kharif_heading: "Kharif Crops - MSP for 2026-27 (Rs per quintal)",
+    msp_kharif_source: "(Source: Govt of India - MSP Notification)",
+    msp_rabi_heading: "Rabi Crops - MSP for 2026-27 (Rs per quintal)",
+    msp_rabi_source: "(Source: Official Government Notification)",
     module_default: "Schemes",
     available_schemes: "Available schemes:",
     no_records: "No records found.",
@@ -456,8 +461,8 @@ function splitMessage(text = "", maxLen = 1400) {
   return chunks.length ? chunks : [""];
 }
 
-function twiml(message) {
-  const parts = splitMessage(message);
+function twiml(message, maxLen = 1400) {
+  const parts = splitMessage(message, maxLen);
   const payload = parts.map((part) => `<Message>${escapeXml(part)}</Message>`).join("");
   return `<?xml version="1.0" encoding="UTF-8"?><Response>${payload}</Response>`;
 }
@@ -723,6 +728,69 @@ function normalizeArray(value) {
   return Array.isArray(value) ? value : [];
 }
 
+function mspValueFromRecord(record = {}, language = "en") {
+  const raw =
+    localizedFieldValue(record, "msp_rupees_per_quintal", language) ||
+    localizedFieldValue(record, "minimum_support_price", language) ||
+    localizedFieldValue(record, "msp", language);
+
+  const value = String(raw || "").trim();
+  if (!value) return t(language, "not_available");
+
+  const normalized = value.toLowerCase();
+  if (["n/a", "na", "not applicable"].includes(normalized)) {
+    return t(language, "not_available");
+  }
+  return value;
+}
+
+function buildAllCropsMspText(language = "en") {
+  const kharif = [
+    "Paddy - Common: 2,369",
+    "Paddy - Grade A: 2,389",
+    "Jowar - Hybrid: 3,699",
+    "Jowar - Maldandi: 3,749",
+    "Bajra: 2,775",
+    "Ragi: 4,290",
+    "Maize: 2,400 (approx)",
+    "Tur / Arhar: 8,000 (approx)",
+    "Moong: 8,682 (approx)",
+    "Urad: 7,400 (approx)",
+    "Groundnut: 6,783 (approx)",
+    "Sunflower Seed: 7,280 (approx)",
+    "Soyabean (Yellow): 5,328 (approx)",
+    "Sesamum (Til): 9,267 (approx)",
+    "Nigerseed: 8,717 (approx)",
+    "Cotton - Medium Staple: 7,710",
+    "Cotton - Long Staple: 8,110",
+  ];
+
+  const rabi = [
+    "Wheat: 2,585",
+    "Barley: 2,150",
+    "Gram (Chana): 5,875",
+    "Lentil (Masur): 7,000",
+    "Rapeseed & Mustard: 6,200",
+    "Safflower: 6,54",
+  ];
+
+  return [
+    t(language, "msp_all_heading"),
+    "",
+    t(language, "msp_kharif_heading"),
+    t(language, "msp_kharif_source"),
+    "",
+    ...kharif,
+    "",
+    t(language, "msp_rabi_heading"),
+    t(language, "msp_rabi_source"),
+    "",
+    ...rabi,
+    "",
+    t(language, "back_main"),
+  ].join("\n");
+}
+
 function buildFertilizerSection(record = {}, language = "en") {
   const schedule = normalizeArray(
     pickFirstExisting(record, ["fertilizer_schedule", "fertilizerSchedule"])
@@ -888,6 +956,7 @@ router.post("/webhook", async (req, res, next) => {
     const session = sessions.get(from) || { step: "main_menu" };
 
     let reply = "";
+    let maxReplyLen = 1400;
 
     if (!session.language) {
       const selectedLanguage = LANGUAGE_MAP[input];
@@ -1058,16 +1127,23 @@ router.post("/webhook", async (req, res, next) => {
         reply = menuText(session.language);
       }
     } else if (session.step === "module_list") {
-      const schemes = MODULE_SCHEMES[session.activeModule] || [];
-      const selectedIndex = Number.parseInt(input, 10) - 1;
-      const selected = schemes[selectedIndex] || null;
-      if (selected) {
-        const localizedScheme = localizeRecord(selected, session.language);
-        session.step = "module_detail";
-        session.selectedScheme = localizedScheme;
-        reply = moduleDetailText(session.activeModule, localizedScheme, session.language);
+      if (session.activeModule === "msp") {
+        session.step = "main_menu";
+        session.activeModule = null;
+        reply = buildAllCropsMspText(session.language);
+        maxReplyLen = 4096;
       } else {
-        reply = `${t(session.language, "invalid_scheme_selection")}\n\n${moduleListText(session.activeModule, session.language)}`;
+        const schemes = MODULE_SCHEMES[session.activeModule] || [];
+        const selectedIndex = Number.parseInt(input, 10) - 1;
+        const selected = schemes[selectedIndex] || null;
+        if (selected) {
+          const localizedScheme = localizeRecord(selected, session.language);
+          session.step = "module_detail";
+          session.selectedScheme = localizedScheme;
+          reply = moduleDetailText(session.activeModule, localizedScheme, session.language);
+        } else {
+          reply = `${t(session.language, "invalid_scheme_selection")}\n\n${moduleListText(session.activeModule, session.language)}`;
+        }
       }
     } else if (session.step === "module_detail") {
       if (input === "0") {
@@ -1109,9 +1185,10 @@ router.post("/webhook", async (req, res, next) => {
       session.activeModule = "loan";
       reply = moduleListText("loan", session.language);
     } else if (input === "5") {
-      session.step = "module_list";
-      session.activeModule = "msp";
-      reply = moduleListText("msp", session.language);
+      session.step = "main_menu";
+      session.activeModule = null;
+      reply = buildAllCropsMspText(session.language);
+      maxReplyLen = 4096;
     } else if (input === "7") {
       reply = `${t(session.language, "support_unavailable")}\n\n${t(session.language, "back_main")}`;
     } else if (input === "0") {
@@ -1125,7 +1202,7 @@ router.post("/webhook", async (req, res, next) => {
     if (input !== "0") {
       sessions.set(from, session);
     }
-    res.status(200).type("text/xml").send(twiml(reply));
+    res.status(200).type("text/xml").send(twiml(reply, maxReplyLen));
   } catch (error) {
     console.error("WhatsApp webhook error:", error);
     const fallbackLanguage = sessions.get(from)?.language || "en";
