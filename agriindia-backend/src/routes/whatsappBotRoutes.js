@@ -104,6 +104,316 @@ const MODULE_SCHEMES = {
   ],
 };
 
+const I18N = {
+  en: {
+    bot_welcome: "Welcome to AgriIndia Bot",
+    reply_with_number: "Reply with a number:",
+    menu_option_1: "1. Crop information",
+    menu_option_2: "2. Insurance schemes",
+    menu_option_3: "3. Subsidy schemes",
+    menu_option_4: "4. Farm loans",
+    menu_option_5: "5. MSP information",
+    menu_option_7: "7. Talk to support",
+    menu_option_0: "0. Reset session",
+    menu_send_valid: "Send a valid option.",
+    crop_info_title: "Crop information",
+    crop_option_1: "1. Rabi crops",
+    crop_option_2: "2. Kharif crops",
+    crop_option_3: "3. Cash crops",
+    crop_option_4: "4. Fruit crops",
+    crop_option_5: "5. Search crop by name",
+    heading_rabi: "Rabi Crops",
+    heading_kharif: "Kharif Crops",
+    heading_cash: "Cash Crops",
+    heading_fruit: "Fruit Crops",
+    crop_fallback_cash: "Cash Crop",
+    crop_fallback_fruit: "Fruit Crop",
+    crop_fallback: "Crop",
+    crop_back_main: "0. Back to main menu",
+    info_type_prompt: "Reply with a number:",
+    info_option_fertilizer: "1. Fertilizer schedule",
+    info_option_disease: "2. Disease / pest info",
+    back_main: "0. Back to main menu",
+    module_insurance: "Insurance schemes",
+    module_subsidies: "Subsidy schemes",
+    module_loan: "Farm loans",
+    module_msp: "MSP information",
+    module_default: "Schemes",
+    available_schemes: "Available schemes:",
+    no_records: "No records found.",
+    not_available: "Not available",
+    detailed_record: "Detailed record:",
+    season: "Season",
+    sowing: "Sowing/Planting",
+    harvesting: "Harvesting",
+    expected_yield: "Expected yield",
+    fertilizer_schedule: "Fertilizer schedule",
+    diseases: "Diseases",
+    stage: "Stage",
+    disease_label: "Disease",
+    reply_crop_select: "Reply with a number to view crop details.",
+    send_crop_name: "Send crop name (example: Wheat, Mango, Cotton).",
+    detailed_not_available: "Detailed info is not available.",
+    invalid_crop_selection: "Invalid selection. Please choose a crop number.",
+    fertilizer_heading_suffix: " - Fertilizer schedule",
+    disease_heading_suffix: " - Disease / pest info",
+    invalid_scheme_selection: "Invalid scheme selection.",
+    crop_not_found: 'Crop "{input}" not found.',
+    support_unavailable: "Support feature is not configured yet.",
+    session_ended: "You have exited AgriIndia bot.",
+    restart_hint: "Send any message to start again.",
+    error_fallback: "Something went wrong. Please try again or send 0.",
+    welcome_mode: "Welcome to AgriIndia.",
+    item: "Item",
+  },
+  mr: {
+    bot_welcome: "AgriIndia Bot मध्ये स्वागत आहे",
+    reply_with_number: "कृपया क्रमांक पाठवा:",
+    menu_option_1: "1. पिकांची माहिती",
+    menu_option_2: "2. विमा योजना",
+    menu_option_3: "3. अनुदान योजना",
+    menu_option_4: "4. कृषी कर्ज",
+    menu_option_5: "5. MSP माहिती",
+    menu_option_7: "7. सपोर्टशी बोला",
+    menu_option_0: "0. सेशन रीसेट करा",
+    menu_send_valid: "कृपया योग्य पर्याय पाठवा.",
+    crop_info_title: "पिकांची माहिती",
+    crop_option_1: "1. रब्बी पिके",
+    crop_option_2: "2. खरीप पिके",
+    crop_option_3: "3. नगदी पिके",
+    crop_option_4: "4. फळ पिके",
+    crop_option_5: "5. नावाने पीक शोधा",
+    heading_rabi: "रब्बी पिके",
+    heading_kharif: "खरीप पिके",
+    heading_cash: "नगदी पिके",
+    heading_fruit: "फळ पिके",
+    crop_fallback_cash: "नगदी पीक",
+    crop_fallback_fruit: "फळ पीक",
+    crop_fallback: "पीक",
+    crop_back_main: "0. मुख्य मेनूकडे जा",
+    info_type_prompt: "कृपया क्रमांक पाठवा:",
+    info_option_fertilizer: "1. खत वेळापत्रक",
+    info_option_disease: "2. रोग / किड माहिती",
+    back_main: "0. मुख्य मेनूकडे जा",
+    module_insurance: "विमा योजना",
+    module_subsidies: "अनुदान योजना",
+    module_loan: "कृषी कर्ज",
+    module_msp: "MSP माहिती",
+    module_default: "योजना",
+    available_schemes: "उपलब्ध योजना:",
+    no_records: "नोंदी सापडल्या नाहीत.",
+    not_available: "उपलब्ध नाही",
+    detailed_record: "सविस्तर नोंद:",
+    season: "हंगाम",
+    sowing: "पेरणी/लागवड",
+    harvesting: "कापणी",
+    expected_yield: "अपेक्षित उत्पादन",
+    fertilizer_schedule: "खत वेळापत्रक",
+    diseases: "रोग/किड",
+    stage: "टप्पा",
+    disease_label: "रोग",
+    reply_crop_select: "तपशील पाहण्यासाठी क्रमांक पाठवा.",
+    send_crop_name: "पीकाचे नाव पाठवा (उदा. Wheat, Mango, Cotton).",
+    detailed_not_available: "सविस्तर माहिती उपलब्ध नाही.",
+    invalid_crop_selection: "चुकीची निवड. कृपया पीक क्रमांक निवडा.",
+    fertilizer_heading_suffix: " - खत वेळापत्रक",
+    disease_heading_suffix: " - रोग / किड माहिती",
+    invalid_scheme_selection: "चुकीची योजना निवड.",
+    crop_not_found: 'पीक "{input}" सापडले नाही.',
+    support_unavailable: "सपोर्ट सुविधा अजून उपलब्ध नाही.",
+    session_ended: "तुम्ही AgriIndia bot मधून बाहेर पडला आहात.",
+    restart_hint: "पुन्हा सुरू करण्यासाठी कोणताही मेसेज पाठवा.",
+    error_fallback: "काहीतरी चूक झाली. पुन्हा प्रयत्न करा किंवा 0 पाठवा.",
+    welcome_mode: "AgriIndia मध्ये आपले स्वागत आहे.",
+    item: "घटक",
+  },
+  hi: {
+    bot_welcome: "AgriIndia Bot में आपका स्वागत है",
+    reply_with_number: "कृपया नंबर भेजें:",
+    menu_option_1: "1. फसल जानकारी",
+    menu_option_2: "2. बीमा योजनाएं",
+    menu_option_3: "3. सब्सिडी योजनाएं",
+    menu_option_4: "4. कृषि ऋण",
+    menu_option_5: "5. MSP जानकारी",
+    menu_option_7: "7. सपोर्ट से बात करें",
+    menu_option_0: "0. सत्र रीसेट करें",
+    menu_send_valid: "कृपया सही विकल्प भेजें।",
+    crop_info_title: "फसल जानकारी",
+    crop_option_1: "1. रबी फसलें",
+    crop_option_2: "2. खरीफ फसलें",
+    crop_option_3: "3. नकदी फसलें",
+    crop_option_4: "4. फल फसलें",
+    crop_option_5: "5. नाम से फसल खोजें",
+    heading_rabi: "रबी फसलें",
+    heading_kharif: "खरीफ फसलें",
+    heading_cash: "नकदी फसलें",
+    heading_fruit: "फल फसलें",
+    crop_fallback_cash: "नकदी फसल",
+    crop_fallback_fruit: "फल फसल",
+    crop_fallback: "फसल",
+    crop_back_main: "0. मुख्य मेनू पर जाएं",
+    info_type_prompt: "कृपया नंबर भेजें:",
+    info_option_fertilizer: "1. उर्वरक अनुसूची",
+    info_option_disease: "2. रोग / कीट जानकारी",
+    back_main: "0. मुख्य मेनू पर जाएं",
+    module_insurance: "बीमा योजनाएं",
+    module_subsidies: "सब्सिडी योजनाएं",
+    module_loan: "कृषि ऋण",
+    module_msp: "MSP जानकारी",
+    module_default: "योजनाएं",
+    available_schemes: "उपलब्ध योजनाएं:",
+    no_records: "कोई रिकॉर्ड नहीं मिला।",
+    not_available: "उपलब्ध नहीं",
+    detailed_record: "विस्तृत रिकॉर्ड:",
+    season: "मौसम",
+    sowing: "बुवाई/रोपाई",
+    harvesting: "कटाई",
+    expected_yield: "अपेक्षित उत्पादन",
+    fertilizer_schedule: "उर्वरक अनुसूची",
+    diseases: "रोग/कीट",
+    stage: "चरण",
+    disease_label: "रोग",
+    reply_crop_select: "विवरण देखने के लिए नंबर भेजें।",
+    send_crop_name: "फसल का नाम भेजें (उदा. Wheat, Mango, Cotton).",
+    detailed_not_available: "विस्तृत जानकारी उपलब्ध नहीं है।",
+    invalid_crop_selection: "गलत चयन। कृपया फसल का नंबर चुनें।",
+    fertilizer_heading_suffix: " - उर्वरक अनुसूची",
+    disease_heading_suffix: " - रोग / कीट जानकारी",
+    invalid_scheme_selection: "गलत योजना चयन।",
+    crop_not_found: 'फसल "{input}" नहीं मिली।',
+    support_unavailable: "सपोर्ट सुविधा अभी उपलब्ध नहीं है।",
+    session_ended: "आप AgriIndia bot से बाहर निकल चुके हैं।",
+    restart_hint: "फिर से शुरू करने के लिए कोई भी संदेश भेजें।",
+    error_fallback: "कुछ गलत हो गया। फिर कोशिश करें या 0 भेजें।",
+    welcome_mode: "AgriIndia में आपका स्वागत है।",
+    item: "आइटम",
+  },
+};
+
+const TITLE_MAP = {
+  en: {
+    name: "Name",
+    type: "Type",
+    who_can_apply: "Who can apply",
+    coverage: "Coverage",
+    premium: "Premium",
+    where_to_apply: "Where to apply",
+    benefit: "Benefit",
+    eligibility: "Eligibility",
+    provider: "Provider",
+    interest_rate: "Interest rate",
+    max_amount: "Max amount",
+    crop: "Crop",
+    rate: "Rate",
+    season_year: "Season/Year",
+  },
+  mr: {
+    name: "नाव",
+    type: "प्रकार",
+    who_can_apply: "कोण अर्ज करू शकतो",
+    coverage: "संरक्षण",
+    premium: "प्रीमियम",
+    where_to_apply: "अर्ज कुठे करावा",
+    benefit: "लाभ",
+    eligibility: "पात्रता",
+    provider: "प्रदाता",
+    interest_rate: "व्याजदर",
+    max_amount: "कमाल रक्कम",
+    crop: "पीक",
+    rate: "दर",
+    season_year: "हंगाम/वर्ष",
+  },
+  hi: {
+    name: "नाम",
+    type: "प्रकार",
+    who_can_apply: "कौन आवेदन कर सकता है",
+    coverage: "कवरेज",
+    premium: "प्रीमियम",
+    where_to_apply: "कहां आवेदन करें",
+    benefit: "लाभ",
+    eligibility: "पात्रता",
+    provider: "प्रदाता",
+    interest_rate: "ब्याज दर",
+    max_amount: "अधिकतम राशि",
+    crop: "फसल",
+    rate: "दर",
+    season_year: "मौसम/वर्ष",
+  },
+};
+
+const TRANSLATION_REPLACEMENTS = {
+  mr: [
+    [/No MSP \(market-based pricing\)/gi, "MSP उपलब्ध नाही (बाजारभावानुसार)"],
+    [/No MSP/gi, "MSP उपलब्ध नाही"],
+    [/market-based pricing/gi, "बाजारभावानुसार"],
+    [/Not applicable/gi, "लागू नाही"],
+    [/Basal Application/gi, "बेसल मात्रा"],
+    [/Top Dressing/gi, "वरखत मात्रा"],
+    [/First Top Dressing/gi, "पहिली वरखत मात्रा"],
+    [/Second Top Dressing/gi, "दुसरी वरखत मात्रा"],
+    [/Zinc Application/gi, "झिंक मात्रा"],
+    [/Irrigation/gi, "सिंचन"],
+    [/Broadcasting/gi, "प्रसारण पद्धत"],
+    [/Yield/gi, "उत्पादन"],
+    [/Season/gi, "हंगाम"],
+    [/Sowing/gi, "पेरणी"],
+    [/Planting/gi, "लागवड"],
+    [/Harvesting/gi, "कापणी"],
+    [/disease/gi, "रोग"],
+    [/pest/gi, "किड"],
+  ],
+  hi: [
+    [/No MSP \(market-based pricing\)/gi, "MSP उपलब्ध नहीं (बाजार आधारित मूल्य)"],
+    [/No MSP/gi, "MSP उपलब्ध नहीं"],
+    [/market-based pricing/gi, "बाजार आधारित मूल्य"],
+    [/Not applicable/gi, "लागू नहीं"],
+    [/Basal Application/gi, "बेसल मात्रा"],
+    [/Top Dressing/gi, "टॉप ड्रेसिंग मात्रा"],
+    [/First Top Dressing/gi, "पहली टॉप ड्रेसिंग मात्रा"],
+    [/Second Top Dressing/gi, "दूसरी टॉप ड्रेसिंग मात्रा"],
+    [/Zinc Application/gi, "जिंक मात्रा"],
+    [/Irrigation/gi, "सिंचाई"],
+    [/Broadcasting/gi, "प्रसारण विधि"],
+    [/Yield/gi, "उत्पादन"],
+    [/Season/gi, "मौसम"],
+    [/Sowing/gi, "बुवाई"],
+    [/Planting/gi, "रोपाई"],
+    [/Harvesting/gi, "कटाई"],
+    [/disease/gi, "रोग"],
+    [/pest/gi, "कीट"],
+  ],
+};
+
+function normalizeLanguage(language = "en") {
+  return ["mr", "hi"].includes(language) ? language : "en";
+}
+
+function t(language, key) {
+  const lang = normalizeLanguage(language);
+  return I18N[lang]?.[key] || I18N.en[key] || key;
+}
+
+function tf(language, key, values = {}) {
+  let out = t(language, key);
+  for (const [name, value] of Object.entries(values)) {
+    out = out.replaceAll(`{${name}}`, String(value));
+  }
+  return out;
+}
+
+function hasValue(value) {
+  return value !== undefined && value !== null && String(value) !== "";
+}
+
+function localizedFieldValue(record = {}, baseKey = "", language = "en") {
+  const lang = normalizeLanguage(language);
+  if (lang === "en") return record?.[baseKey];
+
+  const localizedKey = `${baseKey}_${lang}`;
+  if (hasValue(record?.[localizedKey])) return record[localizedKey];
+  return record?.[baseKey];
+}
+
 function escapeXml(value = "") {
   return String(value)
     .replace(/&/g, "&amp;")
@@ -152,121 +462,119 @@ function twiml(message) {
   return `<?xml version="1.0" encoding="UTF-8"?><Response>${payload}</Response>`;
 }
 
-function menuText() {
+function menuText(language = "en") {
   return [
-    "Welcome to AgriIndia Bot",
+    t(language, "bot_welcome"),
     "",
-    "Reply with a number:",
+    t(language, "reply_with_number"),
     "",
-    "1. Crop information",
-    "2. Insurance schemes",
-    "3. Subsidy schemes",
-    "4. Farm loans",
-    "5. MSP information",
-    "7. Talk to support",
-    "0. Reset session",
+    t(language, "menu_option_1"),
+    t(language, "menu_option_2"),
+    t(language, "menu_option_3"),
+    t(language, "menu_option_4"),
+    t(language, "menu_option_5"),
+    t(language, "menu_option_7"),
+    t(language, "menu_option_0"),
     "",
-    "Send a valid option.",
+    t(language, "menu_send_valid"),
   ].join("\n");
 }
 
-function cropMenuText() {
+function cropMenuText(language = "en") {
   return [
-    "Crop information",
+    t(language, "crop_info_title"),
     "",
-    "Reply with a number:",
+    t(language, "reply_with_number"),
     "",
-    "1. Rabi crops",
-    "2. Kharif crops",
-    "3. Cash crops",
-    "4. Fruit crops",
-    "5. Search crop by name",
-    "0. Back to main menu",
+    t(language, "crop_option_1"),
+    t(language, "crop_option_2"),
+    t(language, "crop_option_3"),
+    t(language, "crop_option_4"),
+    t(language, "crop_option_5"),
+    t(language, "crop_back_main"),
     "",
-    "Send a valid option.",
+    t(language, "menu_send_valid"),
   ].join("\n");
 }
 
-function cropInfoTypeMenuText(name = "Crop") {
+function cropInfoTypeMenuText(name = "Crop", language = "en") {
   return [
     `${name}`,
     "",
-    "Reply with a number:",
-    "1. Fertilizer schedule",
-    "2. Disease / pest info",
-    "0. Back to main menu",
+    t(language, "info_type_prompt"),
+    t(language, "info_option_fertilizer"),
+    t(language, "info_option_disease"),
+    t(language, "back_main"),
   ].join("\n");
 }
 
-function moduleTitle(moduleKey = "") {
+function moduleTitle(moduleKey = "", language = "en") {
   const map = {
-    insurance: "Insurance schemes",
-    subsidies: "Subsidy schemes",
-    loan: "Farm loans",
-    msp: "MSP information",
+    insurance: t(language, "module_insurance"),
+    subsidies: t(language, "module_subsidies"),
+    loan: t(language, "module_loan"),
+    msp: t(language, "module_msp"),
   };
-  return map[moduleKey] || "Schemes";
+  return map[moduleKey] || t(language, "module_default");
 }
 
-function moduleListText(moduleKey = "") {
+function moduleListText(moduleKey = "", language = "en") {
   const schemes = MODULE_SCHEMES[moduleKey] || [];
   return [
-    moduleTitle(moduleKey),
+    moduleTitle(moduleKey, language),
     "",
-    "Available schemes:",
-    numberedList(schemes.map((s) => s.name)),
-    "0. Back to main menu",
+    t(language, "available_schemes"),
+    numberedList(schemes.map((s) => s.name), language),
+    t(language, "back_main"),
   ].join("\n");
 }
 
-function moduleDetailText(moduleKey = "", scheme = {}) {
+function moduleDetailText(moduleKey = "", scheme = {}, language = "en") {
   return [
-    `${scheme.name || moduleTitle(moduleKey)}`,
+    `${scheme.name || moduleTitle(moduleKey, language)}`,
     "",
-    formatRecordAllFields(scheme),
+    formatRecordAllFields(scheme, "", language),
     "",
-    "0. Back to main menu",
+    t(language, "back_main"),
   ].join("\n");
 }
 
 function languagePrompt() {
   return [
-    "Welcome to AgriIndia.",
+    "Welcome to AgriIndia | AgriIndia मध्ये आपले स्वागत आहे | AgriIndia में आपका स्वागत है",
     "",
-    "Please choose your language:",
+    "Please choose your language / कृपया भाषा निवडा / कृपया भाषा चुनें:",
     "1. English",
-    "2. Marathi",
-    "3. Hindi",
+    "2. मराठी",
+    "3. हिंदी",
     "",
     "Send only 1, 2, or 3.",
   ].join("\n");
 }
 
 function welcomeByLanguage(language) {
-  if (language === "mr") return "Welcome to AgriIndia. Marathi mode selected.";
-  if (language === "hi") return "Welcome to AgriIndia. Hindi mode selected.";
-  return "Welcome to AgriIndia. English mode selected.";
+  return t(language, "welcome_mode");
 }
 
-function shortList(items, field = "name", limit = 15) {
+function shortList(items, field = "name", limit = 15, language = "en") {
   const names = items
     .map((item) => item?.[field])
     .filter(Boolean)
     .slice(0, limit);
-  if (names.length === 0) return "No records found.";
+  if (names.length === 0) return t(language, "no_records");
   return names.join(", ");
 }
 
-function numberedList(items = []) {
-  if (!items.length) return "No records found.";
+function numberedList(items = [], language = "en") {
+  if (!items.length) return t(language, "no_records");
   return items.map((item, index) => `${index + 1}. ${item}`).join("\n");
 }
 
-function numberedListFromItems(items = [], field = "name") {
+function numberedListFromItems(items = [], field = "name", language = "en") {
   const names = items
     .map((item) => String(item?.[field] || "").trim())
     .filter(Boolean);
-  return numberedList(names);
+  return numberedList(names, language);
 }
 
 function readCropNamesFromDataset(fileName) {
@@ -301,27 +609,15 @@ function readDatasetRecords(fileName) {
   }
 }
 
-function normalizedRecordName(row = {}) {
-  return String(row?.name || row?.crop_name || "").trim();
+function normalizedRecordName(row = {}, language = "en") {
+  const name = localizedFieldValue(row, "name", language);
+  const cropName = localizedFieldValue(row, "crop_name", language);
+  return String(name || cropName || "").trim();
 }
 
-function toTitle(key = "") {
-  const map = {
-    name: "Name",
-    type: "Type",
-    who_can_apply: "Who can apply",
-    coverage: "Coverage",
-    premium: "Premium",
-    where_to_apply: "Where to apply",
-    benefit: "Benefit",
-    eligibility: "Eligibility",
-    provider: "Provider",
-    interest_rate: "Interest rate",
-    max_amount: "Max amount",
-    crop: "Crop",
-    rate: "Rate",
-    season_year: "Season/Year",
-  };
+function toTitle(key = "", language = "en") {
+  const lang = normalizeLanguage(language);
+  const map = TITLE_MAP[lang] || TITLE_MAP.en;
   if (map[key]) return map[key];
   return String(key)
     .replace(/_/g, " ")
@@ -331,13 +627,13 @@ function toTitle(key = "") {
     .replace(/\b\w/g, (c) => c.toUpperCase());
 }
 
-function formatAny(value, indent = "") {
+function formatAny(value, indent = "", language = "en") {
   if (Array.isArray(value)) {
-    if (!value.length) return `${indent}- Not available`;
+    if (!value.length) return `${indent}- ${t(language, "not_available")}`;
     return value
       .map((item, index) => {
         if (item && typeof item === "object") {
-          return `${indent}- Item ${index + 1}\n${formatRecordAllFields(item, `${indent}  `)}`;
+          return `${indent}- ${t(language, "item")} ${index + 1}\n${formatRecordAllFields(item, `${indent}  `, language)}`;
         }
         return `${indent}- ${String(item)}`;
       })
@@ -345,44 +641,72 @@ function formatAny(value, indent = "") {
   }
 
   if (value && typeof value === "object") {
-    return formatRecordAllFields(value, `${indent}`);
+    return formatRecordAllFields(value, `${indent}`, language);
   }
 
-  if (value === null || value === undefined || value === "") return `${indent}Not available`;
+  if (value === null || value === undefined || value === "") return `${indent}${t(language, "not_available")}`;
   return `${indent}${String(value)}`;
 }
 
-function formatRecordAllFields(record, indent = "") {
+function formatRecordAllFields(record, indent = "", language = "en") {
   return Object.entries(record || {})
     .map(([key, value]) => {
       if (Array.isArray(value) || (value && typeof value === "object")) {
-        return `${indent}${toTitle(key)}:\n${formatAny(value, `${indent}  `)}`;
+        return `${indent}${toTitle(key, language)}:\n${formatAny(value, `${indent}  `, language)}`;
       }
-      return `${indent}${toTitle(key)}: ${formatAny(value)}`;
+      return `${indent}${toTitle(key, language)}: ${formatAny(value, "", language)}`;
     })
     .join("\n");
 }
 
-function translateTextToMarathi(text = "") {
-  // Keep deterministic output even when translation mappings are unavailable.
-  return String(text);
+function translateTextToLanguage(text = "", language = "en") {
+  let out = String(text);
+  const replacements = TRANSLATION_REPLACEMENTS[normalizeLanguage(language)] || [];
+  for (const [pattern, value] of replacements) out = out.replace(pattern, value);
+  return out;
 }
 
 function localizeRecord(record, language) {
-  if (language !== "mr") return record;
+  const lang = normalizeLanguage(language);
+  if (lang === "en") return record;
   if (Array.isArray(record)) return record.map((item) => localizeRecord(item, language));
   if (!record || typeof record !== "object") {
-    return typeof record === "string" ? translateTextToMarathi(record) : record;
+    return typeof record === "string" ? translateTextToLanguage(record, language) : record;
   }
 
   const localized = {};
+
+  // First, map base keys to language-specific values where *_hi/*_mr exists.
   for (const [key, value] of Object.entries(record)) {
-    if (typeof value === "string") {
-      localized[key] = translateTextToMarathi(value);
+    if (/_hi$|_mr$/i.test(key)) continue;
+
+    const resolvedValue = localizedFieldValue(record, key, language);
+    if (typeof resolvedValue === "string") {
+      localized[key] = translateTextToLanguage(resolvedValue, language);
+    } else if (Array.isArray(resolvedValue) || (resolvedValue && typeof resolvedValue === "object")) {
+      localized[key] = localizeRecord(resolvedValue, language);
+    } else if (typeof value === "string") {
+      localized[key] = translateTextToLanguage(value, language);
     } else if (Array.isArray(value) || (value && typeof value === "object")) {
       localized[key] = localizeRecord(value, language);
     } else {
       localized[key] = value;
+    }
+  }
+
+  // If dataset only has suffixed key and no base key, expose it using base key name.
+  const suffix = `_${lang}`;
+  for (const [key, value] of Object.entries(record)) {
+    if (!key.endsWith(suffix)) continue;
+    const baseKey = key.slice(0, -suffix.length);
+    if (Object.prototype.hasOwnProperty.call(localized, baseKey)) continue;
+
+    if (typeof value === "string") {
+      localized[baseKey] = translateTextToLanguage(value, language);
+    } else if (Array.isArray(value) || (value && typeof value === "object")) {
+      localized[baseKey] = localizeRecord(value, language);
+    } else {
+      localized[baseKey] = value;
     }
   }
   return localized;
@@ -399,117 +723,118 @@ function normalizeArray(value) {
   return Array.isArray(value) ? value : [];
 }
 
-function buildFertilizerSection(record = {}) {
+function buildFertilizerSection(record = {}, language = "en") {
   const schedule = normalizeArray(
     pickFirstExisting(record, ["fertilizer_schedule", "fertilizerSchedule"])
   );
-  if (!schedule.length) return "Fertilizer schedule: Not available";
+  if (!schedule.length) return `${t(language, "fertilizer_schedule")}: ${t(language, "not_available")}`;
 
-  const lines = ["Fertilizer schedule:"];
+  const lines = [`${t(language, "fertilizer_schedule")}:`];
   for (let i = 0; i < Math.min(schedule.length, 5); i += 1) {
     const row = schedule[i] || {};
-    const stage = row.stage || row.application_period || `Stage ${i + 1}`;
-    const dosage = row.dosage_per_acre || row.dosage || row.quantity || "Not available";
+    const stage = row.stage || row.application_period || `${t(language, "stage")} ${i + 1}`;
+    const dosage = row.dosage_per_acre || row.dosage || row.quantity || t(language, "not_available");
     lines.push(`${i + 1}. ${stage}: ${dosage}`);
   }
   return lines.join("\n");
 }
 
-function buildDiseaseSection(record = {}) {
+function buildDiseaseSection(record = {}, language = "en") {
   const diseases = normalizeArray(
     pickFirstExisting(record, ["major_diseases", "diseases", "disease_management"])
   );
-  if (!diseases.length) return "Diseases: Not available";
+  if (!diseases.length) return `${t(language, "diseases")}: ${t(language, "not_available")}`;
 
-  const lines = ["Diseases:"];
+  const lines = [`${t(language, "diseases")}:`];
   for (let i = 0; i < Math.min(diseases.length, 5); i += 1) {
     const row = diseases[i] || {};
-    const diseaseName = row.disease_name || row.name || row.disease || `Disease ${i + 1}`;
+    const diseaseName = row.disease_name || row.name || row.disease || `${t(language, "disease_label")} ${i + 1}`;
     lines.push(`${i + 1}. ${diseaseName}`);
   }
   return lines.join("\n");
 }
 
-function formatCropResponse(record = {}, heading = "Crop") {
+function formatCropResponse(record = {}, heading = "Crop", language = "en") {
   const rawYield =
     record.expected_yield_per_acre_quintals ||
     record.expected_yield ||
     record.yield ||
-    "Not available";
+    t(language, "not_available");
   const yieldText =
     rawYield && String(rawYield).toLowerCase() !== "n/a"
       ? `${rawYield} quintal/acre`
-      : "Not available";
+      : t(language, "not_available");
 
   const rawMsp =
     record.msp_rupees_per_quintal ||
     record.msp ||
     record.minimum_support_price ||
-    "Not available";
+    t(language, "not_available");
   const mspText =
     rawMsp && String(rawMsp).toLowerCase() !== "n/a"
       ? `Rs ${rawMsp} per quintal`
-      : "Not available";
+      : t(language, "not_available");
 
   return [
     heading,
     "",
-    `Season: ${record.season || "Not available"}`,
-    `Sowing/Planting: ${record.sowing_time || record.sowing_or_planting_time || "Not available"}`,
-    `Harvesting: ${record.harvesting_time || "Not available"}`,
-    `Expected yield: ${yieldText}`,
+    `${t(language, "season")}: ${record.season || t(language, "not_available")}`,
+    `${t(language, "sowing")}: ${record.sowing_time || record.sowing_or_planting_time || t(language, "not_available")}`,
+    `${t(language, "harvesting")}: ${record.harvesting_time || t(language, "not_available")}`,
+    `${t(language, "expected_yield")}: ${yieldText}`,
     `MSP: ${mspText}`,
-    buildFertilizerSection(record),
-    buildDiseaseSection(record),
+    buildFertilizerSection(record, language),
+    buildDiseaseSection(record, language),
     "",
-    "Detailed record:",
-    formatRecordAllFields(record),
+    t(language, "detailed_record"),
+    formatRecordAllFields(record, "", language),
   ].join("\n");
 }
 
-function buildBasicInfoSection(record = {}) {
+function buildBasicInfoSection(record = {}, language = "en") {
   const rawYield =
     record.expected_yield_per_acre_quintals ||
     record.expected_yield ||
     record.yield ||
-    "Not available";
+    t(language, "not_available");
   const yieldText =
     rawYield && String(rawYield).toLowerCase() !== "n/a"
       ? `${rawYield} quintal/acre`
-      : "Not available";
+      : t(language, "not_available");
 
   const rawMsp =
     record.msp_rupees_per_quintal ||
     record.msp ||
     record.minimum_support_price ||
-    "Not available";
+    t(language, "not_available");
   const mspText =
     rawMsp && String(rawMsp).toLowerCase() !== "n/a"
       ? `Rs ${rawMsp} per quintal`
-      : "Not available";
+      : t(language, "not_available");
 
   return [
-    `Season: ${record.season || "Not available"}`,
-    `Sowing/Planting: ${record.sowing_time || record.sowing_or_planting_time || "Not available"}`,
-    `Harvesting: ${record.harvesting_time || "Not available"}`,
-    `Expected yield: ${yieldText}`,
+    `${t(language, "season")}: ${record.season || t(language, "not_available")}`,
+    `${t(language, "sowing")}: ${record.sowing_time || record.sowing_or_planting_time || t(language, "not_available")}`,
+    `${t(language, "harvesting")}: ${record.harvesting_time || t(language, "not_available")}`,
+    `${t(language, "expected_yield")}: ${yieldText}`,
     `MSP: ${mspText}`,
   ].join("\n");
 }
 
-function buildCropInfoLanding(record = {}, heading = "Crop") {
+function buildCropInfoLanding(record = {}, heading = "Crop", language = "en") {
   return [
     heading,
     "",
-    buildBasicInfoSection(record),
+    buildBasicInfoSection(record, language),
     "",
-    cropInfoTypeMenuText(heading),
+    cropInfoTypeMenuText(heading, language),
   ].join("\n");
 }
 
-async function findCropRecordByName(name) {
+async function findCropRecordByName(name, language = "en") {
   const regex = new RegExp(`^${name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}$`, "i");
   const normalizedName = String(name || "").trim().toLowerCase();
+  const lang = normalizeLanguage(language);
 
   const datasets = [
     ...readDatasetRecords("rabiData.json"),
@@ -519,12 +844,21 @@ async function findCropRecordByName(name) {
   ];
 
   const datasetMatch = datasets.find((row) => {
-    const rowName = String(row?.name || row?.crop_name || "").trim().toLowerCase();
-    return rowName && rowName === normalizedName;
+    const candidates = [
+      normalizedRecordName(row, "en"),
+      normalizedRecordName(row, lang),
+      String(row?.name_hi || "").trim(),
+      String(row?.name_mr || "").trim(),
+      String(row?.crop_name_hi || "").trim(),
+      String(row?.crop_name_mr || "").trim(),
+    ]
+      .filter(Boolean)
+      .map((v) => v.toLowerCase());
+    return candidates.includes(normalizedName);
   });
 
   if (datasetMatch) {
-    const heading = datasetMatch.crop_name || datasetMatch.name || "Crop";
+    const heading = normalizedRecordName(datasetMatch, lang) || t(lang, "crop_fallback");
     return { heading, record: datasetMatch };
   }
 
@@ -535,20 +869,20 @@ async function findCropRecordByName(name) {
   ]);
 
   if (crop) {
-    return { heading: crop.name || "Crop", record: crop };
+    return { heading: crop.name || t(lang, "crop_fallback"), record: crop };
   }
 
   const special = cashCrop || fruitCrop;
   if (special) {
-    return { heading: special.crop_name || special.name || "Crop", record: special };
+    return { heading: special.crop_name || special.name || t(lang, "crop_fallback"), record: special };
   }
 
   return null;
 }
 
 router.post("/webhook", async (req, res, next) => {
+  const from = (req.body?.From || "unknown").trim();
   try {
-    const from = (req.body?.From || "unknown").trim();
     const input = (req.body?.Body || "").trim();
     const lowerInput = input.toLowerCase();
     const session = sessions.get(from) || { step: "main_menu" };
@@ -562,80 +896,80 @@ router.post("/webhook", async (req, res, next) => {
       } else {
         session.language = selectedLanguage;
         session.step = "main_menu";
-        reply = `${welcomeByLanguage(selectedLanguage)}\n\n${menuText()}`;
+        reply = `${welcomeByLanguage(selectedLanguage)}\n\n${menuText(selectedLanguage)}`;
       }
     } else if (!input || ["hi", "hello", "menu", "start", "help"].includes(lowerInput)) {
       session.step = "main_menu";
-      reply = menuText();
+      reply = menuText(session.language);
     } else if (session.step === "crop_menu") {
       if (input === "1") {
         const rabiRecords = readDatasetRecords("rabiData.json")
-          .map((row) => ({ name: normalizedRecordName(row), record: row }))
+          .map((row) => ({ name: normalizedRecordName(row, session.language), record: row }))
           .filter((row) => row.name);
         if (rabiRecords.length) {
           session.step = "rabi_crop_list";
           session.rabiCropOptions = rabiRecords;
-          reply = `Rabi Crops\n${numberedList(rabiRecords.map((r) => r.name))}\n\nReply with a number to view crop details.\n0. Back to main menu`;
+          reply = `${t(session.language, "heading_rabi")}\n${numberedList(rabiRecords.map((r) => r.name), session.language)}\n\n${t(session.language, "reply_crop_select")}\n${t(session.language, "back_main")}`;
         } else {
           const crops = await Crop.find({ season: /rabi/i }).lean();
           const names = crops.map((c) => ({ name: String(c?.name || "").trim(), record: c })).filter((c) => c.name);
           session.step = "rabi_crop_list";
           session.rabiCropOptions = names;
-          reply = `Rabi Crops\n${numberedList(names.map((n) => n.name))}\n\nReply with a number to view crop details.\n0. Back to main menu`;
+          reply = `${t(session.language, "heading_rabi")}\n${numberedList(names.map((n) => n.name), session.language)}\n\n${t(session.language, "reply_crop_select")}\n${t(session.language, "back_main")}`;
         }
       } else if (input === "2") {
         const kharifRecords = readDatasetRecords("kharifData.json")
-          .map((row) => ({ name: normalizedRecordName(row), record: row }))
+          .map((row) => ({ name: normalizedRecordName(row, session.language), record: row }))
           .filter((row) => row.name);
         if (kharifRecords.length) {
           session.step = "kharif_crop_list";
           session.kharifCropOptions = kharifRecords;
-          reply = `Kharif Crops\n${numberedList(kharifRecords.map((r) => r.name))}\n\nReply with a number to view crop details.\n0. Back to main menu`;
+          reply = `${t(session.language, "heading_kharif")}\n${numberedList(kharifRecords.map((r) => r.name), session.language)}\n\n${t(session.language, "reply_crop_select")}\n${t(session.language, "back_main")}`;
         } else {
           const crops = await Crop.find({ season: /kharif/i }).lean();
           const names = crops.map((c) => ({ name: String(c?.name || "").trim(), record: c })).filter((c) => c.name);
           session.step = "kharif_crop_list";
           session.kharifCropOptions = names;
-          reply = `Kharif Crops\n${numberedList(names.map((n) => n.name))}\n\nReply with a number to view crop details.\n0. Back to main menu`;
+          reply = `${t(session.language, "heading_kharif")}\n${numberedList(names.map((n) => n.name), session.language)}\n\n${t(session.language, "reply_crop_select")}\n${t(session.language, "back_main")}`;
         }
       } else if (input === "3") {
         const cashRecords = readDatasetRecords("cash crops.json");
         if (cashRecords.length) {
           session.step = "cash_crop_list";
           session.cashCropOptions = cashRecords
-            .map((row) => ({ name: normalizedRecordName(row), record: row }))
+            .map((row) => ({ name: normalizedRecordName(row, session.language), record: row }))
             .filter((row) => row.name);
-          reply = `Cash Crops\n${numberedList(session.cashCropOptions.map((r) => r.name))}\n\nReply with a number to view crop details.\n0. Back to main menu`;
+          reply = `${t(session.language, "heading_cash")}\n${numberedList(session.cashCropOptions.map((r) => r.name), session.language)}\n\n${t(session.language, "reply_crop_select")}\n${t(session.language, "back_main")}`;
         } else {
           const crops = await CashCrop.find({}).lean();
           session.step = "cash_crop_list";
           session.cashCropOptions = crops
-            .map((row) => ({ name: normalizedRecordName(row), record: row }))
+            .map((row) => ({ name: normalizedRecordName(row, session.language), record: row }))
             .filter((row) => row.name);
-          reply = `Cash Crops\n${numberedList(session.cashCropOptions.map((r) => r.name))}\n\nReply with a number to view crop details.\n0. Back to main menu`;
+          reply = `${t(session.language, "heading_cash")}\n${numberedList(session.cashCropOptions.map((r) => r.name), session.language)}\n\n${t(session.language, "reply_crop_select")}\n${t(session.language, "back_main")}`;
         }
       } else if (input === "4") {
         const fruitRecords = readDatasetRecords("fruitcrops.json");
         if (fruitRecords.length) {
           session.step = "fruit_crop_list";
           session.fruitCropOptions = fruitRecords
-            .map((row) => ({ name: normalizedRecordName(row), record: row }))
+            .map((row) => ({ name: normalizedRecordName(row, session.language), record: row }))
             .filter((row) => row.name);
-          reply = `Fruit Crops\n${numberedList(session.fruitCropOptions.map((r) => r.name))}\n\nReply with a number to view crop details.\n0. Back to main menu`;
+          reply = `${t(session.language, "heading_fruit")}\n${numberedList(session.fruitCropOptions.map((r) => r.name), session.language)}\n\n${t(session.language, "reply_crop_select")}\n${t(session.language, "back_main")}`;
         } else {
           const crops = await FruitCrop.find({}).lean();
           session.step = "fruit_crop_list";
           session.fruitCropOptions = crops
-            .map((row) => ({ name: normalizedRecordName(row), record: row }))
+            .map((row) => ({ name: normalizedRecordName(row, session.language), record: row }))
             .filter((row) => row.name);
-          reply = `Fruit Crops\n${numberedList(session.fruitCropOptions.map((r) => r.name))}\n\nReply with a number to view crop details.\n0. Back to main menu`;
+          reply = `${t(session.language, "heading_fruit")}\n${numberedList(session.fruitCropOptions.map((r) => r.name), session.language)}\n\n${t(session.language, "reply_crop_select")}\n${t(session.language, "back_main")}`;
         }
       } else if (input === "5") {
         session.step = "awaiting_crop_name";
-        reply = "Send crop name (example: Wheat, Mango, Cotton).";
+        reply = t(session.language, "send_crop_name");
       } else {
         session.step = "main_menu";
-        reply = menuText();
+        reply = menuText(session.language);
       }
     } else if (session.step === "rabi_crop_list") {
       const selectedIndex = Number.parseInt(input, 10) - 1;
@@ -647,12 +981,12 @@ router.post("/webhook", async (req, res, next) => {
           session.step = "crop_info_type_menu";
           session.selectedCropName = selected.name;
           session.selectedCropRecord = localizeRecord(record, session.language);
-          reply = buildCropInfoLanding(session.selectedCropRecord, selected.name);
+          reply = buildCropInfoLanding(session.selectedCropRecord, selected.name, session.language);
         } else {
-          reply = `${selected.name}\n\nDetailed info is not available.\n0. Back to main menu`;
+          reply = `${selected.name}\n\n${t(session.language, "detailed_not_available")}\n${t(session.language, "back_main")}`;
         }
       } else {
-        reply = "Invalid selection. Please choose a crop number.\n0. Back to main menu";
+        reply = `${t(session.language, "invalid_crop_selection")}\n${t(session.language, "back_main")}`;
       }
     } else if (session.step === "kharif_crop_list") {
       const selectedIndex = Number.parseInt(input, 10) - 1;
@@ -664,122 +998,127 @@ router.post("/webhook", async (req, res, next) => {
           session.step = "crop_info_type_menu";
           session.selectedCropName = selected.name;
           session.selectedCropRecord = localizeRecord(record, session.language);
-          reply = buildCropInfoLanding(session.selectedCropRecord, selected.name);
+          reply = buildCropInfoLanding(session.selectedCropRecord, selected.name, session.language);
         } else {
-          reply = `${selected.name}\n\nDetailed info is not available.\n0. Back to main menu`;
+          reply = `${selected.name}\n\n${t(session.language, "detailed_not_available")}\n${t(session.language, "back_main")}`;
         }
       } else {
-        reply = "Invalid selection. Please choose a crop number.\n0. Back to main menu";
+        reply = `${t(session.language, "invalid_crop_selection")}\n${t(session.language, "back_main")}`;
       }
     } else if (session.step === "cash_crop_list") {
       const selectedIndex = Number.parseInt(input, 10) - 1;
       const records = Array.isArray(session.cashCropOptions) ? session.cashCropOptions : [];
       const selected = records[selectedIndex]?.record || null;
       if (selected) {
-        const cropName = selected.crop_name || selected.name || "Cash Crop";
+        const cropName = selected.crop_name || selected.name || t(session.language, "crop_fallback_cash");
         session.step = "crop_info_type_menu";
         session.selectedCropName = cropName;
         session.selectedCropRecord = localizeRecord(selected, session.language);
-        reply = buildCropInfoLanding(session.selectedCropRecord, cropName);
+        reply = buildCropInfoLanding(session.selectedCropRecord, cropName, session.language);
       } else {
-        reply = "Invalid selection. Please choose a crop number.\n0. Back to main menu";
+        reply = `${t(session.language, "invalid_crop_selection")}\n${t(session.language, "back_main")}`;
       }
     } else if (session.step === "fruit_crop_list") {
       const selectedIndex = Number.parseInt(input, 10) - 1;
       const records = Array.isArray(session.fruitCropOptions) ? session.fruitCropOptions : [];
       const selected = records[selectedIndex]?.record || null;
       if (selected) {
-        const cropName = selected.crop_name || selected.name || "Fruit Crop";
+        const cropName = selected.crop_name || selected.name || t(session.language, "crop_fallback_fruit");
         session.step = "crop_info_type_menu";
         session.selectedCropName = cropName;
         session.selectedCropRecord = localizeRecord(selected, session.language);
-        reply = buildCropInfoLanding(session.selectedCropRecord, cropName);
+        reply = buildCropInfoLanding(session.selectedCropRecord, cropName, session.language);
       } else {
-        reply = "Invalid selection. Please choose a crop number.\n0. Back to main menu";
+        reply = `${t(session.language, "invalid_crop_selection")}\n${t(session.language, "back_main")}`;
       }
     } else if (session.step === "crop_info_type_menu") {
       const selectedRecord = session.selectedCropRecord || null;
-      const selectedName = session.selectedCropName || "Crop";
+      const selectedName = session.selectedCropName || t(session.language, "crop_fallback");
       if (!selectedRecord) {
         session.step = "main_menu";
-        reply = menuText();
+        reply = menuText(session.language);
       } else if (input === "1") {
         reply = [
-          `${selectedName} - Fertilizer schedule`,
+          `${selectedName}${t(session.language, "fertilizer_heading_suffix")}`,
           "",
-          buildFertilizerSection(selectedRecord),
+          buildFertilizerSection(selectedRecord, session.language),
           "",
-          cropInfoTypeMenuText(selectedName),
+          cropInfoTypeMenuText(selectedName, session.language),
         ].join("\n");
       } else if (input === "2") {
         reply = [
-          `${selectedName} - Disease / pest info`,
+          `${selectedName}${t(session.language, "disease_heading_suffix")}`,
           "",
-          buildDiseaseSection(selectedRecord),
+          buildDiseaseSection(selectedRecord, session.language),
           "",
-          cropInfoTypeMenuText(selectedName),
+          cropInfoTypeMenuText(selectedName, session.language),
         ].join("\n");
       } else {
         session.step = "main_menu";
-        reply = menuText();
+        reply = menuText(session.language);
       }
     } else if (session.step === "module_list") {
       const schemes = MODULE_SCHEMES[session.activeModule] || [];
       const selectedIndex = Number.parseInt(input, 10) - 1;
       const selected = schemes[selectedIndex] || null;
       if (selected) {
+        const localizedScheme = localizeRecord(selected, session.language);
         session.step = "module_detail";
-        session.selectedScheme = selected;
-        reply = moduleDetailText(session.activeModule, selected);
+        session.selectedScheme = localizedScheme;
+        reply = moduleDetailText(session.activeModule, localizedScheme, session.language);
       } else {
-        reply = `Invalid scheme selection.\n\n${moduleListText(session.activeModule)}`;
+        reply = `${t(session.language, "invalid_scheme_selection")}\n\n${moduleListText(session.activeModule, session.language)}`;
       }
     } else if (session.step === "module_detail") {
       if (input === "0") {
         session.step = "main_menu";
         session.activeModule = null;
         session.selectedScheme = null;
-        reply = menuText();
+        reply = menuText(session.language);
       } else {
-        reply = moduleDetailText(session.activeModule, session.selectedScheme || {});
+        reply = moduleDetailText(
+          session.activeModule,
+          localizeRecord(session.selectedScheme || {}, session.language),
+          session.language
+        );
       }
     } else if (session.step === "awaiting_crop_name") {
-      const matched = await findCropRecordByName(input);
+      const matched = await findCropRecordByName(input, session.language);
       if (matched?.record) {
         session.step = "crop_info_type_menu";
         session.selectedCropName = matched.heading;
         session.selectedCropRecord = localizeRecord(matched.record, session.language);
-        reply = buildCropInfoLanding(session.selectedCropRecord, matched.heading);
+        reply = buildCropInfoLanding(session.selectedCropRecord, matched.heading, session.language);
       } else {
         session.step = "main_menu";
-        reply = `Crop "${input}" not found.\n0. Back to main menu`;
+        reply = `${tf(session.language, "crop_not_found", { input })}\n${t(session.language, "back_main")}`;
       }
     } else if (input === "1") {
       session.step = "crop_menu";
-      reply = cropMenuText();
+      reply = cropMenuText(session.language);
     } else if (input === "2") {
       session.step = "module_list";
       session.activeModule = "insurance";
-      reply = moduleListText("insurance");
+      reply = moduleListText("insurance", session.language);
     } else if (input === "3") {
       session.step = "module_list";
       session.activeModule = "subsidies";
-      reply = moduleListText("subsidies");
+      reply = moduleListText("subsidies", session.language);
     } else if (input === "4") {
       session.step = "module_list";
       session.activeModule = "loan";
-      reply = moduleListText("loan");
+      reply = moduleListText("loan", session.language);
     } else if (input === "5") {
       session.step = "module_list";
       session.activeModule = "msp";
-      reply = moduleListText("msp");
+      reply = moduleListText("msp", session.language);
     } else if (input === "7") {
-      reply = "Support feature is not configured yet.\n\n0. Back to main menu";
+      reply = `${t(session.language, "support_unavailable")}\n\n${t(session.language, "back_main")}`;
     } else if (input === "0") {
       sessions.delete(from);
-      reply = "You have exited AgriIndia bot.\nSend any message to start again.";
+      reply = `${t(session.language, "session_ended")}\n${t(session.language, "restart_hint")}`;
     } else {
-      reply = menuText();
+      reply = menuText(session.language);
       session.step = "main_menu";
     }
 
@@ -789,11 +1128,12 @@ router.post("/webhook", async (req, res, next) => {
     res.status(200).type("text/xml").send(twiml(reply));
   } catch (error) {
     console.error("WhatsApp webhook error:", error);
+    const fallbackLanguage = sessions.get(from)?.language || "en";
     // Always return TwiML so Twilio can send a fallback reply instead of silently failing.
     return res
       .status(200)
       .type("text/xml")
-      .send(twiml("Something went wrong. Please try again or send 0."));
+      .send(twiml(t(fallbackLanguage, "error_fallback")));
   }
 });
 
