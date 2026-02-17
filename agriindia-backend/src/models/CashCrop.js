@@ -1,54 +1,84 @@
 const mongoose = require("mongoose");
 
-const fertilizerScheduleSchema = new mongoose.Schema({
-  stage: String,
-  application_period: String,
-  fertilizer_name: String,
-  dosage_per_acre: String,
-  application_method: String,
-  water_quantity_for_spray: String
-}, { _id: false, strict: false });
+function localizedString(base) {
+  return {
+    [base]: String,
+    [`${base}_hi`]: String,
+    [`${base}_mr`]: String,
+  };
+}
 
-const irrigationScheduleSchema = new mongoose.Schema({
-  growth_stage: String,
-  interval_days: String,
-  water_requirement: String
-}, { _id: false, strict: false });
+const fertilizerScheduleSchema = new mongoose.Schema(
+  {
+    ...localizedString("stage"),
+    ...localizedString("application_period"),
+    ...localizedString("fertilizer_name"),
+    ...localizedString("dosage_per_acre"),
+    ...localizedString("application_method"),
+    ...localizedString("water_quantity_for_spray"),
+  },
+  { _id: false, strict: false }
+);
 
-const diseaseSchema = new mongoose.Schema({
-  disease_name: String,
-  causal_organism: String,
-  symptoms: String,
-  preventive_measures: String,
-  recommended_chemical: String,
-  dosage_per_liter: String,
-  waiting_period_before_harvest: String
-}, { _id: false, strict: false });
+const irrigationScheduleSchema = new mongoose.Schema(
+  {
+    ...localizedString("growth_stage"),
+    ...localizedString("interval_days"),
+    ...localizedString("water_requirement"),
+  },
+  { _id: false, strict: false }
+);
 
-const pestSchema = new mongoose.Schema({
-  pest_name: String,
-  damage_symptoms: String,
-  recommended_insecticide: String,
-  dosage_per_liter: String,
-  waiting_period_before_harvest: String
-}, { _id: false, strict: false });
+const diseaseSchema = new mongoose.Schema(
+  {
+    ...localizedString("disease_name"),
+    ...localizedString("causal_organism"),
+    ...localizedString("symptoms"),
+    ...localizedString("preventive_measures"),
+    ...localizedString("recommended_chemical"),
+    ...localizedString("dosage_per_liter"),
+    ...localizedString("waiting_period_before_harvest"),
+  },
+  { _id: false, strict: false }
+);
 
-const cashCropSchema = new mongoose.Schema({
-  crop_name: { type: String, required: true, unique: true },
-  crop_type: String,
-  season: String,
-  crop_nature: String,
-  sowing_or_planting_time: String,
-  harvesting_time: String,
-  expected_yield_per_acre_quintals: String,
-  planting_material_quantity_per_acre: String,
-  average_market_price_rupees_per_quintal: String,
-  fertilizer_schedule: [fertilizerScheduleSchema],
-  irrigation_schedule: [irrigationScheduleSchema],
-  major_diseases: [diseaseSchema],
-  major_pests: [pestSchema],
-  estimated_cost_of_cultivation_per_acre: String,
-  average_profit_margin_percentage: String
-}, { timestamps: true, strict: false });
+const pestSchema = new mongoose.Schema(
+  {
+    ...localizedString("pest_name"),
+    ...localizedString("damage_symptoms"),
+    ...localizedString("recommended_insecticide"),
+    ...localizedString("dosage_per_liter"),
+    ...localizedString("waiting_period_before_harvest"),
+  },
+  { _id: false, strict: false }
+);
+
+const cashCropSchema = new mongoose.Schema(
+  {
+    crop_name: { type: String, required: true, unique: true },
+    crop_name_hi: String,
+    crop_name_mr: String,
+    ...localizedString("name"),
+    ...localizedString("crop_type"),
+    ...localizedString("season"),
+    ...localizedString("crop_nature"),
+    ...localizedString("sowing_or_planting_time"),
+    ...localizedString("harvesting_time"),
+    ...localizedString("expected_yield_per_acre_quintals"),
+    ...localizedString("planting_material_quantity_per_acre"),
+    ...localizedString("average_market_price_rupees_per_quintal"),
+    ...localizedString("estimated_cost_of_cultivation_per_acre"),
+    ...localizedString("average_profit_margin_percentage"),
+    fertilizer_schedule: [fertilizerScheduleSchema],
+    irrigation_schedule: [irrigationScheduleSchema],
+    major_diseases: [diseaseSchema],
+    major_pests: [pestSchema],
+  },
+  {
+    timestamps: true,
+    strict: false,
+    minimize: false,
+  }
+);
 
 module.exports = mongoose.model("CashCrop", cashCropSchema);

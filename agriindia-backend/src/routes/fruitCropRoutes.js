@@ -21,7 +21,6 @@ function normalizeCrop(data) {
     crop_name: resolvedName,
   };
 
-  delete normalized.name;
   return normalized;
 }
 
@@ -81,7 +80,7 @@ router.get(
   authorize("admin", "farmer"),
   async (req, res) => {
     try {
-      const data = await FruitCrop.find();
+      const data = await FruitCrop.find().lean();
 
       res.status(200).json({
         success: true,
@@ -112,7 +111,7 @@ router.get(
           $regex: `^${req.params.name}$`,
           $options: "i",
         },
-      });
+      }).lean();
 
       if (!crop) {
         return res.status(404).json({

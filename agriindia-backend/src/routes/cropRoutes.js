@@ -24,8 +24,16 @@ function normalizeCropData(crop) {
   if (!normalized.sowing_time && normalized["crop.sowing_time"]) {
     normalized.sowing_time = normalized["crop.sowing_time"];
   }
+  if (!normalized.sowing_time_hi && normalized["crop.sowing_time_hi"]) {
+    normalized.sowing_time_hi = normalized["crop.sowing_time_hi"];
+  }
+  if (!normalized.sowing_time_mr && normalized["crop.sowing_time_mr"]) {
+    normalized.sowing_time_mr = normalized["crop.sowing_time_mr"];
+  }
 
   delete normalized["crop.sowing_time"];
+  delete normalized["crop.sowing_time_hi"];
+  delete normalized["crop.sowing_time_mr"];
   return normalized;
 }
 
@@ -75,7 +83,7 @@ router.get(
       await syncAllCropDataToDb();
     }
 
-    const crops = await Crop.find();
+    const crops = await Crop.find().lean();
     res.status(200).json(crops);
   })
 );
@@ -86,7 +94,7 @@ router.get(
     const safeName = escapeRegex(req.params.name);
     const crop = await Crop.findOne({
       name: { $regex: `^${safeName}$`, $options: "i" },
-    });
+    }).lean();
 
     if (!crop) {
       res.status(404);
