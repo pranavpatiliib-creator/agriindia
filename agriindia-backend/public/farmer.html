@@ -339,9 +339,27 @@
       color: #f3fff8;
       font-weight: 700;
       display: flex;
+      align-items: center;
       justify-content: space-between;
       gap: 8px;
       flex-wrap: wrap;
+    }
+
+    .chat-close-btn {
+      margin-left: auto;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      background: rgba(0, 0, 0, 0.2);
+      color: #ecfdf1;
+      border-radius: 999px;
+      width: 30px;
+      height: 30px;
+      line-height: 1;
+      font-size: 18px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
     }
 
     .chat-body {
@@ -423,9 +441,7 @@
       cursor: pointer;
     }
 
-    .chat-toggle-btn.chat-open {
-      bottom: 92px;
-    }
+    .chat-toggle-btn.chat-open { display: none; }
 
     @media (max-width: 980px) {
       .metrics { grid-template-columns: repeat(2, minmax(140px, 1fr)); }
@@ -437,7 +453,6 @@
     @media (max-width: 640px) {
       .grid { grid-template-columns: 1fr; }
       .hero { border-radius: 18px; }
-      .chat-toggle-btn.chat-open { bottom: 104px; }
     }
   </style>
 </head>
@@ -509,6 +524,7 @@
       <div class="chat-head">
         <span id="chatTitle">Farmer Assistant Chat</span>
         <span id="chatState">Type a number or crop name to get guidance</span>
+        <button id="chatHeaderClose" class="chat-close-btn" type="button" aria-label="Close Bot Chat" title="Close Bot Chat">×</button>
       </div>
       <div class="chat-body" id="chatBody"></div>
       <div class="chat-quick">
@@ -820,6 +836,8 @@
       document.getElementById("qMsp").textContent = t("quickMsp");
       document.getElementById("qReset").textContent = t("quickReset");
       document.getElementById("chatToggleBtn").textContent = chatState.open ? t("closeChat") : t("openChat");
+      document.getElementById("chatHeaderClose").setAttribute("aria-label", t("closeChat"));
+      document.getElementById("chatHeaderClose").setAttribute("title", t("closeChat"));
       render();
     }
 
@@ -1188,6 +1206,10 @@
 
     document.getElementById("chatToggleBtn").addEventListener("click", () => {
       setChatOpen(!chatState.open, true);
+    });
+
+    document.getElementById("chatHeaderClose").addEventListener("click", () => {
+      setChatOpen(false);
     });
 
     [...document.querySelectorAll(".quick-btn")].forEach((btn) => {
