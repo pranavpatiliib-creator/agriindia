@@ -585,6 +585,7 @@
         symptoms: "Symptoms",
         waitingPeriod: "Waiting period before harvest",
         recommendedInsecticide: "Recommended insecticide",
+        insecticideNote: "Insecticide details are available in major pests (mainly cash/fruit crops).",
         noData: "No data",
         chatTitle: "Farmer Assistant Chat",
         chatState: "Type a number or crop name to get guidance",
@@ -656,6 +657,7 @@
         symptoms: "लक्षण",
         waitingPeriod: "कटाई से पहले प्रतीक्षा अवधि",
         recommendedInsecticide: "सुझाया गया कीटनाशक",
+        insecticideNote: "कीटनाशक विवरण मुख्य कीट जानकारी में मिलता है (मुख्यतः नकदी/फल फसलों में)।",
         noData: "डेटा नहीं",
         chatTitle: "किसान सहायक चैट",
         chatState: "मार्गदर्शन के लिए नंबर या फसल का नाम लिखें",
@@ -727,6 +729,7 @@
         symptoms: "लक्षणे",
         waitingPeriod: "कापणीपूर्व प्रतीक्षा कालावधी",
         recommendedInsecticide: "शिफारस केलेले कीटकनाशक",
+        insecticideNote: "कीटकनाशक तपशील मुख्य किडी विभागात मिळतो (मुख्यतः नगदी/फळ पिकांमध्ये).",
         noData: "डेटा नाही",
         chatTitle: "शेतकरी सहाय्यक चॅट",
         chatState: "मार्गदर्शनासाठी क्रमांक किंवा पीक नाव टाइप करा",
@@ -1141,6 +1144,13 @@
     function openModal(row) {
       const title = row?.name || "-";
       const raw = row?.raw || {};
+      const pickAny = (obj, keys) => {
+        for (const key of keys) {
+          const v = pick(obj, key);
+          if (v !== undefined && v !== null && v !== "") return v;
+        }
+        return undefined;
+      };
       const fert = list(row?.fertilizerSchedule);
       const irr = list(raw?.irrigation_schedule || raw?.irrigationSchedule);
       const dis = list(row?.majorDiseases);
@@ -1150,42 +1160,42 @@
 
       const fertHtml = fert.length ? fert.map((f) => `
         <li>
-          <strong>${esc(val(pick(f, "stage")))}</strong><br>
-          ${esc(t("timing"))}: ${esc(val(pick(f, "days_after_sowing") || pick(f, "application_period")))}<br>
-          ${esc(t("fertilizer"))}: ${esc(val(pick(f, "fertilizer_name")))}<br>
-          ${esc(t("method"))}: ${esc(val(pick(f, "application_method")))}<br>
-          ${esc(t("waterQty"))}: ${esc(val(pick(f, "water_quantity_for_spray")))}<br>
-          ${esc(t("dosagePerAcre"))}: ${esc(val(pick(f, "dosage_per_acre")))}
+          <strong>${esc(val(pickAny(f, ["stage"])))}</strong><br>
+          ${esc(t("timing"))}: ${esc(val(pickAny(f, ["days_after_sowing", "application_period"])))}<br>
+          ${esc(t("fertilizer"))}: ${esc(val(pickAny(f, ["fertilizer_name"])))}<br>
+          ${esc(t("method"))}: ${esc(val(pickAny(f, ["application_method"])))}<br>
+          ${esc(t("waterQty"))}: ${esc(val(pickAny(f, ["water_quantity_for_spray"])))}<br>
+          ${esc(t("dosagePerAcre"))}: ${esc(val(pickAny(f, ["dosage_per_acre"])))}
         </li>
       `).join("") : `<li>${esc(t("noData"))}</li>`;
 
       const irrHtml = irr.length ? irr.map((i) => `
         <li>
-          <strong>${esc(val(pick(i, "growth_stage")))}</strong><br>
-          ${esc(t("timing"))}: ${esc(val(pick(i, "interval_days")))}<br>
-          ${esc(t("waterQty"))}: ${esc(val(pick(i, "water_requirement")))}
+          <strong>${esc(val(pickAny(i, ["growth_stage"])))}</strong><br>
+          ${esc(t("timing"))}: ${esc(val(pickAny(i, ["interval_days"])))}<br>
+          ${esc(t("waterQty"))}: ${esc(val(pickAny(i, ["water_requirement"])))}
         </li>
       `).join("") : `<li>${esc(t("noData"))}</li>`;
 
       const disHtml = dis.length ? dis.map((d) => `
         <li>
-          <strong>${esc(val(pick(d, "disease_name")))}</strong><br>
-          ${esc(t("cause"))}: ${esc(val(pick(d, "causal_organism")))}<br>
-          ${esc(t("symptoms"))}: ${esc(val(pick(d, "symptoms")))}<br>
-          ${esc(t("prevention"))}: ${esc(val(pick(d, "preventive_measures")))}<br>
-          ${esc(t("recommendedChemical"))}: ${esc(val(pick(d, "recommended_chemical")))}<br>
-          ${esc(t("dosagePerLiter"))}: ${esc(val(pick(d, "dosage_per_liter")))}<br>
-          ${esc(t("waitingPeriod"))}: ${esc(val(pick(d, "waiting_period_before_harvest")))}
+          <strong>${esc(val(pickAny(d, ["disease_name"])))}</strong><br>
+          ${esc(t("cause"))}: ${esc(val(pickAny(d, ["causal_organism"])))}<br>
+          ${esc(t("symptoms"))}: ${esc(val(pickAny(d, ["symptoms"])))}<br>
+          ${esc(t("prevention"))}: ${esc(val(pickAny(d, ["preventive_measures"])))}<br>
+          ${esc(t("recommendedChemical"))}: ${esc(val(pickAny(d, ["recommended_chemical", "recommended_chemical_name", "recommended_chemicals"])))}<br>
+          ${esc(t("dosagePerLiter"))}: ${esc(val(pickAny(d, ["dosage_per_liter"])))}<br>
+          ${esc(t("waitingPeriod"))}: ${esc(val(pickAny(d, ["waiting_period_before_harvest"])))}
         </li>
       `).join("") : `<li>${esc(t("noData"))}</li>`;
 
       const pestHtml = pests.length ? pests.map((p) => `
         <li>
-          <strong>${esc(val(pick(p, "pest_name")))}</strong><br>
-          ${esc(t("symptoms"))}: ${esc(val(pick(p, "damage_symptoms")))}<br>
-          ${esc(t("recommendedInsecticide"))}: ${esc(val(pick(p, "recommended_insecticide")))}<br>
-          ${esc(t("dosagePerLiter"))}: ${esc(val(pick(p, "dosage_per_liter")))}<br>
-          ${esc(t("waitingPeriod"))}: ${esc(val(pick(p, "waiting_period_before_harvest")))}
+          <strong>${esc(val(pickAny(p, ["pest_name"])))}</strong><br>
+          ${esc(t("symptoms"))}: ${esc(val(pickAny(p, ["damage_symptoms"])))}<br>
+          ${esc(t("recommendedInsecticide"))}: ${esc(val(pickAny(p, ["recommended_insecticide", "recommended_insecticide_name", "recommended_pesticide"])))}<br>
+          ${esc(t("dosagePerLiter"))}: ${esc(val(pickAny(p, ["dosage_per_liter"])))}<br>
+          ${esc(t("waitingPeriod"))}: ${esc(val(pickAny(p, ["waiting_period_before_harvest"])))}
         </li>
       `).join("") : `<li>${esc(t("noData"))}</li>`;
 
@@ -1208,6 +1218,7 @@
         <div class="sec"><strong>${esc(t("irrigation"))}:</strong><ul>${irrHtml}</ul></div>
         <div class="sec"><strong>${esc(t("diseases"))}:</strong><ul>${disHtml}</ul></div>
         <div class="sec"><strong>${esc(t("pests"))}:</strong><ul>${pestHtml}</ul></div>
+        <div class="sec">${esc(t("insecticideNote"))}</div>
       `;
       document.getElementById("modal").classList.add("show");
     }
