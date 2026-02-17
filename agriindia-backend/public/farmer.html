@@ -302,6 +302,17 @@
 
     .modal h2 { margin: 0 0 10px; }
     .modal .sec { margin-bottom: 12px; }
+    .modal pre {
+      margin: 8px 0 0;
+      background: #103624;
+      color: #eafff2;
+      border-radius: 10px;
+      padding: 10px;
+      font-size: 12px;
+      line-height: 1.4;
+      overflow: auto;
+      max-height: 320px;
+    }
 
     .danger-note {
       margin-top: 8px;
@@ -508,7 +519,7 @@
         <button id="chatSendBtn">Send</button>
       </div>
     </section>
-    <button id="chatToggleBtn" class="chat-toggle-btn" type="button" aria-expanded="false">Open Chat</button>
+    <button id="chatToggleBtn" class="chat-toggle-btn" type="button" aria-expanded="false">Open Bot Chat</button>
   </main>
 
   <div class="modal" id="modal">
@@ -537,10 +548,16 @@
         error: "Unable to load data. Check backend server and DB connection.",
         details: "View Crop Details",
         season: "Season",
+        sowing: "Sowing / Planting",
+        harvesting: "Harvesting",
+        seed: "Seed / Planting material",
         yield: "Yield",
         msp: "MSP / Price",
         fertilizer: "Fertilizer stages",
+        irrigation: "Irrigation schedule",
         diseases: "Major diseases",
+        pests: "Major pests",
+        fullData: "Complete Crop Data (JSON)",
         noData: "No data",
         chatTitle: "Farmer Assistant Chat",
         chatState: "Type a number or crop name to get guidance",
@@ -565,8 +582,8 @@
         quickSub: "Subsidy",
         quickMsp: "MSP",
         quickReset: "Reset",
-        openChat: "Open Chat",
-        closeChat: "Close Chat",
+        openChat: "Open Bot Chat",
+        closeChat: "Close Bot Chat",
         chatServerIssue: "Assistant is unavailable right now.",
       },
       hi: {
@@ -585,10 +602,16 @@
         error: "डेटा लोड नहीं हुआ। बैकएंड सर्वर और DB कनेक्शन जांचें।",
         details: "पूरी जानकारी देखें",
         season: "सीजन",
+        sowing: "बुवाई / रोपाई",
+        harvesting: "कटाई",
+        seed: "बीज / रोपण सामग्री",
         yield: "उपज",
         msp: "एमएसपी / कीमत",
         fertilizer: "उर्वरक चरण",
+        irrigation: "सिंचाई अनुसूची",
         diseases: "मुख्य रोग",
+        pests: "मुख्य कीट",
+        fullData: "फसल का पूरा डेटा (JSON)",
         noData: "डेटा नहीं",
         chatTitle: "किसान सहायक चैट",
         chatState: "मार्गदर्शन के लिए नंबर या फसल का नाम लिखें",
@@ -613,8 +636,8 @@
         quickSub: "सब्सिडी",
         quickMsp: "एमएसपी",
         quickReset: "रीसेट",
-        openChat: "चैट खोलें",
-        closeChat: "चैट बंद करें",
+        openChat: "बॉट चैट खोलें",
+        closeChat: "बॉट चैट बंद करें",
         chatServerIssue: "सहायक अभी उपलब्ध नहीं है।",
       },
       mr: {
@@ -633,10 +656,16 @@
         error: "डेटा लोड झाला नाही. बॅकएंड आणि DB कनेक्शन तपासा.",
         details: "पूर्ण माहिती पहा",
         season: "हंगाम",
+        sowing: "पेरणी / लागवड",
+        harvesting: "कापणी",
+        seed: "बियाणे / लागवड साहित्य",
         yield: "उत्पन्न",
         msp: "एमएसपी / किंमत",
         fertilizer: "खत टप्पे",
+        irrigation: "सिंचन वेळापत्रक",
         diseases: "मुख्य रोग",
+        pests: "मुख्य किडी",
+        fullData: "पूर्ण पीक डेटा (JSON)",
         noData: "डेटा नाही",
         chatTitle: "शेतकरी सहाय्यक चॅट",
         chatState: "मार्गदर्शनासाठी क्रमांक किंवा पीक नाव टाइप करा",
@@ -661,17 +690,22 @@
         quickSub: "अनुदान",
         quickMsp: "एमएसपी",
         quickReset: "रीसेट",
-        openChat: "चॅट उघडा",
-        closeChat: "चॅट बंद करा",
+        openChat: "बॉट चॅट उघडा",
+        closeChat: "बॉट चॅट बंद करा",
         chatServerIssue: "सहाय्यक सध्या उपलब्ध नाही.",
       }
     };
+
+    const CHAT_LANGUAGE_CODE = { en: "1", mr: "2", hi: "3" };
 
     const state = { lang: "en", field: [], cash: [], fruit: [], crops: [], selectedCrop: null };
     const chatState = {
       from: localStorage.getItem("chatFrom") || "web-farmer-919999999999",
       busy: false,
       open: localStorage.getItem("farmerChatOpen") === "1",
+      syncing: false,
+      syncPromise: null,
+      botLang: localStorage.getItem("farmerBotLang") || "",
     };
 
     function t(k) { return texts[state.lang][k] || texts.en[k] || k; }
@@ -849,35 +883,78 @@
       return cleaned ? [cleaned] : [];
     }
 
+    async function postWebhookMessage(payload) {
+      const body = new URLSearchParams();
+      body.set("From", chatState.from);
+      body.set("Body", String(payload || "").trim());
+
+      const res = await fetch(`${apiBase()}/api/whatsapp/webhook`, {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: body.toString(),
+      });
+
+      const raw = await res.text();
+      const replies = parseBotReplies(raw, res.headers.get("content-type"));
+      return { ok: res.ok, status: res.status, replies };
+    }
+
+    async function syncChatLanguage(showBotReply = false) {
+      if (chatState.syncPromise) return chatState.syncPromise;
+
+      chatState.syncPromise = (async () => {
+        chatState.syncing = true;
+        try {
+          const langCode = CHAT_LANGUAGE_CODE[state.lang] || "1";
+          // Reset current chat session then pick selected language.
+          await postWebhookMessage("0");
+          const result = await postWebhookMessage(langCode);
+
+          if (!result.ok) {
+            addBubble("bot", `${t("chatServerIssue")} (HTTP ${result.status})`);
+            return;
+          }
+
+          chatState.botLang = state.lang;
+          localStorage.setItem("farmerBotLang", state.lang);
+
+          if (showBotReply && result.replies.length) {
+            result.replies.forEach((msg) => addBubble("bot", msg));
+          }
+        } catch (_) {
+          addBubble("bot", t("chatServerIssue"));
+        } finally {
+          chatState.syncing = false;
+          chatState.syncPromise = null;
+        }
+      })();
+
+      return chatState.syncPromise;
+    }
+
     async function sendChatMessage(text) {
       const payload = String(text || "").trim();
       if (!payload || chatState.busy) return;
+
+      if (chatState.botLang !== state.lang) {
+        await syncChatLanguage(false);
+      }
+
       chatState.busy = true;
       addBubble("user", payload);
 
       try {
-        const body = new URLSearchParams();
-        body.set("From", chatState.from);
-        body.set("Body", payload);
-
-        const res = await fetch(`${apiBase()}/api/whatsapp/webhook`, {
-          method: "POST",
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: body.toString(),
-        });
-
-        const raw = await res.text();
-        const replies = parseBotReplies(raw, res.headers.get("content-type"));
-        if (!res.ok) {
-          const msg = replies[0] || `${t("chatServerIssue")} (HTTP ${res.status})`;
+        const result = await postWebhookMessage(payload);
+        if (!result.ok) {
+          const msg = result.replies[0] || `${t("chatServerIssue")} (HTTP ${result.status})`;
           addBubble("bot", msg);
           return;
         }
-        if (!replies.length) {
+        if (!result.replies.length) {
           addBubble("bot", t("noReply"));
           return;
         }
-        replies.forEach((msg) => addBubble("bot", msg));
+        result.replies.forEach((msg) => addBubble("bot", msg));
       } catch (err) {
         addBubble("bot", `Chat error: ${err.message || err}`);
       } finally {
@@ -1000,21 +1077,36 @@
     function openModal(row) {
       const title = row?.name || "-";
       const fert = list(row?.fertilizerSchedule);
+      const irr = list(row?.raw?.irrigation_schedule || row?.raw?.irrigationSchedule);
       const dis = list(row?.majorDiseases);
+      const pests = list(row?.raw?.major_pests || row?.raw?.pests);
       const fertHtml = fert.length
         ? fert.map((f) => `<li>${esc(val(pick(f, "stage") || pick(f, "application_period")))} - ${esc(val(pick(f, "fertilizer_name")))} (${esc(val(pick(f, "dosage_per_acre")))})</li>`).join("")
+        : `<li>${esc(t("noData"))}</li>`;
+      const irrHtml = irr.length
+        ? irr.map((i) => `<li>${esc(val(pick(i, "growth_stage")))} - ${esc(val(pick(i, "interval_days")))} / ${esc(val(pick(i, "water_requirement")))}</li>`).join("")
         : `<li>${esc(t("noData"))}</li>`;
       const disHtml = dis.length
         ? dis.map((d) => `<li>${esc(val(pick(d, "disease_name")))} - ${esc(val(pick(d, "symptoms")))}</li>`).join("")
         : `<li>${esc(t("noData"))}</li>`;
+      const pestHtml = pests.length
+        ? pests.map((p) => `<li>${esc(val(pick(p, "pest_name")))} - ${esc(val(pick(p, "damage_symptoms")))}</li>`).join("")
+        : `<li>${esc(t("noData"))}</li>`;
+      const rawJson = esc(JSON.stringify(row?.raw || {}, null, 2));
 
       document.getElementById("modalTitle").textContent = title;
       document.getElementById("modalBody").innerHTML = `
         <div class="sec"><strong>${esc(t("season"))}:</strong> ${esc(val(row?.season))}</div>
+        <div class="sec"><strong>${esc(t("sowing"))}:</strong> ${esc(val(pick(row?.raw, "sowing_time") || pick(row?.raw, "sowing_or_planting_time")))}</div>
+        <div class="sec"><strong>${esc(t("harvesting"))}:</strong> ${esc(val(pick(row?.raw, "harvesting_time")))}</div>
+        <div class="sec"><strong>${esc(t("seed"))}:</strong> ${esc(val(row?.seedPerAcre))}</div>
         <div class="sec"><strong>${esc(t("yield"))}:</strong> ${esc(val(row?.yieldPerAcre))}</div>
         <div class="sec"><strong>${esc(t("msp"))}:</strong> ${esc(val(row?.msp))}</div>
         <div class="sec"><strong>${esc(t("fertilizer"))}:</strong><ul>${fertHtml}</ul></div>
+        <div class="sec"><strong>${esc(t("irrigation"))}:</strong><ul>${irrHtml}</ul></div>
         <div class="sec"><strong>${esc(t("diseases"))}:</strong><ul>${disHtml}</ul></div>
+        <div class="sec"><strong>${esc(t("pests"))}:</strong><ul>${pestHtml}</ul></div>
+        <div class="sec"><strong>${esc(t("fullData"))}:</strong><pre>${rawJson}</pre></div>
       `;
       document.getElementById("modal").classList.add("show");
     }
@@ -1100,6 +1192,7 @@
       state.lang = e.target.value;
       localStorage.setItem("farmerLang", state.lang);
       applyLanguage();
+      syncChatLanguage(true);
     });
 
     ["searchInput", "typeFilter", "seasonFilter"].forEach((id) => {
