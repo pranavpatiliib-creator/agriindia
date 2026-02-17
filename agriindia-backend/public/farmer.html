@@ -567,6 +567,24 @@
         irrigation: "Irrigation schedule",
         diseases: "Major diseases",
         pests: "Major pests",
+        cropType: "Crop type",
+        cropNature: "Crop nature",
+        soilType: "Soil type",
+        costPerAcre: "Estimated cultivation cost / acre",
+        profitMargin: "Average profit margin (%)",
+        createdAt: "Created at",
+        updatedAt: "Updated at",
+        timing: "Timing",
+        method: "Method",
+        waterQty: "Water quantity",
+        cause: "Cause",
+        prevention: "Preventive measures",
+        recommendedChemical: "Recommended chemical",
+        dosagePerAcre: "Dosage per acre",
+        dosagePerLiter: "Dosage per liter",
+        symptoms: "Symptoms",
+        waitingPeriod: "Waiting period before harvest",
+        recommendedInsecticide: "Recommended insecticide",
         noData: "No data",
         chatTitle: "Farmer Assistant Chat",
         chatState: "Type a number or crop name to get guidance",
@@ -620,6 +638,24 @@
         irrigation: "सिंचाई अनुसूची",
         diseases: "मुख्य रोग",
         pests: "मुख्य कीट",
+        cropType: "फसल प्रकार",
+        cropNature: "फसल प्रकृति",
+        soilType: "मिट्टी का प्रकार",
+        costPerAcre: "अनुमानित खेती लागत / एकड़",
+        profitMargin: "औसत लाभ मार्जिन (%)",
+        createdAt: "बनाया गया समय",
+        updatedAt: "अपडेट किया गया समय",
+        timing: "समय",
+        method: "विधि",
+        waterQty: "पानी की मात्रा",
+        cause: "कारण",
+        prevention: "रोकथाम उपाय",
+        recommendedChemical: "सुझाया गया रसायन",
+        dosagePerAcre: "प्रति एकड़ मात्रा",
+        dosagePerLiter: "प्रति लीटर मात्रा",
+        symptoms: "लक्षण",
+        waitingPeriod: "कटाई से पहले प्रतीक्षा अवधि",
+        recommendedInsecticide: "सुझाया गया कीटनाशक",
         noData: "डेटा नहीं",
         chatTitle: "किसान सहायक चैट",
         chatState: "मार्गदर्शन के लिए नंबर या फसल का नाम लिखें",
@@ -673,6 +709,24 @@
         irrigation: "सिंचन वेळापत्रक",
         diseases: "मुख्य रोग",
         pests: "मुख्य किडी",
+        cropType: "पीक प्रकार",
+        cropNature: "पीक स्वरूप",
+        soilType: "मातीचा प्रकार",
+        costPerAcre: "अंदाजे लागवड खर्च / एकर",
+        profitMargin: "सरासरी नफा मार्जिन (%)",
+        createdAt: "तयार केलेली वेळ",
+        updatedAt: "अपडेट केलेली वेळ",
+        timing: "वेळ",
+        method: "पद्धत",
+        waterQty: "पाण्याचे प्रमाण",
+        cause: "कारण",
+        prevention: "प्रतिबंधक उपाय",
+        recommendedChemical: "शिफारस केलेले रसायन",
+        dosagePerAcre: "प्रति एकर मात्रा",
+        dosagePerLiter: "प्रति लिटर मात्रा",
+        symptoms: "लक्षणे",
+        waitingPeriod: "कापणीपूर्व प्रतीक्षा कालावधी",
+        recommendedInsecticide: "शिफारस केलेले कीटकनाशक",
         noData: "डेटा नाही",
         chatTitle: "शेतकरी सहाय्यक चॅट",
         chatState: "मार्गदर्शनासाठी क्रमांक किंवा पीक नाव टाइप करा",
@@ -1086,31 +1140,70 @@
 
     function openModal(row) {
       const title = row?.name || "-";
+      const raw = row?.raw || {};
       const fert = list(row?.fertilizerSchedule);
-      const irr = list(row?.raw?.irrigation_schedule || row?.raw?.irrigationSchedule);
+      const irr = list(raw?.irrigation_schedule || raw?.irrigationSchedule);
       const dis = list(row?.majorDiseases);
-      const pests = list(row?.raw?.major_pests || row?.raw?.pests);
-      const fertHtml = fert.length
-        ? fert.map((f) => `<li>${esc(val(pick(f, "stage") || pick(f, "application_period")))} - ${esc(val(pick(f, "fertilizer_name")))} (${esc(val(pick(f, "dosage_per_acre")))})</li>`).join("")
-        : `<li>${esc(t("noData"))}</li>`;
-      const irrHtml = irr.length
-        ? irr.map((i) => `<li>${esc(val(pick(i, "growth_stage")))} - ${esc(val(pick(i, "interval_days")))} / ${esc(val(pick(i, "water_requirement")))}</li>`).join("")
-        : `<li>${esc(t("noData"))}</li>`;
-      const disHtml = dis.length
-        ? dis.map((d) => `<li>${esc(val(pick(d, "disease_name")))} - ${esc(val(pick(d, "symptoms")))}</li>`).join("")
-        : `<li>${esc(t("noData"))}</li>`;
-      const pestHtml = pests.length
-        ? pests.map((p) => `<li>${esc(val(pick(p, "pest_name")))} - ${esc(val(pick(p, "damage_symptoms")))}</li>`).join("")
-        : `<li>${esc(t("noData"))}</li>`;
+      const pests = list(raw?.major_pests || raw?.pests);
+      const soil = Array.isArray(raw?.soil_type) ? raw.soil_type.join(", ") : raw?.soil_type;
+      const sowing = pick(raw, "sowing_time") || pick(raw, "crop.sowing_time") || pick(raw, "sowing_or_planting_time");
+
+      const fertHtml = fert.length ? fert.map((f) => `
+        <li>
+          <strong>${esc(val(pick(f, "stage")))}</strong><br>
+          ${esc(t("timing"))}: ${esc(val(pick(f, "days_after_sowing") || pick(f, "application_period")))}<br>
+          ${esc(t("fertilizer"))}: ${esc(val(pick(f, "fertilizer_name")))}<br>
+          ${esc(t("method"))}: ${esc(val(pick(f, "application_method")))}<br>
+          ${esc(t("waterQty"))}: ${esc(val(pick(f, "water_quantity_for_spray")))}<br>
+          ${esc(t("dosagePerAcre"))}: ${esc(val(pick(f, "dosage_per_acre")))}
+        </li>
+      `).join("") : `<li>${esc(t("noData"))}</li>`;
+
+      const irrHtml = irr.length ? irr.map((i) => `
+        <li>
+          <strong>${esc(val(pick(i, "growth_stage")))}</strong><br>
+          ${esc(t("timing"))}: ${esc(val(pick(i, "interval_days")))}<br>
+          ${esc(t("waterQty"))}: ${esc(val(pick(i, "water_requirement")))}
+        </li>
+      `).join("") : `<li>${esc(t("noData"))}</li>`;
+
+      const disHtml = dis.length ? dis.map((d) => `
+        <li>
+          <strong>${esc(val(pick(d, "disease_name")))}</strong><br>
+          ${esc(t("cause"))}: ${esc(val(pick(d, "causal_organism")))}<br>
+          ${esc(t("symptoms"))}: ${esc(val(pick(d, "symptoms")))}<br>
+          ${esc(t("prevention"))}: ${esc(val(pick(d, "preventive_measures")))}<br>
+          ${esc(t("recommendedChemical"))}: ${esc(val(pick(d, "recommended_chemical")))}<br>
+          ${esc(t("dosagePerLiter"))}: ${esc(val(pick(d, "dosage_per_liter")))}<br>
+          ${esc(t("waitingPeriod"))}: ${esc(val(pick(d, "waiting_period_before_harvest")))}
+        </li>
+      `).join("") : `<li>${esc(t("noData"))}</li>`;
+
+      const pestHtml = pests.length ? pests.map((p) => `
+        <li>
+          <strong>${esc(val(pick(p, "pest_name")))}</strong><br>
+          ${esc(t("symptoms"))}: ${esc(val(pick(p, "damage_symptoms")))}<br>
+          ${esc(t("recommendedInsecticide"))}: ${esc(val(pick(p, "recommended_insecticide")))}<br>
+          ${esc(t("dosagePerLiter"))}: ${esc(val(pick(p, "dosage_per_liter")))}<br>
+          ${esc(t("waitingPeriod"))}: ${esc(val(pick(p, "waiting_period_before_harvest")))}
+        </li>
+      `).join("") : `<li>${esc(t("noData"))}</li>`;
 
       document.getElementById("modalTitle").textContent = title;
       document.getElementById("modalBody").innerHTML = `
         <div class="sec"><strong>${esc(t("season"))}:</strong> ${esc(val(row?.season))}</div>
-        <div class="sec"><strong>${esc(t("sowing"))}:</strong> ${esc(val(pick(row?.raw, "sowing_time") || pick(row?.raw, "sowing_or_planting_time")))}</div>
-        <div class="sec"><strong>${esc(t("harvesting"))}:</strong> ${esc(val(pick(row?.raw, "harvesting_time")))}</div>
+        <div class="sec"><strong>${esc(t("cropType"))}:</strong> ${esc(val(pick(raw, "crop_type")))}</div>
+        <div class="sec"><strong>${esc(t("cropNature"))}:</strong> ${esc(val(pick(raw, "crop_nature")))}</div>
+        <div class="sec"><strong>${esc(t("soilType"))}:</strong> ${esc(val(soil))}</div>
+        <div class="sec"><strong>${esc(t("sowing"))}:</strong> ${esc(val(sowing))}</div>
+        <div class="sec"><strong>${esc(t("harvesting"))}:</strong> ${esc(val(pick(raw, "harvesting_time")))}</div>
         <div class="sec"><strong>${esc(t("seed"))}:</strong> ${esc(val(row?.seedPerAcre))}</div>
         <div class="sec"><strong>${esc(t("yield"))}:</strong> ${esc(val(row?.yieldPerAcre))}</div>
         <div class="sec"><strong>${esc(t("msp"))}:</strong> ${esc(val(row?.msp))}</div>
+        <div class="sec"><strong>${esc(t("costPerAcre"))}:</strong> ${esc(val(pick(raw, "estimated_cost_of_cultivation_per_acre")))}</div>
+        <div class="sec"><strong>${esc(t("profitMargin"))}:</strong> ${esc(val(pick(raw, "average_profit_margin_percentage")))}</div>
+        <div class="sec"><strong>${esc(t("createdAt"))}:</strong> ${esc(val(raw?.createdAt))}</div>
+        <div class="sec"><strong>${esc(t("updatedAt"))}:</strong> ${esc(val(raw?.updatedAt))}</div>
         <div class="sec"><strong>${esc(t("fertilizer"))}:</strong><ul>${fertHtml}</ul></div>
         <div class="sec"><strong>${esc(t("irrigation"))}:</strong><ul>${irrHtml}</ul></div>
         <div class="sec"><strong>${esc(t("diseases"))}:</strong><ul>${disHtml}</ul></div>
