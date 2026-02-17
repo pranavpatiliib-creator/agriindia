@@ -302,17 +302,6 @@
 
     .modal h2 { margin: 0 0 10px; }
     .modal .sec { margin-bottom: 12px; }
-    .modal pre {
-      margin: 8px 0 0;
-      background: #103624;
-      color: #eafff2;
-      border-radius: 10px;
-      padding: 10px;
-      font-size: 12px;
-      line-height: 1.4;
-      overflow: auto;
-      max-height: 320px;
-    }
 
     .danger-note {
       margin-top: 8px;
@@ -578,7 +567,6 @@
         irrigation: "Irrigation schedule",
         diseases: "Major diseases",
         pests: "Major pests",
-        fullData: "Complete Crop Data (JSON)",
         noData: "No data",
         chatTitle: "Farmer Assistant Chat",
         chatState: "Type a number or crop name to get guidance",
@@ -632,7 +620,6 @@
         irrigation: "सिंचाई अनुसूची",
         diseases: "मुख्य रोग",
         pests: "मुख्य कीट",
-        fullData: "फसल का पूरा डेटा (JSON)",
         noData: "डेटा नहीं",
         chatTitle: "किसान सहायक चैट",
         chatState: "मार्गदर्शन के लिए नंबर या फसल का नाम लिखें",
@@ -686,7 +673,6 @@
         irrigation: "सिंचन वेळापत्रक",
         diseases: "मुख्य रोग",
         pests: "मुख्य किडी",
-        fullData: "पूर्ण पीक डेटा (JSON)",
         noData: "डेटा नाही",
         chatTitle: "शेतकरी सहाय्यक चॅट",
         chatState: "मार्गदर्शनासाठी क्रमांक किंवा पीक नाव टाइप करा",
@@ -1116,7 +1102,6 @@
       const pestHtml = pests.length
         ? pests.map((p) => `<li>${esc(val(pick(p, "pest_name")))} - ${esc(val(pick(p, "damage_symptoms")))}</li>`).join("")
         : `<li>${esc(t("noData"))}</li>`;
-      const rawJson = esc(JSON.stringify(row?.raw || {}, null, 2));
 
       document.getElementById("modalTitle").textContent = title;
       document.getElementById("modalBody").innerHTML = `
@@ -1130,7 +1115,6 @@
         <div class="sec"><strong>${esc(t("irrigation"))}:</strong><ul>${irrHtml}</ul></div>
         <div class="sec"><strong>${esc(t("diseases"))}:</strong><ul>${disHtml}</ul></div>
         <div class="sec"><strong>${esc(t("pests"))}:</strong><ul>${pestHtml}</ul></div>
-        <div class="sec"><strong>${esc(t("fullData"))}:</strong><pre>${rawJson}</pre></div>
       `;
       document.getElementById("modal").classList.add("show");
     }
