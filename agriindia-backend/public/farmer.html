@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AgriIndia Farmer Hub</title>
+  <title>AgriIndia Farmer Dashboard</title>
   <style>
     :root {
       --bg-1: #0c1f16;
@@ -412,12 +412,12 @@
     <section class="hero">
       <div class="hero-top">
         <div>
-          <h1 id="title">AgriIndia Farmer Hub</h1>
-          <div class="subtitle" id="subtitle">Live crop intelligence from your database</div>
+          <h1 id="title">AgriIndia Farmer Dashboard</h1>
+          <div class="subtitle" id="subtitle">Crop guidance, planning and support for your farm</div>
         </div>
         <div class="toolbar">
-          <span class="pill" id="tokenLabel">Farmer Token (optional)</span>
-          <input id="tokenInput" type="password" placeholder="Paste farmer JWT for cash/fruit access" />
+          <span class="pill" id="tokenLabel">Farmer Login Token (optional)</span>
+          <input id="tokenInput" type="password" placeholder="Paste farmer login token to unlock protected crop data" />
           <button id="saveTokenBtn">Save</button>
           <select id="langSelect" title="Language">
             <option value="en">English</option>
@@ -473,18 +473,19 @@
     <section class="chat-shell">
       <div class="chat-head">
         <span id="chatTitle">Farmer Assistant Chat</span>
-        <span id="chatState">WhatsApp-like flow connected</span>
+        <span id="chatState">Type a number or crop name to get guidance</span>
       </div>
       <div class="chat-body" id="chatBody"></div>
       <div class="chat-quick">
-        <button class="quick-btn" data-chat="menu">menu</button>
-        <button class="quick-btn" data-chat="1">1</button>
-        <button class="quick-btn" data-chat="2">2</button>
-        <button class="quick-btn" data-chat="3">3</button>
-        <button class="quick-btn" data-chat="0">0</button>
+        <button id="qMenu" class="quick-btn" data-chat="menu">Menu</button>
+        <button id="qCrop" class="quick-btn" data-chat="1">Crop Info</button>
+        <button id="qIns" class="quick-btn" data-chat="2">Insurance</button>
+        <button id="qSub" class="quick-btn" data-chat="3">Subsidy</button>
+        <button id="qMsp" class="quick-btn" data-chat="5">MSP</button>
+        <button id="qReset" class="quick-btn" data-chat="0">Reset</button>
       </div>
       <div class="chat-input">
-        <input id="chatInput" placeholder="Type message like WhatsApp..." />
+        <input id="chatInput" placeholder="Ask your farming question..." />
         <button id="chatSendBtn">Send</button>
       </div>
     </section>
@@ -501,20 +502,20 @@
   <script>
     const texts = {
       en: {
-        title: "AgriIndia Farmer Hub",
-        subtitle: "Live crop intelligence from your database",
-        total: "Total Crops",
-        field: "Rabi + Kharif",
+        title: "AgriIndia Farmer Dashboard",
+        subtitle: "Crop guidance, planning and support for your farm",
+        total: "Crops Available",
+        field: "Field Crops (Rabi + Kharif)",
         cash: "Cash Crops",
         fruit: "Fruit Crops",
         allTypes: "All Types",
         search: "Search crop by name...",
         allSeasons: "All Seasons",
-        loading: "Loading crops from database...",
-        loaded: "Connected. Data loaded from database.",
-        partial: "Connected to field crops. Cash/Fruit endpoints need valid farmer/admin token.",
+        loading: "Loading farmer crop data...",
+        loaded: "Farmer data is ready.",
+        partial: "Field crops loaded. Add farmer token to unlock protected crop lists.",
         error: "Unable to load data. Check backend server and DB connection.",
-        details: "View Full Details",
+        details: "View Crop Details",
         season: "Season",
         yield: "Yield",
         msp: "MSP / Price",
@@ -522,33 +523,43 @@
         diseases: "Major diseases",
         noData: "No data",
         chatTitle: "Farmer Assistant Chat",
-        chatState: "WhatsApp-like flow connected",
-        chatPlaceholder: "Type message like WhatsApp...",
+        chatState: "Type a number or crop name to get guidance",
+        chatPlaceholder: "Ask your farming question...",
         send: "Send",
-        tokenLabel: "Farmer Token (optional)",
-        tokenPlaceholder: "Paste farmer JWT for cash/fruit access",
+        tokenLabel: "Farmer Login Token (optional)",
+        tokenPlaceholder: "Paste farmer login token to unlock protected crop data",
         plannerPlaceholder: "Select crop from cards below",
         planButton: "Estimate",
-        selectCrop: "Set My Crop",
+        selectCrop: "Use For Planning",
         plannerEmpty: "Select crop first, then press Estimate.",
         plannerTitle: "Farm Plan",
         plannerAcre: "Acre",
         plannerSeed: "Seed / Planting material needed",
         plannerYield: "Estimated total yield",
+        tokenTip: "Tip: Add your farmer login token for complete crop access.",
+        chatWelcome: "Welcome farmer. Send 'menu' to start.",
+        noReply: "No response from assistant.",
+        quickMenu: "Menu",
+        quickCrop: "Crop Info",
+        quickIns: "Insurance",
+        quickSub: "Subsidy",
+        quickMsp: "MSP",
+        quickReset: "Reset",
+        chatServerIssue: "Assistant is unavailable right now.",
       },
       hi: {
-        title: "एग्रीइंडिया किसान हब",
-        subtitle: "आपके डेटाबेस से लाइव फसल जानकारी",
-        total: "कुल फसलें",
-        field: "रबी + खरीफ",
+        title: "एग्रीइंडिया किसान डैशबोर्ड",
+        subtitle: "आपके खेत के लिए फसल मार्गदर्शन, योजना और सहायता",
+        total: "उपलब्ध फसलें",
+        field: "मैदानी फसलें (रबी + खरीफ)",
         cash: "नकदी फसलें",
         fruit: "फल फसलें",
         allTypes: "सभी प्रकार",
         search: "नाम से फसल खोजें...",
         allSeasons: "सभी सीजन",
-        loading: "डेटाबेस से फसलें लोड हो रही हैं...",
-        loaded: "कनेक्ट हो गया। डेटा डेटाबेस से लोड हुआ।",
-        partial: "फील्ड फसलें लोड हो गईं। Cash/Fruit API के लिए वैध किसान/एडमिन टोकन चाहिए।",
+        loading: "किसान फसल डेटा लोड हो रहा है...",
+        loaded: "किसान डेटा तैयार है।",
+        partial: "मैदानी फसलें लोड हो गईं। सुरक्षित फसल सूची खोलने के लिए किसान टोकन जोड़ें।",
         error: "डेटा लोड नहीं हुआ। बैकएंड सर्वर और DB कनेक्शन जांचें।",
         details: "पूरी जानकारी देखें",
         season: "सीजन",
@@ -558,33 +569,43 @@
         diseases: "मुख्य रोग",
         noData: "डेटा नहीं",
         chatTitle: "किसान सहायक चैट",
-        chatState: "व्हाट्सऐप जैसी चैट जुड़ी हुई है",
-        chatPlaceholder: "व्हाट्सऐप की तरह संदेश लिखें...",
+        chatState: "मार्गदर्शन के लिए नंबर या फसल का नाम लिखें",
+        chatPlaceholder: "अपना खेती सवाल लिखें...",
         send: "भेजें",
-        tokenLabel: "किसान टोकन (वैकल्पिक)",
-        tokenPlaceholder: "Cash/Fruit एक्सेस हेतु किसान JWT डालें",
+        tokenLabel: "किसान लॉगिन टोकन (वैकल्पिक)",
+        tokenPlaceholder: "सुरक्षित फसल डेटा खोलने के लिए किसान लॉगिन टोकन डालें",
         plannerPlaceholder: "नीचे कार्ड से फसल चुनें",
         planButton: "अनुमान निकालें",
-        selectCrop: "मेरी फसल चुनें",
+        selectCrop: "योजना के लिए चुनें",
         plannerEmpty: "पहले फसल चुनें, फिर अनुमान निकालें दबाएं।",
         plannerTitle: "खेती योजना",
         plannerAcre: "एकड़",
         plannerSeed: "बीज / रोपण सामग्री आवश्यकता",
         plannerYield: "कुल अनुमानित उपज",
+        tokenTip: "सुझाव: पूरी फसल सूची के लिए किसान लॉगिन टोकन जोड़ें।",
+        chatWelcome: "स्वागत है किसान। शुरू करने के लिए 'menu' भेजें।",
+        noReply: "सहायक से कोई जवाब नहीं मिला।",
+        quickMenu: "मेनू",
+        quickCrop: "फसल जानकारी",
+        quickIns: "बीमा",
+        quickSub: "सब्सिडी",
+        quickMsp: "एमएसपी",
+        quickReset: "रीसेट",
+        chatServerIssue: "सहायक अभी उपलब्ध नहीं है।",
       },
       mr: {
-        title: "अ‍ॅग्रीइंडिया शेतकरी हब",
-        subtitle: "तुमच्या डेटाबेसमधून थेट पीक माहिती",
-        total: "एकूण पिके",
-        field: "रबी + खरीप",
+        title: "अ‍ॅग्रीइंडिया शेतकरी डॅशबोर्ड",
+        subtitle: "तुमच्या शेतासाठी पीक मार्गदर्शन, नियोजन आणि मदत",
+        total: "उपलब्ध पिके",
+        field: "मैदानी पिके (रबी + खरीप)",
         cash: "नगदी पिके",
         fruit: "फळ पिके",
         allTypes: "सर्व प्रकार",
         search: "नावाने पीक शोधा...",
         allSeasons: "सर्व हंगाम",
-        loading: "डेटाबेसमधून पिके लोड होत आहेत...",
-        loaded: "जोडणी यशस्वी. डेटा डेटाबेसमधून लोड झाला.",
-        partial: "फिल्ड पिके लोड झाली. Cash/Fruit साठी वैध farmer/admin टोकन आवश्यक आहे.",
+        loading: "शेतकरी पीक डेटा लोड होत आहे...",
+        loaded: "शेतकरी डेटा तयार आहे.",
+        partial: "फिल्ड पिके लोड झाली. सुरक्षित पीक सूचीसाठी शेतकरी टोकन जोडा.",
         error: "डेटा लोड झाला नाही. बॅकएंड आणि DB कनेक्शन तपासा.",
         details: "पूर्ण माहिती पहा",
         season: "हंगाम",
@@ -594,30 +615,48 @@
         diseases: "मुख्य रोग",
         noData: "डेटा नाही",
         chatTitle: "शेतकरी सहाय्यक चॅट",
-        chatState: "व्हॉट्सअॅपसारखा चॅट फ्लो जोडलेला आहे",
-        chatPlaceholder: "व्हॉट्सअॅपसारखा संदेश टाइप करा...",
+        chatState: "मार्गदर्शनासाठी क्रमांक किंवा पीक नाव टाइप करा",
+        chatPlaceholder: "तुमचा शेतीचा प्रश्न लिहा...",
         send: "पाठवा",
-        tokenLabel: "शेतकरी टोकन (पर्यायी)",
-        tokenPlaceholder: "Cash/Fruit साठी शेतकरी JWT टाका",
+        tokenLabel: "शेतकरी लॉगिन टोकन (पर्यायी)",
+        tokenPlaceholder: "सुरक्षित पीक डेटा उघडण्यासाठी शेतकरी लॉगिन टोकन टाका",
         plannerPlaceholder: "खालील कार्डमधून पीक निवडा",
         planButton: "अंदाज काढा",
-        selectCrop: "माझे पीक निवडा",
+        selectCrop: "नियोजनासाठी निवडा",
         plannerEmpty: "पहिले पीक निवडा, मग अंदाज काढा दाबा.",
         plannerTitle: "शेती आराखडा",
         plannerAcre: "एकर",
         plannerSeed: "बियाणे / लागवड साहित्य आवश्यकता",
         plannerYield: "एकूण अंदाजे उत्पादन",
+        tokenTip: "सूचना: पूर्ण पीक प्रवेशासाठी शेतकरी लॉगिन टोकन जोडा.",
+        chatWelcome: "स्वागत आहे शेतकरी. सुरू करण्यासाठी 'menu' पाठवा.",
+        noReply: "सहाय्याकडून उत्तर मिळाले नाही.",
+        quickMenu: "मेन्यू",
+        quickCrop: "पीक माहिती",
+        quickIns: "विमा",
+        quickSub: "अनुदान",
+        quickMsp: "एमएसपी",
+        quickReset: "रीसेट",
+        chatServerIssue: "सहाय्यक सध्या उपलब्ध नाही.",
       }
     };
 
-    const state = { lang: "en", field: [], cash: [], fruit: [], selectedCrop: null };
+    const state = { lang: "en", field: [], cash: [], fruit: [], crops: [], selectedCrop: null };
     const chatState = {
       from: localStorage.getItem("chatFrom") || "web-farmer-919999999999",
       busy: false,
     };
 
     function t(k) { return texts[state.lang][k] || texts.en[k] || k; }
-    function pick(obj, key) { return obj?.[`${key}_${state.lang}`] || obj?.[key] || "-"; }
+
+    function pick(obj, key) {
+      if (!obj || !key) return undefined;
+      const byLang = obj[`${key}_${state.lang}`];
+      if (byLang !== undefined && byLang !== null && byLang !== "") return byLang;
+      const plain = obj[key];
+      if (plain !== undefined && plain !== null && plain !== "") return plain;
+      return undefined;
+    }
 
     function apiBase() {
       return (localStorage.getItem("apiBaseUrl") || window.location.origin).replace(/\/+$/, "");
@@ -634,7 +673,40 @@
       return res;
     }
 
+    function list(v) { return Array.isArray(v) ? v : []; }
     function val(v) { return v === undefined || v === null || v === "" ? "-" : v; }
+    function esc(v) {
+      return String(v === undefined || v === null ? "" : v)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#39;");
+    }
+
+    function normalizeCrop(raw, type) {
+      const name = pick(raw, "name") || pick(raw, "crop_name");
+      if (!name) return null;
+      return {
+        type,
+        name,
+        season: pick(raw, "season"),
+        yieldPerAcre: pick(raw, "expected_yield_per_acre_quintals"),
+        msp: pick(raw, "msp_rupees_per_quintal") || pick(raw, "average_market_price_rupees_per_quintal"),
+        seedPerAcre: pick(raw, "seed_quantity_per_acre_kg") || pick(raw, "planting_material_quantity_per_acre"),
+        fertilizerSchedule: list(raw?.fertilizer_schedule),
+        majorDiseases: list(raw?.major_diseases),
+        raw
+      };
+    }
+
+    function rebuildCrops() {
+      state.crops = [
+        ...list(state.field).map((row) => normalizeCrop(row, "field")),
+        ...list(state.cash).map((row) => normalizeCrop(row, "cash")),
+        ...list(state.fruit).map((row) => normalizeCrop(row, "fruit")),
+      ].filter(Boolean);
+    }
 
     function applyLanguage() {
       document.documentElement.lang = state.lang;
@@ -649,6 +721,9 @@
       document.getElementById("barFruitLabel").textContent = t("fruit");
       document.getElementById("searchInput").placeholder = t("search");
       document.querySelector('#typeFilter option[value="all"]').textContent = t("allTypes");
+      document.querySelector('#typeFilter option[value="field"]').textContent = t("field");
+      document.querySelector('#typeFilter option[value="cash"]').textContent = t("cash");
+      document.querySelector('#typeFilter option[value="fruit"]').textContent = t("fruit");
       document.querySelector('#seasonFilter option[value="all"]').textContent = t("allSeasons");
       document.getElementById("chatTitle").textContent = t("chatTitle");
       document.getElementById("chatState").textContent = t("chatState");
@@ -658,6 +733,12 @@
       document.getElementById("tokenInput").placeholder = t("tokenPlaceholder");
       document.getElementById("plannerCrop").placeholder = t("plannerPlaceholder");
       document.getElementById("planBtn").textContent = t("planButton");
+      document.getElementById("qMenu").textContent = t("quickMenu");
+      document.getElementById("qCrop").textContent = t("quickCrop");
+      document.getElementById("qIns").textContent = t("quickIns");
+      document.getElementById("qSub").textContent = t("quickSub");
+      document.getElementById("qMsp").textContent = t("quickMsp");
+      document.getElementById("qReset").textContent = t("quickReset");
       render();
     }
 
@@ -670,11 +751,61 @@
       box.scrollTop = box.scrollHeight;
     }
 
+    function decodeEntities(text) {
+      const box = document.createElement("textarea");
+      box.innerHTML = String(text || "");
+      return box.value;
+    }
+
+    function stripTags(text) {
+      return String(text || "").replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim();
+    }
+
     function parseTwimlMessages(xmlText) {
       const parser = new DOMParser();
       const doc = parser.parseFromString(xmlText, "text/xml");
-      const nodes = [...doc.getElementsByTagName("Message")];
-      return nodes.map((n) => (n.textContent || "").trim()).filter(Boolean);
+      const messageNodes = [...doc.getElementsByTagName("Message")];
+      const bodyNodes = [...doc.getElementsByTagName("Body")];
+      const raw = [
+        ...messageNodes.map((n) => (n.textContent || "").trim()),
+        ...bodyNodes.map((n) => (n.textContent || "").trim()),
+      ].filter(Boolean);
+      if (raw.length) return raw;
+
+      // Fallback for parser errors or non-standard wrappers
+      const regexHits = String(xmlText || "").match(/<Message[^>]*>([\s\S]*?)<\/Message>/gi) || [];
+      return regexHits
+        .map((x) => x.replace(/^<Message[^>]*>/i, "").replace(/<\/Message>$/i, ""))
+        .map((x) => decodeEntities(stripTags(x)))
+        .map((x) => x.trim())
+        .filter(Boolean);
+    }
+
+    function parseBotReplies(text, contentType) {
+      const payload = String(text || "");
+      const ctype = String(contentType || "").toLowerCase();
+
+      if (!payload.trim()) return [];
+
+      if (ctype.includes("xml") || payload.trimStart().startsWith("<?xml") || payload.includes("<Response")) {
+        return parseTwimlMessages(payload);
+      }
+
+      if (ctype.includes("json") || payload.trimStart().startsWith("{") || payload.trimStart().startsWith("[")) {
+        try {
+          const json = JSON.parse(payload);
+          if (Array.isArray(json?.messages)) return json.messages.map((x) => String(x || "").trim()).filter(Boolean);
+          if (Array.isArray(json?.replies)) return json.replies.map((x) => String(x || "").trim()).filter(Boolean);
+          if (typeof json?.message === "string") return [json.message.trim()].filter(Boolean);
+          if (typeof json?.reply === "string") return [json.reply.trim()].filter(Boolean);
+          return [JSON.stringify(json)];
+        } catch (_) {
+          return [];
+        }
+      }
+
+      const cleaned = stripTags(payload);
+      return cleaned ? [cleaned] : [];
     }
 
     async function sendChatMessage(text) {
@@ -694,9 +825,17 @@
           body: body.toString(),
         });
 
-        const xml = await res.text();
-        const replies = parseTwimlMessages(xml);
-        if (!replies.length) addBubble("bot", "No reply from bot.");
+        const raw = await res.text();
+        const replies = parseBotReplies(raw, res.headers.get("content-type"));
+        if (!res.ok) {
+          const msg = replies[0] || `${t("chatServerIssue")} (HTTP ${res.status})`;
+          addBubble("bot", msg);
+          return;
+        }
+        if (!replies.length) {
+          addBubble("bot", t("noReply"));
+          return;
+        }
         replies.forEach((msg) => addBubble("bot", msg));
       } catch (err) {
         addBubble("bot", `Chat error: ${err.message || err}`);
@@ -706,9 +845,9 @@
     }
 
     function updateMetrics() {
-      const f = state.field.length;
-      const c = state.cash.length;
-      const r = state.fruit.length;
+      const f = state.crops.filter((x) => x.type === "field").length;
+      const c = state.crops.filter((x) => x.type === "cash").length;
+      const r = state.crops.filter((x) => x.type === "fruit").length;
       const total = f + c + r;
       document.getElementById("m1").textContent = total;
       document.getElementById("m2").textContent = f;
@@ -729,43 +868,36 @@
       });
     }
 
-    function merged() {
-      return [
-        ...state.field.map((x) => ({ ...x, __type: "field", __name: x.name })),
-        ...state.cash.map((x) => ({ ...x, __type: "cash", __name: x.crop_name || x.name })),
-        ...state.fruit.map((x) => ({ ...x, __type: "fruit", __name: x.crop_name || x.name }))
-      ];
-    }
-
     function render() {
       const q = document.getElementById("searchInput").value.trim().toLowerCase();
       const tf = document.getElementById("typeFilter").value;
       const sf = document.getElementById("seasonFilter").value;
       const grid = document.getElementById("grid");
 
-      const rows = merged().filter((row) => {
-        const name = String(pick(row, "name") || row.__name || "").toLowerCase();
+      const rows = state.crops.filter((row) => {
+        const name = String(row.name || "").toLowerCase();
         const season = String(row.season || "");
         if (q && !name.includes(q)) return false;
-        if (tf !== "all" && row.__type !== tf) return false;
-        if (sf !== "all" && season !== sf) return false;
+        if (tf !== "all" && row.type !== tf) return false;
+        if (sf !== "all" && season.toLowerCase() !== sf.toLowerCase()) return false;
         return true;
       });
 
+      if (!rows.length) {
+        grid.innerHTML = `<article class="card"><h3>${esc(t("noData"))}</h3></article>`;
+        return;
+      }
+
       grid.innerHTML = rows.map((row, i) => {
-        const nm = pick(row, "name") || row.__name || "-";
-        const season = pick(row, "season");
-        const yieldV = pick(row, "expected_yield_per_acre_quintals");
-        const msp = pick(row, "msp_rupees_per_quintal") || pick(row, "average_market_price_rupees_per_quintal");
-        const chip = row.__type === "field" ? t("field") : row.__type === "cash" ? t("cash") : t("fruit");
+        const chip = row.type === "field" ? t("field") : row.type === "cash" ? t("cash") : t("fruit");
 
         return `<article class="card">
-          <div class="chips"><span class="chip">${chip}</span><span class="chip">${season}</span></div>
-          <h3>${nm}</h3>
-          <div class="line"><strong>${t("yield")}:</strong> ${val(yieldV)}</div>
-          <div class="line"><strong>${t("msp")}:</strong> ${val(msp)}</div>
-          <button class="details-btn" data-index="${i}">${t("details")}</button>
-          <button class="pick-btn" data-pick="${i}">${t("selectCrop")}</button>
+          <div class="chips"><span class="chip">${esc(chip)}</span><span class="chip">${esc(val(row.season))}</span></div>
+          <h3>${esc(row.name)}</h3>
+          <div class="line"><strong>${esc(t("yield"))}:</strong> ${esc(val(row.yieldPerAcre))}</div>
+          <div class="line"><strong>${esc(t("msp"))}:</strong> ${esc(val(row.msp))}</div>
+          <button class="details-btn" data-index="${i}">${esc(t("details"))}</button>
+          <button class="pick-btn" data-pick="${i}">${esc(t("selectCrop"))}</button>
         </article>`;
       }).join("");
 
@@ -779,7 +911,7 @@
         btn.addEventListener("click", () => {
           const row = rows[Number(btn.dataset.pick)];
           state.selectedCrop = row || null;
-          document.getElementById("plannerCrop").value = pick(row, "name") || row.__name || "";
+          document.getElementById("plannerCrop").value = row?.name || "";
           document.getElementById("planOutput").textContent = "";
         });
       });
@@ -787,7 +919,7 @@
 
     function parseRangeAvg(text) {
       const s = String(text || "");
-      const nums = s.match(/\\d+(\\.\\d+)?/g);
+      const nums = s.match(/\d+(\.\d+)?/g);
       if (!nums || !nums.length) return null;
       const arr = nums.slice(0, 2).map(Number).filter((n) => !Number.isNaN(n));
       if (!arr.length) return null;
@@ -808,8 +940,8 @@
       }
 
       const row = state.selectedCrop;
-      const seedRaw = pick(row, "seed_quantity_per_acre_kg") || pick(row, "planting_material_quantity_per_acre");
-      const yieldRaw = pick(row, "expected_yield_per_acre_quintals");
+      const seedRaw = row.seedPerAcre;
+      const yieldRaw = row.yieldPerAcre;
 
       const seedPerAcre = parseRangeAvg(seedRaw);
       const yieldPerAcre = parseRangeAvg(yieldRaw);
@@ -817,7 +949,7 @@
       const yieldTotal = yieldPerAcre ? (yieldPerAcre * acres).toFixed(2) : null;
 
       out.textContent = [
-        `${t("plannerTitle")}: ${pick(row, "name") || row.__name || "-"}`,
+        `${t("plannerTitle")}: ${row.name || "-"}`,
         `${t("plannerAcre")}: ${acres}`,
         `${t("plannerSeed")}: ${seedTotal ? `${seedTotal}` : val(seedRaw)}`,
         `${t("plannerYield")}: ${yieldTotal ? `${yieldTotal}` : val(yieldRaw)}`,
@@ -825,19 +957,23 @@
     }
 
     function openModal(row) {
-      const title = pick(row, "name") || row.__name || "-";
-      const fert = row.fertilizer_schedule || [];
-      const dis = row.major_diseases || [];
-      const fertHtml = fert.length ? fert.map((f) => `<li>${val(pick(f, "stage"))} - ${val(pick(f, "fertilizer_name"))} (${val(pick(f, "dosage_per_acre"))})</li>`).join("") : `<li>${t("noData")}</li>`;
-      const disHtml = dis.length ? dis.map((d) => `<li>${val(pick(d, "disease_name"))} - ${val(pick(d, "symptoms"))}</li>`).join("") : `<li>${t("noData")}</li>`;
+      const title = row?.name || "-";
+      const fert = list(row?.fertilizerSchedule);
+      const dis = list(row?.majorDiseases);
+      const fertHtml = fert.length
+        ? fert.map((f) => `<li>${esc(val(pick(f, "stage") || pick(f, "application_period")))} - ${esc(val(pick(f, "fertilizer_name")))} (${esc(val(pick(f, "dosage_per_acre")))})</li>`).join("")
+        : `<li>${esc(t("noData"))}</li>`;
+      const disHtml = dis.length
+        ? dis.map((d) => `<li>${esc(val(pick(d, "disease_name")))} - ${esc(val(pick(d, "symptoms")))}</li>`).join("")
+        : `<li>${esc(t("noData"))}</li>`;
 
       document.getElementById("modalTitle").textContent = title;
       document.getElementById("modalBody").innerHTML = `
-        <div class="sec"><strong>${t("season")}:</strong> ${val(pick(row, "season"))}</div>
-        <div class="sec"><strong>${t("yield")}:</strong> ${val(pick(row, "expected_yield_per_acre_quintals"))}</div>
-        <div class="sec"><strong>${t("msp")}:</strong> ${val(pick(row, "msp_rupees_per_quintal") || pick(row, "average_market_price_rupees_per_quintal"))}</div>
-        <div class="sec"><strong>${t("fertilizer")}:</strong><ul>${fertHtml}</ul></div>
-        <div class="sec"><strong>${t("diseases")}:</strong><ul>${disHtml}</ul></div>
+        <div class="sec"><strong>${esc(t("season"))}:</strong> ${esc(val(row?.season))}</div>
+        <div class="sec"><strong>${esc(t("yield"))}:</strong> ${esc(val(row?.yieldPerAcre))}</div>
+        <div class="sec"><strong>${esc(t("msp"))}:</strong> ${esc(val(row?.msp))}</div>
+        <div class="sec"><strong>${esc(t("fertilizer"))}:</strong><ul>${fertHtml}</ul></div>
+        <div class="sec"><strong>${esc(t("diseases"))}:</strong><ul>${disHtml}</ul></div>
       `;
       document.getElementById("modal").classList.add("show");
     }
@@ -850,12 +986,12 @@
       try {
         const fieldRes = await req("/api/crops?sync=true");
         if (!fieldRes.ok) throw new Error("field crops failed");
-        state.field = await fieldRes.json();
+        state.field = list(await fieldRes.json());
 
         const cashRes = await req("/api/cash-crops", true);
         if (cashRes.ok) {
           const j = await cashRes.json();
-          state.cash = Array.isArray(j) ? j : (j.data || []);
+          state.cash = Array.isArray(j) ? j : list(j.data);
         } else {
           state.cash = [];
           partial = true;
@@ -864,16 +1000,17 @@
         const fruitRes = await req("/api/fruit-crops", true);
         if (fruitRes.ok) {
           const j = await fruitRes.json();
-          state.fruit = Array.isArray(j) ? j : (j.data || []);
+          state.fruit = Array.isArray(j) ? j : list(j.data);
         } else {
           state.fruit = [];
           partial = true;
         }
 
+        rebuildCrops();
         updateMetrics();
         render();
         document.getElementById("status").textContent = partial ? t("partial") : t("loaded");
-        document.getElementById("note").textContent = partial ? "Tip: Save farmer/admin JWT to unlock protected endpoints." : "";
+        document.getElementById("note").textContent = partial ? t("tokenTip") : "";
       } catch (e) {
         document.getElementById("status").textContent = t("error");
         document.getElementById("note").textContent = String(e.message || e);
@@ -935,7 +1072,7 @@
       if (savedToken) document.getElementById("tokenInput").value = savedToken;
       applyLanguage();
       load();
-      addBubble("bot", "Welcome. Send 'menu' to start WhatsApp-like flow.");
+      addBubble("bot", t("chatWelcome"));
     })();
   </script>
 </body>
